@@ -22,7 +22,8 @@ let txt = `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-
 handler.command = /^((tt|tiktok)?(dl)?)$/i
+handler.premium = true
+handler.limit = true
 
 module.exports = handler
