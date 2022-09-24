@@ -1,5 +1,4 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
+const { createRequire } = require("module")
 const fs = require('fs')
 const jimp_1 = require('jimp')
 
@@ -36,10 +35,9 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 	}
 }
 
-handler.menugroup = ['setfullbotpp']
-handler.tagsgroup = ['owner']
-handler.command = /^(set(botpp|ppbot)(2|panjang|full?))$/i
-
+handler.help = ['setfullpp']
+handler.tags = ['owner']
+handler.command = /^(setfullpp)$/i
 handler.owner = true
 
 module.exports = handler
