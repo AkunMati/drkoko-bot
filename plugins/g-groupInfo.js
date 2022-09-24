@@ -12,7 +12,7 @@ let handler = async (m, { conn, usedPrefix, participants, groupMetadata, text })
         pp = await conn.profilePictureUrl(m.chat, 'image')
     } catch (e) {
     } finally {
-        let { isBanned, welcome, detect, sWelcome, sBye, sPromote, sDemote, antiLink, expired, descUpdate, stiker, antispam, antitroli, antivirtex, antiBadword, simi, closeGroup } = global.db.data.chats[m.chat]
+        let { isBanned, welcome, detect, sWelcome, sBye, sPromote, sDemote, antiLink, antiluar, expired, descUpdate, stiker, antispam, antitroli, antivirtex, antiBadword, simi, closeGroup } = global.db.data.chats[m.chat]
         const groupAdmins = getGroupAdmins(participants)
         let listAdmin = groupAdmins.map((v, i) => `${i + 1}. @${v.split`@`[0]}`).join('\n')
 
@@ -40,6 +40,7 @@ ${listAdmin}
 
 *Pengaturan Bot:*
 ${antiLink ? '✅' : '❌'} Anti Link
+${antiluar ? '✅' : '❌'} Anti Bule
 ${global.db.data.chats[m.chat].delete ? '❌' : '✅'} Anti Delete
 ${isBanned ? '✅' : '❌'} Banned
 ${descUpdate ? '✅' : '❌'} Deskprisi
