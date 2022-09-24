@@ -23,5 +23,6 @@ Button tidak work untuk pesan sementara/wa mod silahkan pakai ${usedPrefix}nhpdf
 handler.command = /^nh$/i
 handler.tags = ['internet']
 handler.help = ['nh <code>']
+handler.premium = true
 handler.nsfw = true
 module.exports = handler
