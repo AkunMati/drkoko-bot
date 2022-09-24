@@ -191,4 +191,5 @@ handler.command = handler.help = [
 'zettai'
 ]
 handler.tags = ['nsfw']
+handler.premium = true
 module.exports = handler
