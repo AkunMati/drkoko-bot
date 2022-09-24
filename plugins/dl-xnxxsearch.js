@@ -19,5 +19,6 @@ handler.help = ['xnxxsearch'].map(v => v + ' <teks>')
 handler.tags = ['nsfw']
 handler.command = /^xnxxsearch$/i
 handler.register = true
-
+handler.premium = true
+handler.limit = true
 module.exports = handler
