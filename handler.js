@@ -38,7 +38,7 @@ module.exports = {
                     if (!isNumber(user.healt)) user.healt = 0
                     if (!isNumber(user.level)) user.level = 1
                     if (!isNumber(user.exp)) user.exp = 0
-                    if (!isNumber(user.limit)) user.limit = 10
+                    if (!isNumber(user.limit)) user.limit = 100
                     if (!isNumber(user.lastseen)) user.lastseen = 0
                     if (!isNumber(user.usebot)) user.usebot = 0
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -145,7 +145,7 @@ module.exports = {
                     healt: 100,
                     level: 1,
                     exp: 0,
-                    limit: 10,
+                    limit: 100,
                     lastseen: 0,
                     usebot: 0,
                     lastclaim: 0,
@@ -280,24 +280,24 @@ module.exports = {
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: true,
-                    descUpdate: true,
+                    desc: false,
+                    descUpdate: false,
                     stiker: false,
                     delete: false,
                     antiLink: true,
                     expired: 0,
-                    antiBadword: true,
-                    antiDownload: true,
+                    antiBadword: false,
+                    antiDownload: false,
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
-                    viewonce: true,
+                    viewonce: false,
                     nsfw: false,
                     simi: false,
                     clear: false,
