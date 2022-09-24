@@ -3,7 +3,7 @@ let handler = async (m, { conn, text }) => {
 conn.reply(global.owner[0] + `@s.whatsapp.net`, ` *Ownerku Ada yang memanggil anda ehe ehe:V*`, m)
 
     let a = "https://telegra.ph/file/a43304aef3ca1c97511fd.jpg"
-  conn.sendStimg(m.chat, a, m, {packname: "", author: data.clg2, 
+  conn.sendStimg(m.chat, a, m, {packname: data.clg1, author: data.clg2, 
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
     showAdAttribution: true,
@@ -24,7 +24,7 @@ Gak usah Malu-malu
 `.trim(), m)
     let mentionedJid = [m.sender]*/
 }
-handler.customPrefix = /@62895336282144 |@62895336282144/i
+handler.customPrefix = /@6287740530274 |@6287740530274/i
 handler.command = new RegExp
 
 module.exports = handler
