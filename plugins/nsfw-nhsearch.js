@@ -12,5 +12,5 @@ let handler = async(m, { conn, text }) => {
     else throw json
 }
 handler.command = /^(nhs|nhsearch)$/i
-
+handler.premium = true
 module.exports = handler
