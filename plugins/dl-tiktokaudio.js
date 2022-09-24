@@ -53,7 +53,7 @@ await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
 handler.help = ['tiktokaudio'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(tt|tiktok)(a(udio)?|mp3|sound)(dl)?(download(er)?)?$/i
-
+handler.premium = true
 handler.limit = true
 
 module.exports = handler
