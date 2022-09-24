@@ -11,6 +11,7 @@ handler.help = ['nhentaipdf'].map(v => v + ' <code>')
 handler.tags = ['dewasa']
 handler.command = /^(nhpdf)$/i
 handler.limit = 1
+handler.premium = true
 handler.nsfw = true
 module.exports = handler
 
