@@ -15,6 +15,7 @@ handler.help = ['facebook'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
 handler.command = /^((facebook|fb)(downloder|dl)?)$/i
-
+handler.premium = true
+handler.limit = true
 module.exports = handler
 
