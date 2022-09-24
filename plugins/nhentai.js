@@ -70,4 +70,5 @@ let handler = async (m, { conn, args }) => {
 }
 
 handler.command = /^get?(nhentai|hentai|doujin|nh)$/i
+handler.premium = true
 module.exports = handler
