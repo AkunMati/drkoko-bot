@@ -30,5 +30,7 @@ handler.help = ['xnxx'].map(v => v + ' <url>')
 handler.tags = ['nsfw']
 handler.command = /^xnxx$/i
 handler.register = true
+handler.premium = true
+handler.limit = true
 
 module.exports = handler
