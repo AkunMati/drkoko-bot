@@ -8,8 +8,8 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 	if (/image/g.test(mime) && !/webp/g.test(mime)) {
 		try {
 			let media = await q.download()
-			let botGrup = await conn.profilePictureUrl
-			let { img } = await pepe(media)
+			let botGrup = m.chat
+			let { img } = await conn.generateProfilePicture(media)
 			await conn.query({
 				tag: 'iq',
 				attrs: {
@@ -43,7 +43,7 @@ handler.botAdmin = true
 handler.admin = true
 module.exports = handler
 
-async function pepe(media) {
+async function generateProfilePicture(media) {
 	const jimp = await jimp_1.read(media)
 	const min = jimp.getWidth()
 	const max = jimp.getHeight()
