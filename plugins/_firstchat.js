@@ -1,4 +1,4 @@
-let moment = require('moment-timezone')
+/*let moment = require('moment-timezone')
 let handler = m => m
 
 handler.all = async function (m) {
@@ -33,4 +33,4 @@ function ucapan() {
         res = "Selamat malam"
     }
     return res
-}
+}*/
