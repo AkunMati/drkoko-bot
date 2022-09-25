@@ -1,49 +1,27 @@
-let fetch = require('node-fetch')
+const qrku = "https://i.ibb.co/1LF6QHQ/pangeran.jpg"
 
-let handler = async (m, { conn }) => {
-    pepe = 'https://i.ibb.co/1LF6QHQ/pangeran.jpg'
-    baper = await fetch(pepe).then(a => a.buffer())
-    let listMessage = {
-        "title": "◈ Made by ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×",
-        "description": `
-┌「 *Sewa bot* 」
-│     
-├ 1 Grup / 30 Hari
-├ Rp. 10,000 Gopay
-├ Rp. 15,000 Pulsa Three
-│
-├ 1 Premium / 30 Hari
-├ Rp. 5,000 Gopay
-├ Rp. 10,000 Pulsa Three
-│
-├ tertarik? hubungi: 
-├ @6287740530274 (ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×)
-└────
-`.trim(),
-        "listType": "PRODUCT_LIST",
-        "productListInfo": {
-            "productSections": [
-                {
-                    "title": "klik untuk melihat harga",
-                    "products": [
-                        {
-                            "productId": "4730029423700586"
-                        }
-                    ]
-                }
-            ],
-            "headerImage": {
-                "productId": "4730029423700586",
-                "jpegThumbnail": baper
-            },
-            "businessOwnerJid": "6287740530274@s.whatsapp.net"
-        },
-        "footerText": "https://wa.me/c/6287740530274\n\nowner number : wa.me/6287740530274"
-    }
-    conn.sendMessage(m.chat, listMessage, 'listMessage', { quoted: m, contextInfo: { mentionedJid: conn.parseMention(listMessage.description) } })
-}
-handler.help = ['sewabot', 'premium']
+let handler = async (m, { conn, usedPrefix }) => conn.sendButtonImg(m.chat, qrku, `
+*──── 「 LIST SEWA 」 ────*
+Hai Kak 👋
+𝐈𝐧𝐢 𝐥𝐢𝐬𝐭 𝐬𝐞𝐰𝐚 𝐤𝐚𝐦𝐢 𝐬𝐢𝐥𝐚𝐡𝐤𝐚𝐧 𝐝𝐢𝐩𝐢𝐥𝐢𝐡
+┏━━━•❅•°•❈〔 𝐋𝐢𝐬𝐭 𝐒𝐞𝐰𝐚 〕
+┣★ミ Premium : 10k/Bulan
+┣★ミ Premium : 15k/2Bulan
+┣★ミ Sewabot + Running : 10k/Bulan
+┣★ミ Sewabot + Running : 20k/2Bulan
+┣★ミ Undang bot ke grup : 10k/Bulan
+┣➲ ILove You Beby🤗
+┗━━━•❅•°•❈
+┏━━━•❅•°•❈𝐊𝐞𝐮𝐧𝐭𝐮𝐧𝐠𝐚𝐧 𝐮𝐬𝐞𝐫 𝐏𝐫𝐞𝐦𝐢𝐮𝐦
+┣➲ Unlock Fitur Premium
+┣➲ Limit Didapat Tiap Hari Dengan Claim
+┣➲ Bisa Invite Bot Ke Group
+┗━━━•❅•°•❈
+Contact person Owner:
+wa.me/6287740530274 (Owner)
+`.trim(), wm, '🧒KOKO', usedPrefix + 'owner', m) // Tambah sendiri kalo mau
+handler.help = ['sewabot', 'sewain']
 handler.tags = ['main']
-handler.command = /^(sewabot|premium)$/i
+handler.command = /^sewa(bot|in)$/i
 
 module.exports = handler
