@@ -41,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'anime', 'nsfw', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -62,6 +62,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'tools': 'Tools',
     'fun': 'Fun',
     'asupan': 'Asupan',
+    'bokep': '22+ Bokep',
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
@@ -121,6 +122,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'asupan') tags = {
     'asupan': 'Asupan'
+  }
+  if (teks == 'bokep') tags = {
+    'bokep': '22+ Bokep'
   }
   if (teks == 'database') tags = {
     'database': 'Database'
@@ -253,7 +257,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Downloader', rowId: `${_p + command} downloader` },
           { title: 'Tools', rowId: `${_p + command} tools` },
           { title: 'Fun', rowId: `${_p + command} fun`},
-          { title: 'Asupan', rowId: `${_p + command} asupan`},
+          { title: 'Asupan', rowId: `${_p + command} asupan` },
+          { title: '22+ Bokep', rowId: `${_p + command} bokep` },
           { title: 'Database', rowId: `${_p + command} database` },
           { title: 'Vote & Absen', rowId: `${_p + command} vote` },
           { title: "Al-Qur\'an", rowId: `${_p + command} quran` },
@@ -349,7 +354,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3TemplateButtonImg(m.chat, await genProfile(conn, m), text.trim(), wm, `🏅Owner`, `${_p}owner`, `🎖ThanksTo`, `${_p}tqto`, `🎗  Donasi  🎗`, `${_p}donasi`, m)
+    await conn.send3TemplateButtonImg(m.chat, await genProfile(conn, m), text.trim(), wm, `🏅KOKO`, `${_p}owner`, `💰SEWA`, `${_p}sewabot`, `🎗  RULES  🎗`, `${_p}rules`, m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
