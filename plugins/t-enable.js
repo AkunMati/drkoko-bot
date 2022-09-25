@@ -126,6 +126,19 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
+    case 'antiluar':
+    case 'only':
+      if (!m.isGroup) {
+        if (!isOwner) {
+          global.dfail('group', m, conn)
+          throw false
+        }
+      } else if (!(isAdmin || isOwner)) {
+        global.dfail('admin', m, conn)
+        throw false
+      }
+      chat.antiluar = isEnable
+      break
     case 'stiker':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -293,6 +306,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ autoclosegroup
 ├ antiviewonce
 ├ antilink
+├ antiluar
 ├ antitroli
 ├ antitag
 ├ antibuggc
