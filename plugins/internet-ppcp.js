@@ -16,6 +16,7 @@ conn.sendFile(m.chat, json.result.female, 'ppcewe.png', 'Cewek', m,false, { cont
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command }) => {
   let res = await fetch('https://api.xteam.xyz/randomimage/ppcouple?APIKEY=NezukoTachibana281207')
+  m.reply(data.wait)
   if (res.status != 200) throw await res.text()
   let json = await res.json()
   if (!json.status) throw json
@@ -26,5 +27,5 @@ handler.help = ['ppcouple', 'ppcp']
 handler.tags = ['internet', 'anime']
 handler.command = /^(pp(cp|couple))$/i
 handler.limit = true
-
+handler.register = true
 module.exports = handler
