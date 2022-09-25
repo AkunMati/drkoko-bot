@@ -8,12 +8,12 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 	if (/image/g.test(mime) && !/webp/g.test(mime)) {
 		try {
 			let media = await q.download()
-			let group = await conn.groupMetadata(m.chat)
+			let botGrup = await conn.profilePictureUrl
 			let { img } = await pepe(media)
 			await conn.query({
 				tag: 'iq',
 				attrs: {
-					to: group,
+					to: botGrup,
 					type:'set',
 					xmlns: 'w:profile:picture'
 				},
