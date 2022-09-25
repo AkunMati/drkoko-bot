@@ -1,4 +1,4 @@
-let fetch = require('node-fetch')
+/*let fetch = require('node-fetch')
 let handler = async (m, { conn, command }) => {
   let res = await fetch('https://botcahx-rest-api.up.railway.app/api/randomgambar/couplepp')
   if (res.status != 200) throw await res.text()
@@ -13,4 +13,4 @@ handler.tags = ['internet']
 handler.command = /^ppcp2$/i
 handler.register = true
 handler.limit = true
-module.exports = handler
+module.exports = handler*/
