@@ -1,4 +1,4 @@
-let IkyyClient = require('ikyy')
+let yts = require('yt-search')
 let handler = async (m, { conn, text }) => {
   if (!text) return conn.reply(m.chat, 'Cari apa?', m)
   let results = await yts(text)
