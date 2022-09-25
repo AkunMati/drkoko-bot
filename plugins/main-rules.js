@@ -31,7 +31,7 @@ _Be a smart user and good luck!_
     contextInfo: {
         externalAdReply: {
             title: 'Harap Patuhin Peraturan Tersebut Yah Kak >_<',
-            body: bodlink,
+            body: data.bodlink,
             description: `Hai Kak @${m.sender.split('@')[0]} Jangan Lupa Donasi Ya Kak ^_^`,
             mediaType: 2,
           thumbnail: await (await fetch('https://telegra.ph/file/be35f3f279c9af2d607e8.jpg')).buffer(),
