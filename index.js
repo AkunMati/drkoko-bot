@@ -8,7 +8,7 @@ const Readline = require('readline')
 const yargs = require('yargs/yargs')
 const rl = Readline.createInterface(process.stdin, process.stdout)
 
-CFonts.say('Leviathan', {
+CFonts.say('Bottom', {
   colors: ['#f2aa4c'],
   font: 'block',
   align: 'center',
@@ -57,7 +57,7 @@ function start(file) {
     if (code === 0) return
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0])
-      start(file)
+      start("main.js")
     })
   })
   let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
