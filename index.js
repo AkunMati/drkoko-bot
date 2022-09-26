@@ -68,4 +68,4 @@ function start(file) {
   // console.log(p)
 }
 
-start('main.enc.js')
+start('main.js')
