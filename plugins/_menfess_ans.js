@@ -1,3 +1,5 @@
+let handler = m => m
+
 const delay = time => new Promise(res => setTimeout(res, time))
 export async function before(m) {
 	if (!m.chat.endsWith('@s.whatsapp.net')) return !0;
@@ -13,3 +15,5 @@ export async function before(m) {
 		return !0
 	})
 }
+
+module.exports = handler
