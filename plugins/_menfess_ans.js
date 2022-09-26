@@ -1,7 +1,7 @@
 let handler = m => m
 
 const delay = time => new Promise(res => setTimeout(res, time))
-export async function before(m) {
+handler.before = async function (m) {
 	if (!m.chat.endsWith('@s.whatsapp.net')) return !0;
 	this.menfess = this.menfess ? this.menfess : {}
 	let mf = Object.values(this.menfess).find(v => v.status === false && v.penerima == m.sender)
