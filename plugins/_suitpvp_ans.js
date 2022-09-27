@@ -19,7 +19,6 @@ handler.before = async function (m) {
       m.reply(`Suit telah dikirimkan ke chat
 @${room.p.split`@`[0]} dan 
 @${room.p2.split`@`[0]}
-
 Silahkan pilih suit di chat masing"
 klik wa.me/${conn.user.jid.split`@`[0]}`, m.chat, {
         contextInfo: {
@@ -73,7 +72,6 @@ klik wa.me/${conn.user.jid.split`@`[0]}`, m.chat, {
       else if (stage == stage2) tie = true
       this.reply(room.asal, `
 _*Hasil Suit*_${tie ? '\nSERI' : ''}
-
 @${room.p.split`@`[0]} (${room.text}) ${tie ? '' : room.p == win ? ` Menang \n+${room.poin}XP\nBonus +${room.poin_bot}` : ` Kalah \n-${room.poin_lose}XP`}
 @${room.p2.split`@`[0]} (${room.text2}) ${tie ? '' : room.p2 == win ? ` Menang \n+${room.poin}XP\nBonus +${room.poin_bot}` : ` Kalah \n-${room.poin_lose}XP`}
 `.trim(), m, { contextInfo: { mentionedJid: [room.p, room.p2] } })
