@@ -1,81 +1,40 @@
-let handler = async (m, { text, conn, usedPrefix }) => {
-    let ras = `Halo Kak @${m.sender.split('@')[0]}`
-    let sel = `Pilih Suitbot Gunting, Batu, Kertas Dibawah Ya Kak!`
-    let rs = `Pilih Disini`
-const sections = [ {
-	title: `Silahkan Pilih Sesuai Perkiraanmu!`,
-	rows: [
-	{title: `Gunting`, rowId: `#suitbot gunting `},//, description: ``},
-        {title: `Batu`, rowId: `#suitbot batu `},//, description: ``},
-	{title: `Kertas`, rowId: `#suitbot kertas `},//, description: ``},
-          ]
- } ]
-
-const listMessage = {
-  text: sel,
-  mentions: [m.sender],
-  footer: wm,
-  title: ras,
-  buttonText: rs,
-  sections
+/* 
+    Made by https://github.com/syahrularranger 
+    Jangan di hapus credit nya :)
+*/
+let timeout = 60000
+let poin = 500
+let poin_lose = -100
+let poin_bot = 200
+let handler = async (m, { conn, usedPrefix }) => {
+  conn.suit = conn.suit ? conn.suit : {}
+  if (Object.values(conn.suit).find(room => room.id.startsWith('suit') && [room.p, room.p2].includes(m.sender))) throw 'Selesaikan suit mu yang sebelumnya'
+  if (!m.mentionedJid[0]) return m.reply(`_Siapa yang ingin kamu tantang?_\nTag orangnya.. Contoh\n\n${usedPrefix}suit @${owner[1]}`, m.chat, { contextInfo: { mentionedJid: [owner[1] + '@s.whatsapp.net'] } })
+  if (Object.values(conn.suit).find(room => room.id.startsWith('suit') && [room.p, room.p2].includes(m.mentionedJid[0]))) throw `Orang yang kamu tantang sedang bermain suit bersama orang lain :(`
+  let id = 'suit_' + new Date() * 1
+  let caption = `
+_*SUIT PvP*_
+@${m.sender.split`@`[0]} menantang @${m.mentionedJid[0].split`@`[0]} untuk bermain suit
+Silahkan @${m.mentionedJid[0].split`@`[0]} 
+`.trim()
+  let footer = `Ketik "terima/ok/gas" untuk memulai suit\nKetik "tolak/gabisa/nanti" untuk menolak`
+  conn.suit[id] = {
+    chat: await conn.send2Button(m.chat, caption, footer, 'Terima', 'ok', 'Tolak', 'tolak', m, { contextInfo: { mentionedJid: conn.parseMention(caption) } }),
+    id: id,
+    p: m.sender,
+    p2: m.mentionedJid[0],
+    status: 'wait',
+    waktu: setTimeout(() => {
+      if (conn.suit[id]) conn.reply(m.chat, `_Waktu suit habis_`, m)
+      delete conn.suit[id]
+    }, timeout), poin, poin_lose, poin_bot, timeout
+  }
 }
-
-    if(!text) return conn.sendMessage(m.chat, listMessage, { quoted: m })
-   
-    //if (!text) return sell
-    var astro = Math.random()
-
-    if (astro < 0.34) {
-        astro = 'batu'
-    } else if (astro > 0.34 && astro < 0.67) {
-        astro = 'gunting'
-    } else {
-        astro = 'kertas'
-    }
-
-    //menentukan rules
-    let winexp = 500
-    let winmoney = 1000
-    let loseexp = 250
-    let losemoney = 500
-    if (text == astro) {
-        m.reply(`Seri!\nkamu: *${text}*\nBot: *${astro}*`)
-    } else if (text == 'batu') {
-        if (astro == 'gunting') {
-            global.db.data.users[m.sender].exp += winexp
-            global.db.data.users[m.sender].money += winmoney
-            m.reply(`Kamu menang!\nKamu: *${text}*\nBot: *${astro}*\n+Rp${winmoney} Money & +${winexp} XP`)
-        } else {
-            global.db.data.users[m.sender].exp -= loseexp
-            global.db.data.users[m.sender].money -= losemoney
-            m.reply(`Kamu kalah!\nkamu: *${text}*\nBot: *${astro}*\n-Rp${losemoney} Money & -${loseexp} XP`)
-        }
-    } else if (text == 'gunting') {
-        if (astro == 'kertas') {
-            global.db.data.users[m.sender].exp += winexp
-            global.db.data.users[m.sender].money += winmoney
-            m.reply(`Kamu menang!\nKamu: *${text}*\nBot: *${astro}*\n+Rp${winmoney} Money & +${winexp} XP`)
-        } else {
-            global.db.data.users[m.sender].exp -= loseexp
-            global.db.data.users[m.sender].money -= losemoney
-            m.reply(`Kamu kalah!\nkamu: *${text}*\nBot: *${astro}*\n-Rp${losemoney} Money & -${loseexp} XP`)
-        }
-    } else if (text == 'kertas') {
-        if (astro == 'batu') {
-            global.db.data.users[m.sender].exp += winexp
-            global.db.data.users[m.sender].money += winmoney
-            m.reply(`Kamu menang!\nKamu: *${text}*\nBot: *${astro}*\n+Rp${winmoney} Money & +${winexp} XP`)
-        } else {
-            global.db.data.users[m.sender].exp -= loseexp
-            global.db.data.users[m.sender].money -= losemoney
-            m.reply(`Kamu kalah!\nkamu: *${text}*\nBot: *${astro}*\n-Rp${losemoney} Money & -${loseexp} XP`)
-        }
-    } else {
-        return false
-    }
-}
-handler.help = ['suitbot']
 handler.tags = ['game']
-handler.command = /^(suitbot)$/i
+handler.help = ['suitpvp', 'suit'].map(v => v + ' @tag')
+handler.command = /^suit(pvp)?$/i
+
+handler.group = true
+handler.game = true
 
 module.exports = handler
