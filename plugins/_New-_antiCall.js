@@ -1,5 +1,5 @@
-const { WAMessageStubType } = require('@adiwajshing/baileys')
-let { format } = require('util')
+let { WAMessageStubType } = require('@adiwajshing/baileys')
+const { format } = require('util')
 
 let imgr = flaaa.getRandom()
 
