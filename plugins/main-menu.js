@@ -41,10 +41,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
+    'store': 'Store',
     'game': 'Game',
     'rpg': 'RPG',
     'xp': 'Exp & Limit',
@@ -72,6 +73,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
+  }
+  if (teks == 'store') tags = {
+    'store': 'Store'
   }
   if (teks == 'game') tags = {
     'game': 'Game'
@@ -244,7 +248,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       {
         title: 'List Menu ' + data.namabot,
         rows: [
-          { title: 'Semua Perintah', rowId: `${_p + command} all` },
+          { title: 'Semua Perintah', rowId: `${_p + command} all`, description: `ALL MENU KIDZ` },
+          { title: 'Store', rowId: `${_p + command} store`, description: `FITUR STORE KIDZ` },
           { title: 'Game', rowId: `${_p + command} game` },
           { title: 'Rpg', rowId: `${_p + command} rpg` },
           { title: 'XP', rowId: `${_p + command} xp` },
