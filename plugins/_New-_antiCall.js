@@ -1,3 +1,5 @@
+let handler = m => m
+
 const { WAMessageStubType } = require('@adiwajshing/baileys')
 const { format } = require('util')
 
