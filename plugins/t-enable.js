@@ -126,6 +126,78 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLink = isEnable
       break
+    case 'antilinkbitly':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkBitly = isEnable
+      break
+      case 'antilinktik':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkTik = isEnable
+      break
+      case 'antilinkyt':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkYt = isEnable
+      break
+      case 'antilinktel':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkTel = isEnable
+      break
+      case 'antilinkfb':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkFb = isEnable
+      break
+      case 'antilinkig':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkIg = isEnable
+      break
+      case 'antilinkwa':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkWa = isEnable
+      break
+      case 'antihttp':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiLinkHttp = isEnable
+      break
     case 'antiluar':
     case 'only':
       if (!m.isGroup) {
@@ -306,6 +378,14 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ autoclosegroup
 ├ antiviewonce
 ├ antilink
+├ antilinkbitly
+├ antilinktik
+├ antilinkyt
+├ antilinktel
+├ antilinkfb
+├ antilinkig
+├ antilinkwa
+├ antihttp
 ├ antiluar
 ├ antitroli
 ├ antitag
