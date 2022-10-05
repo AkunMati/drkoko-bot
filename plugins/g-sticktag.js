@@ -31,13 +31,13 @@ let stiker = false
     mentions: participants.map(a => a.id),
           externalAdReply :{
           showAdAttribution: true,
-    mediaUrl: data.sig,
+    mediaUrl: data.sc,
     mediaType: 2,
     description: data.wm, 
     title: '👋 Hai, ' + name + ' ' + ucapan,
-    body: data.botdate,
+    body: run,
     thumbnail: await(await fetch(pp)).buffer(),
-    sourceUrl: data.sgc
+    sourceUrl: data.sc
      }}
   })
 }
