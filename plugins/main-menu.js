@@ -263,7 +263,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Virusss', rowId: `${_p + command} virus`, description: `FITUR VIRUS KIDZ` },
           { title: 'Internet', rowId: `${_p + command} internet`, description: `FITUR INTERNET KIDZ` },
           { title: 'Anonymous', rowId: `${_p + command} anonymous`, description: `FITUR ANONYMOUS KIDZ` },
-          { title: 'Nulis & Logo', rowId: `${_p + command} nulis`, description: FITUR NULIS KIDZ` },
+          { title: 'Nulis & Logo', rowId: `${_p + command} nulis`, description: `FITUR NULIS KIDZ` },
           { title: 'Downloader', rowId: `${_p + command} downloader`, description: `FITUR DOWNLOAD KIDZ` },
           { title: 'Tools', rowId: `${_p + command} tools`, description: `FITUR TOOLS KIDZ` },
           { title: 'Fun', rowId: `${_p + command} fun`, description: `FITUR FUN KIDZ` },
