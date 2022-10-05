@@ -33,9 +33,9 @@ let stiker = false
           showAdAttribution: true,
     mediaUrl: data.sc,
     mediaType: 2,
-    description: data.wm, 
-    title: '👋 Hai, ' + name + ' ' + ucapan,
-    body: run,
+    description: data.deslink, 
+    title: run,
+    body: wm,
     thumbnail: await(await fetch(pp)).buffer(),
     sourceUrl: data.sc
      }}
