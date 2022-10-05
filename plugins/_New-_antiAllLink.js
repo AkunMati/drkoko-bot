@@ -1,4 +1,4 @@
-/*let handler = m => m
+let handler = m => m
 
 const isLinkTik = /tiktok.com/i // tambahin sendiri
 const isLinkYt = /youtube.com|youtu.be/i // tambahin sendiri
@@ -10,7 +10,7 @@ const isLinkHttp = /http|https/i // tambahin sendiri
 const isLinkBitly = /bit.ly/i // tambahin sendiri
 
 handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, isBotAdmin }) {
-    let imgr = pickRandom(flaaa)
+    //let imgr = pickRandom(flaaa)
     if (m.isBaileys && m.fromMe)
         return !0
     if (!m.isGroup) return !1
@@ -35,9 +35,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link Tiktok
-    Ketik *.limit* untuk cek limit`, `${imgr + 'Anti Link Tiktok'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
     
@@ -51,9 +49,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link Bitly
-    Ketik *.limit* untuk cek limit`, `${imgr + 'Anti Link Bitly'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
 
@@ -67,9 +63,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link Youtube
-    Ketik *.limit* untuk cek limit`, `${imgr + 'Anti Link Youtube'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
     
@@ -84,9 +78,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link Telegram
-    Ketik *.limit* untuk cek limit`, `${imgr + 'Anti Link Tele'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
     
@@ -100,9 +92,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link Facebook
-    Ketik *.limit* untuk cek limit`, wm, `${imgr + 'Anti Link Facebook'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, wm, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
     
@@ -116,9 +106,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link Instagram
-    Ketik *.limit* untuk cek limit`, `${imgr + 'Anti Link Facebook'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
     
@@ -132,9 +120,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link WhatsApp
-    Ketik *.limit* untuk cek limit`, `${imgr + 'Anti Link WhatsApp'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
     
@@ -148,12 +134,10 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     
     await conn.sendButton(m.chat, run, `*Limit anda di reset ke 0*\n*WARN +1*\n*+ Banned Pengirim*
     Karena Mengirim Link Http
-    Ketik *.limit* untuk cek limit`, `${imgr + 'Anti Link Https'}`, [
-        ['OK', `Ok`]
-    ], m)
+    Ketik *.limit* untuk cek limit`, `bye bye`, `terimakasih`, m)
         } else if (!bot.restrict) return m.reply('Gk bisa gw kick!')
     }
     return !0
 }
 
-module.exports = handler*/
+module.exports = handler
