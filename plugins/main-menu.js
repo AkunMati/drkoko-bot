@@ -41,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -55,6 +55,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'anime': 'Anime',
     'nsfw': 'Nsfw',
     'premium': 'Premium',
+    'virus': 'Virus',
     'internet': 'Internet',
     'anonymous': 'Anonymous Chat',
     'nulis': 'MagerNulis & Logo',
@@ -90,7 +91,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
   }
-  if (teks == 'grup') tags = {
+  if (teks == 'group') tags = {
     'group': 'Grup'
   }
   if (teks == 'anime') tags = {
@@ -101,6 +102,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'premium') tags = {
     'premium': 'Premium'
+  }
+  if (teks == 'virus') tags = {
+    'virus': 'Virus'
   }
   if (teks == 'internet') tags = {
     'internet': 'Internet'
@@ -251,6 +255,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Anime', rowId: `${_p + command} anime` },
           { title: 'Nsfw', rowId: `${_p + command} nsfw` },
           { title: 'Premium', rowId: `${_p + command} premium` },
+          { title: 'Virusss', rowId: `${_p + command} virus` },
           { title: 'Internet', rowId: `${_p + command} internet` },
           { title: 'Anonymous', rowId: `${_p + command} anonymous` },
           { title: 'Nulis & Logo', rowId: `${_p + command} nulis` },
