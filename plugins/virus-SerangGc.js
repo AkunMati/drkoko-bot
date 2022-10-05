@@ -1,4 +1,5 @@
-import virtex from '../virtex/index.js';
+//import virtex from '../virtex/index.js';
+let { virtex } = require('../virtex/index.js')
 const isNumber = x => typeof x === 'number' && !isNaN(x)
 const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function () {
     clearTimeout(this)
