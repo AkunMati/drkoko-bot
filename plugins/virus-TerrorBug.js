@@ -5,7 +5,7 @@ let fs = require('fs')
 let fetch = require('node-fetch')
 let { sticker } = require('../lib/sticker.js')
 
-const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = (await import('@adiwajshing/baileys')).default
+const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys')
 let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participants }) => {
 	if (!text)return m.reply(`Contoh Penggunaan : *${_p + command}* <nomor>\n\n*Note :*\nGunaka Fitur Hanya Untuk Ripper Atau Scamer`)
 	let thumb = fs.readFileSync('./thumbnail.jpg')
