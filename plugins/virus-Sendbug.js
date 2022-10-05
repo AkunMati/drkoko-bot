@@ -1,4 +1,5 @@
-import virtex from "../virtex/index.js";
+//import virtex from "../virtex/index.js";
+let virtex = require('../virtex/index.js')
 
 let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) => {
     if (!(isOwner || isPrems)) {
