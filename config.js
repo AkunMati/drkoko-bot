@@ -33,8 +33,12 @@ global.packname = data.namabot
 global.author = data.owner
 global.wm = 'Cʀᴇᴀᴛᴇᴅ Bʏ' + ' ©ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 
-global.asing = `Ciee Orang Asing Join, Dadah Saya Kick👋`
-global.wait = `Tunggu Sebentar Dungu!`
+global.asing = `*Ciee Orang Asing Join, Dadah Saya Kick👋*`
+global.wait = `*Tunggu Sebentar Dungu!*`
+
+//======FAKE REPLY=======//
+global.fsizedoc = '1'.repeat(10)
+global.fpagedoc = '1'.repeat(10)
 
 global.multiplier = 100 // The higher, The harder levelup
 
