@@ -9,7 +9,7 @@ const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function (
     resolve()
 }, ms))
 
-export async function all(m) {
+handler.all = async function (m) {
 	if (m.fromMe && m.isBaileys) return !0
 	let text;
 	let setting = global.db.data.settings[this.user.jid]
@@ -21,3 +21,5 @@ export async function all(m) {
 		await this.updateBlockStatus(m.chat, "block")
 	}
 }
+
+module.exports = handler
