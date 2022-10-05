@@ -1,3 +1,5 @@
+let handler = m => m
+
 const isLinkTik = /tiktok.com/i // tambahin sendiri
 const isLinkYt = /youtube.com|youtu.be/i // tambahin sendiri
 const isLinkTel = /t.me/i // tambahin sendiri
@@ -7,7 +9,7 @@ const isLinkWa = /wa.me/i // tambahin sendiri
 const isLinkHttp = /http|https/i // tambahin sendiri
 const isLinkBitly = /bit.ly/i // tambahin sendiri
 
-export async function before(m, { conn, args, usedPrefix, command, isAdmin, isBotAdmin }) {
+handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, isBotAdmin }) {
     let imgr = flaaa.getRandom()
     if (m.isBaileys && m.fromMe)
         return !0
