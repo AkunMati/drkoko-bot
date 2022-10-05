@@ -41,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'store', 'game', 'rpg', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'game', 'rpg', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -49,10 +49,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'game': 'Game',
     'rpg': 'RPG',
     'xp': 'Exp & Limit',
-    'sticker': 'Stiker',
+    'sticker': 'Sticker',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
-    'group': 'Grup',
+    'group': 'Group',
     'anime': 'Anime',
     'nsfw': 'Nsfw',
     'premium': 'Premium',
@@ -86,8 +86,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'rpg') tags = {
     'rpg': 'RPG'
   }
-  if (teks == 'stiker') tags = {
-    'sticker': 'Stiker'
+  if (teks == 'sticker') tags = {
+    'sticker': 'Sticker'
   }
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
@@ -96,7 +96,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quotes': 'Quotes'
   }
   if (teks == 'group') tags = {
-    'group': 'Grup'
+    'group': 'Group'
   }
   if (teks == 'anime') tags = {
     'anime': 'Anime'
@@ -250,33 +250,33 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         rows: [
           { title: 'Semua Perintah', rowId: `${_p + command} all`, description: `ALL MENU KIDZ` },
           { title: 'Store', rowId: `${_p + command} store`, description: `FITUR STORE KIDZ` },
-          { title: 'Game', rowId: `${_p + command} game` },
-          { title: 'Rpg', rowId: `${_p + command} rpg` },
-          { title: 'XP', rowId: `${_p + command} xp` },
-          { title: 'Stiker', rowId: `${_p + command} stiker` },
-          { title: 'Kerang Ajaib', rowId: `${_p + command} kerangajaib` },
-          { title: 'Quotes', rowId: `${_p + command} quotes` },
-          { title: 'Group', rowId: `${_p + command} grup` },
-          { title: 'Anime', rowId: `${_p + command} anime` },
-          { title: 'Nsfw', rowId: `${_p + command} nsfw` },
-          { title: 'Premium', rowId: `${_p + command} premium` },
-          { title: 'Virusss', rowId: `${_p + command} virus` },
-          { title: 'Internet', rowId: `${_p + command} internet` },
-          { title: 'Anonymous', rowId: `${_p + command} anonymous` },
-          { title: 'Nulis & Logo', rowId: `${_p + command} nulis` },
-          { title: 'Downloader', rowId: `${_p + command} downloader` },
-          { title: 'Tools', rowId: `${_p + command} tools` },
-          { title: 'Fun', rowId: `${_p + command} fun`},
-          { title: 'Asupan', rowId: `${_p + command} asupan` },
-          { title: '22+ Bokep', rowId: `${_p + command} bokep` },
-          { title: 'Database', rowId: `${_p + command} database` },
-          { title: 'Vote & Absen', rowId: `${_p + command} vote` },
-          { title: "Al-Qur\'an", rowId: `${_p + command} quran` },
-          { title: 'Pengubah Suara', rowId: `${_p + command} audio` },
-          { title: 'Jadi Bot', rowId: `${_p + command} jadibot` },
-          { title: 'Info', rowId: `${_p +command} info` },
-          { title: 'Tanpa Kategori', rowId: `${_p + command} tanpakategori` },
-          { title: 'Owner', rowId: `${_p + command} owner` },
+          { title: 'Game', rowId: `${_p + command} game`, description: `FITUR GAMES KIDZ` },
+          { title: 'Rpg', rowId: `${_p + command} rpg`, description: `FITUR RPG KIDZ` },
+          { title: 'XP', rowId: `${_p + command} xp`, description: `FITUR XP KIDZ` },
+          { title: 'Sticker', rowId: `${_p + command} sticker`, description: `FITUR STICKER KIDZ` },
+          { title: 'Kerang Ajaib', rowId: `${_p + command} kerangajaib`, description: `FITUR KERANG AJAIB KIDZ` },
+          { title: 'Quotes', rowId: `${_p + command} quotes`, description: `FITUR QUOTES KIDZ` },
+          { title: 'Group', rowId: `${_p + command} group`, description: `FITUR GROUP KIDZ` },
+          { title: 'Anime', rowId: `${_p + command} anime`, description: `FITUR ANIME KIDZ` },
+          { title: 'Nsfw', rowId: `${_p + command} nsfw`, description: `FITUR NSFW KIDZ` },
+          { title: 'Premium', rowId: `${_p + command} premium`, description: `FITUR PREMIUM KIDZ` },
+          { title: 'Virusss', rowId: `${_p + command} virus`, description: `FITUR VIRUS KIDZ` },
+          { title: 'Internet', rowId: `${_p + command} internet`, description: `FITUR INTERNET KIDZ` },
+          { title: 'Anonymous', rowId: `${_p + command} anonymous`, description: `FITUR ANONYMOUS KIDZ` },
+          { title: 'Nulis & Logo', rowId: `${_p + command} nulis`, description: FITUR NULIS KIDZ` },
+          { title: 'Downloader', rowId: `${_p + command} downloader`, description: `FITUR DOWNLOAD KIDZ` },
+          { title: 'Tools', rowId: `${_p + command} tools`, description: `FITUR TOOLS KIDZ` },
+          { title: 'Fun', rowId: `${_p + command} fun`, description: `FITUR FUN KIDZ` },
+          { title: 'Asupan', rowId: `${_p + command} asupan`, description: `FITUR ASUPAN KIDZ` },
+          { title: '22+ Bokep', rowId: `${_p + command} bokep`, description: `FITUR BOKEP KIDZ` },
+          { title: 'Database', rowId: `${_p + command} database`, description: `FITUR DATABASE KIDZ` },
+          { title: 'Vote & Absen', rowId: `${_p + command} vote`, description: `FITUR VOTE KIDZ` },
+          { title: "Al-Qur\'an", rowId: `${_p + command} quran`, description: `FITUR AL-QUR'AN KIDZ` },
+          { title: 'Pengubah Suara', rowId: `${_p + command} audio`, description: `FITUR AUDIO KIDZ` },
+          { title: 'Jadi Bot', rowId: `${_p + command} jadibot`, description: `FITUR JADIBOT KIDZ` },
+          { title: 'Info', rowId: `${_p +command} info`, description: `FITUR INFO KIDZ` },
+          { title: 'Thks To', rowId: `${_p + command} tqto`, description: `TERIMAKSIH BUAT CONTRIBUTORS` },
+          { title: 'Owner', rowId: `${_p + command} owner`, description: `NGAPAIN BUKA FITUR OWNER?` },
         ]
       }
     ]
