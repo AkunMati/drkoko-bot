@@ -1,4 +1,4 @@
-let handler = (m, { conn, usedPrefix, command, text }) => {
+/*let handler = (m, { conn, usedPrefix, command, text }) => {
   conn.tembak = conn.tembak || { musuh: [], tembak: [] }
    if(/kiri/i.test(text)) {
 
@@ -105,4 +105,4 @@ function random(arr) {
 
 const button = [
     'Tembak', '.tembak'
-]
+]*/
