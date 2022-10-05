@@ -1,4 +1,4 @@
-import { sticker } from '../lib/sticker.js'
+let { sticker } = require('../lib/sticker.js')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
@@ -8,10 +8,10 @@ let stiker = await sticker(null, global.API(`${pickRandom(stikerhuuu)}`), global
     
 }
 
-handler.customPrefix = /^(thx|thank|thanks)$/i
+handler.customPrefix = /^(terimakasih|tq|ty|thx|thank|thanks)$/i
 handler.command = new RegExp
 
-export default handler
+module.exports = handler
 
 function pickRandom(list) {
   return list[Math.floor(list.length * Math.random())]
