@@ -1,4 +1,4 @@
-let handler = m => m
+/*let handler = m => m
 
 const isLinkTik = /tiktok.com/i // tambahin sendiri
 const isLinkYt = /youtube.com|youtu.be/i // tambahin sendiri
@@ -156,4 +156,4 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     return !0
 }
 
-module.exports = handler
+module.exports = handler*/
