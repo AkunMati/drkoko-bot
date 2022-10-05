@@ -1,4 +1,4 @@
-import moment from 'moment-timezone'
+let moment = require('moment-timezone')
 let handler = async (m, { conn }) => {
   if (!m.quoted) m.reply('*Reply message*')
                 let msg = await conn.serializeM(await m.getQuotedObj())
@@ -17,7 +17,7 @@ handler.help = ['sider']
 handler.tags = ['group']
 handler.command = /^(getsider|nyimak|sider)$/i
 
-export default handler
+module.exports = handler
 
 function formatDate(n, locale = 'id') {
   let d = new Date(n)
