@@ -1,4 +1,4 @@
-wlet levelling = require('../lib/levelling')
+let levelling = require('../lib/levelling')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
