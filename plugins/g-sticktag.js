@@ -1,8 +1,13 @@
-import fetch from 'node-fetch'
-import { sticker } from '../lib/sticker.js'
-import uploadFile from '../lib/uploadFile.js'
-import uploadImage from '../lib/uploadImage.js'
-import { webp2png } from '../lib/webp2mp4.js'
+//import fetch from 'node-fetch'
+//import { sticker } from '../lib/sticker.js'
+//import uploadFile from '../lib/uploadFile.js'
+//import uploadImage from '../lib/uploadImage.js'
+//import { webp2png } from '../lib/webp2mp4.js'
+const fetch = require("node-fetch")
+const { sticker } = require('../lib/sticker.js')
+const uploadFile = require('../lib/uploadFile.js')
+const uploadImage = require('../lib/uploadImage.js')
+const { webp2png } = require('../lib/webp2mp4.js')
 
 let handler = async (m, { conn, text, usedPrefix, command, participants}) => {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
