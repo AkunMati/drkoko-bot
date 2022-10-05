@@ -28,7 +28,7 @@ const sections = [ {
 	{title: `${_c} Hentai For Everyone`, rowId: `${_p + _c} hentaiforeveryone`, description: `JANGAN BUAT COMLY OM:v`},
 	{title: `${_c} Cum`, rowId: `${_p + _c} cum`, description: `JANGAN BUAT COMLY OM:v`},
 	{title: `${_c} yuri`, rowId: `${_p + _c} yuri`, description: `JANGAN BUAT COMLY OM:v`},
-	{title: `${_c} Solo`, rowId: `${_p + _c} solo`, description: ``},
+	{title: `${_c} Solo`, rowId: `${_p + _c} solo`, description: `JANGAN BUAT COMLY OM:v`},
 	{title: `${_c} Anal`, rowId: `${_p + _c} anal`, description: `JANGAN BUAT COMLY OM:v`},
 	{title: `${_c} Keta`, rowId: `${_p + _c} keta`, description: `JANGAN BUAT COMLY OM:v`},
 	{title: `${_c} Tits`, rowId: `${_p + _c} tits`, description: `JANGAN BUAT COMLY OM:v`},
