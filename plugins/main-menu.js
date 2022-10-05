@@ -271,12 +271,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: '22+ Bokep', rowId: `${_p + command} bokep`, description: `FITUR BOKEP KIDZ` },
           { title: 'Database', rowId: `${_p + command} database`, description: `FITUR DATABASE KIDZ` },
           { title: 'Vote & Absen', rowId: `${_p + command} vote`, description: `FITUR VOTE KIDZ` },
-          { title: "Al-Qur\'an", rowId: `${_p + command} quran`, description: `FITUR AL-QUR/AN KIDZ` },
+          { title: 'Al-Qur\an', rowId: `${_p + command} quran`, description: `FITUR AL-QUR/AN KIDZ` },
           { title: 'Pengubah Suara', rowId: `${_p + command} audio`, description: `FITUR AUDIO KIDZ` },
           { title: 'Jadi Bot', rowId: `${_p + command} jadibot`, description: `FITUR JADIBOT KIDZ` },
           { title: 'Info', rowId: `${_p +command} info`, description: `FITUR INFO KIDZ` },
           { title: 'Thks To', rowId: `${_p + command} tqto`, description: `TERIMAKSIH BUAT CONTRIBUTORS` },
-          { title: 'Owner', rowId: `${_p + command} owner`, description: `NGAPAIN BUKA FITUR OWNER` },
+          { title: 'Owner', rowId: `${_p + command} owner`, description: `NGAPAIN BUKA FITUR OWNER` }
         ]
       }
     ]
