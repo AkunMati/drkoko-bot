@@ -1,4 +1,4 @@
-let levelling = require('../lib/levelling')
+wlet levelling = require('../lib/levelling')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
@@ -276,7 +276,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Jadi Bot', rowId: `${_p + command} jadibot`, description: `FITUR JADIBOT KIDZ` },
           { title: 'Info', rowId: `${_p +command} info`, description: `FITUR INFO KIDZ` },
           { title: 'Thks To', rowId: `${_p + command} tqto`, description: `TERIMAKSIH BUAT CONTRIBUTORS` },
-          { title: 'Owner', rowId: `${_p + command} owner`, description: `NGAPAIN BUKA FITUR OWNER?` },
+          { title: 'Owner', rowId: `${_p + command} owner`, description: `NGAPAIN BUKA FITUR OWNER` },
         ]
       }
     ]
