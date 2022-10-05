@@ -1,6 +1,9 @@
-import fs from 'fs'
-import fetch from 'node-fetch'
-import { sticker } from '../lib/sticker.js'
+//import fs from 'fs'
+//import fetch from 'node-fetch'
+//import { sticker } from '../lib/sticker.js'
+let fs = require('fs')
+let fetch = require('node-fetch')
+let { sticker } = require('../lib/sticker.js')
 
 const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = (await import('@adiwajshing/baileys')).default
 let handler  = async (m, { conn, args, text, command, usedPrefix: _p, participants }) => {
