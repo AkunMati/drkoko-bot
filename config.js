@@ -46,7 +46,7 @@ global.nameown = 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 /*============== Github Thanks To ==============*/
 global.namagithub = 'MendingTuru' // nama github lu
 global.linkgithub = 'https://github.com/MendingTuru' // tarok link github lu
-
+global.thumb = 'https://i.ibb.co/XZrK6yQ/transformers.jpg' //Main Thumbnail
 // klau kgk ada github kasih tanda '-' aja biar kgk error
 
 /*============== APIKEY SIMPEL ==============*/
