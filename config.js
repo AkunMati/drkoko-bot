@@ -36,6 +36,22 @@ global.wm = 'Cʀᴇᴀᴛᴇᴅ Bʏ' + ' ©ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇ
 global.asing = `*Ciee Orang Asing Join, Dadah Saya Kick👋*`
 global.wait = `*Tunggu Sebentar Dungu!*`
 
+
+/*============== NOMOR ==============*/
+global.nomorbot = '6287832147584'
+global.nomorown = '6287740530274'
+global.namebot = 'ᵈʳкσкσ-ᴍᴅ×፝֟͜×'
+global.nameown = 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
+
+/*============== Github Thanks To ==============*/
+global.namagithub = 'MendingTuru' // nama github lu
+global.linkgithub = 'https://github.com/MendingTuru' // tarok link github lu
+
+// klau kgk ada github kasih tanda '-' aja biar kgk error
+
+/*============== APIKEY SIMPEL ==============*/
+global.zenzkey = 'b8040941f7'
+global.lolkey = 'e54205a4ca2caa368cc067bb' // PUNYA WAHID  8e66d0934cf741bfd2182c16
 //======FAKE REPLY=======//
 global.fsizedoc = '1'.repeat(10)
 global.fpagedoc = '1'.repeat(10)
