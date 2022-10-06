@@ -3,7 +3,7 @@
 let fs = require('fs')
 let fetch = require('node-fetch')
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-    let info = fs.readFileSync('./mp3/soundultah.mp3')
+    let info = fs.readFileSync('./mp3/mp3_soundultah.mp3')
 
 let td = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 
