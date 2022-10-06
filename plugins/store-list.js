@@ -14,8 +14,8 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 	if (msg[0]) return await conn.sendListM(m.chat, button, row, m)
 	else throw `\nbelum ada Menu yg Ada di list store.\nketik *${usedPrefix + command} <teks>* untuk menambahkan daftar menu.\n`
 }
-handler.help = ['list']
+handler.help = ['liststore']
 handler.tags = ['store']
-handler.command = /^list$/i
+handler.command = /^liststore$/i
 
 module.exports = handler
