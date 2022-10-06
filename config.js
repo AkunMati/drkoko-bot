@@ -43,6 +43,11 @@ global.nomorown = '6287740530274'
 global.namebot = 'ᵈʳкσкσ-ᴍᴅ×፝֟͜×'
 global.nameown = 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 
+global.fkontak = [
+  [ "6287740530274", "ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×", "ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ", "pangeran.dwnta01@gmail.com", true ],
+  [ "6287832147584", "ᵈʳкσкσ-ᴍᴅ×፝֟͜× [BOT MD]", "Bot WhatsApp", "pangeran.dwnta01@gmail.com", true ]
+  ],
+
 /*============== Github Thanks To ==============*/
 global.namagithub = 'MendingTuru' // nama github lu
 global.linkgithub = 'https://github.com/MendingTuru' // tarok link github lu
