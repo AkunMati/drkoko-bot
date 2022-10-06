@@ -18,5 +18,5 @@ conn.reply(m.chat, info, m, { quoted: fkontak },{ contextInfo: { externalAdReply
 }
 handler.command = ['soundultah']
 handler.help = ['soundultah']
-handler.tags = ['sounds']
+handler.tags = ['sound']
 module.exports = handler
