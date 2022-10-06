@@ -43,10 +43,7 @@ global.nomorown = '6287740530274'
 global.namebot = 'ᵈʳкσкσ-ᴍᴅ×፝֟͜×'
 global.nameown = 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 
-global.fkontak = [
-  [ "6287740530274", "ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×", "ᴅᴇᴠᴇʟᴏᴩᴇʀ ʙᴏᴛ", "pangeran.dwnta01@gmail.com", true ],
-  [ "6287832147584", "ᵈʳкσкσ-ᴍᴅ×፝֟͜× [BOT MD]", "Bot WhatsApp", "pangeran.dwnta01@gmail.com", true ]
-  ],
+global.fkontak = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg'), thumbnail: fs.readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
 
 /*============== Github Thanks To ==============*/
 global.namagithub = 'MendingTuru' // nama github lu
