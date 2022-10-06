@@ -8,29 +8,29 @@ let PhoneNumber = require('awesome-phonenumber')
 const defaultMenu = {
   before: `
 ┌─〔 ᵈʳкσкσ-ᴍᴅ×፝֟͜× 〕
-├ *${ucapan()} %name*
+├❏ *${ucapan()} %name*
 │
-├ Tersisa *%limit Limit*
-├ Role *%role*
-├ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├ %totalexp XP secara Total
+├❏ Tersisa *%limit Limit*
+├❏ Role *%role*
+├❏ Level *%level (%exp / %maxexp)* [%xp4levelup]
+├❏ %totalexp XP secara Total
 │
-├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
-├ Waktu: *%time*
+├❏ Tanggal: *%week %weton, %date*
+├❏ Tanggal Islam: *%dateIslamic*
+├❏ Waktu: *%time*
 │
-├ Uptime: *%uptime (%muptime)*
-├ Database: %rtotalreg dari %totalreg
-├ Github:
-├ https://github.com/MendingTuru
+├❏ Uptime: *%uptime (%muptime)*
+├❏ Database: %rtotalreg dari %totalreg
+├❏ Github:
+├❏ https://github.com/MendingTuru
 │
-├ Note :
-├ *Ⓟ* = Premium
-├ *Ⓛ* = Limit
+├❏ Note :
+├❏ *Ⓟ* = Premium
+├❏ *Ⓛ* = Limit
 └────
 %readmore`.trim(),
   header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
+  body: '├❏ %cmd %islimit %isPremium',
   footer: '└────\n',
   after: `
 *%npmname@^%version*
@@ -38,7 +38,7 @@ ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-
+  let bzz = './mp3/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'store', 'game', 'rpg', 'xp', 'sticker', 'sound', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
@@ -370,6 +370,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     await conn.send3TemplateButtonImg(m.chat, await genProfile(conn, m), text.trim(), wm, `🏅KOKO`, `${_p}owner`, `💰SEWA`, `${_p}sewabot`, `🎗  RULES  🎗`, `${_p}rules`, m)
+    await conn.sendFile(m.chat, bzz, 'audio.opus', null, m, true, { duration: 999999999 })
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
