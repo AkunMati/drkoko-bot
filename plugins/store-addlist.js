@@ -9,9 +9,9 @@ let handler = async (m, { conn, text, command, usedPrefix }) => {
 	msgs[text] = M.fromObject(await m.getQuotedObj()).toJSON()
 	m.reply(`berhasil menambahkan ${text} ke List\n\nakses dengan mengetik namanya`.trim())
 }
-handler.help = ['list'].map(v => 'add' + v + ' <teks>')
+handler.help = ['store'].map(v => 'add' + v + ' <teks>')
 handler.tags = ['store']
-handler.command = /^addlist$/i
+handler.command = /^addstore$/i
 handler.premium = true
 handler.owner = true
 
