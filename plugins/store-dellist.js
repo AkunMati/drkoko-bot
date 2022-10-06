@@ -5,9 +5,9 @@ let handler = async (m, { text, usedPrefix, command }) => {
 	delete msgs[text]
 	m.reply(`\n  [💬] berhasil menghapus pesan di daftar List dengan nama '${text}'.\n`)
 }
-handler.help = ['list'].map(v => 'del' + v + ' <teks>')
+handler.help = ['store'].map(v => 'del' + v + ' <teks>')
 handler.tags = ['store']
-handler.command = /^dellist$/i
+handler.command = /^delstore$/i
 handler.group = true
 handler.admin = true
 module.exports = handler
