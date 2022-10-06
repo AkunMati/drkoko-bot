@@ -41,7 +41,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'store', 'game', 'rpg', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'game', 'rpg', 'xp', 'sticker', 'sound', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -50,6 +50,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'rpg': 'RPG',
     'xp': 'Exp & Limit',
     'sticker': 'Sticker',
+    'sound': 'Sound/Musik',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
     'group': 'Group',
@@ -68,7 +69,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'database': 'Database',
     'vote': 'Voting',
     'absen': 'Absen',
-    'quran': 'Al Qur\'an',
+    'quran': 'Al Qur\an',
     'audio': 'Pengubah Suara',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
@@ -88,6 +89,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'sticker') tags = {
     'sticker': 'Sticker'
+  }
+  if (teks == 'sound') tags = {
+    'sound': 'Sound/Musik'
   }
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
@@ -254,6 +258,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Rpg', rowId: `${_p + command} rpg`, description: `FITUR RPG KIDZ` },
           { title: 'XP', rowId: `${_p + command} xp`, description: `FITUR XP KIDZ` },
           { title: 'Sticker', rowId: `${_p + command} sticker`, description: `FITUR STICKER KIDZ` },
+          { title: 'Sound/Musik', rowId: `${_p + command} sound`, description: `FITUR SOUND KIDZ` },
           { title: 'Kerang Ajaib', rowId: `${_p + command} kerangajaib`, description: `FITUR KERANG AJAIB KIDZ` },
           { title: 'Quotes', rowId: `${_p + command} quotes`, description: `FITUR QUOTES KIDZ` },
           { title: 'Group', rowId: `${_p + command} group`, description: `FITUR GROUP KIDZ` },
