@@ -92,8 +92,8 @@ const listMessage = {
   }
 }
 
-handler.help = ['soundkanemenu']
-handler.tags = ['fun']
-handler.command = /^(soundkanemenu)/i
+handler.help = ['soundkane']
+handler.tags = ['sound']
+handler.command = /^(soundkane)/i
 
 module.exports = handler
