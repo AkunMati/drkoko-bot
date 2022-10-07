@@ -73,7 +73,7 @@ const listMessage = {
           conn.reply(m.chat, teksnomor, m, { contextInfo: { mentionedJid: [nowner] }})
             break
           default:
-            return await conn.sendMessage(m.chat, listMessage, { quoted: fakes, mentions: await conn.parseMention(teks), contextInfo:{ forwardingScore: 99999, isForwarded: true }})
+            return await conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(teks), contextInfo:{ forwardingScore: 99999, isForwarded: true }})
         }
     } else if (/enchant|enchan/i.test(command)) {
       const count = args[2] && args[2].length > 0 ? Math.min(99999999, Math.max(parseInt(args[2]), 1)) : !args[2] || args.length < 4 ? 1 :Math.min(1, count)
