@@ -43,17 +43,17 @@ global.nomorown = '6287740530274'
 global.namebot = 'ᵈʳкσкσ-ᴍᴅ×፝֟͜×'
 global.nameown = 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 
-global.fkontak = { key: { fromMe: false, participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg'), thumbnail: fs.readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
-
 /*============== Github Thanks To ==============*/
 global.namagithub = 'MendingTuru' // nama github lu
 global.linkgithub = 'https://github.com/MendingTuru' // tarok link github lu
 global.thumb = 'https://i.ibb.co/XZrK6yQ/transformers.jpg' //Main Thumbnail
+
 // klau kgk ada github kasih tanda '-' aja biar kgk error
 
 /*============== APIKEY SIMPEL ==============*/
 global.zenzkey = 'b8040941f7'
 global.lolkey = 'e54205a4ca2caa368cc067bb' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+
 //======FAKE REPLY=======//
 global.fsizedoc = '1'.repeat(10)
 global.fpagedoc = '1'.repeat(10)
