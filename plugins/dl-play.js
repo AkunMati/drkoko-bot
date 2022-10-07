@@ -65,7 +65,7 @@ let handler = async (m, { conn, command, usedPrefix, text, isPrems, isOwner }) =
   if (yt === false) throw 'All servers can\'t 😕'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
+  conn.sendMedia(m.chat, thumb, 'thumbnail.jpg', `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *Source:* ${vid.url}
@@ -76,7 +76,7 @@ _*Please wait while processing..*_
 let _thumb = {}
 try { if (isVideo) _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
 catch (e) { }
-if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(command)), `
+if (!isLimit) conn.sendMedia(m.chat, dl_link, title + '.mp' + (3 + /2$/.test(command)), `
 *Title:* ${title}
 *Filesize:* ${filesizeF}
 *Source:* ${vid.url}
