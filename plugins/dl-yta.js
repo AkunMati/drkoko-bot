@@ -13,7 +13,7 @@ let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) =
             showAdAttribution: true,
             mediaUrl: `${args}`,
             title: `${title}`, 
-            body: wm,
+            body: run,
             description: wm,
             mediaType: 2,
           thumbnail: await (await fetch(thumb)).buffer(),
