@@ -11,15 +11,18 @@ const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function (
     resolve()
 }, ms))
 
-handler.all = async function (m) {
-        conn.p = conn.p ? conn.p : {}
+handler.all = async function (m, { conn }) {
+	conn.p = conn.p ? conn.p : {}
 	let id = m.chat
 	conn.p[id] = [
 	await conn.sendKontak(m.chat, data.kontak, m, { contextInfo: { externalAdReply :{
     showAdAttribution: true,
      }}
   })
-]
+	]
+	await delay(100)
+        return delete conn.p[id]
+}
 	if (m.fromMe && m.isBaileys) return !0
 	let text;
 	let setting = global.db.data.settings[this.user.jid]
