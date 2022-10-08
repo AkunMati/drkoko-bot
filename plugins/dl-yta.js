@@ -1,84 +1,83 @@
-/*let fetch = require('node-fetch')
-const { servers, yta } = require('../lib/y2mate')
-let handler = async (m, { conn, args, isPrems, isOwner, usedPrefix, command }) => {
-  if (!args || !args[0]) throw `contoh:\n${usedPrefix + command} https://www.youtube.com/watch?v=yxDdj_G9uRY`
-  let chat = db.data.chats[m.chat]
-  let server = (args[1] || servers[0]).toLowerCase()
-  let { dl_link, thumb, title, filesize, filesizeF } = await yta(args[0], servers.includes(server) ? server : servers[0])
-  let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  m.reply(isLimit ? `Ukuran File: ${filesizeF}\nUkuran file diatas ${limit} MB, download sendiri: ${dl_link}` : data.wait)
-  if (!isLimit) conn.sendMedia(m.chat, dl_link, m, {
-    asDocument: chat.useDocument, mimetype: 'audio/mp4', ptt: false, contextInfo: {
-        externalAdReply: {
-            showAdAttribution: true,
-            mediaUrl: `${args}`,
-            title: `${title}`, 
-            body: run,
-            description: wm,
-            mediaType: 2,
-          thumbnail: await (await fetch(thumb)).buffer(),
-         mediaUrl: `${args}`
-        }
+let { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
+let { servers, yta } = require('../lib/y2mate.js')
+let axios = require('axios')
+
+let handler = async (m, { conn, args, usedPrefix, command, isPrems, expiration }) => {
+   if (!args[0]) throw `${set.sb} *Example* : ${usedPrefix + command} url`
+   let ras = `Url salah, perintah ini untuk mengunduh audio youtube (watch/shorts)`
+   if (!args[0].match(/(https|http):\/\/(www.youtube.com|www.youtube|www.youtu.be|youtube.com|youtu.be.com|youtu.be)\/(watch|shorts)?/gi)) throw ras
+   m.react('⏱️')
+   let limit = isPrems ? 300 : 100 
+   let doc = db.data.chats[m.chat].asDocument
+   let qua = '128kbps'
+   let isLimit
+   try {
+     let res = await youtubedl(args[0])
+     isLimit = limit * 1024 < res.audio[qua].fileSize
+   } catch {
+     try {
+       let res = await youtubedlv2(args[0])
+       isLimit = limit * 1024 < res.audio[qua].fileSize
+     } catch {
+       try {
+         let res = await youtubedlv3(args[0])
+         isLimit = limit * 1024 < res.audio[qua].fileSize
+       } catch {
+         let server = (args[1] || servers[0]).toLowerCase()
+         let anu = await yta(args[0], servers.includes(server) ? server : servers[0])
+         isLimit = limit * 1024 < anu.filesize 
+       }
      }
-  })
+   }
+   let res = await youtubedl(args[0])
+   let media 
+   try { 
+     media = await res.audio[qua].download()
+   } catch {
+     console.log('yt1 eror mencoba yt2')
+     try {       
+        let res2 = await youtubedlv2(args[0])
+        media = await res2.audio[qua].download()
+     } catch {
+       console.log('yt2 eror mencoba yt3')
+       try {
+          let res3 = await youtubedlv2(args[0])
+          media = await res3.audio[qua].download()
+       } catch {
+         console.log('yt1l3 eror mencoba yt4')
+         let server = (args[1] || servers[0]).toLowerCase()
+         let anu = await yta(args[0], servers.includes(server) ? server : servers[0])
+         media = anu.dl_link
+       }
+     }
+   }
+   let anu
+   if (isLimit) anu = `_File size above average ${limit} MB download it yourself_\n${await(await axios.get(`https://tinyurl.com/api-create.php?url=${media}`)).data}`                 
+   else anu = `_Wait for the audio to be sent it may take a few minutes!_`
+   let capt = `${set.sa}  *Y T   M P 3*
+   
+${set.sb} *Title* : ${res.title ? res.title : 'Not found'}
+${set.sb} *Size* : ${res.audio[qua]?.fileSizeH ? res.audio[qua]?.fileSizeH : 'Not found'}
+${set.sb} *Quality* : ${res.audio[qua]?.quality ? res.audio[qua]?.quality : 'Not found'}
+${anu}
+  `
+   let sentMsg = await conn.reply(m.chat, capt, m, {
+     ephemeralExpiration: expiration,
+     contextInfo: {
+       externalAdReply :{
+         mediaType: 1,
+         title: set.wm, 
+         thumbnail: await conn.getBuffer(res.thumbnail),
+         renderLargerThumbnail: true,
+       }
+     }
+   })
+   if (!isLimit) conn.sendFile(m.chat, media, res.title + '.mp3', res.title, sentMsg, null, { asDocument: doc, mentions: [m.sender] })
 }
-handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url>`)
+handler.help = ['ytmp3'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^yt(a|mp3)$/i
-handler.owner = false
-handler.mods = false
-handler.premium = true
-handler.group = false
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
+handler.command = /(y(ou)?t(ube)?(a(udio)?|mpp?3|musik))$/i
 handler.limit = true
-
-module.exports = handler*/
-
-let limit = 30
-const { servers, yta } = require('../lib/y2mate')
-let handler = async (m, { conn, args, isPrems, isOwner }) => {
-  if (!args || !args[0]) throw 'Uhm... urlnya mana?'
-  let chat = global.db.data.chats[m.chat]
-  let server = (args[1] || servers[0]).toLowerCase()
-  let { dl_link, thumb, title, filesize, filesizeF} = await yta(args[0], servers.includes(server) ? server : servers[0])
-  let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
-  conn.sendMedia(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${await shortlink(dl_link)}
-`.trim(), m)
-  if (!isLimit) conn.sendMedia(m.chat, dl_link, title + '.mp3', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-`.trim(), m, null, {
-  asDocument: chat.useDocument
-})
-}
-handler.help = ['mp3','a'].map(v => 'yt' + v + ` <url> [server: ${servers.join(', ')}]`)
-handler.tags = ['downloader']
-handler.command = /^yt(a|mp3)$/i
-handler.owner = false
-handler.mods = false
 handler.premium = true
-handler.group = true
-handler.private = false
-
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
-handler.exp = 0
-handler.limit = true
-
+handler.desc = ['Mendownload media audio dari Youtube, gunakan perintah *#ytmp3 url* hilangkan tanda < >']
 module.exports = handler
-
-async function shortlink(url) {
-isurl = /https?:\/\//.test(url)
-return isurl ? (await require('axios').get('https://tinyurl.com/api-create.php?url='+encodeURIComponent(url))).data : ''
-}
