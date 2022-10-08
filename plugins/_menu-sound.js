@@ -20,7 +20,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
   let teks = 'Pilih dibawah kak ! o(〃＾▽＾〃)o'
 const sections = [
    {
-	title: `•------- SOUND MENU –––––––––·•`,
+	title: `•·––––––––– SOUND MENU –––––––––·•`,
 	rows: [
     {title: "Sound Ultah", rowId: ".soundultah"},
 	{title: "Sound 1", rowId: ".sound1"},
@@ -144,7 +144,7 @@ const sections = [
 	{title: "Sound 119", rowId: ".sound119"},
 ]
     },{
-	title: `•------- SUPPORT ME –––––––·•`,
+	title: `•·––––––– SUPPORT ME –––––––·•`,
 	rows: [
 	    {title: "💹 • Donasi", rowId: ".owner"},
 	{title: "🔖 • Sewa", rowId: ".sewain"},
@@ -156,7 +156,7 @@ const sections = [
 const listMessage = {
   text: teks,
   footer: null,
-  title: `♪------ *SOUND* ------♪`,
+  title: `•·––––––– *SOUND* –––––––·•`,
   buttonText: "Click Here !",
   sections
 }
