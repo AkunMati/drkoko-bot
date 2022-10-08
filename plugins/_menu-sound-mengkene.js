@@ -20,7 +20,7 @@ let handler  = async (m, { conn, command, args, usedPrefix, DevMode }) => {
   let teks = 'Pilih dibawah kak Sounds kane Nya! o(〃＾▽＾〃)o'
 const sections = [
    {
-	title: `•---------SOUND MENU –––––––––·•`,
+	title: `•·––––––––– SOUND MENU –––––––––·•`,
 	rows: [
 	{title: "Mangkane 1", rowId: ".mangkane1"},
     {title: "Mangkane 2", rowId: ".mangkane2"},
@@ -48,7 +48,7 @@ const sections = [
 	{title: "Mangkane 24", rowId: ".mangkane24"},
 ]
     },{
-	title: `•---------SUPPORT ME –––––––·•`,
+	title: `•·––––––– SUPPORT ME –––––––·•`,
 	rows: [
 	    {title: "💹 • Donasi", rowId: ".owner"},
 	{title: "🔖 • Sewa", rowId: ".sewain"},
@@ -60,7 +60,7 @@ const sections = [
 const listMessage = {
   text: teks,
   footer: null,
-  title: `*♪SOUND MENGKANE MENU♪*`,
+  title: `•·–––––––SOUND MENGKANE MENU–––––––·•`,
   buttonText: "Click Here !",
   sections
 }
