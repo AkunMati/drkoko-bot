@@ -1,15 +1,21 @@
-let { execSync } = require('child_process')
+const { execSync } = require('child_process')
+const { readdirSync } = require('fs')
+const { format } = require('util')
+
 let handler = async (m, { conn, text, isROwner }) => {
-  if (global.conn.user.jid == conn.user.jid) {
-    let stdout = execSync('git remote set-url origin https://github.com/mendingturu/Bottom-md2.git && git pull' + (isROwner && text ? ' ' + text : ''))
-    if (isROwner) require('fs').readdirSync('plugins').map(v => global.reload('', v))
-    conn.sendButton(m.chat, stdout.toString(), wm,`Node Test`, `$ node test`, m)
+  try {
+    let stdout = execSync('git remote set-url origin ' + set.repo + ' && git pull' + (isROwner && text ? ' ' + text : ''))
+    if (isROwner) readdirSync('plugins').map(v => global.reload('', v))
+    let hasil = stdout.toString()
+    m.react('⚡').then(_=> 
+       conn.sendButton(m.chat, hasil, '                Node Test or Restart Bot?', 0, [['Restart', '.restart'], ['Node Test', '$ node test']], m)
+    )
+    } catch (e) {
+    conn.reply(m.chat, format(e), m)
   }
 }
 handler.help = ['update']
 handler.tags = ['host']
-handler.command = /^(update|uo?p?|uodate)$/i //sedia payung sebelum hujan meteor 
-
+handler.command = /^(update|u)$/i //sedia payung sebelum hujan meteor 
 handler.rowner = true
-
 module.exports = handler
