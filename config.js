@@ -261,6 +261,14 @@ global.hwaifu = ['https://i.pinimg.com/originals/ed/34/f8/ed34f88af161e6278993e1
 'https://i.pinimg.com/originals/fd/21/41/fd21419275236bb153de3c8dcbbf3bf9.jpg',
 'https://i.pinimg.com/originals/80/4f/1a/804f1a05f9996c96a2d492b4854b7fd5.jpg']
 
+global.set = {
+//========={ SETTING HERE }=========//
+    name: "Bottom-MD2",
+    version: "1.0.1",
+    repo: 'https://github.com/MendingTuru/Bottom-md2.git',
+    browser: ['My-MD By Pangeran', 'Safari', '1.0.1'],
+}
+
 //=========== Requirements ==========//
 
 global.rpg = {
