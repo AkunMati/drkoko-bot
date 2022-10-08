@@ -66,7 +66,7 @@ ${anu}
      contextInfo: {
        externalAdReply :{
          mediaType: 1,
-         title: set.wm, 
+         title: wm, 
          thumbnail: await conn.getBuffer(res.thumbnail),
          renderLargerThumbnail: true,
        }
