@@ -1,6 +1,6 @@
 {
     "name": "Bottom-MD2",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Simple Bot WhatsApp with Baileys Multi Device",
     "depecrated": false,
     "main": "index.js",
@@ -28,13 +28,13 @@
         "stikerin",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/MendingTuru/Bottom-md2",
+    "homepage": "https://github.com/MendingTuru/Bottom-md2.git",
     "author": {
         "name": "kokopangeran"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/MendingTuru/Bottom-md2.git"
+        "url": "https://github.com/MendingTuru/Bottom-md2.git"
     },
     "bugs": {
         "url": "https://github.com/MendingTuru/Bottom-md2/issues"
@@ -43,7 +43,7 @@
     "dependencies": {
         "@adiwajshing/baileys": "github:hostinger-bot/Baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@bochilteam/scraper": "2.0.0",
+        "@bochilteam/scraper": "^3.0.0",
         "awesome-phonenumber": "^2.69.0",
         "axios": "^0.26.0",
         "caliph-api": "^0.7.6",
