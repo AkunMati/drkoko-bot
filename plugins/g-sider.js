@@ -1,7 +1,7 @@
 let moment = require('moment-timezone')
 let handler = async (m, { conn }) => {
   if (!m.quoted) m.reply('*Reply message*')
-                let msg = await conn.serializeM(await m.getQuotedMessage())
+                let msg = await conn.serializeM(await m.chat())
                 if (!m.quoted.isBaileys) throw '*The message was not sent by a bot!*'
                 let teks = ''
                 for (let i of msg.userReceipt) {
