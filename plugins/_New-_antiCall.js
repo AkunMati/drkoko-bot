@@ -19,7 +19,7 @@ handler.all = async function (m) {
 	
 	if (m.messageStubType === (WAMessageStubType.CALL_MISSED_VOICE || WAMessageStubType.CALL_MISSED_VIDEO)) {
                 await conn.sendKontak(m.chat, data.kontak, m)
-		await conn.sendButton(m.chat, `👋 Kamu di Blockir karena menelepon *Bot*\nHubungi Owner *Bot* Suruh Buka Blokiran!\n\nNomor Owner:\nwa.me/6287740530274`,wm + '\n\n' + run, `Anti Call`, `.owner`, null)
+		await conn.sendButton(m.chat, `👋 Kamu di Blockir karena menelepon *Bot*\nHubungi Owner *Bot* Suruh Buka Blokiran!\n\nNomor Owner:\nwa.me/6283863727745`,wm + '\n\n' + run, `Anti Call`, `.owner`, null)
 		await delay(1000)
 		await this.updateBlockStatus(m.chat, "block")
 	}
