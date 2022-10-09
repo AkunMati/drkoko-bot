@@ -28,7 +28,7 @@ let stiker = await sticker(null, global.API(`https://telegra.ph/file/d34b2ab2cb2
      }}
   })
   
-let audio = `https://raw.githubusercontent.com/WH-MODS-BOT/Sounds/main/${command}.mp3`
+let audio = `https://raw.githubusercontent.com/MendingTuru/Sound/main/${command}.mp3`
 
 await conn.sendFile(m.chat, audio, 'error.mp3', null, fkontak, true, {
 type: 'audioMessage', 
@@ -39,7 +39,7 @@ ptt: false, seconds: 0,contextInfo: {
     description: 'https://instagram.com/kokopangeran_',
     title: "Now Playing...",
     body: wm,
-    thumbnail: await (await fetch('https://i.ibb.co/XZrK6yQ/transformers.jpg')).buffer(),
+    thumbnail: await (await fetch('https://ibb.co/X5P52fM')).buffer(),
     sourceUrl: 'https://instagram.com/kokopangeran_'
  	  }
      }
