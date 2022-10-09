@@ -1,10 +1,10 @@
-const axios = require('axios')
+let axios = require('axios')
 const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} dj tiktok`
-  m.reply(wait)
+  m.react('⏱️')
   let chat = global.db.data.chats[m.chat]
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
