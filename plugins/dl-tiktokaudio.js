@@ -1,4 +1,4 @@
-const { Tiktok } = require('xfarr-api')
+/*const { Tiktok } = require('xfarr-api')
 const { tiktok } = require('../lib/scrape')
 const { toAudio, toPTT } = require('../lib/converter')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
@@ -56,4 +56,4 @@ handler.command = /^(tt|tiktok)(a(udio)?|mp3|sound)(dl)?(download(er)?)?$/i
 handler.premium = true
 handler.limit = true
 
-module.exports = handler
+module.exports = handler*/
