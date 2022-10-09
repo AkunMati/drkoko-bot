@@ -28,5 +28,6 @@ handler.command = /^yt(a|mp3)$/i
 handler.fail = null
 handler.exp = 0
 handler.limit = true
+handler.premium = true
 
 module.exports = handler
