@@ -37,7 +37,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
     let _thumb = {}
     try { _thumb = { jpegThumbnail: await (await fetch(thumbnail)).buffer() } }
     catch (e) { }
-    await conn.sendMessage(m.chat, { [/^(?:-|--)doc$/i.test(args[1]) || isLimit ? 'document' : 'video']: { url: link }, fileName: `${title}.mp4`, mimetype: 'video/mp4', ..._thumb }, { quoted: fakes },{ contextInfo: { externalAdReply: { showAdAttribution: true,
+    await conn.sendMessage(m.chat, { [/^(?:-|--)doc$/i.test(args[1]) || isLimit ? 'document' : 'video']: { url: link }, fileName: `${title}.mp4`, mimetype: 'video/mp4', ..._thumb }, { quoted: fake },{ contextInfo: { externalAdReply: { showAdAttribution: true,
       mediaUrl: sig,
       mediaType: "VIDEO",
       description: sig, 
