@@ -51,4 +51,4 @@ handler.command = /^(sound1|sound2|sound3|sound4|sound5|sound6|sound7|sound8|sou
 
 handler.limit = true
 
-export default handler
+module.exports = handler
