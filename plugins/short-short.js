@@ -1,5 +1,5 @@
 //import fetch from 'node-fetch'
-let fetch = require('node-fetch')
+/*let fetch = require('node-fetch')
 
 let handler = async (m, { conn, usedPrefix, args }) => {
 	let title = `— *S H O R T E D  U R L* —`
@@ -70,4 +70,4 @@ module.exports = handler
 async function shortUrl(url) {
 	let res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`)
 	return await res.text()
-}
+}*/
