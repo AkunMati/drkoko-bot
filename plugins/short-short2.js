@@ -62,3 +62,8 @@ handler.tags = ['shortlink']
 handler.command = /^(short(url)?)$/i
 
 module.exports = handler
+
+async function shortUrl(url) {
+	let res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`)
+	return await res.text()
+}
