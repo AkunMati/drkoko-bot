@@ -1,6 +1,7 @@
 //import fetch from 'node-fetch'
 //import yts from 'yt-search'
 let fetch = require('node-fetch')
+let yts = require('yt-search')
 let handler = async (m, { conn, groupMetadata, usedPrefix, text, args, command }) => {
 if (!text) throw `Example : ${usedPrefix + command} story wa anime`
                 let search = await yts(text)
