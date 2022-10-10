@@ -41,7 +41,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
       mediaUrl: sig,
       mediaType: "VIDEO",
       description: sig, 
-      title: 'Elaina-MultiDevice',
+      title: 'Koko-MultiDevice',
       body: wm,
       thumbnail: thumb,
       sourceUrl: sgc
