@@ -41,11 +41,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './mp3/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'store', 'game', 'rpg', 'xp', 'sticker', 'sound', 'change', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'change', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
     'store': 'Store',
+    'shortlink': 'Short Link',
     'game': 'Game',
     'rpg': 'RPG',
     'xp': 'Exp & Limit',
@@ -78,6 +79,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'store') tags = {
     'store': 'Store'
+  }
+  if (teks == 'shortlink') tags = {
+    'shortlink': 'Short Link'
   }
   if (teks == 'game') tags = {
     'game': 'Game'
@@ -257,7 +261,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         title: 'List Menu ' + data.namabot,
         rows: [
           { title: 'Semua Perintah', rowId: `${_p + command} all`, description: `ALL MENU KIDZ` },
-          { title: 'Store', rowId: `${_p + command} store`, description: `FITUR STORE KIDZ` },
+          { title: 'Koko Store', rowId: `${_p + command} store`, description: `FITUR STORE KIDZ` },
+          { title: 'Short Link', rowId: `${_p + command} shortlink`, description: `FITUR SHORTLINK KIDZ` },
           { title: 'Game', rowId: `${_p + command} game`, description: `FITUR GAMES KIDZ` },
           { title: 'Rpg', rowId: `${_p + command} rpg`, description: `FITUR RPG KIDZ` },
           { title: 'XP', rowId: `${_p + command} xp`, description: `FITUR XP KIDZ` },
@@ -282,7 +287,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Database', rowId: `${_p + command} database`, description: `FITUR DATABASE KIDZ` },
           { title: 'Vote & Absen', rowId: `${_p + command} vote`, description: `FITUR VOTE KIDZ` },
           { title: 'Al-Qur\an', rowId: `${_p + command} quran`, description: `FITUR AL-QUR/AN KIDZ` },
-          { title: 'Pengubah Suara', rowId: `${_p + command} audio`, description: `FITUR AUDIO KIDZ` },
+          { title: 'Vidio To Audio', rowId: `${_p + command} audio`, description: `FITUR AUDIO KIDZ` },
           { title: 'Jadi Bot', rowId: `${_p + command} jadibot`, description: `FITUR JADIBOT KIDZ` },
           { title: 'Info', rowId: `${_p +command} info`, description: `FITUR INFO KIDZ` },
           { title: 'Thks To', rowId: `${_p} tqto`, description: `TERIMAKSIH BUAT CONTRIBUTORS` },
