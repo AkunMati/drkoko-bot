@@ -4,6 +4,7 @@ let fetch = require('node-fetch')
 let yts = require('yt-search')
 let handler = async (m, { conn, groupMetadata, usedPrefix, text, args, command }) => {
 if (!text) throw `Example : ${usedPrefix + command} story wa anime`
+m.react('⏱️')
                 let search = await yts(text)
                 let anu = search.videos[Math.floor(Math.random() * search.videos.length)]
                 let buttons = [
