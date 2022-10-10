@@ -37,6 +37,11 @@ global.asing = `*Ciee Orang Asing Join, Dadah Saya Kick👋*`
 global.wait = `*Tunggu Sebentar Dungu!*`
 
 
+global.sig = 'https://instagram.com/kokopangeran_' //Link Instagrammu
+global.sgh = 'https://github.com/MendingTuru' //Link Githubmu
+global.sgc = '-'
+global.sdc = '-' //Isi Pake Link Discordmu Kalo Gada Biarin aja
+global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, Ini boleh kalian isi terserah :v
 /*============== NOMOR ==============*/
 global.nomorbot = '6287832147584'
 global.nomorown = '6287740530274'
@@ -64,6 +69,7 @@ global.fpagedoc = '999' //Gausah di ganti.
 
 global.htki = '––––––⦅' // Hiasan Titile (KIRI)
 global.htka = '⦆––––––' // Hiasan Title  (KANAN)
+global.htjava = '⫹⫺'
 
 global.multiplier = 100 // The higher, The harder levelup
 
@@ -324,3 +330,7 @@ fs.watchFile(file, () => {
   delete require.cache[file]
   require(file)
 })
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
