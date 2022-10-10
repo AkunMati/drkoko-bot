@@ -61,9 +61,9 @@ if (args[1] == "ouo") {
 	m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${ouo.result}`,m))
 	}
 }
-handler.help = ['short2 <url> <type>']
+handler.help = ['short <url> <type>']
 handler.tags = ['shortlink']
-handler.command = /^(short2(url)?)$/i
+handler.command = /^(short(url)?)$/i
 
 module.exports = handler
 
