@@ -58,6 +58,13 @@ global.lolkey = 'e54205a4ca2caa368cc067bb' // PUNYA WAHID  8e66d0934cf741bfd2182
 global.fsizedoc = '1'.repeat(10)
 global.fpagedoc = '1'.repeat(10)
 
+/*⫘⫘⫘⫘ FAKE SIZE ⫘⫘⫘⫘⫘*/
+global.fsizedoc = '99999999999999' // 10TB
+global.fpagedoc = '999' //Gausah di ganti.
+
+global.htki = '––––––⦅' // Hiasan Titile (KIRI)
+global.htka = '⦆––––––' // Hiasan Title  (KANAN)
+
 global.multiplier = 100 // The higher, The harder levelup
 
 global.hwaifu = ['https://i.pinimg.com/originals/ed/34/f8/ed34f88af161e6278993e1598c29a621.jpg',
