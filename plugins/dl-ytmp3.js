@@ -39,7 +39,7 @@ let name = await conn.getName(who)
 *${htjava} Filesize:* ${audio.fileSizeH}
 *L O A D I N G. . .*
 `.trim(), m)
-  if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', '', fakes, null, { fileLength: fsizedoc, seconds: fsizedoc, mimetype: 'audio/mp4', contextInfo: {
+  if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', '', fake, null, { fileLength: fsizedoc, seconds: fsizedoc, mimetype: 'audio/mp4', contextInfo: {
           externalAdReply :{
     body: 'Size: ' + audio.fileSizeH,
     containsAutoReply: true,
