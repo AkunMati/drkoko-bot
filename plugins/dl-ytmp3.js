@@ -1,4 +1,4 @@
-let limit = 80
+let limit = 10
 let fetch = require('node-fetch')
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 //import fetch from 'node-fetch'
@@ -9,6 +9,7 @@ let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
 
   if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  m.react('⏱️')
   let chat = global.db.data.chats[m.chat]
   const isY = /y(es)/gi.test(args[1])
   const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
