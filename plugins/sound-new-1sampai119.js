@@ -39,7 +39,7 @@ ptt: false, seconds: 0,contextInfo: {
     description: 'https://instagram.com/kokopangeran_',
     title: "Now Playing...",
     body: wm,
-    thumbnail: await (await fetch('https://ibb.co/X5P52fM')).buffer(),
+    thumbnail: await (await fetch('https://i.ibb.co/n1y1gqt/IMG-20221009-WA0045.jpg')).buffer(),
     sourceUrl: 'https://instagram.com/kokopangeran_'
  	  }
      }
