@@ -1,4 +1,4 @@
-/*let fetch = require('node-fetch')
+let fetch = require('node-fetch')
 let axios = require('axios')
 let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'Uhm...url nya mana?'
@@ -27,4 +27,4 @@ handler.command = /^(tt|tiktok)nowm(dl)?(download(er)?)?$/i
 handler.premium = true
 handler.limit = true
 
-module.exports = handler*/
+module.exports = handler
