@@ -1,6 +1,6 @@
 let limit = 10
 let fetch = require('node-fetch')
-const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
+let { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 //import fetch from 'node-fetch'
 //import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper';
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
