@@ -1,23 +1,19 @@
-let limit = 10
 let fetch = require('node-fetch')
 let { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
-//import fetch from 'node-fetch'
-//import { youtubedl, youtubedlv2, youtubedlv3 } from '@bochilteam/scraper';
+let db = require('../lib/database.js')
+let limit = 10
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
-let name = await conn.getName(who)
-
   if (!args || !args[0]) throw 'Uhm... urlnya mana?'
   m.react('⏱️')
-  let chat = global.db.data.chats[m.chat]
+  let chat = db.data.chats[m.chat]
   const isY = /y(es)/gi.test(args[1])
   const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
-  const limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
+  const limitedSize = (isPrems || isOwner ? 2000 : limit) * 1024
   let audio, source, res, link, lastError, isLimit
   for (let i in _audio) {
     try {
       audio = _audio[i]
+      if (isNaN(audio.fileSize)) continue
       isLimit = limitedSize < audio.fileSize
       if (isLimit) continue
       link = await audio.download()
@@ -33,32 +29,22 @@ let name = await conn.getName(who)
   }
   if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download audio')
   if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
-*${htki} YOUTUBE ${htka}*
-*${htjava} Title:* ${title}
-*${htjava} Type:* mp3
-*${htjava} Filesize:* ${audio.fileSizeH}
-*L O A D I N G. . .*
+*📌Title:* ${title}
+*🗎 Filesize:* ${audio.fileSizeH}
+*${isLimit ? 'Pakai ' : ''}Link:* ${link}
 `.trim(), m)
-  if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', '', fake, null, { fileLength: fsizedoc, seconds: fsizedoc, mimetype: 'audio/mp4', contextInfo: {
-          externalAdReply :{
-    body: 'Size: ' + audio.fileSizeH,
-    containsAutoReply: true,
-    mediaType: 2, 
-    mediaUrl: args[0],
-    showAdAttribution: true,
-    sourceUrl: args[0],
-    thumbnailUrl: thumbnail,
-    renderLargerThumbnail: true,
-    title: 'Nih Kak, ' + name,
-     }}
+  if (!isLimit) await conn.sendFile(m.chat, source, title + '.mp3', `
+*📌Title:* ${title}
+*🗎 Filesize:* ${audio.fileSizeH}
+`.trim(), m, null, {
+    asDocument: chat.useDocument
   })
 }
 handler.help = ['mp3', 'a'].map(v => 'yt' + v + ` <url> <without message>`)
 handler.tags = ['downloader']
-handler.command = /^y((outube|tb)audio|(outube|tb?)mp3|utubaudio|taudio|ta)$/i
-
-handler.exp = 0
-handler.limit = true
+handler.command = /^yt(a|mp3)$/i
 handler.premium = true
+handler.limit = true
+handler.exp = 0
 
 module.exports = handler
