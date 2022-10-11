@@ -2,10 +2,11 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
    let response = args.join(' ').split('|')
-  if (!args[0]) throw 'Masukkan Parameter'
-  m.reply('Proses...')
+  if (!args[0]) throw 'Masukkan Textnya Dungu!'
+  m.react('⏱️')
+  m.reply('Sedang Diproses...')
   let res = `https://ziy.herokuapp.com/api/maker/kaneki?nama=${response[0]}&apikey=xZiyy`
-  conn.sendFile(m.chat, res, 'kaneki.jpg', `*Sudah Jadi Kak>_<*`, m, false)
+  conn.sendButtonImg(m.chat, res, 'kaneki.jpg', `*Sudah Jadi Kak>_<*`, wm, `TERIMA KASIH GANTENG:v`, `terimakasih`, m, false)
 }
 handler.help = ['logokaneki'].map(v => v + ' <text>')
 handler.tags = ['logo']
