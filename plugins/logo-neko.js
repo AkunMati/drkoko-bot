@@ -6,7 +6,7 @@ let handler = async (m, { conn, args }) => {
   m.react('⏱️')
   m.reply('Sedang Diproses...')
   let res = `https://ziy.herokuapp.com/api/maker/girlneko?text1=${response[0]}&text2=${response[1]}&apikey=xZiyy`
-  conn.sendButtonImg(m.chat, res, 'neko.jpg', `Sudah Jadi`, wm, `TERIMA KASIH GANTENG:v`, `terimakasih` m, false)
+  conn.sendFile(m.chat, res, 'neko.jpg', `*Sudah Jadi Kak>_<*`, m, false)
 }
 handler.help = ['logoneko'].map(v => v + ' <text|text>')
 handler.tags = ['logo']
