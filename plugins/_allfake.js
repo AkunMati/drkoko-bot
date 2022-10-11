@@ -8,13 +8,12 @@ handler.all = async function (m) {
 	} finally {
         global.fs = require('fs')
         global.fetch = require('node-fetch')
+        global.bochil = require('@bochilteam/scraper')
         const _uptime = process.uptime() * 1000
         const u = await conn.clockString(_uptime)
         global.run = '𝙍𝙪𝙣𝙩𝙞𝙢𝙚' + ' ' + u
         global.ucapan = ucapan()
         global.col = 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg'
-        global.fetch = require('node-fetch')
-        global.bochil = require('@bochilteam/scraper')
         global.time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss')
 		global.users = db.data.users[m.sender]
 		global.chats = db.data.chats[m.chat]
