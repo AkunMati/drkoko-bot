@@ -55,3 +55,10 @@ handler.limit = true
 handler.premium = true
 
 module.exports = handler
+
+async function shortUrl(url) {
+  url = encodeURIComponent(url)
+  let res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`)
+  if (!res.ok) throw false
+  return await res.text()
+}
