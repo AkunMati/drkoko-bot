@@ -38,10 +38,12 @@ ${'```%npmdesc```'}
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
+  m.react('⏱️')
+  m.reply(m.chat, `Mau Pesan Apa?`, m)
   let bzz = './mp3/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'change', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'change', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'logo', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -57,6 +59,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quotes': 'Quotes',
     'group': 'Group',
     'anime': 'Anime',
+    'logo': 'Logo Menu',
     'nsfw': 'Nsfw',
     'premium': 'Premium',
     'virus': 'Virus',
@@ -112,6 +115,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'anime') tags = {
     'anime': 'Anime'
+  }
+  if (teks == 'logo') tags = {
+    'logo': 'Logo Menu'
   }
   if (teks == 'nsfw') tags = {
     'nsfw': 'Nsfw'
@@ -273,6 +279,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Quotes', rowId: `${_p + command} quotes`, description: `FITUR QUOTES KIDZ` },
           { title: 'Group', rowId: `${_p + command} group`, description: `FITUR GROUP KIDZ` },
           { title: 'Anime', rowId: `${_p + command} anime`, description: `FITUR ANIME KIDZ` },
+          { title: 'Logo Menu', rowId: `$_p + command} logo`, description: `FITUR LOGO KIDZ` },
           { title: 'Nsfw', rowId: `${_p + command} nsfw`, description: `FITUR NSFW KIDZ` },
           { title: 'Premium', rowId: `${_p + command} premium`, description: `FITUR PREMIUM KIDZ` },
           { title: 'Virusss', rowId: `${_p + command} virus`, description: `FITUR VIRUS KIDZ` },
