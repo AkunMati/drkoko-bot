@@ -2,7 +2,7 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     let mCount = {}
     let totalM = 0
-    await conn.loadAllMessages(id, m => {
+    await conn.insertAllGroup(id, m => {
         let user = m.key.fromMe ? conn.user.jid : m.participant ? m.participant : id.includes('g.us') ? '' : id
         if (!user) return
         if (user in mCount) mCount[user]++
@@ -17,5 +17,4 @@ handler.help = ['totalpesan']
 handler.tags = ['group']
 handler.command = /^totalpesan$/i
 handler.admin = true
-handler.botAdmin = true
 module.exports = handler
