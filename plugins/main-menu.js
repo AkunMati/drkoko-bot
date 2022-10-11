@@ -39,7 +39,6 @@ ${'```%npmdesc```'}
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   m.react('⏱️')
-  m.reply(m.chat, `Mau Pesan Apa?`, m)
   let bzz = './mp3/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
@@ -335,6 +334,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       buttonText: "Tap Sayang!",
       sections
     }
+    await conn.reply(m.chat, `Mau Pesan Apa Kak?`, m)
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
