@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
 if (!args[0]) throw 'Uhm..url nya mana?'
-m.reply(wait)
+m.react('⏱️')
 let res = await fetch(`https://botcahx.ddns.net/api/dowloader/tikok?url=${args[0]}`)
 if (!res.ok) throw await res.text()
 let json = await res.json()
