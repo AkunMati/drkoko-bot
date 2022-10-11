@@ -49,7 +49,7 @@ let name = await conn.getName(who)
     sourceUrl: args[0],
     thumbnailUrl: thumbnail,
     renderLargerThumbnail: true,
-    title: 'Nih Kak, ' + name,
+    title: 'Now Playing...'
      }}
   })
 }
