@@ -41,9 +41,9 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:hostinger-bot/Baileys",
+        "@adiwajshing/baileys": "^4.4.0",
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@bochilteam/scraper": "2.0.0",
+        "@bochilteam/scraper": "^3.0.0",
         "awesome-phonenumber": "^2.69.0",
         "axios": "^0.26.0",
         "caliph-api": "^0.7.6",
