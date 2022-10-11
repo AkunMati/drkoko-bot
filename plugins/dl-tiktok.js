@@ -1,15 +1,22 @@
-let axios = require('axios')
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `contoh:\n ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
-    m.react('⏱️')
-    let res = (await axios.get(API('males', '/tiktok', { url: args[0] } ))).data;
-    if (res.status != 200) throw res.message;
-    if (!res) throw res.message;
-    conn.sendButtonVid(m.chat, res.video, `*Judul:* ${res.title}\n${res.author ? `*Pembuat Video:* ${res.author}` : '\n' }`.trim(), 'Cara simpan digalery:\n1. Download dulu videonya\n2. Buka terus klik titik 3 pojok kanan atas\n3. lalu klik simpan!', 'menu', usedPrefix + 'menu', m)
+let fetch = require('node-fetch')
+let handler = async (m, { conn, args }) => {
+if (!args[0]) throw 'Uhm..url nya mana?'
+m.reply(wait)
+let res = await fetch(`https://botcahx.ddns.net/api/dowloader/tikok?url=${args[0]}`)
+if (!res.ok) throw await res.text()
+let json = await res.json()
+if (!json.status) throw json
+let { video, description, username } = json.result
+await conn.sendFile(m.chat, video, 'video.mp4', `
+\n💌 *Deskripsi*: ${description}
+\n\n📛 *Username*: ${username}
+\n\n🏢 *By*: Koko Pangeran
+`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
 }
-handler.help = ['tiktok'].map(v => v + ' <url>')
+
+handler.help = ['tiktok <url>']
 handler.tags = ['downloader']
-handler.command = /^(tik(tok)?(dl)?)$/i
+handler.command = /^(tt|tiktok)$/i
 handler.premium = true
 handler.limit = true
 module.exports = handler
