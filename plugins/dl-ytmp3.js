@@ -1,4 +1,4 @@
-let { generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, downloadContentFromMessage } = require('@adiwajshing/baileys')
+const { toBuffer, generateForwardMessageContent, prepareWAMessageMedia, generateWAMessageFromContent, downloadContentFromMessage } = require('@adiwajshing/baileys')
 let limit = 10
 let fetch = require('node-fetch')
 let { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
