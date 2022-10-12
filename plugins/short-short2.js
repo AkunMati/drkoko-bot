@@ -9,6 +9,7 @@ const sections = [
 	title: "TYPE URL",
 	rows: [
 	    {title: "TinyUrl", rowId: ".short " + args[0] + " tinyurl"},
+            {title: "Cuttly", rowId: ".short " + args[0] + " cuttly"},
 	    {title: "LinkPoi", rowId: ".short " + args[0] + " linkpoi"},
 	    {title: "Bitly", rowId: ".short " + args[0] + " bitly"},
 	    {title: "OuO", rowId: ".short " + args[0] + " ouo"},
@@ -34,6 +35,13 @@ let pros = '_*ᴄ ᴏ ɴ ᴠ ᴇ ʀ ᴛ ɪ ɴ ɢ . . .*_'
 if (args[1] == "tinyurl") {
 	let tiny = await (await fetch(`https://hardianto.xyz/api/short/tinyurl?url=${args[0]}&apikey=hardianto`)).json()
 m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${tiny.result}`,m))
+}
+//--------------
+
+//Case Cuttly
+if (args[1] == "cuttly") {
+	let cuttly = await (await fetch(`https://botcahx.ddns.net/api/linkshort/cuttly?link=${args[0]}`)).json()
+m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${cuttly.result}`,m))
 }
 //--------------
 
