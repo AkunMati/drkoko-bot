@@ -72,7 +72,7 @@ let dapet = json.result.url
 	return conn.sendListM(m.chat, button, row, m)
 }
 } catch (e) {
-    throw eror
+    throw `No media found!`
     }
 }
 handler.help = ['instagram'].map(v => v + ' <url>')
