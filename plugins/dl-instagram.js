@@ -1,14 +1,13 @@
-let cheerio = require('cheerio')
-let fetch = require('node-fetch')
-let axios = require('axios')
+const cheerio = require('cheerio')
+const fetch = require('node-fetch')
+const axios = require('axios')
 const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
-
-if (!args[0]) throw 'Masukkan Link'
 m.react('⏱️')
+if (!args[0]) throw 'Masukkan Link'
 try {
     let listSections = []
 	listSections.push(['No. ' + ++index, [
