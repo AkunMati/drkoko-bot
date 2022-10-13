@@ -35,7 +35,7 @@ global.APIKeys = { // APIKey Here
   'https://hardianto.xyz': 'hardianto',
   'https://leyscoders-api.herokuapp.com': 'MIMINGANZ',
   'https://zenzapis.xyz' : 'f9fccfcff1',
-  'https://violetics.pw' : 'beta'
+  'https://violetics.pw': '0a97-8713-11dc'
 }
 global.packname = data.namabot
 global.author = data.owner
