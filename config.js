@@ -10,6 +10,8 @@ global.APIs = { // API Prefix
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
   zeks: 'https://api.zeks.me',
+  ghst: 'https://ghostui-api.herokuapp.com/',
+  botstyle: 'https://botstyle-api.herokuapp.com',
   pencarikode: 'https://pencarikode.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
   neoxr: 'https://api.neoxr.eu.org',
@@ -25,6 +27,8 @@ global.APIKeys = { // APIKey Here
   'https://api.lolhuman.xyz': '60b1eeb58eb87814b50d2082',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
+  'https://ghostui-api.herokuapp.com/': 'OC2eTK',
+  'https://botstyle-api.herokuapp.com': 'iAEzm9gH',
   'https://pencarikode.xyz': 'pais',
   'https://hardianto.xyz': 'hardianto',
   'https://leyscoders-api.herokuapp.com': 'dappakntlll'
