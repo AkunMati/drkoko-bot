@@ -3,7 +3,7 @@ let handler = async (m, { conn, args, command }) => {
 let totalf = Object.values(global.plugins).filter(
     (v) => v.help && v.tags
   ).length;
- await conn.sendButton(m.chat, `Total Fitur Bot Saat ini: ${totalf}\n`, wm, giflogo, [['THANKS KOKO GANTENG:v','terimakasih']], m, {
+ await conn.sendButtonVid(m.chat, global.giflogo, `Total Fitur Bot Saat ini: ${totalf}\n`, wm, [['THANKS KOKO GANTENG:v','terimakasih']], m, {
 contextInfo: { externalAdReply :{
                         mediaUrl: data.linkig,
                         mediaType: 2,
