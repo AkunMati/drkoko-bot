@@ -48,7 +48,7 @@ global.sdc = '-' //Isi Pake Link Discordmu Kalo Gada Biarin aja
 global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, Ini boleh kalian isi terserah :v
 /*============== NOMOR ==============*/
 global.nomorbot = '6287832147584'
-global.nomorown = '6287740530274'
+global.nomorown = '6283863727744'
 global.namebot = 'ᵈʳкσкσ-ᴍᴅ×፝֟͜×'
 global.nameown = 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 
