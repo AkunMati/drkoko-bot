@@ -5,7 +5,7 @@ let totalf = Object.values(global.plugins).filter(
   ).length;
  await conn.sendButton(m.chat, `Total Fitur Bot Saat ini: ${totalf}\n`, wm, giflogo, [['THANKS KOKO GANTENG:v','terimakasih']], m, {
 contextInfo: { externalAdReply :{
-                        mediaUrl: data.linkig
+                        mediaUrl: data.linkig,
                         mediaType: 2,
                         description: 'Kamu Sayang Aku Kan?',
                         title: run,
