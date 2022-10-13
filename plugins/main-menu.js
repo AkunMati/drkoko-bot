@@ -278,7 +278,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Quotes', rowId: `${_p + command} quotes`, description: `FITUR QUOTES KIDZ` },
           { title: 'Group', rowId: `${_p + command} group`, description: `FITUR GROUP KIDZ` },
           { title: 'Anime', rowId: `${_p + command} anime`, description: `FITUR ANIME KIDZ` },
-          { title: 'Logo Menu', rowId: `{$_p + command} logo`, description: `FITUR LOGO KIDZ` },
+          { title: 'Logo Menu', rowId: `${_p + command} logo`, description: `FITUR LOGO KIDZ` },
           { title: 'Nsfw', rowId: `${_p + command} nsfw`, description: `FITUR NSFW KIDZ` },
           { title: 'Premium', rowId: `${_p + command} premium`, description: `FITUR PREMIUM KIDZ` },
           { title: 'Virusss', rowId: `${_p + command} virus`, description: `FITUR VIRUS KIDZ` },
