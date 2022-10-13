@@ -14,16 +14,18 @@ global.APIs = { // API Prefix
   botstyle: 'https://botstyle-api.herokuapp.com',
   pencarikode: 'https://pencarikode.xyz',
   LeysCoder: 'https://leyscoders-api.herokuapp.com',
-  neoxr: 'https://api.neoxr.eu.org',
+  neoxr : 'https://api.neoxr.my.id',
   amel: 'https://melcanz.com',
   hardianto: 'https://hardianto.xyz',
-  lol: 'https://api.lolhuman.xyz'
+  lol: 'https://api.lolhuman.xyz',
+  zenz : 'https://zenzapis.xyz',
+  violetics : 'https://violetics.pw'
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.neoxr.eu.org': 'yntkts',
+  'https://api.neoxr.my.id': '5VC9rvNx',
   'https://api.xteam.xyz': 'apikeyaine',
-  'https://melcanz.com': 'ZZBk7EBb',
+  'https://melcanz.com': 'manHkmst', //punya koko : 'ZZBk7EBb'
   'https://api.lolhuman.xyz': '60b1eeb58eb87814b50d2082',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
@@ -31,7 +33,9 @@ global.APIKeys = { // APIKey Here
   'https://botstyle-api.herokuapp.com': 'iAEzm9gH',
   'https://pencarikode.xyz': 'pais',
   'https://hardianto.xyz': 'hardianto',
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll'
+  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
+  'https://zenzapis.xyz' : 'f9fccfcff1',
+  'https://violetics.pw' : 'beta'
 }
 global.packname = data.namabot
 global.author = data.owner
@@ -61,8 +65,29 @@ global.thumb = 'https://i.ibb.co/1LF6QHQ/pangeran.jpg' //Main Thumbnail
 
 /*============== APIKEY SIMPEL ==============*/
 global.zenzkey = 'b8040941f7'
-global.lolkey = 'e54205a4ca2caa368cc067bb' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+/*Lolhuman*/
+global.lolkey = 'ed78c137a46873c5b8e5fe3b' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+/*Xteam*/
+global.xteamkey = 'HIRO'
+/*Xcoders*/
+global.xckey = '7iyNa0qA'
 
+/*List Key
+-Lolhuman-
+'327a6596e4c4baa20c756132'
+'bukanitucuy14315195'
+'85faf717d0545d14074659ad'
+'ed78c137a46873c5b8e5fe3b'
+'e54205a4ca2caa368cc067bb'
+
+-XTEAM-
+'5bd33b276d41d6b4'
+'NezukoTachibana281207'
+'HIRO'
+
+-Neoxr-
+'5VC9rvNx'
+*/
 //======FAKE REPLY=======//
 global.fsizedoc = '1'.repeat(10)
 global.fpagedoc = '1'.repeat(10)
