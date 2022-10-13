@@ -7,9 +7,9 @@ let totalf = Object.values(global.plugins).filter(
 contextInfo: { externalAdReply :{
                         mediaUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ',
                         mediaType: 2,
-                        description: 'Total Cintaku Padamu',
+                        description: 'Kamu Sayang Aku Kan?',
                         title: run,
-                        body: wm,          previewType: 0,
+                        body: 'Total Cintaku Padamu',          previewType: 0,
                         thumbnail: fs.readFileSync("./thumbnail.jpg"),
                         sourceUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ'
                       }}
