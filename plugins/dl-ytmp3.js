@@ -11,6 +11,7 @@ let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
 
   if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  m.react('⏱️')
   let chat = global.db.data.chats[m.chat]
   const isY = /y(es)/gi.test(args[1])
   const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
@@ -51,7 +52,7 @@ try {
     sourceUrl: args[0],
     thumbnailUrl: thumbnail,
     renderLargerThumbnail: true,
-    title: 'Nihh Kak, ' + name,
+    title: 'Playing Now...'
      }}
   })
   if (args[1] == 'deno') {
