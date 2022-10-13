@@ -353,14 +353,21 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       setting.epe = isEnable
       break
     case 'simi':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.simi = isEnable
-      break
+    case 'simsimi':
+	if (m.isGroup) {
+	if (!(isAdmin || isOwner)) {
+	global.dfail('admin', m, conn)
+	throw false
+	}
+   }
+	if (chat.simi && isEnable) {
+	throw "simsimi telah aktif di chat ini"
+	} else if (!chat.simi && isEnable == false) {
+	   throw "simsimi belum aktif di chat ini"
+	} else {
+	   chat.simi = isEnable
+    }
+    break
     case 'autodownload':
     case 'autodl':
       if (m.isGroup) {
