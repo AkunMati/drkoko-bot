@@ -33,7 +33,7 @@ global.APIKeys = { // APIKey Here
   'https://botstyle-api.herokuapp.com': 'iAEzm9gH',
   'https://pencarikode.xyz': 'pais',
   'https://hardianto.xyz': 'hardianto',
-  'https://leyscoders-api.herokuapp.com': 'dappakntlll',
+  'https://leyscoders-api.herokuapp.com': 'MIMINGANZ',
   'https://zenzapis.xyz' : 'f9fccfcff1',
   'https://violetics.pw' : 'beta'
 }
@@ -66,7 +66,7 @@ global.thumb = 'https://i.ibb.co/1LF6QHQ/pangeran.jpg' //Main Thumbnail
 /*============== APIKEY SIMPEL ==============*/
 global.zenzkey = 'b8040941f7'
 /*Lolhuman*/
-global.lolkey = '60b1eeb58eb87814b50d2082' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+global.lolkey = 'ed78c137a46873c5b8e5fe3b' // PUNYA WAHID  8e66d0934cf741bfd2182c16
 /*Xteam*/
 global.xteamkey = 'HIRO'
 /*Xcoders*/
