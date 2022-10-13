@@ -1,6 +1,7 @@
-let { sticker } = require('../lib/sticker.js')
+const { sticker } = require('../lib/sticker')
+const fetch = require('node-fetch')
 let fs = require('fs')
-let fetch = require('node-fetch')
+//let fetch = require('node-fetch')
 
 let handler = async(m, { conn, text, args, usedPrefix, command }) => {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
