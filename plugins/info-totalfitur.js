@@ -1,24 +1,13 @@
-let fs = require('fs')
 let handler = async (m, { conn, args, command }) => {
+let img = 'https://telegra.ph/file/6433c5e9e7710aeeffeb5.jpg'
 let totalf = Object.values(global.plugins).filter(
     (v) => v.help && v.tags
   ).length;
- await conn.sendButtonVid(m.chat, global.giflogo, `Total Fitur Bot Saat ini: ${totalf}\n`, wm, [['THANKS KOKO GANTENG:v','terimakasih']], m, {
-contextInfo: { externalAdReply :{
-                        mediaUrl: data.linkig,
-                        mediaType: 2,
-                        description: 'Kamu Sayang Aku Kan?',
-                        title: run,
-                        body: 'Total Cintaku Padamu',          previewType: 0,
-                        thumbnail: global.giflogo,
-                        sourceUrl: data.linkig
-                      }}
-})
+conn.sendButtonImg(m.chat, img, `Total Fitur saat ini: ${totalf}`, wm, 'THANKS KOKO GANTENG:v', 'terimakasih', m)
 }
 
-
 handler.help = ['totalfitur']
-handler.tags = ['main']
-handler.command = /^(total)?fitur$/i
-
+handler.tags = ['tools']
+handler.command = ['totalfitur']
+handler.limit = true
 module.exports = handler
