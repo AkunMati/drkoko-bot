@@ -14,7 +14,7 @@ function kata() {
 function cKata(input) {
 	return new Promise(async (resolve, reject) => {
 		if (!kbbi.find(v => v == input.toLowerCase())) return resolve({ creator: '@neoxrs – Wildan Izzudin', status: false })
-		resolve({ creator: '@neoxrs – Wildan Izzudin', status: true })
+		resolve({ creator: '@ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×', status: true })
 	})
 }
 
