@@ -77,7 +77,7 @@ global.htjava = '⫹⫺'
 
 global.multiplier = 100 // The higher, The harder levelup
 
-global.imglogo = 'https://telegra.ph/file/6433c5e9e7710aeeffeb5.jpg'
+global.giflogo = 'https://telegra.ph/file/676207767f41946afce49.mp4'
 global.hwaifu = ['https://i.pinimg.com/originals/ed/34/f8/ed34f88af161e6278993e1598c29a621.jpg',
 'https://i.pinimg.com/originals/85/4d/bb/854dbbd30304cd69f305352f0183fad0.jpg',
 'https://i.pinimg.com/originals/32/2c/a4/322ca456fa2cdec4b717895a65adfa8d.jpg',
