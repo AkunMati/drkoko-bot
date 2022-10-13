@@ -10,7 +10,7 @@ contextInfo: { externalAdReply :{
                         description: 'Kamu Sayang Aku Kan?',
                         title: run,
                         body: 'Total Cintaku Padamu',          previewType: 0,
-                        thumbnail: fs.readFileSync("./thumbnail.jpg"),
+                        thumbnail: global.giflogo,
                         sourceUrl: data.linkig
                       }}
 })
