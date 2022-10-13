@@ -1,102 +1,57 @@
 let limit = 10
 let fetch = require('node-fetch')
-let axios = require('axios')
-let { youtubeSearch, youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
-let handler = async (m, { conn, groupMetadata, usedPrefix, text, args, command, isPrems, isOwner }) => {
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
-let name = await conn.getName(who)
-if (!args || !args[0]) throw 'Uhm... urlnya mana?'
-m.react('⏱️')
-try {
-  let chat = global.db.data.chats[m.chat]
-  const isY = /y(es)/gi.test(args[1])
-  const { thumbnail, video: _video, title} = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
-  const limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
-  let video, source, res, link, lastError, isLimit
-  for (let i in _video) {
-    try {
-      video = _video[i]
-      isLimit = limitedSize < video.fileSize
-      if (isLimit) continue
-      link = await video.download()
-      if (link) res = await fetch(link)
-      isLimit = res?.headers.get('content-length') && parseInt(res.headers.get('content-length')) < limitedSize
-      if (isLimit) continue
-      if (res) source = await res.arrayBuffer()
-      if (source instanceof ArrayBuffer) break
-    } catch (e) {
-      video = source = link = null
-      lastError = e
-    }
-  }
-  if ((!(source instanceof ArrayBuffer) || !link || !res.ok) && !isLimit) throw 'Error: ' + (lastError || 'Can\'t download video')
-  if (!isY && !isLimit) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
-*${htki} YOUTUBE ${htka}*
-*${htjava} Title:* ${title}
-*${htjava} Filesize:* ${video.fileSizeH}
-`.trim(), m)
-  let _thumb = {}
-  try { _thumb = { thumbnail: await (await fetch(thumbnail)).buffer() } }
-  catch (e) { }
-  if (!isLimit) await conn.sendButton(m.chat, `*${htki} YOUTUBE ${htka}*
-*${htjava} Title:* ${title}
-*${htjava} Filesize:* ${video.fileSizeH}`, title + '.mp4', await(await fetch(link)).buffer(), [['🎀 Menu', '/menu']], m, {
-            fileLength: fsizedoc,
-            seconds: fsizedoc,
-            jpegThumbnail: Buffer.alloc(0), contextInfo: {
-            mimetype: 'video/mp4',
-          externalAdReply :{
-    body: 'Size: ' + video.fileSizeH,
-    containsAutoReply: true,
-    mediaType: 2, 
-    mediaUrl: args[0],
-    showAdAttribution: true,
-    sourceUrl: args[0],
-    thumbnailUrl: thumbnail,
-    renderLargerThumbnail: true,
-    title: 'Playing Now...'
-     }}
-  })
-  } catch {
-  try {
-let res = await axios('https://violetics.pw/api/downloader/youtube?apikey=beta&url=' + text)
-let json = res.data
-let dapet = json.result.url
-	let row = Object.values(dapet).map((v, index) => ({
-		title: htjava + '📌 Quality: ' + v.subname,
-		description: '\n⌚ Host: ' + json.result.hosting + '\n⏲️ Title: ' + json.result.meta.title + '\n📎 URL: ' + v.url + '\n📌 Source: ' + json.result.meta.source + '\n📌 Duration: ' + json.result.meta.duration,
-		rowId: usedPrefix + 'get ' + v.url
-	}))
-	let button = {
-		buttonText: `☂️ ${command} Search Disini ☂️`,
-		description: `⚡ Hai ${name}, Silakan pilih ${command} Search di tombol di bawah...\n*Teks yang anda kirim:* ${text}\n\nKetik ulang *${usedPrefix + command}* teks anda untuk mengubah teks lagi`,
-		footerText: wm
-	}
-	return conn.sendListM(m.chat, button, row, m)
-  } catch {
-  let res = await fetch(`https://rest-beni.herokuapp.com/api/youtube?url=${args[0]}`)
-let v = await res.json()
-let caption = `*${htki} YOUTUBE ${htka}*
-*ID:* ${v.result.id}
-*title:* ${v.result.title}
-*size:* ${v.result.size}
-*quality:* ${v.result.quality}
-`
-await conn.sendButton(m.chat, caption, wm, v.result.thumb, [
-                ['Mp4', `${usedPrefix}get ${v.result.link}`],
-                ['Mp3', `${usedPrefix}get ${v.result.mp3}`]
-            ], m)
-  }
-  }
-}
-handler.help = ['mp4', 'v', ''].map(v => 'yt' + v + ` <url> <without message>`)
-handler.tags = ['downloader']
-handler.command = /^y(outube(mp4|vdl)|t((mp4|v)|vdl))$/i
+const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 
-handler.exp = 0
-handler.register = false
+let handler = async (m, { conn, args, isPrems, isOwner }) => {
+  if (args && /(?:https?:\/{2})?(?:w{3}|m|music)?\.?youtu(?:be)?\.(?:com|be)(?:watch\?v=|\/)([^\s&]+)/i.test(args[0])) {
+    let opt = args[1] && args[1].isNumber() ? args[1].replace(/\D/g, '') : ''
+    let res = await fetch(`https://yt-downloader.akkun3704.repl.co/yt?url=${args[0]}`)
+    res = await res.json()
+    if (!res) res = ''
+    let { description, ownerChannelName, viewCount, uploadDate, likes, dislikes } = res.result.videoDetails
+    let { thumbnail, video: _video, title } = await youtubedlv2(args[0]).catch(async _ => await youtubedl(args[0])).catch(async _ => await youtubedlv3(args[0]))
+    await m.reply('_In progress, please wait..._')
+    let limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
+    let video, quality, link, lastError, isLimit //, source
+    for (let i in _video) {
+      try {
+        video = _video[i]
+        quality = video.quality
+        console.log(video)
+        isLimit = video.fileSize > limitedSize
+        if (isLimit && /1080p/.test(quality) || !quality.includes(opt)) continue
+        link = await video.download()
+        // if (isLimit) return conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: `*Title:* ${title}\n*Link:* ${await shortUrl(link)}\n\n_Filesize too big_` }, { quoted: m })
+        if (link) break
+        // if (source instanceof ArrayBuffer) break
+      } catch (e) {
+        video = quality = link = null
+        lastError = e
+        continue
+      }
+    }
+    if (!link) throw 'Error: ' + (lastError || 'Can\'t download video')
+    let _thumb = {}
+    try { _thumb = { jpegThumbnail: await (await fetch(thumbnail)).buffer() } }
+    catch (e) { }
+    await conn.sendMessage(m.chat, { [/^(?:-|--)doc$/i.test(args[1]) || isLimit ? 'document' : 'video']: { url: link }, fileName: `${title}.mp4`, mimetype: 'video/mp4', ..._thumb }, { quoted: m }).then(async (msg) => {
+      let caption = `*Title:* ${title}\n*Quality:* ${quality}\n*Channel:* ${ownerChannelName || ''}\n*Views:* ${viewCount}\n*Upload Date:* ${uploadDate}${likes ? `\n*Likes:* ${likes}` : ''}${dislikes ? `\n*Dislikes*: ${dislikes}` : ''}${description ? `\n*Description:*\n${description}` : ''}`.trim()
+      await conn.sendMessage(m.chat, { image: { url: thumbnail }, caption }, { quoted: msg })
+    })
+  } else throw 'Invalid URL'
+}
+handler.help = ['ytmp4']
+handler.tags = ['downloader']
+handler.alias = ['yt', 'ytv', 'ytmp4']
+handler.command = /^yt(v|mp4)?$/i
 handler.limit = true
 handler.premium = true
 
 module.exports = handler
+
+async function shortUrl(url) {
+  url = encodeURIComponent(url)
+  let res = await fetch(`https://is.gd/create.php?format=simple&url=${url}`)
+  if (!res.ok) throw false
+  return await res.text()
+}
