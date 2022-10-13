@@ -10,6 +10,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
     if (!res) res = ''
     let { description, ownerChannelName, viewCount, uploadDate, likes, dislikes } = res.result.videoDetails
     let { thumbnail, video: _video, title } = await youtubedlv2(args[0]).catch(async _ => await youtubedl(args[0])).catch(async _ => await youtubedlv3(args[0]))
+    m.react('⏱️')
     await m.reply('_In progress, please wait..._')
     let limitedSize = (isPrems || isOwner ? 99 : limit) * 1024
     let video, quality, link, lastError, isLimit //, source
