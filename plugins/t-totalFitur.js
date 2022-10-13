@@ -1,4 +1,4 @@
-import fs from 'fs'
+let fs = require('fs')
 let handler = async (m, { conn, args, command }) => {
 let totalf = Object.values(global.plugins).filter(
     (v) => v.help && v.tags
