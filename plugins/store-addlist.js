@@ -13,7 +13,7 @@ handler.help = ['store'].map(v => 'add' + v + ' <teks>')
 handler.tags = ['store']
 handler.command = /^addstore$/i
 handler.premium = true
-handler.owner = true
-
+handler.owner = false
+handler.register = true
 
 module.exports = handler
