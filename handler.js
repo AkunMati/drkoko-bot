@@ -812,6 +812,6 @@ fs.watchFile(file, () => {
     if (global.reloadHandler) console.log(global.reloadHandler())
 })
 
-//function pickRandom(list) {
+/*function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
-}
+}*/
