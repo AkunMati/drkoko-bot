@@ -784,7 +784,7 @@ global.dfail = async (type, m, conn) => {
         restrict: 'Fitur ini di *disable*!'
     /*}[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })*/
-    }[type]
+    /*}[type]
     if (msg) return conn.sendButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), msg, wm, 'Menu', '.menu', m, {
   mentions: conn.parseMention(msg),
   contextInfo: { 
