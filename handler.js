@@ -21,7 +21,7 @@ module.exports = {
         if (chatUpdate.messages.length > 1) console.log(chatUpdate.messages)
         let m = chatUpdate.messages[chatUpdate.messages.length - 1]
 
-        //global.pickRandom = pickRandom
+        global.pickRandom = pickRandom
         if (!m) return
         //console.log(JSON.stringify(m, null, 4))
         try {
@@ -723,7 +723,7 @@ Untuk mematikan fitur ini, ketik
     }
 },
 
- global.dfail = async (type, m, conn) => {
+ /*global.dfail = async (type, m, conn) => {
     let msg = {
         rowner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
         owner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
@@ -739,7 +739,7 @@ Untuk mematikan fitur ini, ketik
         restrict: 'Fitur ini di *disable*!'
     /*}[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })*/
-    }[type]
+    /*}[type]
     if (msg) return conn.sendButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), msg, wm, 'Menu', '.menu', m, {
   mentions: conn.parseMention(msg),
   contextInfo: { 
@@ -754,7 +754,52 @@ Untuk mematikan fitur ini, ketik
     sourceUrl: data.sc
      }}
   })
-}
+}*/
+
+global.dfail = async (type, m, conn) => {
+  let name = conn.getName(m.sender)
+  let msg = {
+    rowner: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
+❑ Perintah ini hanya untuk developer bot
+╰─────────────────❑`,
+    owner: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
+❑ Perintah ini hanya untuk owner bot
+╰─────────────────❑`,
+    mods: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
+❑ Perintah ini hanya untuk moderator bot
+╰─────────────────❑`,
+    premium: `╭─❑〔 ıll 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐎𝐍𝐋𝐘 llı 〕─❑
+❑ Fitur ini hanya tersedia untuk user *Premium*
+╰─────────────────❑`,
+    group: `╭─❑〔 ıll 𝐆𝐑𝐎𝐔𝐏 𝐎𝐍𝐋𝐘 llı 〕─❑
+❑ Fitur ini hanya dapat digunakan didalam grup!!
+╰─────────────────֍`,
+    private: `╭─❑〔 ıll 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 𝐎𝐍𝐋𝐘 llı 〕─❑
+❑ Fitur ini hanya dapat digunakan diprivate chat
+╰─────────────────❑`,
+    admin: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
+❑ Fitur ini hanya tersedia untuk admin grup!!
+╰─────────────────֍`,
+    botAdmin: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
+❑ Fitur ini tidak dapat work, bot tidak menjadi admin
+╰─────────────────❑`,
+    restrict: 'Fitur ini di *disable*!',
+    }[type]
+  if (msg) return conn.sendButton(m.chat, msg, '❑ Silahkan Klik Menu Dibawah Ini ❑', '👨KOKO', '.owner', m)
+ let unreg = {
+  unreg: `
+┏━━━〔 ıll 𝐑𝐄𝐆𝐈𝐒𝐓𝐄𝐑 llı 〕━━❑
+❑ Hallo mypren👋, @${m.sender.split`@`[0]}
+❑ Sebelum melihat fitur bot, lebih baik register dulu
+❑ Kalau tidak kelihatan button nya, contohnya dibawah!
+┗━━━━━━━━━━━━━━━━━━❑
+┏━━〔 ıll CONTOH llı 〕━❑
+❑ #daftar namamu.umurmu
+❑ #daftar @${m.sender.split`@`[0]}.18
+┗━━━━━━━━━━❑ `
+  }[type]
+ if (unreg) return conn.sendButtonDoc(m.chat, unreg, '❑ Silahkan Klik Reg Dibawah Ini ❑', 'REGISTER', `.daftar @${m.sender.split`@`[0]}.18`, m)
+ }
 
 let fs = require('fs')
 let chalk = require('chalk')
