@@ -785,7 +785,7 @@ global.dfail = async (type, m, conn) => {
 ╰─────────────────❑`,
     restrict: 'Fitur ini di *disable*!',
     }[type]
-  if (msg) return conn.sendButton(m.chat, msg, '❑ Silahkan Klik Menu Dibawah Ini ❑', '👨KOKO', '.owner', m)
+  if (msg) return conn.sendButtonDoc(m.chat, msg, '❑ Silahkan Klik Menu Dibawah Ini ❑', '👨KOKO', '.owner', m)
  let unreg = {
   unreg: `
 ┏━━━〔 ıll 𝐑𝐄𝐆𝐈𝐒𝐓𝐄𝐑 llı 〕━━❑
