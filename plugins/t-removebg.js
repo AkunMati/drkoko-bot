@@ -7,7 +7,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 	let q = m.quoted ? m.quoted : m,
 		mime = (q.msg || q).mimetype || q.mediaType || ''
              m.react('⏱️')
-           m.reply('Sedang Diproses...)
+           m.reply('Sedang Diproses...')
 	if (/image/g.test(mime)) {
 		let img = await webp2png(await q.download()),
 			url = API('violetics', '/api/media/removebg', { img }, 'apikey')
