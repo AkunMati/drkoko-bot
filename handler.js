@@ -721,9 +721,9 @@ Untuk mematikan fitur ini, ketik
             console.error(e)
         }
     }
-}
+},
 
-/*global.dfail = async (type, m, conn) => {
+global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
     rowner: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
@@ -766,9 +766,9 @@ Untuk mematikan fitur ini, ketik
 ┗━━━━━━━━━━❑ `
   }[type]
  if (unreg) return conn.sendButtonDoc(m.chat, unreg, '❑ Silahkan Klik Reg Dibawah Ini ❑', 'REGISTER', `.daftar @${m.sender.split`@`[0]}.18`, m)
- }*/
+ }
 
- global.dfail = async (type, m, conn) => {
+ /*global.dfail = async (type, m, conn) => {
     let msg = {
         rowner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
         owner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
@@ -784,7 +784,7 @@ Untuk mematikan fitur ini, ketik
         restrict: 'Fitur ini di *disable*!'
     /*}[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })*/
-    }[type]
+    /*}[type]
     if (msg) return conn.sendButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), msg, wm, 'Menu', '.menu', m, {
   mentions: conn.parseMention(msg),
   contextInfo: { 
@@ -799,7 +799,7 @@ Untuk mematikan fitur ini, ketik
     sourceUrl: data.sc
      }}
   })
-}
+}*/
 
 let fs = require('fs')
 let chalk = require('chalk')
@@ -812,6 +812,6 @@ fs.watchFile(file, () => {
     if (global.reloadHandler) console.log(global.reloadHandler())
 })
 
-function pickRandom(list) {
+/*function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
-}
+}*/
