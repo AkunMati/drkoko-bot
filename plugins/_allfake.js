@@ -37,8 +37,8 @@ handler.all = async function (m) {
 					showAdAttribution: true,
 					title: author,
 					body: '👋 ' + sapa + ' Kak :> ' + name,
-					mediaUrl: sgc,
-					description: botdate,
+					mediaUrl: sgh,
+					description: run,
 					previewType: 'PHOTO',
 					thumbnail: await(await fetch(pp)).buffer(),
 					sourceUrl: sgh
