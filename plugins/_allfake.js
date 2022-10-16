@@ -28,6 +28,27 @@ handler.all = async function (m) {
         let json = await res.json()
         global.hit = `${json.value}`
         
+
+      global.adReply = {
+		fileLength: fsizedoc, seconds: fsizedoc,
+			contextInfo: {
+				forwardingScore: fsizedoc,
+				externalAdReply: {
+					showAdAttribution: true,
+					title: author,
+					body: '👋 ' + sapa + ' Kak :> ' + name,
+					mediaUrl: sgc,
+					description: botdate,
+					previewType: 'PHOTO',
+					thumbnail: await(await fetch(pp)).buffer(),
+					sourceUrl: sgh
+				}
+			}
+		}
+
+
+
+
         //is fake
 
 		const ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999999999999999999999999999999999999999999999999, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
