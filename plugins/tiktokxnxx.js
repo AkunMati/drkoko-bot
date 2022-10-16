@@ -14,6 +14,8 @@ let json = await fetch(`http://mkbot.online/api/tiktok/nsfw/nsfwtt?&apikey=${mkb
 let jsons = await json.json()
 let res = jsons.result
 conn.sendButton(m.chat, `- Nih Beb Jgn Sangne🥵 -`, `*◈•@${who.split("@s.whatsapp.net")[0]}*`, res, [['🔄 NEXT BEB 🔄', `/${command}`]], fgif, { mentions: [who] })}
+handler.help = ['tiktokxxx']
+handler.tags = ['bokep']
 handler.command = /^(tiktokxxx)$/i
 module.exports = handler
 global.mkbot = ['lwSUluWz', 'HSxJ72Rf', 'H6pvVPJc', 'uVAf54xz', 'nwJVzP6v']
