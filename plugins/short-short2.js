@@ -1,5 +1,5 @@
 //import fetch from 'node-fetch'
-let fetch = require('node-fetch')
+const fetch = require('node-fetch')
 
 let handler = async (m, { conn, usedPrefix, args }) => {
 	let title = `— *S H O R T E D  U R L* —`
@@ -47,7 +47,7 @@ m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${cuttly.result}`,m))
 
 //LINKPOI
 if (args[1] == "linkpoi") {
-	let poi = await(await fetch(`https://api.lolhuman.xyz/api/poishortlink?apikey=SGWN&url=${args[0]}`)).json()
+	let poi = await(await fetch(`https://api.xteam.xyz/shorturl/linkpoi?url=${args[0]}&APIKEY=f04c164fdec6c033`)).json()
 	m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${poi.result}`,m))
 }
 //------------
@@ -68,7 +68,7 @@ if (args[1] == "ouo") {
 handler.help = ['short <url> <type>']
 handler.tags = ['shortlink']
 handler.command = /^(short(url)?)$/i
-
+handler.limit = true
 module.exports = handler
 
 async function shortUrl(url) {
