@@ -36,7 +36,7 @@ handler.all = async function (m) {
 				externalAdReply: {
 					showAdAttribution: true,
 					title: author,
-					body: '👋 ' + sapa + ' Kak :> ' + name,
+					body: '👋 Hai Kak :> ',
 					mediaUrl: sgh,
 					description: run,
 					previewType: 'PHOTO',
