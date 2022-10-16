@@ -42,7 +42,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './mp3/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'change', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'logo', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'soundanime', 'change', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'logo', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -53,6 +53,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'xp': 'Exp & Limit',
     'sticker': 'Sticker',
     'sound': 'Sound/Musik',
+    'soundanime': 'Sound Anime',
     'change': 'Pengubah Suara',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
@@ -74,7 +75,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\an',
-    'audio': 'Pengubah Suara',
+    'audio': 'Vidio To Audio',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
@@ -100,8 +101,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'sound') tags = {
     'sound': 'Sound/Musik'
   }
+  if (teks == 'soundanime') tags = {
+    'soundanime': 'Sound Anime'
+  }
   if (teks == 'change') tags = {
-    'change': 'Pengubah Suara',
+    'change': 'Pengubah Suara'
   }
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
@@ -162,7 +166,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'quran': 'Al Qur\'an'
   }
   if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
+    'audio': 'Vidio To Audio'
   }
   if (teks == 'jadibot') tags = {
     'jadibot': 'Jadi Bot'
@@ -273,6 +277,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'XP', rowId: `${_p + command} xp`, description: `FITUR XP KIDZ` },
           { title: 'Sticker', rowId: `${_p + command} sticker`, description: `FITUR STICKER KIDZ` },
           { title: 'Sound/Musik', rowId: `${_p + command} sound`, description: `FITUR SOUND KIDZ` },
+          { title: 'Sound Anime', rowId: `${_p + command} soundanime`, description: `FITUR SOUND ANIME KIDZ` },
           { title: 'Pengubah Suara', rowId: `${_p + command} change`, description: `FITUR PENGUBAH SUARA KIDZ` },
           { title: 'Kerang Ajaib', rowId: `${_p + command} kerangajaib`, description: `FITUR KERANG AJAIB KIDZ` },
           { title: 'Quotes', rowId: `${_p + command} quotes`, description: `FITUR QUOTES KIDZ` },
@@ -334,7 +339,7 @@ ${pe}Note: Jika ada Fitur yg Error Lapor ke owner${pe}`,
       buttonText: "Tap Sayang!",
       sections
     }
-    await conn.reply(m.chat, `Mau Pesan Apa Kak?`, m)
+    await conn.reply(m.chat, `_*Mau Pesan Apa Kak?*_`, m)
     return conn.sendMessage(m.chat, listMessage, { quoted: m, mentions: await conn.parseMention(judul), contextInfo: { forwardingScore: 99999, isForwarded: true }})
     
     }
