@@ -47,8 +47,8 @@ m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${cuttly.result}`,m))
 
 //LINKPOI
 if (args[1] == "linkpoi") {
-	let poi = await(await fetch(`https://linkpoi.ga/api.php?url=${args[0]}`)).json()
-	m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${poi.shorturl.replace('\/','/')}`,m))
+	let poi = await(await fetch(`https://api.lolhuman.xyz/api/poishortlink?apikey=SGWN&url=${args[0]}`)).json()
+	m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${poi.result}`,m))
 }
 //------------
 
