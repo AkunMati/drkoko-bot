@@ -9,7 +9,7 @@ let handler = async (m, { conn, args }) => {
     let me = groupMetadata.participants.find(user => areJidsSameUser(user.id, conn.user.id))
     if (!me) throw 'Gw gk ada di grup itu 🗿'
     if (!me.admin) throw 'Gw bukan atmin bg 🗿'
-    await conn.sendHydrated(m.chat, `*${htki} LINK GROUP ${htka}*`, bottime, null, 'https://www.whatsapp.com/otp/copy/'+'https://chat.whatsapp.com/' + await conn.groupInviteCode(group), 'S A L I N', swb, wm, [
+    await conn.sendHydrated(m.chat, `*${htki} LINK GROUP ${htka}*`, run, null, 'https://www.whatsapp.com/otp/copy/'+'https://chat.whatsapp.com/' + await conn.groupInviteCode(group), 'S A L I N', swb, wm, [
       ['SEWA BOT', '/sewain'],
       ['KOKO', '/owner']
     ], null)
