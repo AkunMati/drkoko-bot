@@ -50,6 +50,7 @@ global.sgh = 'https://github.com/MendingTuru' //Link Githubmu
 global.sgc = '-'
 global.sdc = '-' //Isi Pake Link Discordmu Kalo Gada Biarin aja
 global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, Ini boleh kalian isi terserah :v
+global.swb = 'https://instagram.com/kokopangeran_'
 /*============== NOMOR ==============*/
 global.nomorbot = '6287832147584'
 global.nomorown = '6283863727744'
