@@ -117,7 +117,7 @@ Nomor akan di banned!.
  'mediaUrl': lin_.getRandom(),
  'mediaType': 2, 
  'previewType': 'pdf', 
- 'title': run, 
+ 'title': time, 
  'body': wm, 
  'thumbnail': await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
  'sourceUrl': data.linkig}}, 
@@ -128,7 +128,7 @@ Nomor akan di banned!.
  {'buttonId':'.start','buttonText':{'displayText':'❍CARI TEMAN'},'type':1} 
  ], 
  'headerType':6} 
-     await conn.sendMessage(m.chat,buttonMessage, { quoted:fpay}) 
+     await conn.sendMessage(m.chat,buttonMessage, { quoted: m}) 
  } 
 handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
 handler.tags = ['xp'] 
