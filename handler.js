@@ -751,11 +751,11 @@ RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur i
 Fitur ini di *disable* !`
     }[type]
     if (msg) return conn.sendButton(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['MENU', '.menu'],['KOKO', '.owner']], m)
-    
+}  
      let msgg = {
     	unreg: `${nmsr}\nSilahkan daftar ke database terlebih dahulu untuk menggunakan bot ini lebih lanjut *Click button di bawah*\n\n*Kalian bisa ikuti langkah verify selanjutnya*\n\nLAKI-LAKI ATAU PEREMPUAN ?`
-}[type]
-if (msgg) return conn.sendButton(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'Verify'}`, [['LAKI-LAKI', '.verify'],['PEREMPUAN', '.verify']], m)
+    }[type]
+    if (msgg) return conn.sendButton(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'Verify'}`, [['LAKI-LAKI', '.verify'],['PEREMPUAN', '.verify']], m)
 }
 
 
