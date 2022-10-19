@@ -105,7 +105,7 @@ Jika owner mengetahui Hal di atas, Maka tidak segan²
 Nomor akan di banned!.
 ` 
    let buttonMessage= { 
- 'document': {'url':data.linkig}, 
+ 'document': {'url': data.linkig}, 
  'mimetype': mim_.getRandom(), 
  'fileName': hiasan, 
  'fileLength': fsizedoc, 
@@ -114,15 +114,15 @@ Nomor akan di banned!.
  'forwardingScore': 555, 
  'isForwarded': true, 
  'externalAdReply': { 
- 'mediaUrl': data.linkig,
+ 'mediaUrl': lin_.getRandom(),
  'mediaType': 2, 
  'previewType': 'pdf', 
  'title': run, 
- 'body': data.bodlink, 
+ 'body': wm, 
  'thumbnail': await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
  'sourceUrl': data.linkig}}, 
  'caption': data.titlink, 
- 'footer': wm, 
+ 'footer': cap, 
  'buttons': [ 
  {'buttonId':'.ref','buttonText':{'displayText':'❍REFERAL'},'type':1}, 
  {'buttonId':'.start','buttonText':{'displayText':'❍CARI TEMAN'},'type':1} 
