@@ -419,12 +419,12 @@ module.exports = {
                 continue
             if (plugin.disabled)
                 continue
-            const __filename = join(___dirname, name)
+            const __filename = join(__dirname, name)
             if (typeof plugin.all === 'function') {
                 try {
                     await plugin.all.call(this, m, {
                         chatUpdate,
-                        __dirname: ___dirname,
+                        pluginFolder: __dirname,
                         __filename
                     })
                 } catch (e) {
@@ -470,7 +470,7 @@ module.exports = {
                     isBotAdmin,
                     isPrems,
                     chatUpdate,
-                    pluginFolder: ___dirname,
+                    pluginFolder: __dirname,
                     __filename
                 })) 
                     continue 
@@ -578,7 +578,7 @@ module.exports = {
                         isBotAdmin,
                         isPrems,
                         chatUpdate,
-                        pluginFolder: ___dirname,
+                        pluginFolder: __dirname,
                         __filename
                     }
                     try {
