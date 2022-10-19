@@ -578,6 +578,8 @@ module.exports = {
                         isBotAdmin,
                         isPrems,
                         chatUpdate,
+                        __dirname: ___dirname,
+                        __filename
                     }
                     try {
                         await plugin.call(this, m, extra)
@@ -612,7 +614,6 @@ module.exports = {
                     }
                     break
                 }
-            }
         } catch (e) {
             console.error(e)
         } finally {
