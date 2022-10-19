@@ -128,7 +128,7 @@ Nomor akan di banned!.
  {'buttonId':'.start','buttonText':{'displayText':'❍CARI TEMAN'},'type':1} 
  ], 
  'headerType':6} 
-     await conn.sendMessage(m.chat,buttonMessage, { quoted: m}) 
+     await conn.sendMessage(m.chat,buttonMessage, { quoted: m.sender}) 
  } 
 handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
 handler.tags = ['xp'] 
