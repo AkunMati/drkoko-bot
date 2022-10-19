@@ -65,6 +65,7 @@ global.nameown = 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
 global.namagithub = 'MendingTuru' // nama github lu
 global.linkgithub = 'https://github.com/MendingTuru' // tarok link github lu
 global.thumb = 'https://i.ibb.co/1LF6QHQ/pangeran.jpg' //Main Thumbnail
+global.serialimg = 'https://telegra.ph/file/eaf30ca57d5c4c2d7a6f0.jpg'
 
 // klau kgk ada github kasih tanda '-' aja biar kgk error
 
