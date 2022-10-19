@@ -378,6 +378,35 @@ global.rpg = {
   }
 }
 
+global.fpay = {
+	key: {
+		remoteJid: '0@s.whatsapp.net',
+		fromMe: false,
+		id: 'ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×',
+		participant: '0@s.whatsapp.net'
+	},
+	message: {
+		requestPaymentMessage: {
+			currencyCodeIso4217: "USD",
+			amount1000: 999999999,
+			requestFrom: '0@s.whatsapp.net',
+			noteMessage: {
+				extendedTextMessage: {
+					text: 'Hay kak👋'
+				}
+			},
+			expiryTimestamp: 999999999,
+			amount: {
+				value: 91929291929,
+				offset: 1000,
+				currencyCode: "USD"
+			}
+		}
+	}
+}
+
+
+//-------JANGAN DI UBAH MEK-------//
 let chalk = require('chalk')
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
