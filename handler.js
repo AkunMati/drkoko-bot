@@ -470,7 +470,7 @@ module.exports = {
                     isBotAdmin,
                     isPrems,
                     chatUpdate,
-                    __dirname: ___dirname,
+                    pluginFolder: ___dirname,
                     __filename
                 })) 
                     continue 
@@ -578,7 +578,7 @@ module.exports = {
                         isBotAdmin,
                         isPrems,
                         chatUpdate,
-                        __dirname: ___dirname,
+                        pluginFolder: ___dirname,
                         __filename
                     }
                     try {
