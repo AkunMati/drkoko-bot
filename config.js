@@ -51,6 +51,9 @@ global.sgc = '-'
 global.sdc = '-' //Isi Pake Link Discordmu Kalo Gada Biarin aja
 global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, Ini boleh kalian isi terserah :v
 global.swb = 'https://instagram.com/kokopangeran_'
+
+global.hiasan = '꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦'
+global.titlebot = '𝗬𝗧: Koko Pangeran' //Ganti serah lu
 /*============== NOMOR ==============*/
 global.nomorbot = '6287832147584'
 global.nomorown = '6283863727744'
