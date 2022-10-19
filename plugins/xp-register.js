@@ -1,10 +1,7 @@
 const { createHash } = require('crypto')
 //const fetch = require('node-fetch')
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
-let handler = async function (m, { text, usedPrefix, command }) {
-	function pickRandom(list) {
-  return list[Math.floor(Math.random() * list.length)]
-}
+let handler = async function (m, { text, usedPrefix, command }) {	
 	let namae = conn.getName(m.sender)
 	const sections = [
 	{
@@ -134,3 +131,7 @@ Nomor akan di banned!.
  handler.command = /^(daftar|verify|reg(ister)?)$/i 
 
 module.exports = handler
+
+function pickRandom(list) {
+  return list[Math.floor(Math.random() * list.length)]
+}
