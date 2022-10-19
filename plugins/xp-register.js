@@ -73,7 +73,7 @@ let handler = async function (m, { text, usedPrefix, command }) {
    if (!age) throw 'Umur tidak boleh kosong (Angka)' 
    age = parseInt(age) 
    if (age > 30) throw 'WOI TUA (。-`ω´-)' 
-   if (age < 0) throw 'Halah dasar bocil' 
+   if (age < 8) throw 'Halah dasar bocil' 
    user.name = name.trim() 
    user.age = age 
    user.regTime = + new Date 
@@ -115,7 +115,7 @@ Nomor akan di banned!.
  'externalAdReply':{ 
  'mediaUrl': lin_.getRandom(),
  'mediaType':2, 
- 'previewType':'pdf', 
+ 'previewType':0, 
  'title':global.time, 
  'body':global.titlebot, 
  'thumbnail':await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
