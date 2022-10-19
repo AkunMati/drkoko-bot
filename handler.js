@@ -749,7 +749,7 @@ RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur i
         restrict: `${nmsr}\n
 Fitur ini di *disable* !`
     }[type]
-    if (msg) return conn.send2ButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), danied, msg, wm, [['MENU', '.menu'],['KOKO', '.owner']], m, {
+    if (msg) return conn.send2ButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), msg, wm, 'MENU', '.menu', 'KOKO', '.owner', m, {
   mentions: conn.parseMention(msg),
   contextInfo: { 
     externalAdReply :{
@@ -767,7 +767,7 @@ Fitur ini di *disable* !`
     let msgg = {
     	unreg: `${nmsr}\nSilahkan daftar ke database terlebih dahulu untuk menggunakan bot ini lebih lanjut *Click button di bawah*\n\n*Kalian bisa ikuti langkah verify selanjutnya*\n\nLAKI-LAKI ATAU PEREMPUAN ?`
     }[type]
-    if (msgg) return conn.send2ButtonLoc(m.chat, await conn.resize(fla + 'VERIFY', 280, 210), `${global.htki} VERIFY ${global.htka}`, msgg, wm, [['LAKI-LAKI', '.verify'],['PEREMPUAN', '.verify']], m, {
+    if (msgg) return conn.send2ButtonLoc(m.chat, await conn.resize(fla + 'VERIFY', 280, 210), `${global.htki} VERIFY ${global.htka}`, msgg, wm, 'LAKI-LAKI', '.verify', 'PEREMPUAN', '.verify', m, {
   mentions: conn.parseMention(msgg),
   contextInfo: { 
     externalAdReply :{
