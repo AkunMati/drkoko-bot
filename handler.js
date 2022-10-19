@@ -723,8 +723,12 @@ Untuk mematikan fitur ini, ketik
     }
 },
 
+/**
+dfail
+ */
 global.dfail = (type, m, conn) => {
-    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*`
+    let imgr = flaaa.getRandom()
+    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*, `
     let msg = {
         rowner: `${nmsr}\n 
 Perintah ini hanya dapat digunakan oleh *OWWNER* !`,
@@ -749,38 +753,12 @@ RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur i
         restrict: `${nmsr}\n
 Fitur ini di *disable* !`
     }[type]
-    if (msg) return conn.send2ButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), msg, wm, 'MENU', '.menu', 'KOKO', '.owner', m, {
-  mentions: conn.parseMention(msg),
-  contextInfo: { 
-    externalAdReply :{
-    showAdAttribution: true,
-    mediaUrl: data.sc,
-    mediaType: 2,
-    description: data.deslink, 
-    title: run,
-    body: wm,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: data.sc
-     }}
-  })
-
-    let msgg = {
+    if (msg) return conn.sendButt(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['MENU', '.menu'],['KOKO', '.owner']],m)
+    
+     let msgg = {
     	unreg: `${nmsr}\nSilahkan daftar ke database terlebih dahulu untuk menggunakan bot ini lebih lanjut *Click button di bawah*\n\n*Kalian bisa ikuti langkah verify selanjutnya*\n\nLAKI-LAKI ATAU PEREMPUAN ?`
-    }[type]
-    if (msgg) return conn.send2ButtonLoc(m.chat, await conn.resize(fla + 'VERIFY', 280, 210), `${global.htki} VERIFY ${global.htka}`, msgg, wm, 'LAKI-LAKI', '.verify', 'PEREMPUAN', '.verify', m, {
-  mentions: conn.parseMention(msgg),
-  contextInfo: { 
-    externalAdReply :{
-    showAdAttribution: true,
-    mediaUrl: data.sc,
-    mediaType: 2,
-    description: data.deslink, 
-    title: run,
-    body: wm,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: data.sc
-     }}
-  })
+}[type]
+if (msgg) return conn.sendButt(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'VERIFY'}`, [['LAKI-LAKI', '/verify'],['PEREMPUAN', '/verify']],m)
 }
 
 
