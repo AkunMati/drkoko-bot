@@ -1,7 +1,7 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 let fetch = require("node-fetch")
 let tio = 'LAWAK DEK DEK🤓'
- await conn.sendFile(m.chat, 'https://ffcdn-srv-1e2mf2sh6.filezone.cf/file/9jEsLrUmtIC~SDIXzH~j.opus', 'sample.opus', null, m, true, {
+ await conn.sendFile(m.chat, 'https://filezone.cf/dl/00ptz', 'sample.opus', null, m, true, {
 type: 'audioMessage', 
 ptt: true, contextInfo: {
         externalAdReply: { showAdAttribution: true, title: tio,
