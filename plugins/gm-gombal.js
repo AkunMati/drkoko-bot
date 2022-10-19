@@ -7,7 +7,7 @@ let imgr = flaaa.getRandom()
     conn.tebakgombal = conn.tebakgombal ? conn.tebakgombal : {}
     let id = m.chat
     if (id in conn.tebakgombal) {
-        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebakgombal[id][0])
+        conn.sendButt(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebakgombal[id][0])
         throw false
     }
     let res = await fetch(`https://sekha.me/api/game/tebakgombal?apikey=apirey`)
