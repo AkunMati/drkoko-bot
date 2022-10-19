@@ -106,10 +106,9 @@ module.exports = {
                     if (!isNumber(user.lastweekly)) user.lastweekly = 0
                     if (!isNumber(user.lastmonthly)) user.lastmontly = 0  
                     if (!('registered' in user)) user.registered = false
+                    
                     if (!user.registered) {
-                    if (!('name' in user)) user.name = this.getName(m.sender)
-                    if (!('email' in user)) user.email = ''
-                    if (!('label' in user)) user.label = ''
+                    if (!('name' in user)) user.name = m.name
                     if (!isNumber(user.age)) user.age = -1
                     if (!isNumber(user.regTime)) user.regTime = -1
                     }
@@ -215,9 +214,7 @@ module.exports = {
                     lastweekly: 0,
                     lastmonthly: 0,
                     registered: false,
-                    name: this.getName(m.sender),
-                    email: '',
-                    label: '',
+                    name: m.name,
                     age: -1,
                     regTime: -1,
                     regTime: -1,
