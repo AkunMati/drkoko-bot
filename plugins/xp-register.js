@@ -1,7 +1,5 @@
 const { createHash } = require('crypto')
-let fetch = require('node-fetch')
-let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
-
+const fetch = require('node-fetch')
 let handler = async function (m, { text, usedPrefix, command }) {
 	function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
@@ -60,7 +58,7 @@ let handler = async function (m, { text, usedPrefix, command }) {
 ┗━━━━━━━━━━㉿ 
 ⫹⫺ 
 ⫹⫺`, 
-   footer: `*┗ ©ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×*`, 
+   footer: `*┗ © ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×*`, 
    title: "", 
    buttonText: "CLICK HERE", 
    sections 
@@ -105,33 +103,33 @@ Jika owner mengetahui Hal di atas, Maka tidak segan²
 Nomor akan di banned!.
 ` 
    let buttonMessage= { 
- 'document': {'url': data.linkig}, 
- 'mimetype': mim_.getRandom(), 
- 'fileName': hiasan, 
- 'fileLength': fsizedoc, 
- 'pageCount': fpagedoc, 
- 'contextInfo': { 
- 'forwardingScore': 555, 
- 'isForwarded': true, 
- 'externalAdReply': { 
+ 'document':{'url':sgc}, 
+ 'mimetype':mim_.getRandom(), 
+ 'fileName':hiasan, 
+ 'fileLength':fsizedoc, 
+ 'pageCount':fpagedoc, 
+ 'contextInfo':{ 
+ 'forwardingScore':555, 
+ 'isForwarded':true, 
+ 'externalAdReply':{ 
  'mediaUrl': lin_.getRandom(),
- 'mediaType': 2, 
- 'previewType': 'pdf', 
- 'title': time, 
- 'body': wm, 
- 'thumbnail': await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
- 'sourceUrl': data.linkig}}, 
- 'caption': data.titlink, 
- 'footer': cap, 
- 'buttons': [ 
+ 'mediaType':2, 
+ 'previewType':'pdf', 
+ 'title':global.bottime, 
+ 'body':global.titlebot, 
+ 'thumbnail':await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
+ 'sourceUrl':sgc}}, 
+ 'caption':bottime, 
+ 'footer':cap, 
+ 'buttons':[ 
  {'buttonId':'.ref','buttonText':{'displayText':'❍REFERAL'},'type':1}, 
  {'buttonId':'.start','buttonText':{'displayText':'❍CARI TEMAN'},'type':1} 
  ], 
  'headerType':6} 
-     await conn.sendMessage(m.chat,buttonMessage, { quoted: m.sender}) 
+     await conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
  } 
-handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
-handler.tags = ['xp'] 
-handler.command = /^(daftar|verify|reg(ister)?)$/i 
+ handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
+ handler.tags = ['xp'] 
+ handler.command = /^(daftar|verify|reg(ister)?)$/i 
 
 module.exports = handler
