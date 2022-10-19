@@ -116,11 +116,11 @@ Nomor akan di banned!.
  'mediaUrl': lin_.getRandom(),
  'mediaType':2, 
  'previewType':'pdf', 
- 'title':global.bottime, 
+ 'title':global.time, 
  'body':global.titlebot, 
  'thumbnail':await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
  'sourceUrl':sgc}}, 
- 'caption':bottime, 
+ 'caption':time, 
  'footer':cap, 
  'buttons':[ 
  {'buttonId':'.ref','buttonText':{'displayText':'❍REFERAL'},'type':1}, 
