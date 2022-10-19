@@ -20,7 +20,7 @@ Ketik ${usedPrefix}hgom untuk bantuan
 Bonus: ${poin} XP
     `.trim()
     conn.tebakgombal[id] = [
-        await conn.send2ButtonLoc(m.chat, await conn.resize(fla + 'TEBAK GOMBAL', 280, 210), caption, wm, buttons, m),
+        await conn.send2Button(m.chat, await conn.resize(fla + 'TEBAK GOMBAL', 280, 210), caption, wm, buttons, m,)
         json, poin,
         setTimeout(() => {
             if (conn.tebakgombal[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, wm, null, [
