@@ -55,7 +55,7 @@ module.exports = {
                     if (!isNumber(user.diamond)) user.diamond = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.batu)) user.batu = 0
-                    if (!isNumber(user.kayu)) user.kayu = 0
+                    //if (!isNumber(user.kayu)) user.kayu = 0
                     if (!isNumber(user.string)) user.string = 0  
                     if (!isNumber(user.common)) user.common = 0
                     if (!isNumber(user.uncommon)) user.uncommon = 0
@@ -108,12 +108,28 @@ module.exports = {
                     if (!('registered' in user)) user.registered = false
                     
                     if (!user.registered) {
-                    if (!('name' in user)) user.name = this.getName(m.sender)
+                    if (!('name' in user)) user.name = m.name
                     if (!isNumber(user.age)) user.age = -1
+                    if (!isNumber(user.anggur)) user.anggur = 0
+                    if (!isNumber(user.apel)) user.apel = 0
+                    if (!isNumber(user.bibitanggur)) user.bibitanggur = 0
+                    if (!isNumber(user.bibitapel)) user.bibitapel = 0
+                    if (!isNumber(user.bibitjeruk)) user.bibitjeruk = 0
+                    if (!isNumber(user.bibitmangga)) user.bibitmangga = 0
+                    if (!isNumber(user.bibitpisang)) user.bibitpisang = 0
+                    if (!isNumber(user.emas)) user.emas = 0
+                    if (!isNumber(user.jeruk)) user.jeruk = 0
+                    if (!isNumber(user.kayu)) user.kayu = 0
+                    if (!isNumber(user.makanan)) user.makanan = 0
+                    if (!isNumber(user.mangga)) user.mangga = 0
+                    if (!isNumber(user.pisang)) user.pisang = 0
+                    if (!isNumber(user.premiumTime)) user.premiumTime = -1
                     if (!isNumber(user.regTime)) user.regTime = -1
+                    if (!isNumber(user.semangka)) user.semangka = 0
+                    if (!isNumber(user.stroberi)) user.stroberi = 0
                     }
                     if (!('premium' in user)) user.premium = false
-                    if (!isNumber(user.premiumTime)) user.premiumTime = 0
+                    //if (!isNumber(user.premiumTime)) user.premiumTime = 0
                     if (!user.role) user.role = ''
                     if (!('autolevelup' in user)) user.autolevelup = false
                     if (!isNumber(user.pc)) user.pc = 0
@@ -196,6 +212,20 @@ module.exports = {
                     makananpet: 0,
                     antispam: 0,
                     antispamlastclaim: 0,
+                    anggur: 0,
+                    apel: 0,
+                    bibitanggur: 0,
+                    bibitapel: 0,
+                    bibitjeruk: 0,
+                    bibitmangga: 0,
+                    bibitpisang: 0,
+                    jeruk: 0,
+                    makanan: 0,
+                    mangga: 0,
+                    emas: 0,
+                    stroberi: 0,
+                    semangka: 0,
+                    pisang: 0,
                     kayu: 0,
                     batu: 0,
                     string: 0,
@@ -217,9 +247,8 @@ module.exports = {
                     name: this.getName(m.sender),
                     age: -1,
                     regTime: -1,
-                    regTime: -1,
                     premium: false,
-                    premiumTime: 0,
+                    premiumTime: -1,
                     role: '',
                     autolevelup: false,
                     pc: 0,
