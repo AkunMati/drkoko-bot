@@ -1,8 +1,9 @@
+const fetch = require('node-fetch')
 let handler = m => m
 
 handler.before = async function (m) {
    let chat = global.db.data.chats[m.chat]
-    if (chat.Luar && !chat.isBanned ) {
+    if (chat.antiluar && !chat.isBanned ) {
         if (/^.*false|disnable|(turn)?off|0/i.test(m.text)) return
         if (!m.text) return
    if (m.sender.startsWith('212' || '212')) {
@@ -160,6 +161,7 @@ conn.reply(m.chat, asing, m)
 this.groupParticipantsUpdate(m.chat, [m.sender], "remove")
 this.updateBlockStatus(m.sender, 'block')
    }
-    }
+  return true 
+}
 
 module.exports = handler
