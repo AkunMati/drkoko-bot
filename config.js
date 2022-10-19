@@ -54,6 +54,7 @@ global.swb = 'https://instagram.com/kokopangeran_'
 
 global.hiasan = '꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦ ͝ ꒷ ͝ ꒦'
 global.titlebot = '𝗬𝗧: Koko Pangeran' //Ganti serah lu
+global.danied = '✘ 𝗘𝗥𝗢𝗥 𝟰𝟬𝟰' //Gausah di apa² in
 /*============== NOMOR ==============*/
 global.nomorbot = '6287832147584'
 global.nomorown = '6283863727744'
