@@ -1,5 +1,5 @@
 const { createHash } = require('crypto')
-et handler = async function (m, { args }) {
+let handler = async function (m, { args }) {
   if (!args[0]) throw '📮Serial Number kosong'
   let user = global.db.data.users[m.sender]
   let sn = createHash('md5').update(m.sender).digest('hex')
