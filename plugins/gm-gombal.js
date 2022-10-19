@@ -36,4 +36,7 @@ handler.command = /^tebakgombal/i
 
 module.exports = handler
 
-const buttons = ['Hint', '.hgom', 'Nyerah', '.menyerah']
+const buttons = [
+    ['Hint', '.hgom'],
+    ['Nyerah', 'menyerah']
+]
