@@ -412,11 +412,33 @@ module.exports = {
             const isAdmin = user && user?.admin || false // Is User Admin?
             const isBotAdmin = bot && bot?.admin || false // Are you Admin?
 
+            const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
             for (let name in global.plugins) {
-                let plugin = global.plugins[name]
-                if (!plugin) continue
-                if (plugin.disabled) continue
-                if (!opts['restrict']) if (plugin.tags && plugin.tags.includes('admin')) {
+            let plugin = global.plugins[name]
+            if (!plugin)
+                continue
+            if (plugin.disabled)
+                continue
+            const __filename = join(___dirname, name)
+            if (typeof plugin.all === 'function') {
+                try {
+                    await plugin.all.call(this, m, {
+                        chatUpdate,
+                        __dirname: ___dirname,
+                        __filename
+                    })
+                } catch (e) {
+                    // if (typeof e === 'string') continue
+                    console.error(e)
+                    for (let [jid] of global.owner.filter(([number, _, isDeveloper]) => isDeveloper && number)) {
+                        let data = (await conn.onWhatsApp(jid))[0] || {}
+                        if (data.exists)
+                            m.reply(`*Plugin:* ${name}\n*Sender:* ${m.sender}\n*Chat:* ${m.chat}\n*Command:* ${m.text}\n\n\`\`\`${format(e)}\`\`\``.trim(), data.jid)
+                    }
+                }
+            }
+            if (!opts['restrict'])
+                if (plugin.tags && plugin.tags.includes('admin')) {
                     // global.dfail('restrict', m, this)
                     continue
                 }
@@ -450,7 +472,9 @@ module.exports = {
                     chatUpdate,
                     __dirname: ___dirname,
                     __filename
-                })) continue          
+                })) 
+                    continue 
+                }
                 if (typeof plugin !== 'function') continue
                 if ((usedPrefix = (match[0] || '')[0])) {
                     let noPrefix = m.text.replace(usedPrefix, '')
