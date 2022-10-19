@@ -3,7 +3,7 @@ let { sticker } = require('../lib/sticker.js')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
 
 let stiker = await sticker(null, global.API(`${pickRandom(stikerhuuu)}`), global.packname, global.author)
-    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
+    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', 'sama.sama', m)
     throw stiker.toString()
     
 }
