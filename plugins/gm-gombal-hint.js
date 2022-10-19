@@ -3,12 +3,9 @@ let handler = async (m, { conn }) => {
     let id = m.chat
     if (!(id in conn.tebakgombal)) throw false
     let json = conn.tebakgombal[id][1]
-    conn.sendButton(m.chat, '```' + json.jawaban.replace(/[AIUEOaiueo]/ig, '_') + '```', author, null, [
-        ['Nyerah', 'menyerah']
-    ], m)
+    let clue = json.jawaban.replace(/[AIUEOaiueo]/ig, '_')
+    conn.reply(m.chat, '```' + clue + '```\nBalas soalnya, bukan pesan ini', wm, conn.tebakgombal[id][0])
 }
 handler.command = /^hgom$/i
-
 handler.limit = true
-
 module.exports = handler
