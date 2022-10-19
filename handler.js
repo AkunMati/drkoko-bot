@@ -723,6 +723,42 @@ Untuk mematikan fitur ini, ketik
     }
 },
 
+global.dfail = (type, m, conn) => {
+    let imgr = flaaa.getRandom()
+    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*, `
+    let msg = {
+        rowner: `${nmsr}\n 
+Perintah ini hanya dapat digunakan oleh *OWWNER* !`,
+        owner: `${nmsr}\n
+Perintah ini hanya dapat digunakan oleh *Owner Bot* !`,
+        mods: `${nmsr}\n 
+Perintah ini hanya dapat digunakan oleh *Moderator* !`,
+        premium: `${nmsr}\n
+Perintah ini hanya untuk member *Premium* !`,
+        group: `${nmsr}\n
+Perintah ini hanya dapat digunakan di grup !`,
+        private: `${nmsr}\n
+Perintah ini hanya dapat digunakan di Chat Pribadi !`,
+        admin: `${nmsr}\n
+Perintah ini hanya untuk *Admin* grup !`,
+        botAdmin: `${nmsr}\n
+Jadikan bot sebagai *Admin* untuk menggunakan perintah ini !`,
+        nsfw: `${nmsr}\n
+NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini !`,
+        rpg: `${nmsr}\n
+RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini !`,
+        restrict: `${nmsr}\n
+Fitur ini di *disable* !`
+    }[type]
+    if (msg) return conn.sendButton(m.chat, danied, msg, `${imgr + 'Accses Danied'}`, 'MENU', '.menu', 'KOKO', '.owner', m)
+    
+     let msgg = {
+    	unreg: `${nmsr}\nSilahkan daftar ke database terlebih dahulu untuk menggunakan bot ini lebih lanjut *Click button di bawah*\n\n*Kalian bisa ikuti langkah verify selanjutnya*\n\nLAKI-LAKI ATAU PEREMPUAN ?`
+}[type]
+if (msgg) return conn.sendButton(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'Verify'}`, 'LAKI-LAKI', '.verify', 'PEREMPUAN', '.verify', m)
+}
+
+
  /*global.dfail = async (type, m, conn) => {
     let msg = {
         rowner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
@@ -756,7 +792,7 @@ Untuk mematikan fitur ini, ketik
   })
 }*/
 
-global.dfail = async (type, m, conn) => {
+/*global.dfail = async (type, m, conn) => {
   let name = conn.getName(m.sender)
   let msg = {
     rowner: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
@@ -799,7 +835,7 @@ global.dfail = async (type, m, conn) => {
 ┗━━━━━━━━━━❑ `
   }[type]
  if (unreg) return conn.sendButtonDoc(m.chat, unreg, '❑ Silahkan Klik Reg Dibawah Ini ❑', 'REGISTER', `.daftar @${m.sender.split`@`[0]}.18`, m)
- }
+ }*/
 
 let fs = require('fs')
 let chalk = require('chalk')
