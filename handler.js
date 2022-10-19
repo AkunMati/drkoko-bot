@@ -643,7 +643,7 @@ module.exports = {
                                 member: groupMetadata.participants.length
                             })
                             /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')*/
-   await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
+   await conn.sendButtonImg(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'Koko.Pangeran', fake,{
   contextInfo: { externalAdReply :{
     showAdAttribution: true,
     mediaUrl: 'https://youtu.be/c-06tx4vusw',
