@@ -725,7 +725,7 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
     let imgr = flaaa.getRandom()
-    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*, `
+    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*`,
     let msg = {
         rowner: `${nmsr}\n 
 Perintah ini hanya dapat digunakan oleh *OWWNER* !`,
@@ -750,12 +750,12 @@ RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur i
         restrict: `${nmsr}\n
 Fitur ini di *disable* !`
     }[type]
-    if (msg) return conn.sendButton(m.chat, danied, msg, `${imgr + 'Accses Danied'}`, 'MENU', '.menu', 'KOKO', '.owner', m)
+    if (msg) return conn.sendButton(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['MENU', '.menu'],['KOKO', '.owner']], m)
     
      let msgg = {
     	unreg: `${nmsr}\nSilahkan daftar ke database terlebih dahulu untuk menggunakan bot ini lebih lanjut *Click button di bawah*\n\n*Kalian bisa ikuti langkah verify selanjutnya*\n\nLAKI-LAKI ATAU PEREMPUAN ?`
 }[type]
-if (msgg) return conn.sendButton(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'Verify'}`, 'LAKI-LAKI', '.verify', 'PEREMPUAN', '.verify', m)
+if (msgg) return conn.sendButton(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'Verify'}`, [['LAKI-LAKI', '.verify'],['PEREMPUAN', '.verify']], m)
 }
 
 
@@ -847,13 +847,6 @@ fs.watchFile(file, () => {
     delete require.cache[file]
     if (global.reloadHandler) console.log(global.reloadHandler())
 })
-
-/*function clockString(ms) {
-    let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
-    let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-    let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-    return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
-}*/
 
 function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
