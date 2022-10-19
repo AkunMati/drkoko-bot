@@ -24,11 +24,15 @@ export async function before(m) {
         } else if (similarity(m.text.toLowerCase(), json.jawaban.toLowerCase().trim()) >= threshold)
             m.reply(`*Dikit Lagi!*`)
         else
-            conn.sendButton(m.chat, `*Salah!*`, author, null, 'Hint', '.hgom', 'Nyerah', '.menyerah', m)
+            conn.sendButton(m.chat, `*Salah!*`, author, null, [
+                ['Hint', '.hgom'],
+                ['Nyerah', 'menyerah']
+            ], m)
     }
     return !0
 }
+export const exp = 0
 
-module.exports = handler
-
-const buttontebakgombal = ['tebakgombal', '.tebakgombal']
+const buttontebakgombal = [
+    ['tebakgombal', '.tebakgombal']
+]
