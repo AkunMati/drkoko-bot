@@ -105,25 +105,25 @@ Jika owner mengetahui Hal di atas, Maka tidak segan²
 Nomor akan di banned!.
 ` 
    let buttonMessage= { 
- 'document':{'url':sgh}, 
- 'mimetype':mim_.getRandom(), 
- 'fileName':hiasan, 
- 'fileLength':fsizedoc, 
- 'pageCount':fpagedoc, 
- 'contextInfo':{ 
- 'forwardingScore':555, 
- 'isForwarded':true, 
- 'externalAdReply':{ 
- 'mediaUrl': 'https://github.com/MendingTuru',
- 'mediaType':2, 
- 'previewType':'pdf', 
- 'title':global.bottime, 
- 'body':global.titlebot, 
- 'thumbnail':await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
- 'sourceUrl':sgh}}, 
- 'caption':bottime, 
- 'footer':wm, 
- 'buttons':[ 
+ 'document': {'url':data.linkig}, 
+ 'mimetype': mim_.getRandom(), 
+ 'fileName': hiasan, 
+ 'fileLength': fsizedoc, 
+ 'pageCount': fpagedoc, 
+ 'contextInfo': { 
+ 'forwardingScore': 555, 
+ 'isForwarded': true, 
+ 'externalAdReply': { 
+ 'mediaUrl': data.linkig,
+ 'mediaType': 2, 
+ 'previewType': 'pdf', 
+ 'title': run, 
+ 'body': data.bodlink, 
+ 'thumbnail': await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
+ 'sourceUrl': data.linkig}}, 
+ 'caption': data.titlink, 
+ 'footer': wm, 
+ 'buttons': [ 
  {'buttonId':'.ref','buttonText':{'displayText':'❍REFERAL'},'type':1}, 
  {'buttonId':'.start','buttonText':{'displayText':'❍CARI TEMAN'},'type':1} 
  ], 
