@@ -724,7 +724,6 @@ Untuk mematikan fitur ini, ketik
 },
 
 global.dfail = (type, m, conn) => {
-    let imgr = flaaa.getRandom()
     let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*`
     let msg = {
         rowner: `${nmsr}\n 
