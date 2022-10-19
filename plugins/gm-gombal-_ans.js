@@ -1,6 +1,7 @@
 const similarity = require('similarity')
 const threshold = 0.72
-export async function before(m) {
+let handler = m => m
+handler.before = async function (m) {
     let id = m.chat
     if (!m.quoted || !m.quoted.fromMe || !m.quoted.isBaileys || !m.text || !/Ketik.*hgom/i.test(m.quoted.text) || /.*hgom/i.test(m.text))
         return !0
@@ -31,7 +32,9 @@ export async function before(m) {
     }
     return !0
 }
-export const exp = 0
+handler.exp = 0
+
+module.exports = handler
 
 const buttontebakgombal = [
     ['tebakgombal', '.tebakgombal']
