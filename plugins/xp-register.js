@@ -1,7 +1,7 @@
 const { createHash } = require('crypto')
-//const fetch = require('node-fetch')
+const fetch = require('node-fetch')
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
-let handler = async function (m, { text, usedPrefix, command }) {	
+let handler = async function (m, { conn, text, usedPrefix, command }) {	
 	let namae = conn.getName(m.sender)
 	const sections = [
 	{
@@ -74,7 +74,8 @@ let handler = async function (m, { text, usedPrefix, command }) {
    user.name = name.trim() 
    user.age = age 
    user.regTime = + new Date 
-   user.registered = true 
+   user.registered = true
+   let prefix = usedPrefix 
    let sn = createHash('md5').update(m.sender).digest('hex') 
     let mim_ = ["application/json"] 
       let lin_ = ["https://www.instagram.com"] 
