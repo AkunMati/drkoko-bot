@@ -412,7 +412,7 @@ module.exports = {
             const isAdmin = user && user?.admin || false // Is User Admin?
             const isBotAdmin = bot && bot?.admin || false // Are you Admin?
 
-            const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
+            const pluginFolder = path.join(__dirname, 'plugins')
             for (let name in global.plugins) {
             let plugin = global.plugins[name]
             if (!plugin)
