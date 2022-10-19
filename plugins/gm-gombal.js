@@ -2,12 +2,12 @@ const fetch = require('node-fetch')
 let timeout = 120000
 let poin = 4999
 let handler = async (m, { conn, command, usedPrefix }) => {
-//let imgr = flaaa.getRandom()
+let imgr = flaaa.getRandom()
 
     conn.tebakgombal = conn.tebakgombal ? conn.tebakgombal : {}
     let id = m.chat
     if (id in conn.tebakgombal) {
-        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', wm, null, buttons, conn.tebakgombal[id][0])
+        conn.sendButton(m.chat, 'Masih ada soal belum terjawab di chat ini', author, null, buttons, conn.tebakgombal[id][0])
         throw false
     }
     let res = await fetch(`https://sekha.me/api/game/tebakgombal?apikey=apirey`)
@@ -20,10 +20,10 @@ Ketik ${usedPrefix}hgom untuk bantuan
 Bonus: ${poin} XP
     `.trim()
     conn.tebakgombal[id] = [
-        await conn.send2Button(m.chat, await conn.resize(fla + 'TEBAK GOMBAL', 280, 210), caption, wm, buttons, m,)
+        await conn.sendButt(m.chat, caption, author, `${imgr + command}`, buttons, m),
         json, poin,
         setTimeout(() => {
-            if (conn.tebakgombal[id]) conn.sendButton(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, wm, null, [
+            if (conn.tebakgombal[id]) conn.sendButt(m.chat, `Waktu habis!\nJawabannya adalah *${json.jawaban}*`, author, null, [
                 ['tebakgombal', '/tebakgombal']
             ], conn.tebakgombal[id][0])
             delete conn.tebakgombal[id]
@@ -37,6 +37,6 @@ handler.command = /^tebakgombal/i
 module.exports = handler
 
 const buttons = [
-    ['Hint', '.hgom'],
+    ['Hint', '/hgom'],
     ['Nyerah', 'menyerah']
 ]
