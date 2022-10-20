@@ -108,7 +108,7 @@ module.exports = {
                     if (!('registered' in user)) user.registered = false
                     
                     if (!user.registered) {
-                    if (!('name' in user)) user.name = m.name
+                    if (!('name' in user)) user.name = this.getName(m.sender)
                     if (!isNumber(user.age)) user.age = -1
                     if (!isNumber(user.anggur)) user.anggur = 0
                     if (!isNumber(user.apel)) user.apel = 0
