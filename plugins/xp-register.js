@@ -88,7 +88,7 @@ Di Database kami
  ╭━━━━「 *DATA* 」
  ┊➥ *Sucsess ☑️* 】STATUS
  ┊➥ *${name}* 】NAME
- ┊➥ *${age}* 】UMUR/AGE                                          
+ ┊➥ *${age}* 】AGE                                          
  ╰═┅═━––––––๑
 
 *SYARAT*
@@ -101,7 +101,7 @@ Jika owner mengetahui Hal di atas, Maka tidak segan²
 Nomor akan di banned!.
 
 *SN* (Serial Number) di kirim di chat pribadi dan digunakan untuk daftar ulang, jika lupa *SN* silahkan ketik *${usedPrefix}sn* untuk mengecek *SN* kamu! 
-`.trim(), wm, `{imgr + 'DONE'}`, [['PROFILE','.pp'],['RULES','.rules']], m) 
+`.trim(), wm, `${imgr + 'SUCCES'}`, [['PROFILE','.pp'],['RULES','.rules']], m) 
 conn.sendMessage(m.sender, {text: `*SN:* ${sn}`}, { quoted:fpay}, m)
 //conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
 } 
