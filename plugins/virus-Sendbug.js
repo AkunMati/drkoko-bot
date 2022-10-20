@@ -3,13 +3,13 @@ let virtex = require('../virtex/index.js')
 
 let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) => {
     if (!(isOwner || isPrems)) {
-        global.dfail('premium', m, conn)
+        global.dfail('owner', m, conn)
         throw false
     }
     if (!text) throw `uhm... siapa yg mau diserang?\n contoh penggunaan:\n *${usedPrefix + command}* nomor\n Example: *${usedPrefix + command}* 6281234567890`;
     let [orang, jumlah] = text.split(',')
     if (!jumlah) throw 'masukan jumlah nya.\n\nContoh\n.sbug 62882...., 10'
-    m.reply('_sedang diproses..._')
+    m.reply('_Sedang Diproses BossQ..._')
     let who
     try {
         if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : orang.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
@@ -30,7 +30,7 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) =
                 }
             })
         }
-        conn.reply(m.chat, `sukses mengirim bug ke @${who.split('@')[0]}`, m, { mentions: [who] })
+        conn.reply(m.chat, `Sukses Mengirim Bug BossQ, Ke @${who.split('@')[0]}`, m, { mentions: [who] })
     } catch (e) {
         console.error(e)
         throw e
@@ -39,7 +39,6 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) =
 handler.help = ['sendbug', 'sbug'].map(v => v + ' <nomor>')
 handler.tags = ['virus']
 handler.command = /^s(end)?bug$/i
-
-handler.premium = true
+handler.owner = true
 
 module.exports = handler
