@@ -640,9 +640,9 @@ module.exports = {
 
  async participantsUpdate({ id, participants, action }) {
         if (set.opts['self']) return
-        if (this.isInit) return
+        if (global.isInit) return
         if (global.db.data == null) await global.loadDatabase()
-        let chat = db.data.chats[id]
+        let chat = db.data.chats[id] || {}
         let ppimut = 'https://telegra.ph/file/118a75cb0c8396bdd7975.jpg'
         let ppgc = 'https://telegra.ph/file/45315c8cc2cceb27ab81b.png'
         let text = ''
@@ -650,7 +650,7 @@ module.exports = {
            case 'add':
            case 'remove':
              if (chat.welcome) {
-                let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+                const groupMetadata = await this.groupMetadata(id)
                 for (let user of participants) { 
                     let name = this.getName(user)
                     let pp = await this.profilePictureUrl(id, 'image').catch(_=> ppgc)
