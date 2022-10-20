@@ -447,9 +447,7 @@ module.exports = {
                     isAdmin,
                     isBotAdmin,
                     isPrems,
-                    chatUpdate,
-                    __dirname: __dirname,
-                    __filename
+                    chatUpdate,                                         
                 })) continue
                 if (typeof plugin !== 'function') continue
                 if ((usedPrefix = (match[0] || '')[0])) {
@@ -553,9 +551,7 @@ module.exports = {
                         isAdmin,
                         isBotAdmin,
                         isPrems,
-                        chatUpdate,
-                        __dirname: __dirname,
-                        __filename
+                        chatUpdate,                                                
                     }
                     try {
                         await plugin.call(this, m, extra)
@@ -647,26 +643,22 @@ async participantsUpdate({ id, participants, action }) {
         let text = ''
         switch (action) {
             case 'add':
-            case 'remove':
-		case 'leave':
-		case 'invite':
-		case 'invite_v4':
-                if (chat.welcome) {
-                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-                    for (let user of participants) {
-                        let pp = './src/avatar_contact.png'
-                        try {
-                            pp = await this.profilePictureUrl(user)
-                        } catch (e) {
-                        } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
-                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                            this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+            case 'remove':		
+            if (chat.welcome) {
+            let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+            for (let user of participants) {
+            let pp = './src/avatar_contact.png'
+               try {
+            pp = await this.profilePictureUrl(user)
+            } catch (e) {
+            } finally {
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
+                     (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                     this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
                         }
                     }
                 }
-                break                        
-                                        
+                break                                                               
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
