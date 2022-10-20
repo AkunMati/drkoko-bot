@@ -783,12 +783,12 @@ RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur i
         restrict: `${nmsr}\n
 Fitur ini di *disable* !`
     }[type]
-    if (msg) return conn.sendButt(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['MENU', '.menu'],['KOKO', '.owner']],m)
+    if (msg) return conn.sendButt(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['✔️MENU', '.menu'],['KOKO👦', '.owner']],m)
     
      let msgg = {
-    	unreg: `${nmsr}\nSilahkan daftar ke database terlebih dahulu untuk menggunakan bot ini lebih lanjut *Click button di bawah*\n\n*Kalian bisa ikuti langkah verify selanjutnya*\n\nLAKI-LAKI ATAU PEREMPUAN ?`
+    	unreg: `${nmsr}\nSilahkan Daftar Ke Database Terlebih Dahulu Untuk Menggunakan ᵈʳкσкσ-ᴍᴅ×፝֟͜× Ini, Lebih Lanjut *Click Button Di Bawah*\n\nKalian Bisa Ikuti Langkah _*VERIFY*_ Selanjutnya\n\n_*COWO*_ *ATAU* _*CEWE?*_`
 }[type]
-if (msgg) return conn.sendButt(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'VERIFY'}`, [['LAKI-LAKI', '/verify'],['PEREMPUAN', '/verify']],m)
+if (msgg) return conn.sendButt(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'VERIFY'}`, [['👦COWO', '/daftarco'],['CEWE👧', '/daftarce']],m)
 }
 
 
