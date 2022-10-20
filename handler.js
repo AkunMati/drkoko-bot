@@ -638,57 +638,67 @@ module.exports = {
         }
     },
 
-    async participantsUpdate({ id, participants, action }) {
-        if (opts['self']) return
-        // if (id in conn.chats) return // First login will spam
-        if (global.isInit) return
-        let chat = db.data.chats[id] || {}
+ async participantsUpdate(update) {
+        // console.log(update)
+        let { id, participants, action } = update
+        if (set.opts['self']) return
+        if (this.isInit) return
+        if (global.db.data == null) await global.loadDatabase()
+        let chat = db.data.chats[id]
+        let ppimut = 'https://telegra.ph/file/118a75cb0c8396bdd7975.jpg'
+        let ppgc = 'https://telegra.ph/file/45315c8cc2cceb27ab81b.png'
         let text = ''
         switch (action) {
-            case 'add':
-            case 'remove':
-                if (chat.welcome) {
-                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-                    for (let user of participants) {
-                        let pp = 'https://telegra.ph/file/2d06f0936842064f6b3bb.png'
-                        try {
-                            pp = await this.profilePictureUrl(user, 'image')
-                        } catch (e) {
-
-                        } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
-                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace(/@user/g, '@' + user.split`@`[0])
-                            let wel = API('hardianto', '/api/welcome3', {
-                                profile: pp,
-                                name: await this.getName(user),
-                                bg: 'https://telegra.ph/file/0c7614657950e02908209.jpg',
-                                namegb: await this.getName(id),
-                                member: groupMetadata.participants.length
-                            })
-                            let lea = API('hardianto', '/api/goodbye3', {
-                                profile: pp,
-                                name: await this.getName(user),
-                                bg: 'https://telegra.ph/file/0c7614657950e02908209.jpg',
-                                namegb: await this.getName(id),
-                                member: groupMetadata.participants.length
-                            })
-                            /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')*/
-   await conn.sendButtonImg(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'Koko.Pangeran', fake,{
-  contextInfo: { externalAdReply :{
-    showAdAttribution: true,
-    mediaUrl: 'https://youtu.be/c-06tx4vusw',
-    mediaType: 2,
-    description: data.deslink , 
-    title: run,
-    body: wm,
-    thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
-    sourceUrl: data.linkgc
-     }}
-  })
+           case 'add':
+           case 'remove':
+             if (chat.welcome) {
+                const groupMetadata = await this.groupMetadata(id)
+                for (let user of participants) { 
+                    let name = this.getName(user)
+                    let pp = await this.profilePictureUrl(id, 'image').catch(_=> ppgc)
+                    text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.sWelcome || 'Hi, @user 👋\nWelcom in group').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc?.toString() || '') :
+                           (chat.sBye || this.bye || conn.sBye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
+                    if (action === 'add') {
+                        if (user.includes(this.user.jid)) return this.reply(id, `Hello everyone 👋\n\nSaya adalah *${this.user.name}* Bot WhatsApp yang akan membantu kamu mempermudah sesuatu seperti membuat stiker dan lainnya, untuk menggunakan fitur bot silahkan ketik *#menu*`,                 
+                            fake.contact(parseInt(user), name), { 
+			    ephemeralExpiration: 86400,
+                            contextInfo: {
+                               mentionedJid: groupMetadata.participants.map(v => v.id),
+                               externalAdReply :{
+                                  showAdAttribution: true,
+                                  mediaType: 1,
+                                  title: wm, 
+                                  thumbnail: await this.getBuffer(pp),
+                                  renderLargerThumbnail: true,
+                                  sourceUrl: 'https://chat.whatsapp.com/FR1KfE3OTcQCayiabos8Ff'
+                               }
+                            }
+                        })                       
+			if (db.data.chats[id].only) {
+                            if (!user.startsWith(db.data.chats[id].onlyNumber)) return this.reply(id, `Sorry @${parseInt(user)} this group is only for people *+${db.data.chats[id].onlyNumber}* you will be removed from this group.\n\n                *Goodbye! 👋*\n`, null, { mentions: [user] })
+                                .then(async _=> {
+                                    await this.groupParticipantsUpdate(id, [user], "remove")
+                                })
                         }
-                    }
-                }
-                break
+                      }
+                      this.reply(id, text, fake.contact(parseInt(user), name), {
+                         ephemeralExpiration: 86400,
+                         contextInfo: {
+                           mentionedJid: [user],
+                           externalAdReply :{
+                             showAdAttribution: true,
+                             mediaType: 1,
+                             title: wm, 
+                             thumbnail: await this.getBuffer(pp),
+                             renderLargerThumbnail: true,
+                             sourceUrl: 'https://chat.whatsapp.com/FR1KfE3OTcQCayiabos8Ff'
+                           }
+                       }
+                    }) 
+                 }
+             }
+             break           
+               
 
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
