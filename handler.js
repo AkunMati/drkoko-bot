@@ -668,8 +668,8 @@ async participantsUpdate({ id, participants, action }) {
                                 namegb: await this.getName(id),
                                 member: groupMetadata.participants.length
                             })
-                            await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? '👋SELAMAT DATANG BEBAN' : 'SAMPAI JUMPA BEBAN😙', action === 'add' ? '.intro' : 'KokoPangeran')
-   /*await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
+                            /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? '👋SELAMAT DATANG BEBAN' : 'SAMPAI JUMPA BEBAN😙', action === 'add' ? '.intro' : 'KokoPangeran')*/
+   await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
   contextInfo: { externalAdReply :{
     showAdAttribution: true,
     mediaUrl: 'https://youtu.be/c-06tx4vusw',
@@ -680,7 +680,7 @@ async participantsUpdate({ id, participants, action }) {
     thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
     sourceUrl: data.linkgc
      }}
-  })*/
+  })
                         }
                     }
                 }
