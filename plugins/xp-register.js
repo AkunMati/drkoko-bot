@@ -2,6 +2,7 @@ const { createHash } = require('crypto')
 const fetch = require('node-fetch')
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 let handler = async function (m, { conn, text, usedPrefix, command }) {	
+let imgr = flaaa.getRandom()
 	let namae = conn.getName(m.sender)
 	const sections = [
 	{
