@@ -86,9 +86,9 @@ Di Database Kami
  ❖ © ᵈʳкσкσ-ᴍᴅ×፝֟͜× || ALL RESERVED
 
  ╭━━━━「 *DATA* 」
- ┊➥ *SUCCES ☑️* 】STATUS
- ┊➥ *${name}* 】NAME
- ┊➥ *${age}* 】AGE                                          
+ ┊➥👦 *SUCCES ☑️* 】STATUS
+ ┊➥👦 *${name}* 】NAME
+ ┊➥👦 *${age}* 】AGE                                          
  ╰═┅═━––––––๑
 
 *SYARAT*
@@ -97,8 +97,7 @@ Di Database Kami
 ➥ Dilarang Spam Button/Chat
 ➥ Dilarang Toxic
 
-Jika Owner Mengetahui Hal Di Atas, Maka Tidak Segan²
-Nomor Akan Di Banned!.
+_*Jika Owner Mengetahui Hal Di Atas, Maka Tidak Segan² Nomor Akan Di Banned!*_
 
 *SN* (Serial Number) Di Kirim Di Chat Pribadi Dan Digunakan Untuk Daftar Ulang, Jika Lupa *SN* Silahkan Ketik *${usedPrefix}sn* Untuk Mengecek *SN* Kamu! 
 `.trim(), wm, `${imgr + 'SUCCES'}`, [['✔️MENU','.menu'],['SEWA💰','.sewain']], m) 
