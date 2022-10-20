@@ -119,14 +119,10 @@ Nomor akan di banned!.
  'thumbnail': await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
  'sourceUrl': sgc}}, 
  'caption': time, 
- 'footer': cap, 
- 'buttons': [ 
- {'buttonId': '.pp','buttonText':{'displayText':'❍PROFILE'},'type':1}, 
- {'buttonId': '.owner','buttonText':{'displayText':'❍KOKO'},'type':1} 
- ], 
+ 'footer': cap,
  'headerType': 6} 
-     await conn.sendMessage(m.sender, buttonMessage, {text: `*SN:* ${sn}`}, { quoted:fpay}, m)
-     //conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
+ await conn.sendMessage(m.sender, buttonMessage, {text: `*SN:* ${sn}`}, { quoted:fpay}, m)
+ //conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
  } 
  handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
  handler.tags = ['xp'] 
