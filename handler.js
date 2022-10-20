@@ -638,9 +638,7 @@ module.exports = {
         }
     },
 
- async participantsUpdate(update) {
-        // console.log(update)
-        let { id, participants, action } = update
+ async participantsUpdate({ id, participants, action }) {
         if (set.opts['self']) return
         if (this.isInit) return
         if (global.db.data == null) await global.loadDatabase()
@@ -652,9 +650,9 @@ module.exports = {
            case 'add':
            case 'remove':
              if (chat.welcome) {
-                const groupMetadata = await this.groupMetadata(id)
+                let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) { 
-                    let name = this.getName(m.sender)
+                    let name = this.getName(user)
                     let pp = await this.profilePictureUrl(id, 'image').catch(_=> ppgc)
                     text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.sWelcome || 'Hi, @user 👋\nWelcom in group').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc?.toString() || '') :
                            (chat.sBye || this.bye || conn.sBye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
@@ -697,9 +695,7 @@ module.exports = {
                     }) 
                  }
              }
-             break           
-               
-
+             break
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
