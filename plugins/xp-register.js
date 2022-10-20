@@ -57,7 +57,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 ⫹⫺ 
 ⫹⫺`, 
    footer: `*┗ © ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×*`, 
-   title: "Wajib Sayang Pangeran", 
+   title: "", 
    buttonText: "CLICK HERE", 
    sections 
  } 
@@ -77,19 +77,17 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
    user.registered = true
    let prefix = usedPrefix 
    let sn = createHash('md5').update(m.sender).digest('hex') 
-    let mim_ = ["application/json"] 
-      let lin_ = ["https://www.instagram.com"] 
-    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender 
-   let cap = ` 
+   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender 
+   conn.sendButt(m.chat, ` 
  ╭━━━━「 *BERHASIL* 」
  ❖ Terima kasih ${name} Sudah mendaftar
 Di Database kami
  ❖ © ᵈʳкσкσ-ᴍᴅ×፝֟͜× || ALL RESERVED
 
  ╭━━━━「 *DATA* 」
- ┊⫹ *Sucsess ☑️* 】Status
- ┊⫹ *${name}* 】Nama
- ┊⫹ *${age}* 】Umur/Age                                          
+ ┊➥ *Sucsess ☑️* 】STATUS
+ ┊➥ *${name}* 】NAME
+ ┊➥ *${age}* 】UMUR/AGE                                          
  ╰═┅═━––––––๑
 
 *SYARAT*
@@ -100,33 +98,15 @@ Di Database kami
 
 Jika owner mengetahui Hal di atas, Maka tidak segan²
 Nomor akan di banned!.
-` 
-   let buttonMessage= { 
- 'document': {'url':sgc}, 
- 'mimetype': mim_.getRandom(), 
- 'fileName': hiasan, 
- 'fileLength': fsizedoc, 
- 'pageCount': fpagedoc, 
- 'contextInfo': { 
- 'forwardingScore': 555, 
- 'isForwarded': true, 
- 'externalAdReply': { 
- 'mediaUrl': lin_.getRandom(),
- 'mediaType': 2, 
- 'previewType': 'pdf', 
- 'title': global.time, 
- 'body': global.titlebot, 
- 'thumbnail': await(await fetch('https://telegra.ph/file/f7f8efef516f7f5698724.jpg')).buffer(),
- 'sourceUrl': sgc}}, 
- 'caption': time, 
- 'footer': cap,
- 'headerType': 6} 
- await conn.sendMessage(m.sender, buttonMessage, {text: `*SN:* ${sn}`}, { quoted:fpay}, m)
- //conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
- } 
- handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
- handler.tags = ['xp'] 
- handler.command = /^(daftar|verify|reg(ister)?)$/i 
+
+*SN* (Serial Number) di kirim di chat pribadi dan digunakan untuk daftar ulang, jika lupa *SN* silahkan ketik *${usedPrefix}sn* untuk mengecek *SN* kamu! 
+`.trim(), wm, `{imgr + 'DONE'}`, [['PROFILE','.pp'],['MENU','.menu]] m) 
+conn.sendMessage(m.sender, {text: `*SN:* ${sn}`}, { quoted:fpay}, m)
+//conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
+} 
+handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
+handler.tags = ['xp'] 
+handler.command = /^(daftar|verify|reg(ister)?)$/i 
 
 module.exports = handler
 
