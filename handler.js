@@ -634,8 +634,59 @@ module.exports = {
         }
     },
 
-
 async participantsUpdate({ id, participants, action }) {
+        if (opts['self']) return
+        // if (id in conn.chats) return // First login will spam
+        if (global.isInit) return
+        let chat = db.data.chats[id] || {}
+        let text = ''
+        switch (action) {
+            case 'add':
+            case 'remove':
+                if (chat.welcome) {
+                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+                    for (let user of participants) {
+                        let pp = 'https://telegra.ph/file/2d06f0936842064f6b3bb.png'
+                        try {
+                            pp = await this.profilePictureUrl(user, 'image')
+                        } catch (e) {
+
+                        } finally {
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+                            let wel = API('Ferdiz', '/api/canvas/welcome_v1', {
+                                profile: pp,
+                                name: await this.getName(user),
+                                bg: 'https://telegra.ph/file/0c7614657950e02908209.jpg',
+                                namegb: await this.getName(id),
+                                member: groupMetadata.participants.length
+                            })
+                            let lea = API('Ferdiz', '/api/canvas/leav_v1', {
+                                profile: pp,
+                                name: await this.getName(user),
+                                bg: 'https://telegra.ph/file/0c7614657950e02908209.jpg',
+                                namegb: await this.getName(id),
+                                member: groupMetadata.participants.length
+                            })
+                            await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? '👋SELAMAT DATANG BEBAN' : 'SAMPAI JUMPA BEBAN😙', action === 'add' ? '.intro' : 'KokoPangeran')
+   /*await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
+  contextInfo: { externalAdReply :{
+    showAdAttribution: true,
+    mediaUrl: 'https://youtu.be/c-06tx4vusw',
+    mediaType: 2,
+    description: data.deslink , 
+    title: run,
+    body: wm,
+    thumbnail: await(await fetch(action === 'add' ? wel : lea)).buffer(),
+    sourceUrl: data.linkgc
+     }}
+  })*/
+                        }
+                    }
+                }
+                break
+
+/*async participantsUpdate({ id, participants, action }) {
         if (opts['self']) return
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
@@ -658,7 +709,8 @@ async participantsUpdate({ id, participants, action }) {
                         }
                     }
                 }
-                break                                                               
+                break*/
+                                                             
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
