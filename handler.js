@@ -654,7 +654,7 @@ module.exports = {
              if (chat.welcome) {
                 const groupMetadata = await this.groupMetadata(id)
                 for (let user of participants) { 
-                    let name = this.getName(user)
+                    let name = this.getName(m.sender)
                     let pp = await this.profilePictureUrl(id, 'image').catch(_=> ppgc)
                     text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.sWelcome || 'Hi, @user 👋\nWelcom in group').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc?.toString() || '') :
                            (chat.sBye || this.bye || conn.sBye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
