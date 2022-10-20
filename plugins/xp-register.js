@@ -57,7 +57,7 @@ let handler = async function (m, { conn, text, usedPrefix, command }) {
 ⫹⫺ 
 ⫹⫺`, 
    footer: `*┗ © ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×*`, 
-   title: "", 
+   title: "Wajib Sayang Pangeran", 
    buttonText: "CLICK HERE", 
    sections 
  } 
@@ -121,11 +121,12 @@ Nomor akan di banned!.
  'caption': time, 
  'footer': cap, 
  'buttons': [ 
- {'buttonId': '.ref','buttonText':{'displayText':'❍REFERAL'},'type':1}, 
- {'buttonId': '.start','buttonText':{'displayText':'❍CARI TEMAN'},'type':1} 
+ {'buttonId': '.pp','buttonText':{'displayText':'❍PROFILE'},'type':1}, 
+ {'buttonId': '.owner','buttonText':{'displayText':'❍KOKO'},'type':1} 
  ], 
  'headerType': 6} 
-     await conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
+     await conn.sendMessage(m.sender, buttonMessage, {text: `*SN:* ${sn}`}, { quoted:fpay}, m)
+     //conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
  } 
  handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>') 
  handler.tags = ['xp'] 
