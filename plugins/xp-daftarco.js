@@ -85,7 +85,7 @@ let imgr = flaaa.getRandom()
 Di Database Kami
  ❖ © ᵈʳкσкσ-ᴍᴅ×፝֟͜× || ALL RESERVED
 
- ╭━━━━「 *DATA* 」
+ ╭━━━━「 *DATA COWO* 」
  ┊➥👦 *SUCCES ☑️* 】STATUS
  ┊➥👦 *${name}* 】NAME
  ┊➥👦 *${age}* 】AGE                                          
