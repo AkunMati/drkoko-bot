@@ -1,4 +1,6 @@
-export async function before(m, { conn, isAdmin, isBotAdmin }) {
+let handler = m => m
+
+handler.before = async function (m, { conn, isAdmin, isBotAdmin }) => {
     if (m.isBaileys && m.fromMe)
         return !0
     if (!m.isGroup) return !1
@@ -19,3 +21,4 @@ export async function before(m, { conn, isAdmin, isBotAdmin }) {
     }
     return !0
 }
+module.exports = handler
