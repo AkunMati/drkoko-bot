@@ -289,20 +289,20 @@ module.exports = {
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: true,
-                    descUpdate: true,
+                    desc: false,
+                    descUpdate: false,
                     stiker: false,
-                    delete: false,
+                    delete: true,
                     antiLink: true,
                     antiBuleAll: true,
                     expired: 0,
-                    antiBadword: false,
+                    antiBadword: true,
                     antiDownload: false,
                     antispam: true,
                     antitroli: false,
@@ -643,7 +643,7 @@ module.exports = {
                                 member: groupMetadata.participants.length
                             })
                             /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')*/
-   await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
+   await conn.sendButtonLoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
   contextInfo: { externalAdReply :{
     showAdAttribution: true,
     mediaUrl: ''https://youtu.be/BhOWot4tu2o'',
@@ -723,8 +723,42 @@ Untuk mematikan fitur ini, ketik
     }
 },
 
+global.dfail = (type, m, conn) => {
+    let imgr = flaaa.getRandom()
+    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*, `
+    let msg = {
+        rowner: `${nmsr}\n 
+Perintah ini hanya dapat digunakan oleh *OWWNER* !`,
+        owner: `${nmsr}\n
+Perintah ini hanya dapat digunakan oleh *Owner Bot* !`,
+        mods: `${nmsr}\n 
+Perintah ini hanya dapat digunakan oleh *Moderator* !`,
+        premium: `${nmsr}\n
+Perintah ini hanya untuk member *Premium* !`,
+        group: `${nmsr}\n
+Perintah ini hanya dapat digunakan di grup !`,
+        private: `${nmsr}\n
+Perintah ini hanya dapat digunakan di Chat Pribadi !`,
+        admin: `${nmsr}\n
+Perintah ini hanya untuk *Admin* grup !`,
+        botAdmin: `${nmsr}\n
+Jadikan bot sebagai *Admin* untuk menggunakan perintah ini !`,
+        nsfw: `${nmsr}\n
+NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini !`,
+        rpg: `${nmsr}\n
+RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini !`,
+        restrict: `${nmsr}\n
+Fitur ini di *disable* !`
+    }[type]
+    if (msg) return conn.sendButt(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['✔️MENU', '.menu'],['KOKO👦', '.owner']],m)
+    
+     let msgg = {
+    	unreg: `${nmsr}\nSilahkan Daftar Ke Database Terlebih Dahulu Untuk Menggunakan ᵈʳкσкσ-ᴍᴅ×፝֟͜× Ini, Lebih Lanjut *Click Button Di Bawah*\n\nKalian Bisa Ikuti Langkah _*VERIFY*_ Selanjutnya\n\n_*COWO*_ *ATAU* _*CEWE?*_`
+}[type]
+if (msgg) return conn.sendButt(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'VERIFY'}`, [['👦COWO', '/daftarco'],['CEWE👧', '/daftarce']],m)
+}
 
- global.dfail = async (type, m, conn) => {
+ /*global.dfail = async (type, m, conn) => {
     let msg = {
         rowner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
         owner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
@@ -740,7 +774,7 @@ Untuk mematikan fitur ini, ketik
         restrict: 'Fitur ini di *disable*!'
     /*}[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })*/
-    }[type]
+    /*}[type]
     if (msg) return conn.sendButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), msg, wm, 'Menu', '.menu', m, {
   mentions: conn.parseMention(msg),
   contextInfo: { 
@@ -755,7 +789,7 @@ Untuk mematikan fitur ini, ketik
     sourceUrl: data.sc
      }}
   })
-}
+}*/
 
 let fs = require('fs')
 let chalk = require('chalk')
