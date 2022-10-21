@@ -3,7 +3,7 @@ let handler = m => m
 
 handler.before = async function (m) {
    let chat = global.db.data.chats[m.chat]
-    if (chat.antiluar && !chat.isBanned ) {
+    if (chat.antiBuleAll && !chat.isBanned ) {
         if (/^.*false|disnable|(turn)?off|0/i.test(m.text)) return
         if (!m.text) return
    if (m.sender.startsWith('212' || '212')) {
