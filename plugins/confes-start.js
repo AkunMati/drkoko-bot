@@ -25,7 +25,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     try {
     	let id = + new Date
         let txt = `Hai @${data.jid.split('@')[0]}, kamu menerima pesan confess nih.\n\nDari: *${name}*\nPesan: \n${pesan}\n\nMau balas pesan ini kak? bisa kak. kakak tinggal ketik pesan kakak nanti saya sampaikan ke *${name}*.`.trim();
-        await conn.sendButton(data.jid, txt, wm, 0, [['Balas Pesan', '.balasconfess']], null)
+        await conn.sendButt(data.jid, txt, wm, 0, [['Balas Pesan', '.balasconfess']], null)
         .then(() => {
             m.reply('Berhasil mengirim pesan confess.')
             conn.confess[id] = {
