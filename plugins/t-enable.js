@@ -198,7 +198,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLinkHttp = isEnable
       break
-    case 'antiluar':
+    case 'antiBuleAll':
     case 'only':
       if (!m.isGroup) {
         if (!isOwner) {
@@ -209,7 +209,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         global.dfail('admin', m, conn)
         throw false
       }
-      chat.antiluar = isEnable
+      chat.antiBuleAll = isEnable
+      break
+    case 'antibule':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antibule = isEnable
       break
     case 'stiker':
       if (m.isGroup) {
@@ -393,7 +402,8 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antilinkig
 ├ antilinkwa
 ├ antihttp
-├ antiluar
+├ antiBuleAll
+├ antibule
 ├ antitroli
 ├ antitag
 ├ antibuggc
