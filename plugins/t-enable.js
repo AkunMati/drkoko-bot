@@ -198,7 +198,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antiLinkHttp = isEnable
       break
-    case 'antiBuleAll':
+    case 'antibuleall':
     case 'only':
       if (!m.isGroup) {
         if (!isOwner) {
@@ -299,7 +299,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
         }
       }
       chat.antivirtex = isEnable
-      break  
+      break
+    case 'antivirus':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiVirus = isEnable
+      break
     case 'antispam':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
@@ -405,6 +414,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antiBuleAll
 ├ antibule
 ├ antitroli
+├ antivirus
 ├ antitag
 ├ antibuggc
 ├ autolevelup
