@@ -39,7 +39,7 @@ global.APIKeys = { // APIKey Here
 }
 global.packname = data.namabot
 global.author = data.owner
-global.wm = 'ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜× × Qᴜᴇᴇ፝֟፝֟ɴ×፝֟͜×'
+global.wm = '©ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜× × Qᴜᴇᴇ፝֟፝֟ɴ×፝֟͜×'
 
 global.asing = `*Ciee Orang Asing Join, Dadah Saya Kick👋*`
 global.wait = `*Tunggu Sebentar Dungu!*`
