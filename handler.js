@@ -648,7 +648,7 @@ module.exports = {
    await conn.sendButtonLoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
   contextInfo: { externalAdReply :{
     showAdAttribution: true,
-    mediaUrl: ''https://youtu.be/BhOWot4tu2o'',
+    mediaUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ',
     mediaType: 2,
     description: data.deslink , 
     title: run,
