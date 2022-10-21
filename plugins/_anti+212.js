@@ -162,6 +162,6 @@ this.groupParticipantsUpdate(m.chat, [m.sender], "remove")
 this.updateBlockStatus(m.sender, 'block')
    }
   return true 
+ }
 }
-
 module.exports = handler
