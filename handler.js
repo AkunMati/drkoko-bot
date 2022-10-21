@@ -44,6 +44,10 @@ module.exports = {
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
                     if (!isNumber(user.lastclaim2)) user.lastclaim2 = 0  
                     if (!isNumber(user.lastngojek)) user.lastngojek = 0
+                    if (!isNumber(user.lastpolisi)) user.lastpolisi = 0
+                    if (!isNumber(user.polisi)) user.polisi = 0
+                    if (!isNumber(user.lastroket)) user.lastroket = 0
+                    if (!isNumber(user.roket)) user.roket = 0
                     if (!isNumber(user.lastnebang)) user.lastnebang = 0
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
                     if (!isNumber(user.lastowner)) user.lastowner = 0
@@ -151,6 +155,10 @@ module.exports = {
                     lastclaim: 0,
                     lastclaim2: 0,
                     lastngojek: 0,
+                    lastpolisi: 0,
+                    polisi: 0,
+                    lastroket: 0,
+                    roket: 0,
                     lastnebang: 0,
                     lastnyampah: 0,
                     lastowner: 0,
