@@ -276,8 +276,9 @@ module.exports = {
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antiDownload' in chat)) chat.antiDownload = true
                     if (!('antispam' in chat)) chat.antispam = true
-                    if (!('antitroli' in chat)) chat.antitroli = false
-                    if (!('antivirtex' in chat)) chat.antivirtex = false
+                    if (!('antitroli' in chat)) chat.antitroli = true
+                    if (!('antivirtex' in chat)) chat.antivirtex = true
+                    if (!('antiVirus' in chat)) chat.antiVirus = true
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('nsfw' in chat)) chat.nsfw = false
                     if (!('simi' in chat)) chat.simi = false
@@ -305,8 +306,9 @@ module.exports = {
                     antiBadword: true,
                     antiDownload: false,
                     antispam: true,
-                    antitroli: false,
-                    antivirtex: false,
+                    antitroli: true,
+                    antivirtex: true,
+                    antiVirus: true,
                     viewonce: false,
                     nsfw: false,
                     simi: false,
