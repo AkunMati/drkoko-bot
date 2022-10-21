@@ -44,8 +44,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     }
 }
 handler.tags = ['anonymous']
-handler.help = ['confes'].map(v => v + ' <nomor|nama|pesan>')
-handler.command = /^(confes)$/i
+handler.help = ['confess'].map(v => v + ' <nomor|nama|pesan>')
+handler.command = /^(confess)$/i
 handler.private = true
 
 module.exports = handler
