@@ -21,7 +21,7 @@ module.exports = {
         if (chatUpdate.messages.length > 1) console.log(chatUpdate.messages)
         let m = chatUpdate.messages[chatUpdate.messages.length - 1]
 
-        global.pickRandom = pickRandom
+        //global.pickRandom = pickRandom
         if (!m) return
         //console.log(JSON.stringify(m, null, 4))
         try {
@@ -807,6 +807,6 @@ fs.watchFile(file, () => {
     if (global.reloadHandler) console.log(global.reloadHandler())
 })
 
-function pickRandom(list) {
+/*function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
-}
+}*/
