@@ -282,6 +282,7 @@ module.exports = {
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('nsfw' in chat)) chat.nsfw = false
                     if (!('simi' in chat)) chat.simi = false
+                    if (!('simiautoVn' in chat)) chat.simiautoVn = false
                     if (!('clear' in chat)) chat.clear = false
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
                     if (!('antitag' in chat)) chat.antitag = false
@@ -312,6 +313,7 @@ module.exports = {
                     viewonce: false,
                     nsfw: false,
                     simi: false,
+                    simiautoVn: false,
                     clear: false,
                     clearTime: 0,
                     antitag: false
