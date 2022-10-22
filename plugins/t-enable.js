@@ -10,7 +10,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
         {title: "✅ | AutoSticker", rowId: `${usedPrefix + command} stiker`},
 	{title: "🗣️ | Simi", rowId: `${usedPrefix + command} simi`},
-        {title: "🗣️ | Auto Vn (simi-simi)", rowId: `${usedPrefix + command} autovn`},
+        {title: "🗣️ | Auto Vn (simi-simi)", rowId: `${usedPrefix + command} simiautovn`},
 	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
         {title: "😤 | AntiSpam", rowId: `${usedPrefix + command} antispam`},
         {title: "😤 | AntiCall", rowId: `${usedPrefix + command} anticall`},
@@ -445,6 +445,13 @@ const listMessage = {
 	   chat.simi = isEnable
     }
     break
+    case 'simiautovn':
+        if (!isROwner) {
+          global.dfail('rowner', m, conn)
+          throw false
+        }
+      chat.simiautoVn = isEnable
+      break
     case 'autodownload':
     case 'autodl':
       if (m.isGroup) {
