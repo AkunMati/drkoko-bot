@@ -17,7 +17,7 @@ handler.all = async function (m) {
 	if(!setting.anticall) return 
 	
 	if (m.messageStubType === (WAMessageStubType.CALL_MISSED_VOICE || WAMessageStubType.CALL_MISSED_VIDEO)) {
-		await conn.sendButt(m.chat, `👋 Kamu di Blockir Karena Menelepon *ᵈʳкσкσ-ᴍᴅ×፝֟͜×*\nSegera Hubungi Owner *ᵈʳкσкσ-ᴍᴅ×፝֟͜×* Untuk Membuka Blockiran`, wm + '\n\n' + run, `${imgr + 'Anti Call'}`, [['TERIMAKASIH','terimakasih']], null)
+		await conn.sendButt(m.chat, `👋 Kamu di Blockir Karena Menelepon *ᵈʳкσкσ-ᴍᴅ×፝֟͜×*\nSegera Hubungi Owner *ᵈʳкσкσ-ᴍᴅ×፝֟͜×* Untuk Membuka Blockiran\n\nNomor Own: wa.me/6283863727744`, wm + '\n\n' + run, `${imgr + 'Anti Call'}`, [['TERIMAKASIH','terimakasih']], null)
 		await delay(1000)
 		await this.updateBlockStatus(m.chat, "block")
 	}
