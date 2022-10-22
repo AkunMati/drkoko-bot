@@ -1,10 +1,12 @@
 let handler  = async (m, { conn, text}) => {
 
-	if(typeof global.conns[m.sender] === 'object' && global.conns[m.sender] === conn){		await conn.ws.end()
+    if (typeof global.conns[m.sender] === 'object' && global.conns[m.sender] === conn) {
+        
+       await conn.ws.end()
 
 	} else {
 
-		if(global.rowner[m.sender] !== 'undefined'){
+		if (global.rowner[m.sender] !== 'undefined') {
 
 			await conn.ws.end() 
 
