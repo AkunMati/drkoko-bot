@@ -1,7 +1,7 @@
 {
-    "name": "Bottom-MD2",
-    "version": "2.0.0",
-    "description": "Simple Bot WhatsApp By ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×",
+    "name": "Koko-Multi-Auth",
+    "version": "1.0.0",
+    "description": "Simple Bot WhatsApp Multi Auth By ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×",
     "depecrated": false,
     "main": "index.js",
     "directories": {
@@ -28,22 +28,22 @@
         "stikerin",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/MendingTuru/Bottom-md2.git",
+    "homepage": "https://github.com/radhin123/Leviathan-md",
     "author": {
-        "name": "kokopangeran"
+        "name": "radhin123"
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/MendingTuru/Bottom-md2.git"
+        "url": "git+https://github.com/radhin123/Leviathan-md.git"
     },
     "bugs": {
-        "url": "https://github.com/MendingTuru/Bottom-md2/issues"
+        "url": "https://github.com/radhin123/Leviathan-md/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys": "github:hostinger-bot/Baileys",
+        "@adiwajshing/baileys": "github:BOTCAHX/Baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@bochilteam/scraper": "^3.0.0",
+        "@bochilteam/scraper": "2.0.0",
         "awesome-phonenumber": "^2.69.0",
         "axios": "^0.26.0",
         "caliph-api": "^0.7.6",
@@ -76,6 +76,8 @@
         "node-webpmux": "^3.1.0",
         "nodemon": "^2.0.15",
         "npm": "^8.12.1",
+        "social_media_downloader": "^1.0.6",
+        "instagram-url-direct": "^1.0.12",
         "nhentai-node-api": "^1.1.2",
         "os": "^0.1.2",
         "perf_hooks": "^0.0.1",
@@ -90,8 +92,6 @@
         "socket.io": "^4.4.1",
         "spinnies": "^0.5.1",
         "syntax-error": "^1.4.0",
-        "social_media_downloader": "^1.0.6",
-        "instagram-url-direct": "^1.0.12",
         "terminal-image": "^2.0.0",
         "translate-google-api": "^1.0.4",
         "url-regex": "^5.0.0",
