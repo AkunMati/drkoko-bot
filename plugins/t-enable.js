@@ -3,7 +3,7 @@ let imgr = flaaa.getRandom()
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
 	const sections = [
    {
-	title: `${dmenub} LIST OPTIONS`,
+	title: `*•> LIST OPTIONS <•*`,
 	rows: [
         {title: "👋 | AutoCloseGroup", rowId: `${usedPrefix + command} autoclosegroup`},
 	{title: "✨ | Welcome", rowId: `${usedPrefix + command} welcome`},
