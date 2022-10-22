@@ -11,7 +11,6 @@ if ((m.isBaileys && m.fromMe) || m.fromMe || !m.isGroup) return true
     let res = await sim.json()
         let tts = `https://hadi-api.herokuapp.com/api/tts?language=id&text=${res.success}`
         conn.sendMessage(m.chat, { audio: { url: tts }, mimetype: 'audio/mp4' })
-       return !0
     }
    return true
 }
