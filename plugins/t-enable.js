@@ -1,64 +1,4 @@
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
-	const sections = [
-   {
-	title: `*•> LIST OPTIONS <•*`,
-	rows: [
-        {title: "👋 | AutoCloseGroup", rowId: `${usedPrefix + command} autoclosegroup`},
-	{title: "✨ | Welcome", rowId: `${usedPrefix + command} welcome`},
-        {title: "🚫 | Delete", rowId: `${usedPrefix + command} delete`},
-        {title: "❌ | autodelvn", rowId: `${usedPrefix + command} autodelvn`},
-	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
-        {title: "✅ | AutoSticker", rowId: `${usedPrefix + command} stiker`},
-	{title: "🗣️ | Simi", rowId: `${usedPrefix + command} simi`},
-        {title: "🗣️ | Auto Vn (simi-simi)", rowId: `${usedPrefix + command} simiautovn`},
-	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
-        {title: "😤 | AntiSpam", rowId: `${usedPrefix + command} antispam`},
-        {title: "😤 | AntiCall", rowId: `${usedPrefix + command} anticall`},
-	{title: "🌟 | AntiBuleAll", rowId: `${usedPrefix + command} antibuleall`},
-        {title: "🌟 | AntiBule", rowId: `${usedPrefix + command} antibule`},
-	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
-        {title: "🔗 | AntilinkBitly", rowId: `${usedPrefix + command} antilinkbitly`},
-        {title: "🔗 | AntilinkTIK", rowId: `${usedPrefix + command} antilinktik`},
-        {title: "🔗 | AntilinkYT", rowId: `${usedPrefix + command} antilinkyt`},
-        {title: "🔗 | AntilinkTEL", rowId: `${usedPrefix + command} antilinktel`},
-        {title: "🔗 | AntilinkFB", rowId: `${usedPrefix + command} antilinkfb`},
-        {title: "🔗 | AntilinkIG", rowId: `${usedPrefix + command} antilinkig`},
-        {title: "🔗 | AntilinkWA", rowId: `${usedPrefix + command} antilinkwa`},
-        {title: "🔗 | AntiHttp", rowId: `${usedPrefix + command} antihttp`},
-	{title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
-	{title: "📛 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`},
-	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
-        {title: "⏩ | AutoDownload", rowId: `${usedPrefix + command} autodownload`},
-	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
-        {title: "📃 | Desc Update", rowId: `${usedPrefix + command} desc`},
-        {title: "🚫 | AntiViewonce", rowId: `${usedPrefix + command} viewonce`},
-        {title: "❌ | AntiBadword", rowId: `${usedPrefix + command} antibadword`},
-	{title: "📑 | Document", rowId: `${usedPrefix + command} document`},
-        {title: "✅ | BackUp", rowId: `${usedPrefix + command} backup`},
-	{title: "👤 | WhiteListMyContact", rowId: `${usedPrefix + command} whitelistmycontact`},
-	{title: "❕ | Restrict", rowId: `${usedPrefix + command} restrict`},
-	{title: "😈 | AntiBugGc", rowId: `${usedPrefix + command} antibuggc`},
-        {title: "😈 | AntiVirtex", rowId: `${usedPrefix + command} antivirtex`},
-        {title: "😈 | AntiVirus", rowId: `${usedPrefix + command} antivirus`},
-	{title: "☑️ | Autoread", rowId: `${usedPrefix + command} autoread`},
-	{title: "🗿 | Ephemeral", rowId: `${usedPrefix + command} ephemeral`},
-        {title: "🎭 | Jadibot", rowId: `${usedPrefix + command} jadibot`},
-        {title: "💢 | Clear", rowId: `${usedPrefix + command} clear`},
-	{title: "🏢 | GcOnly", rowId: `${usedPrefix + command} gruponly`},
-	{title: "😳 | Anon", rowId: `${usedPrefix + command} anon`},
-        {title: "❎ | AntiTag", rowId: `${usedPrefix + command} antitag`}
-	]
-    },
-]
-
-const listMessage = {
-  text: '',
-  footer: wm,
-  title: `*${htki} OPTIONS ${htka}*`,
-  buttonText: "CLICK HERE!",
-  sections
-}
-
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let chat = db.data.chats[m.chat]
   let user = db.data.users[m.sender]
@@ -463,17 +403,56 @@ const listMessage = {
       chat.autoDownload = isEnable
       break
     default:
-      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
+      if (!/[01]/.test(command)) throw `
+┌〔 Daftar Opsi 〕
+│ ${isOwner ? '\n├ anon\n├ antispam\n├ antivirtex\n├ backup\n├ clear\n├ autoread\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ clear\n├ mycontact\n├ ephe' : ''}
+├ autoclosegroup
+├ antiviewonce
+├ antilink
+├ antilinkbitly
+├ antilinktik
+├ antilinkyt
+├ antilinktel
+├ antilinkfb
+├ antilinkig
+├ antilinkwa
+├ antihttp
+├ antibuleall
+├ antibule
+├ antivirus
+├ antitroli
+├ antitag
+├ antibuggc
+├ autolevelup
+├ antibadword
+├ delete
+├ detect
+├ document
+├ stiker
+├ simi
+├ simiautovn
+├ welcome
+│ 
+└────
+Contoh:
+${usedPrefix}on welcome
+${usedPrefix}off welcome
+`.trim()
       throw false
   }
-  conn.sendButt(m.chat, `*${htki} OPTIONS ${htka}*
-🗂️ *Type:* ${type} 
-📊 *Status:* Succes ✅
-🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
-📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
-`, wm, null, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['💌MENU', '.menu']],m)
+ conn.reply(m.chat, ` *${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'} `, m, { contextInfo: { externalAdReply :{
+    containsAutoReply: true,
+    mediaUrl: data.sc,
+    mediaType: 2,
+    description: data.deslink, 
+    title: run,
+    body: wm,
+    thumbnail: await(await fetch(img)).buffer(),
+    sourceUrl: data.sc
+     }}
+  })
 }
-handler.help = ['on', 'off'].map(v => v + 'table <option>')
+handler.help = ['on', 'off'].map(v => v + ' <opsi>')
 handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
