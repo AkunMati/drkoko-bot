@@ -1,3 +1,5 @@
+let imgr = flaaa.getRandom()
+
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
 	const sections = [
    {
@@ -471,7 +473,7 @@ const listMessage = {
 📊 *Status:* Succes ✅
 🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
 📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
-`, `${imgr + 'SUCCES AKTIF'}`, wm '\n\n' run, null, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['💌MENU', '.menu']],m)
+`, wm + '\n\n' + run, null, `${imgr + 'OPTION SUCCES'}`, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['💌MENU', '.menu']],m)
 }
 handler.help = ['on', 'off'].map(v => v + 'table <option>')
 handler.tags = ['group', 'owner']
