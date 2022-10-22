@@ -38,16 +38,12 @@ module.exports = {
                     if (!isNumber(user.healt)) user.healt = 0
                     if (!isNumber(user.level)) user.level = 1
                     if (!isNumber(user.exp)) user.exp = 0
-                    if (!isNumber(user.limit)) user.limit = 100
+                    if (!isNumber(user.limit)) user.limit = 10
                     if (!isNumber(user.lastseen)) user.lastseen = 0
                     if (!isNumber(user.usebot)) user.usebot = 0
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
                     if (!isNumber(user.lastclaim2)) user.lastclaim2 = 0  
                     if (!isNumber(user.lastngojek)) user.lastngojek = 0
-                    if (!isNumber(user.lastpolisi)) user.lastpolisi = 0
-                    if (!isNumber(user.polisi)) user.polisi = 0
-                    if (!isNumber(user.lastroket)) user.lastroket = 0
-                    if (!isNumber(user.roket)) user.roket = 0
                     if (!isNumber(user.lastnebang)) user.lastnebang = 0
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
                     if (!isNumber(user.lastowner)) user.lastowner = 0
@@ -55,7 +51,7 @@ module.exports = {
                     if (!isNumber(user.diamond)) user.diamond = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.batu)) user.batu = 0
-                    //if (!isNumber(user.kayu)) user.kayu = 0
+                    if (!isNumber(user.kayu)) user.kayu = 0
                     if (!isNumber(user.string)) user.string = 0  
                     if (!isNumber(user.common)) user.common = 0
                     if (!isNumber(user.uncommon)) user.uncommon = 0
@@ -106,30 +102,15 @@ module.exports = {
                     if (!isNumber(user.lastweekly)) user.lastweekly = 0
                     if (!isNumber(user.lastmonthly)) user.lastmontly = 0  
                     if (!('registered' in user)) user.registered = false
-                    
                     if (!user.registered) {
                     if (!('name' in user)) user.name = this.getName(m.sender)
+                    if (!('email' in user)) user.email = ''
+                    if (!('label' in user)) user.label = ''
                     if (!isNumber(user.age)) user.age = -1
-                    if (!isNumber(user.anggur)) user.anggur = 0
-                    if (!isNumber(user.apel)) user.apel = 0
-                    if (!isNumber(user.bibitanggur)) user.bibitanggur = 0
-                    if (!isNumber(user.bibitapel)) user.bibitapel = 0
-                    if (!isNumber(user.bibitjeruk)) user.bibitjeruk = 0
-                    if (!isNumber(user.bibitmangga)) user.bibitmangga = 0
-                    if (!isNumber(user.bibitpisang)) user.bibitpisang = 0
-                    if (!isNumber(user.emas)) user.emas = 0
-                    if (!isNumber(user.jeruk)) user.jeruk = 0
-                    if (!isNumber(user.kayu)) user.kayu = 0
-                    if (!isNumber(user.makanan)) user.makanan = 0
-                    if (!isNumber(user.mangga)) user.mangga = 0
-                    if (!isNumber(user.pisang)) user.pisang = 0
-                    if (!isNumber(user.premiumTime)) user.premiumTime = -1
                     if (!isNumber(user.regTime)) user.regTime = -1
-                    if (!isNumber(user.semangka)) user.semangka = 0
-                    if (!isNumber(user.stroberi)) user.stroberi = 0
                     }
                     if (!('premium' in user)) user.premium = false
-                    //if (!isNumber(user.premiumTime)) user.premiumTime = 0
+                    if (!isNumber(user.premiumTime)) user.premiumTime = 0
                     if (!user.role) user.role = ''
                     if (!('autolevelup' in user)) user.autolevelup = false
                     if (!isNumber(user.pc)) user.pc = 0
@@ -164,16 +145,12 @@ module.exports = {
                     healt: 100,
                     level: 1,
                     exp: 0,
-                    limit: 100,
+                    limit: 10,
                     lastseen: 0,
                     usebot: 0,
                     lastclaim: 0,
                     lastclaim2: 0,
                     lastngojek: 0,
-                    lastpolisi: 0,
-                    polisi: 0,
-                    lastroket: 0,
-                    roket: 0,
                     lastnebang: 0,
                     lastnyampah: 0,
                     lastowner: 0,
@@ -212,20 +189,6 @@ module.exports = {
                     makananpet: 0,
                     antispam: 0,
                     antispamlastclaim: 0,
-                    anggur: 0,
-                    apel: 0,
-                    bibitanggur: 0,
-                    bibitapel: 0,
-                    bibitjeruk: 0,
-                    bibitmangga: 0,
-                    bibitpisang: 0,
-                    jeruk: 0,
-                    makanan: 0,
-                    mangga: 0,
-                    emas: 0,
-                    stroberi: 0,
-                    semangka: 0,
-                    pisang: 0,
                     kayu: 0,
                     batu: 0,
                     string: 0,
@@ -245,10 +208,13 @@ module.exports = {
                     lastmonthly: 0,
                     registered: false,
                     name: this.getName(m.sender),
+                    email: '',
+                    label: '',
                     age: -1,
                     regTime: -1,
+                    regTime: -1,
                     premium: false,
-                    premiumTime: -1,
+                    premiumTime: 0,
                     role: '',
                     autolevelup: false,
                     pc: 0,
@@ -297,7 +263,6 @@ module.exports = {
                     if (!('stiker' in chat)) chat.stiker = false
                     if (!('delete' in chat)) chat.delete = false
                     if (!('antiLink' in chat)) chat.antiLink = true
-                    if (!('antiluar' in chat)) chat.antiluar = true
                     if (!isNumber(chat.expired)) chat.expired = 0
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antiDownload' in chat)) chat.antiDownload = true
@@ -315,25 +280,24 @@ module.exports = {
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: false,
+                    welcome: true,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
                     sPromote: '',
                     sDemote: '',
-                    desc: false,
-                    descUpdate: false,
+                    desc: true,
+                    descUpdate: true,
                     stiker: false,
-                    delete: true,
+                    delete: false,
                     antiLink: true,
-                    antiluar: true,
                     expired: 0,
                     antiBadword: true,
-                    antiDownload: false,
+                    antiDownload: true,
                     antispam: true,
                     antitroli: false,
                     antivirtex: false,
-                    viewonce: false,
+                    viewonce: true,
                     nsfw: false,
                     simi: false,
                     clear: false,
@@ -447,7 +411,7 @@ module.exports = {
                     isAdmin,
                     isBotAdmin,
                     isPrems,
-                    chatUpdate,                                         
+                    chatUpdate,
                 })) continue
                 if (typeof plugin !== 'function') continue
                 if ((usedPrefix = (match[0] || '')[0])) {
@@ -551,7 +515,7 @@ module.exports = {
                         isAdmin,
                         isBotAdmin,
                         isPrems,
-                        chatUpdate,                                                
+                        chatUpdate,
                     }
                     try {
                         await plugin.call(this, m, extra)
@@ -634,7 +598,7 @@ module.exports = {
         }
     },
 
-async participantsUpdate({ id, participants, action }) {
+    async participantsUpdate({ id, participants, action }) {
         if (opts['self']) return
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
@@ -668,11 +632,11 @@ async participantsUpdate({ id, participants, action }) {
                                 namegb: await this.getName(id),
                                 member: groupMetadata.participants.length
                             })
-                            /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? '👋SELAMAT DATANG BEBAN' : 'SAMPAI JUMPA BEBAN😙', action === 'add' ? '.intro' : 'KokoPangeran')*/
+                            /*await this.send3TemplateButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'FokusID')*/
    await conn.sendButtonDoc(id, text, wm, action == 'add' ? 'selamat datang' : 'sampai jumpa', action === 'add' ? '.intro' : 'the.sad.boy01', fake,{
   contextInfo: { externalAdReply :{
     showAdAttribution: true,
-    mediaUrl: 'https://youtu.be/c-06tx4vusw',
+    mediaUrl: ''https://youtu.be/BhOWot4tu2o'',
     mediaType: 2,
     description: data.deslink , 
     title: run,
@@ -686,31 +650,6 @@ async participantsUpdate({ id, participants, action }) {
                 }
                 break
 
-/*async participantsUpdate({ id, participants, action }) {
-        if (opts['self']) return
-        // if (id in conn.chats) return // First login will spam
-        if (global.isInit) return
-        let chat = db.data.chats[id] || {}
-        let text = ''
-        switch (action) {
-            case 'add':
-            case 'remove':		
-            if (chat.welcome) {
-            let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-            for (let user of participants) {
-            let pp = './src/avatar_contact.png'
-               try {
-            pp = await this.profilePictureUrl(user)
-            } catch (e) {
-            } finally {
-              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc.toString()) :
-                     (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', '@' + user.split('@')[0])
-                     this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
-                        }
-                    }
-                }
-                break*/
-                                                             
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
@@ -774,46 +713,8 @@ Untuk mematikan fitur ini, ketik
     }
 },
 
-/**
-dfail
- */
-global.dfail = (type, m, conn) => {
-    let imgr = flaaa.getRandom()
-    let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*, `
-    let msg = {
-        rowner: `${nmsr}\n 
-Perintah ini hanya dapat digunakan oleh *OWWNER* !`,
-        owner: `${nmsr}\n
-Perintah ini hanya dapat digunakan oleh *Owner Bot* !`,
-        mods: `${nmsr}\n 
-Perintah ini hanya dapat digunakan oleh *Moderator* !`,
-        premium: `${nmsr}\n
-Perintah ini hanya untuk member *Premium* !`,
-        group: `${nmsr}\n
-Perintah ini hanya dapat digunakan di grup !`,
-        private: `${nmsr}\n
-Perintah ini hanya dapat digunakan di Chat Pribadi !`,
-        admin: `${nmsr}\n
-Perintah ini hanya untuk *Admin* grup !`,
-        botAdmin: `${nmsr}\n
-Jadikan bot sebagai *Admin* untuk menggunakan perintah ini !`,
-        nsfw: `${nmsr}\n
-NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini !`,
-        rpg: `${nmsr}\n
-RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini !`,
-        restrict: `${nmsr}\n
-Fitur ini di *disable* !`
-    }[type]
-    if (msg) return conn.sendButt(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['✔️MENU', '.menu'],['KOKO👦', '.owner']],m)
-    
-     let msgg = {
-    	unreg: `${nmsr}\nSilahkan Daftar Ke Database Terlebih Dahulu Untuk Menggunakan ᵈʳкσкσ-ᴍᴅ×፝֟͜× Ini, Lebih Lanjut *Click Button Di Bawah*\n\nKalian Bisa Ikuti Langkah _*VERIFY*_ Selanjutnya\n\n_*COWO*_ *ATAU* _*CEWE?*_`
-}[type]
-if (msgg) return conn.sendButt(m.chat, `${global.htki} VERIFY ${global.htka}`, msgg, `${imgr + 'VERIFY'}`, [['👦COWO', '/daftarco'],['CEWE👧', '/daftarce']],m)
-}
 
-
- /*global.dfail = async (type, m, conn) => {
+ global.dfail = async (type, m, conn) => {
     let msg = {
         rowner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
         owner: 'Perintah ini hanya dapat digunakan oleh _*Team Bot Discussion!1!1!*_',
@@ -829,7 +730,7 @@ if (msgg) return conn.sendButt(m.chat, `${global.htki} VERIFY ${global.htka}`, m
         restrict: 'Fitur ini di *disable*!'
     /*}[type]
     if (msg) return conn.reply(m.chat, msg, m, { mentions: conn.parseMention(msg) })*/
-    /*}[type]
+    }[type]
     if (msg) return conn.sendButtonLoc(m.chat, await conn.resize(fla + 'ACCESS DENIED', 280, 210), msg, wm, 'Menu', '.menu', m, {
   mentions: conn.parseMention(msg),
   contextInfo: { 
@@ -844,52 +745,7 @@ if (msgg) return conn.sendButt(m.chat, `${global.htki} VERIFY ${global.htka}`, m
     sourceUrl: data.sc
      }}
   })
-}*/
-
-/*global.dfail = async (type, m, conn) => {
-  let name = conn.getName(m.sender)
-  let msg = {
-    rowner: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
-❑ Perintah ini hanya untuk developer bot
-╰─────────────────❑`,
-    owner: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
-❑ Perintah ini hanya untuk owner bot
-╰─────────────────❑`,
-    mods: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
-❑ Perintah ini hanya untuk moderator bot
-╰─────────────────❑`,
-    premium: `╭─❑〔 ıll 𝐏𝐑𝐄𝐌𝐈𝐔𝐌 𝐎𝐍𝐋𝐘 llı 〕─❑
-❑ Fitur ini hanya tersedia untuk user *Premium*
-╰─────────────────❑`,
-    group: `╭─❑〔 ıll 𝐆𝐑𝐎𝐔𝐏 𝐎𝐍𝐋𝐘 llı 〕─❑
-❑ Fitur ini hanya dapat digunakan didalam grup!!
-╰─────────────────֍`,
-    private: `╭─❑〔 ıll 𝐏𝐑𝐈𝐕𝐀𝐓𝐄 𝐂𝐇𝐀𝐓 𝐎𝐍𝐋𝐘 llı 〕─❑
-❑ Fitur ini hanya dapat digunakan diprivate chat
-╰─────────────────❑`,
-    admin: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
-❑ Fitur ini hanya tersedia untuk admin grup!!
-╰─────────────────֍`,
-    botAdmin: `╭─❑〔 ıll 𝐀𝐂𝐂𝐄𝐒𝐒 𝐃𝐄𝐍𝐈𝐄𝐃 llı 〕─❑
-❑ Fitur ini tidak dapat work, bot tidak menjadi admin
-╰─────────────────❑`,
-    restrict: 'Fitur ini di *disable*!',
-    }[type]
-  if (msg) return conn.sendButtonDoc(m.chat, msg, '❑ Silahkan Klik Menu Dibawah Ini ❑', '👨KOKO', '.owner', m)
- let unreg = {
-  unreg: `
-┏━━━〔 ıll 𝐑𝐄𝐆𝐈𝐒𝐓𝐄𝐑 llı 〕━━❑
-❑ Hallo mypren👋, @${m.sender.split`@`[0]}
-❑ Sebelum melihat fitur bot, lebih baik register dulu
-❑ Kalau tidak kelihatan button nya, contohnya dibawah!
-┗━━━━━━━━━━━━━━━━━━❑
-┏━━〔 ıll CONTOH llı 〕━❑
-❑ #daftar namamu.umurmu
-❑ #daftar @${m.sender.split`@`[0]}.18
-┗━━━━━━━━━━❑ `
-  }[type]
- if (unreg) return conn.sendButtonDoc(m.chat, unreg, '❑ Silahkan Klik Reg Dibawah Ini ❑', 'REGISTER', `.daftar @${m.sender.split`@`[0]}.18`, m)
- }*/
+}
 
 let fs = require('fs')
 let chalk = require('chalk')
