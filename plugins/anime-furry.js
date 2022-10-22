@@ -1,10 +1,10 @@
-let fetch = require('node-fetch')
+const fetch = require('node-fetch')
 
 let fs = require('fs')
 
  
 
-let handler = async (m, { conn }) => {
+let handler = async (m, { conn, usedPrefix, command }) => {
 
 	let res = await (await fetch('https://raw.githubusercontent.com/Zivfurr/HAORI-API/main/furry.json'))	if (!res.ok) throw await `${res.status} ${res.statusText}`; 
 
