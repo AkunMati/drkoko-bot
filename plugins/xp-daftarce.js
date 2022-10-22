@@ -57,7 +57,7 @@ let imgr = flaaa.getRandom()
 ┗━━━━━━━━━━㉿ 
 ⫹⫺ 
 ⫹⫺`, 
-   footer: `*┗ ©ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜× × Qᴜᴇᴇ፝֟፝֟ɴ×፝֟͜×*`, 
+   footer: `*┗ ©ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×*`, 
    title: "", 
    buttonText: "CLICK HERE!", 
    sections 
