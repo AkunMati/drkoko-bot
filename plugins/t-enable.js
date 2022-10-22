@@ -459,12 +459,12 @@ const listMessage = {
       if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
       throw false
   }
-  conn.sendButt(m.chat, `${imgr + 'SUCCES AKTIF'}`, `*${htki} OPTIONS ${htka}*
+  conn.sendButt(m.chat, `*${htki} OPTIONS ${htka}*
 🗂️ *Type:* ${type} 
 📊 *Status:* Succes ✅
 🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
 📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
-`, wm, null, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['💌MENU', '.menu']],m)
+`, `${imgr + 'SUCCES AKTIF'}`, wm '\n\n' run, null, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['💌MENU', '.menu']],m)
 }
 handler.help = ['on', 'off'].map(v => v + 'table <option>')
 handler.tags = ['group', 'owner']
