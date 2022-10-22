@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
-
-export async function before(m, { isAdmin, isBotAdmin }) {
+let m => m
+handler.before = async function (m, { isAdmin, isBotAdmin }) {
 if (m.isBaileys && m.fromMe)
         return !0
     if (!m.isGroup) return !1
