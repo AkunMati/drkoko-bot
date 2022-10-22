@@ -1,257 +1,64 @@
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
 	const sections = [
    {
-	title: `${dmenub} List Options`,
+	title: `${dmenub} LIST OPTIONS`,
 	rows: [
+        {title: "👋 | AutoCloseGroup", rowId: `${usedPrefix + command} autoclosegroup`},
 	{title: "✨ | Welcome", rowId: `${usedPrefix + command} welcome`},
-  {title: "🚫 | Delete", rowId: `${usedPrefix + command} delete`},
-  {title: "🚫 | autodelvn", rowId: `${usedPrefix + command} autodelvn`},
-		{title: "🚫 | autoreply", rowId: `${usedPrefix + command} autodelvn`},
+        {title: "🚫 | Delete", rowId: `${usedPrefix + command} delete`},
+        {title: "❌ | autodelvn", rowId: `${usedPrefix + command} autodelvn`},
 	{title: "🌎 | Public", rowId: `${usedPrefix + command} public`},
+        {title: "✅ | AutoSticker", rowId: `${usedPrefix + command} stiker`},
 	{title: "🗣️ | Simi", rowId: `${usedPrefix + command} simi`},
-  {title: "🗣️ | Auto Vn (simi-simi)", rowId: `${usedPrefix + command} autovn`},
+        {title: "🗣️ | Auto Vn (simi-simi)", rowId: `${usedPrefix + command} autovn`},
 	{title: "🔞 | Nsfw", rowId: `${usedPrefix + command} nsfw`},
-	{title: "🌟 | PremNsfwChat", rowId: `${usedPrefix + command} premnsfwchat`},
+        {title: "😤 | AntiSpam", rowId: `${usedPrefix + command} antispam`},
+        {title: "😤 | AntiCall", rowId: `${usedPrefix + command} anticall`},
+	{title: "🌟 | AntiBuleAll", rowId: `${usedPrefix + command} antibuleall`},
+        {title: "🌟 | AntiBule", rowId: `${usedPrefix + command} antibule`},
 	{title: "🔗 | Antilink", rowId: `${usedPrefix + command} antilink`},
+        {title: "🔗 | AntilinkBitly", rowId: `${usedPrefix + command} antilinkbitly`},
+        {title: "🔗 | AntilinkTIK", rowId: `${usedPrefix + command} antilinktik`},
+        {title: "🔗 | AntilinkYT", rowId: `${usedPrefix + command} antilinkyt`},
+        {title: "🔗 | AntilinkTEL", rowId: `${usedPrefix + command} antilinktel`},
+        {title: "🔗 | AntilinkFB", rowId: `${usedPrefix + command} antilinkfb`},
+        {title: "🔗 | AntilinkIG", rowId: `${usedPrefix + command} antilinkig`},
+        {title: "🔗 | AntilinkWA", rowId: `${usedPrefix + command} antilinkwa`},
+        {title: "🔗 | AntiHttp", rowId: `${usedPrefix + command} antihttp`},
 	{title: "🚫 | Antidelete", rowId: `${usedPrefix + command} antidelete`},
 	{title: "📛 | Antitoxic", rowId: `${usedPrefix + command} antitoxic`},
 	{title: "⏏️ | Autolevelup", rowId: `${usedPrefix + command} autolevelup`},
+        {title: "⏩ | AutoDownload", rowId: `${usedPrefix + command} autodownload`},
 	{title: "🔎 | Detect", rowId: `${usedPrefix + command} detect`},
+        {title: "📃 | Desc Update", rowId: `${usedPrefix + command} desc`},
+        {title: "🚫 | AntiViewonce", rowId: `${usedPrefix + command} viewonce`},
+        {title: "❌ | AntiBadword", rowId: `${usedPrefix + command} antibadword`},
 	{title: "📑 | Document", rowId: `${usedPrefix + command} document`},
+        {title: "✅ | BackUp", rowId: `${usedPrefix + command} backup`},
 	{title: "👤 | WhiteListMyContact", rowId: `${usedPrefix + command} whitelistmycontact`},
-	{title: "❗ | Restrict", rowId: `${usedPrefix + command} restrict`},
-	{title: "😐 | Nyimak", rowId: `${usedPrefix + command} nyimak`},
+	{title: "❕ | Restrict", rowId: `${usedPrefix + command} restrict`},
+	{title: "😈 | AntiBugGc", rowId: `${usedPrefix + command} antibuggc`},
+        {title: "😈 | AntiVirtex", rowId: `${usedPrefix + command} antivirtex`},
+        {title: "😈 | AntiVirus", rowId: `${usedPrefix + command} antivirus`},
 	{title: "☑️ | Autoread", rowId: `${usedPrefix + command} autoread`},
-	{title: "💬 | PcOnly", rowId: `${usedPrefix + command} pconly`},
-	{title: "🏢 | GcOnly", rowId: `${usedPrefix + command} gconly`},
-	{title: "📷 | SwOnly", rowId: `${usedPrefix + command} swonly`},
+	{title: "🗿 | Ephemeral", rowId: `${usedPrefix + command} ephemeral`},
+        {title: "🎭 | Jadibot", rowId: `${usedPrefix + command} jadibot`},
+        {title: "💢 | Clear", rowId: `${usedPrefix + command} clear`},
+	{title: "🏢 | GcOnly", rowId: `${usedPrefix + command} gruponly`},
+	{title: "😳 | Anon", rowId: `${usedPrefix + command} anon`},
+        {title: "❎ | AntiTag", rowId: `${usedPrefix + command} antitag`},
 	]
     },
 ]
 
 const listMessage = {
-  text: ' ',
-  footer: botdate,
+  text: '',
+  footer: wm,
   title: `*${htki} OPTIONS ${htka}*`,
-  buttonText: "Click Here!",
+  buttonText: "CLICK HERE!",
   sections
 }
 
-  let isEnable = /true|enable|(turn)?on|1/i.test(command)
-  let chat = global.db.data.chats[m.chat]
-  let user = global.db.data.users[m.sender]
-  let bot = global.db.data.settings[conn.user.jid] || {}
-  let type = (args[0] || '').toLowerCase()
-  let isAll = false, isUser = false
-  switch (type) {
-    case 'welcome':
-      if (!m.isGroup) {
-        if (!isOwner) {
-          global.dfail('group', m, conn)
-          throw false
-        }
-      } else if (!isAdmin) {
-        global.dfail('admin', m, conn)
-        throw false
-      }
-      chat.welcome = isEnable
-      break
-      case 'autovn':
-        if (!isROwner) {
-          global.dfail('rowner', m, conn)
-          throw false
-        }
-      chat.autoVn = isEnable
-      break
-     case 'detect':
-       if (!m.isGroup) {
-         if (!isOwner) {
-           global.dfail('group', m, conn)
-           throw false
-         }
-       } else if (!isAdmin) {
-         global.dfail('admin', m, conn)
-         throw false
-       }
-       chat.detect = isEnable
-       break
-		  case 'autoreply':
-        if (!isROwner) {
-          global.dfail('rowner', m, conn)
-          throw false
-        }
-      chat.autoReply = isEnable
-      break
-    case 'delete':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.delete = isEnable
-      break
-    case 'antidelete':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.delete = !isEnable
-      break
-     case 'autodelvn':
-       if (m.isGroup) {
-         if (!(isAdmin || isOwner)) {
-           global.dfail('admin', m, conn)
-           throw false
-         }
-       }
-       chat.autodelvn = isEnable
-       break
-     case 'document':
-       chat.useDocument = isEnable
-       break
-    case 'public':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['self'] = !isEnable
-      break
-    case 'antilink':
-      if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }
-      }
-      chat.antiLink = isEnable
-      break
-      case 'simi':
-        if (!isROwner) {
-          global.dfail('rowner', m, conn)
-          throw false
-        }
-      chat.simi = isEnable
-      break
-      case 'nsfw':
-        if (m.isGroup) {
-        if (!(isAdmin || isOwner)) {
-          global.dfail('admin', m, conn)
-          throw false
-        }}
-      chat.nsfw = isEnable
-      break
-      case 'premnsfwchat':
-        if (m.isGroup) {
-        if (!isROwner) {
-          global.dfail('rowner', m, conn)
-          throw false
-        }}
-      chat.premnsfw = isEnable
-      break
-    // case 'toxic':
-    //   if (m.isGroup) {
-    //     if (!(isAdmin || isOwner)) {
-    //       global.dfail('admin', m, conn)
-    //       throw false
-    //     }
-    //   }
-    //   chat.antiToxic = !isEnable
-    //   break
-     case 'antitoxic':
-       if (m.isGroup) {
-         if (!(isAdmin || isOwner)) {
-           global.dfail('admin', m, conn)
-           throw false
-         }
-       }
-       chat.antiToxic = isEnable
-       break
-     case 'autolevelup':
-       isUser = true
-       user.autolevelup = isEnable
-       break
-     case 'mycontact':
-     case 'mycontacts':
-     case 'whitelistcontact':
-     case 'whitelistcontacts':
-     case 'whitelistmycontact':
-     case 'whitelistmycontacts':
-       if (!isOwner) {
-         global.dfail('owner', m, conn)
-         throw false
-       }
-       conn.callWhitelistMode = isEnable
-       break
-    case 'restrict':
-      isAll = true
-      if (!isOwner) {
-        global.dfail('owner', m, conn)
-        throw false
-      }
-      bot.restrict = isEnable
-      break
-    case 'nyimak':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['nyimak'] = isEnable
-      break
-    case 'autoread':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['autoread'] = isEnable
-      break
-    case 'pconly':
-    case 'privateonly':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['pconly'] = isEnable
-      break
-    case 'gconly':
-    case 'grouponly':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['gconly'] = isEnable
-      break
-    case 'swonly':
-    case 'statusonly':
-      isAll = true
-      if (!isROwner) {
-        global.dfail('rowner', m, conn)
-        throw false
-      }
-      global.opts['swonly'] = isEnable
-      break
-    default:
-      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
-      throw false
-  }
-  conn.sendButton(m.chat, `*${htki} OPTIONS ${htka}*
-🗂️ *Type:* ${type} 
-📊 *Status:* Succes ✅
-🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
-📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
-`,wm, null, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['🎀 Menu', '.menu']],m)
-}
-
-
-
-/*let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let chat = db.data.chats[m.chat]
   let user = db.data.users[m.sender]
@@ -275,20 +82,19 @@ const listMessage = {
       }
       chat.closeGroup = isEnable
       break
-    case 'w':
     case 'welcome':
       if (!m.isGroup) {
         if (!isOwner) {
           global.dfail('group', m, conn)
           throw false
         }
-      } else if (!(isAdmin || isOwner)) {
+      } else if (!isAdmin) {
         global.dfail('admin', m, conn)
         throw false
       }
       chat.welcome = isEnable
       break
-    case 'detect':
+      case 'detect':
       if (!m.isGroup) {
         if (!isOwner) {
           global.dfail('group', m, conn)
@@ -650,55 +456,17 @@ const listMessage = {
       chat.autoDownload = isEnable
       break
     default:
-      if (!/[01]/.test(command)) throw `
-┌〔 Daftar Opsi 〕
-│ ${isOwner ? '\n├ anon\n├ antispam\n├ antivirtex\n├ backup\n├ clear\n├ autoread\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ clear\n├ mycontact\n├ ephe' : ''}
-├ autoclosegroup
-├ antiviewonce
-├ antilink
-├ antilinkbitly
-├ antilinktik
-├ antilinkyt
-├ antilinktel
-├ antilinkfb
-├ antilinkig
-├ antilinkwa
-├ antihttp
-├ antiBuleAll
-├ antibule
-├ antitroli
-├ antivirus
-├ antitag
-├ antibuggc
-├ autolevelup
-├ antibadword
-├ delete
-├ detect
-├ document
-├ stiker
-├ simi
-├ welcome
-│ 
-└────
-Contoh:
-${usedPrefix}on welcome
-${usedPrefix}off welcome
-`.trim()
+      if (!/[01]/.test(command)) return await conn.sendMessage(m.chat, listMessage)
       throw false
   }
- conn.reply(m.chat, ` *${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'} `, m, { contextInfo: { externalAdReply :{
-    containsAutoReply: true,
-    mediaUrl: data.sc,
-    mediaType: 2,
-    description: data.deslink, 
-    title: run,
-    body: wm,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: data.sc
-     }}
-  })
-}*/
-handler.help = ['on', 'off'].map(v => v + ' <opsi>')
+  conn.sendButt(m.chat, `${imgr + 'SUCCES AKTIF'}`, `*${htki} OPTIONS ${htka}*
+🗂️ *Type:* ${type} 
+📊 *Status:* Succes ✅
+🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
+📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
+`, wm, null, [[`${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`], ['💌MENU', '.menu']],m)
+}
+handler.help = ['on', 'off'].map(v => v + 'table <option>')
 handler.tags = ['group', 'owner']
 handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
 
