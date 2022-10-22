@@ -1,5 +1,5 @@
-let fetch = require('node-fetch')
-let m => m
+const fetch = require('node-fetch')
+let handler = m => m
 handler.before = async function (m, { isAdmin, isBotAdmin }) {
 if (m.isBaileys && m.fromMe)
         return !0
@@ -12,6 +12,7 @@ if (m.isBaileys && m.fromMe)
         let tts = `https://hadi-api.herokuapp.com/api/tts?language=id&text=${res.success}`
         conn.sendMessage(m.chat, { audio: { url: tts }, mimetype: 'audio/mp4' })
     }
+   return true
 }
 
 module.exports = handler
