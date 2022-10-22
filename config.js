@@ -47,7 +47,7 @@ global.wait = `*Tunggu Sebentar Dungu!*`
 
 global.sig = 'https://instagram.com/kokopangeran_' //Link Instagrammu
 global.sgh = 'https://github.com/MendingTuru' //Link Githubmu
-global.sgc = '-'
+global.sgc = 'https://chat.whatsapp.com/FR1KfE3OTcQCayiabos8Ff'
 global.sdc = '-' //Isi Pake Link Discordmu Kalo Gada Biarin aja
 global.snh = 'https://nhentai.net/g/HaramTod🗿' //Hmmm, Ini boleh kalian isi terserah :v
 global.swb = 'https://instagram.com/kokopangeran_'
