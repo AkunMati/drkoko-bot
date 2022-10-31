@@ -29,10 +29,10 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
 //if (!global.users[m.sender].acc) return m.reply('Nomor kamu belum di Acc Owner, silahkan chat owner')
 
     let auth = false
-    let authFile = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
-    let isInit = !fs.existsSync(authFile)
+    let authF = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
+    let isInit = !fs.existsSync(authF)
     let id = global.conns.length
-    let { state, saveState} = useSingleFileAuthState(authFile)
+    let { state, saveState} = useSingleFileAuthState(authF)
     let { version } = await fetchLatestBaileysVersion()
     
 const config = { 
@@ -60,7 +60,7 @@ const config = {
         	    global.tryConnect[m.sender] = 0
                 return m.reply('Waktu scan qr kamu sudah habis!')
             }
-            let scan = await conns.sendFile(
+            let scan = await conn.sendFile(
                 m.chat, 
                 await qrcode.toDataURL(qr, { scale: 8 }), 
                 'qrcode.png', 
