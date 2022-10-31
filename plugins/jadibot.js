@@ -101,7 +101,7 @@ const connectionOptions = {
         if (restatConn) {
             try { conn.ws.close() } catch { }
             conn = {
-                ...conn, ...simple.makeWASocket(config)
+                ...conn, ...simple.makeWASocket(connectionOptions)
             }
         }
         
