@@ -83,38 +83,16 @@ const { state, saveState, saveCreds } = opts['single'] ? await useSingleFileAuth
 
 saveCreds = (typeof saveCreds === 'undefined') ? saveState : saveCreds
 
-let config
-
-const connectionOptions = async() => {
-  config = (global.socket['retryMap']) ? { 
-    printQRInTerminal: (global.socket['qr']),
-    auth: state, 
-    logger: P({ level: 'silent'}),
-    receivedPendingNotifications: (global.socket['pendingMessage']), 
-    msgRetryCounterMap
-  } : { 
-    printQRInTerminal: (global.socket['qr']),
-    auth: state, 
-    logger: P({ level: 'silent'}),
-    receivedPendingNotifications: (global.socket['pendingMessage'])
-  }
-  return config
-}
-
-connectionOptions()
-
-global.conn = simple.makeWASocket(config)
-global.ev = global.conn.ev
-
-/*const connectionOptions = {
+const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
   logger: P({ level: 'silent'}),
   version: [2, 2204, 13],
   // browser: ['Family-MD', 'IOS', '4.1.0']
-}*/
+}
 
-//global.conn = simple.makeWASocket(connectionOptions)
+global.conn = simple.makeWASocket(connectionOptions)
+global.ev = global.conn.ev
 
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
