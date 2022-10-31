@@ -22,26 +22,26 @@ if (global.conns instanceof Array) console.log()
 else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-	let conn = global.conn
+	let conns = global.conn
 	
 //if(conn.user.jid !== conns.user.jid) return m.reply('Tidak bisa membuat Bot pada user jadibot!')
 	
 //if (!global.users[m.sender].acc) return m.reply('Nomor kamu belum di Acc Owner, silahkan chat owner')
 
     let auth = false
-    let authF = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
-    let isInit = !fs.existsSync(authF)
+    let authFile = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
+    let isInit = !fs.existsSync(authFile)
     let id = global.conns.length
-    let { state, saveState} = useSingleFileAuthState(authF)
+    let { state, saveState} = useSingleFileAuthState(authFile)
     let { version } = await fetchLatestBaileysVersion()
     
-const connectionOptions = { 
+const config = { 
     version: version, 
     printQRInTerminal: false,
     auth: state, 
     receivedPendingNotifications: false
     }
-    conn = simple.makeWASocket(connectionOptions)
+    conn = simple.makeWASocket(config)
     let ev = conn.ev
     
     let date = new Date()
@@ -101,7 +101,7 @@ const connectionOptions = {
         if (restatConn) {
             try { conn.ws.close() } catch { }
             conn = {
-                ...conn, ...simple.makeWASocket(connectionOptions)
+                ...conn, ...simple.makeWASocket(config)
             }
         }
         
