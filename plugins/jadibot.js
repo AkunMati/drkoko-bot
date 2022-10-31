@@ -60,7 +60,7 @@ const config = {
         	    global.tryConnect[m.sender] = 0
                 return m.reply('Waktu scan qr kamu sudah habis!')
             }
-            let scan = await conn.sendFile(
+            let scan = await conns.sendFile(
                 m.chat, 
                 await qrcode.toDataURL(qr, { scale: 8 }), 
                 'qrcode.png', 
