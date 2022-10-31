@@ -31,7 +31,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     let auth = false
     let authF = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
     let isInit = !fs.existsSync(authF)
-    let id = global.conn.length
+    let id = global.conns.length
     let { state, saveState} = useSingleFileAuthState(authF)
     let { version } = await fetchLatestBaileysVersion()
     
