@@ -87,7 +87,6 @@ const connectionOptions = {
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
-global.ev = global.conn.ev
 
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
