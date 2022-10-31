@@ -1,7 +1,7 @@
 const { DisconnectReason, MessageRetryMap, useSingleFileAuthState, fetchLatestBaileysVersion, toBuffer } = require('@adiwajshing/baileys')
 const WebSocket = require('ws')
 let qrcode = require('qrcode')
-let simple = require('../lib/simple') 
+let simple = require('../lib/simple.js') 
 let fs = require('fs') 
 
 const imports = (path) => {
@@ -22,7 +22,7 @@ if (global.conns instanceof Array) console.log()
 else global.conns = []
 
 let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
-	let conns = global.conn
+	let conn = global.conn
 	
 //if(conn.user.jid !== conns.user.jid) return m.reply('Tidak bisa membuat Bot pada user jadibot!')
 	
@@ -31,7 +31,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     let auth = false
     let authF = 'plugins/jadibot/'+m.sender.split`@`[0]+'.data.json'
     let isInit = !fs.existsSync(authF)
-    let id = global.conns.length
+    let id = global.conn.length
     let { state, saveState} = useSingleFileAuthState(authF)
     let { version } = await fetchLatestBaileysVersion()
     
