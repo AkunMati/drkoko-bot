@@ -35,13 +35,13 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
     let { state, saveState} = useSingleFileAuthState(authF)
     let { version } = await fetchLatestBaileysVersion()
     
-const config = { 
+const connectionOptions = { 
     version: version, 
     printQRInTerminal: false,
     auth: state, 
     receivedPendingNotifications: false
     }
-    conn = simple.makeWASocket(config)
+    conn = simple.makeWASocket(connectionOptions)
     let ev = conn.ev
     
     let date = new Date()
