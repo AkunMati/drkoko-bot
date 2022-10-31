@@ -74,19 +74,45 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
+
+const msgRetryCounterMap = MessageRetryMap => { }
+
 const authF = opts['single'] ? `${opts._[0] || 'session'}.data.json` : 'sessions'
 global.isInit = !fs.existsSync(authF)
 const { state, saveState, saveCreds } = opts['single'] ? await useSingleFileAuthState(authF) : await useMultiFileAuthState(authF)
 
-const connectionOptions = {
+let config
+
+const connectionOptions = async() => {
+  config = (global.socket['retryMap']) ? { 
+    printQRInTerminal: (global.socket['qr']),
+    auth: state, 
+    logger: P({ level: 'silent'}),
+    receivedPendingNotifications: (global.socket['pendingMessage']), 
+    msgRetryCounterMap
+  } : { 
+    printQRInTerminal: (global.socket['qr']),
+    auth: state, 
+    logger: P({ level: 'silent'}),
+    receivedPendingNotifications: (global.socket['pendingMessage'])
+  }
+  return config
+}
+
+connectionOptions()
+
+global.conn = simple.makeWASocket(config)
+global.ev = global.conn.ev
+
+/*const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
   logger: P({ level: 'silent'}),
   version: [2, 2204, 13],
   // browser: ['Family-MD', 'IOS', '4.1.0']
-}
+}*/
 
-global.conn = simple.makeWASocket(connectionOptions)
+//global.conn = simple.makeWASocket(connectionOptions)
 
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
