@@ -74,14 +74,9 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-
-const msgRetryCounterMap = MessageRetryMap => { }
-
 const authF = opts['single'] ? `${opts._[0] || 'session'}.data.json` : 'sessions'
 global.isInit = !fs.existsSync(authF)
 const { state, saveState, saveCreds } = opts['single'] ? await useSingleFileAuthState(authF) : await useMultiFileAuthState(authF)
-
-saveCreds = (typeof saveCreds === 'undefined') ? saveState : saveCreds
 
 const connectionOptions = {
   printQRInTerminal: true,
