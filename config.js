@@ -107,6 +107,19 @@ global.htki = '––––––⦅' // Hiasan Titile (KIRI)
 global.htka = '⦆––––––' // Hiasan Title  (KANAN)
 global.htjava = '⫹⫺'
 
+// Config Whatsapp socket
+global.socket = {
+	qr: true, //wajib keknya
+	version: false, // jika mau
+	logger: true, //on in aja
+	retryMap: false, //not recommend now
+	pendingMessage: false, //off aja ngab, ntar lag
+}
+
+global.useMulti = false //Bug?
+
+global.media = 'https://telegra.ph/file/6433c5e9e7710aeeffeb5.jpg'
+
 global.multiplier = 100 // The higher, The harder levelup
 
 global.giflogo = 'https://telegra.ph/file/a46ab7fa39338b1f54d5a.mp4'
