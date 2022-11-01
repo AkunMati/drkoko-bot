@@ -15,7 +15,7 @@ let handler = async (m, { conn, text}) => {
       jpegThumbnail
     } : {})
   }} catch (e){
-  	conn.reply(m.chat, `Maaf sedang error, gunakan chat.whatsapp.com/EwTzMTo82TcHjWNpSf1lmL`, m)
+  	conn.reply(m.chat, `Maaf sedang error, gunakan https://chat.whatsapp.com/IqFfoXcdh7UFyPoQTpKoQp`, m)
       throw e
   }
 }
