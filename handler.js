@@ -611,66 +611,37 @@ module.exports = {
             if (opts['queque'] && m.text && quequeIndex !== -1) this.msgqueque.splice(quequeIndex, 1)
         }
     },
-
-    async participantsUpdate({ id, participants, action }) {
-    if (opts['self']) return
-    // if (id in conn.chats) return // First login will spam
-    if (global.isInit) return
-    if (global.db.data == null)
-        await loadDatabase()
-    let chat = global.db.data.chats[id] || {}
-    let text = ''
-    switch (action) {
-        case 'add':
-        case 'remove':
-            if (chat.welcome) {
-                let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
-                for (let user of participants) {
-                    let pp = 'https://telegra.ph/file/2d06f0936842064f6b3bb.png'
-                    try {
-                        pp = await this.profilePictureUrl(user, 'image')
-                    } catch (e) {
-                    } finally {
-                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
-                            (chat.sBye || this.bye || conn.bye || 'Bye @user')).replace(/@user/g, '@' + user.split`@`[0])
-                        let wel = API('males', '/welcome2', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/7f827ca45c833542777f0.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-                            let lea = API('males', '/goodbye2', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/7f827ca45c833542777f0.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-          let welcom = 'https://telegra.ph/file/aab124271570c51f76aac.jpg'
-          let godbye = 'https://telegra.ph/file/deaf59bc3e5216eaae814.jpg'
-          conn.sendButtonImg(id, await(await fetch(action === 'add' ? wel : lea)).buffer(), 'Group Messege', text, action == 'add' ? 'ᴡᴇʟᴄᴏᴍᴇ' : 'sᴀʏᴏɴᴀʀᴀᴀ', action === 'add' ? '.intro' : 'KOKO PANGERAN', fake, { contextInfo: { externalAdReply: { showAdAttribution: true,
-        mediaUrl: 'https://www.instagram.com/kokopangeran_/',
-        mediaType: 2, 
-        description: sgc,
-        title: "Jᴏɪɴ Sɪɴɪ Cᴜʏ",
-        body: wm,
-        thumbnail: await(await fetch(action === 'add' ? welcom : godbye)).buffer(),
-        sourceUrl: sig
-       }}
-    })
-  
+async participantsUpdate({ id, participants, action }) {
+        if (opts['self']) return
+        // if (id in conn.chats) return // First login will spam
+        if (global.isInit) return
+        let chat = global.db.data.chats[id] || {}
+        let fetch = require('node-fetch')
+        let text = ''
+        switch (action) {
+            case 'add':
+            case 'remove':
+                if (chat.welcome) {
+                    let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
+                    for (let user of participants) {
+                       let pp = 'https://telegra.ph/file/2e77ffa63ce0b7f8c5163.jpg'
+                        try {
+                            pp = await this.profilePictureUrl(user, 'image')
+                        } catch (e) {
+                        } finally {
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
+                                (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
+                                this.send2ButtonImg(id, pp, text, wm, "⎙ MENU", ".menu", "⎙ INTRO", ".intro", null)
+                                }
                     }
                 }
-            }
-            break
-
+                break
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
                 if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
                 text = text.replace('@user', '@' + participants[0].split('@')[0])
-                if (chat.detect) this.reply(id, text, {
+                if (chat.detect) this.sendMessage(id, text, MessageType.extendedText, {
                     contextInfo: {
                         mentionedJid: this.parseMention(text)
                     }
@@ -678,7 +649,8 @@ module.exports = {
                 break
         }
     },
-    async groupsUpdate(groupsUpdate, fromMe, m) {
+
+async groupsUpdate(groupsUpdate, fromMe, m) {
         if (opts['self'] && m.fromMe) return
             console.log(m)
         // Ingfo tag orang yg update group
@@ -703,7 +675,7 @@ module.exports = {
             //await this.sendMessage(id, { text, mentions: this.parseMention(text) })
         }
     },
-    async delete(message) {
+async delete(message) {
         try {
             let { fromMe, 
                  id, 
@@ -727,6 +699,25 @@ Untuk mematikan fitur ini, ketik
         }
     }
 },
+async onCall(json) {
+    let { from } = json[2][0][1]
+    let users = global.db.data.users
+    let user = users[from] || {}
+    if (user.whitelist) return
+    if (!db.data.settings.anticall) return
+    switch (this.callWhitelistMode) {
+      case 'mycontact':
+        if (from in this.contacts && 'short' in this.contacts[from])
+          return
+        break
+    }
+    user.call += 1
+    await this.reply(from, `Jika kamu menelepon lebih dari 5, kamu akan diblokir.\n\n${user.call} / 5`, null)
+    if (user.call == 5) {
+      await this.blockUser(from, 'add')
+      user.call = 0
+    }
+  }
 
 global.dfail = (type, m, conn) => {
     let imgr = flaaa.getRandom()
