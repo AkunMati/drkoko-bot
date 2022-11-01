@@ -43,6 +43,7 @@ const fetch = require('node-fetch')
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
   if (!args || !args[0]) throw 'Uhm... urlnya mana?'
+  m.react('⏱️')
   let chat = global.db.data.chats[m.chat]
   const isY = /y(es)/gi.test(args[1])
   const { thumbnail, audio: _audio, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
@@ -91,9 +92,9 @@ handler.premium = true
 
 module.exports = handler
 
-async function shortUrl(url) {
+/*async function shortUrl(url) {
   url = encodeURIComponent(url)
   let res = await fetch(`https://is.gd/create.php?format=simple&url=${url}`)
   if (!res.ok) throw false
   return await res.text()
-}
+}*/
