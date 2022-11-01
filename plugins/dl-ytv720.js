@@ -1,5 +1,5 @@
-let xfar = require('xfarr-api')
-let fetch = require('node-fetch')
+const xfar = require('xfarr-api')
+const fetch = require('node-fetch')
 let handler = async (m, { conn, command, text }) => {
     if (!text) throw 'Masukkan Link\n\nContoh: .ytv720 https://youtube.com/xxxxxx'
   let res = await xfar.Youtube(text)
