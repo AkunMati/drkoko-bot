@@ -39,7 +39,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
 }*/
 
 let limit = 10
-const fetch = require('node-fetch')
+let fetch = require('node-fetch')
 const { youtubedl, youtubedlv2, youtubedlv3 } = require('@bochilteam/scraper')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
   if (!args || !args[0]) throw 'Uhm... urlnya mana?'
