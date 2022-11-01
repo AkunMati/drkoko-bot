@@ -649,6 +649,25 @@ async participantsUpdate({ id, participants, action }) {
                 break
         }
     },
+async onCall(json) {
+    let { from } = json[2][0][1]
+    let users = global.db.data.users
+    let user = users[from] || {}
+    if (user.whitelist) return
+    if (!db.data.settings.anticall) return
+    switch (this.callWhitelistMode) {
+      case 'mycontact':
+        if (from in this.contacts && 'short' in this.contacts[from])
+          return
+        break
+    }
+    user.call += 1
+    await this.reply(from, `Jika kamu menelepon lebih dari 5, kamu akan diblokir.\n\n${user.call} / 5`, null)
+    if (user.call == 5) {
+      await this.blockUser(from, 'add')
+      user.call = 0
+    }
+  },
 
 async groupsUpdate(groupsUpdate, fromMe, m) {
         if (opts['self'] && m.fromMe) return
@@ -698,26 +717,7 @@ Untuk mematikan fitur ini, ketik
             console.error(e)
         }
     }
-},
-async onCall(json) {
-    let { from } = json[2][0][1]
-    let users = global.db.data.users
-    let user = users[from] || {}
-    if (user.whitelist) return
-    if (!db.data.settings.anticall) return
-    switch (this.callWhitelistMode) {
-      case 'mycontact':
-        if (from in this.contacts && 'short' in this.contacts[from])
-          return
-        break
-    }
-    user.call += 1
-    await this.reply(from, `Jika kamu menelepon lebih dari 5, kamu akan diblokir.\n\n${user.call} / 5`, null)
-    if (user.call == 5) {
-      await this.blockUser(from, 'add')
-      user.call = 0
-    }
-  }
+}
 
 global.dfail = (type, m, conn) => {
     let imgr = flaaa.getRandom()
