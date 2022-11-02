@@ -1,77 +1,57 @@
-//import fetch from 'node-fetch'
 const fetch = require('node-fetch')
 
 let handler = async (m, { conn, usedPrefix, args }) => {
 	let title = `— *S H O R T E D  U R L* —`
-    let caption = 'Silahkan Pilih Type Urlnya kak'
+    let caption = 'Please select the URL type'
 const sections = [
    {
 	title: "TYPE URL",
 	rows: [
 	    {title: "TinyUrl", rowId: ".short " + args[0] + " tinyurl"},
-            {title: "Cuttly", rowId: ".short " + args[0] + " cuttly"},
-	    {title: "LinkPoi", rowId: ".short " + args[0] + " linkpoi"},
+	    {title: "Cuttly", rowId: ".short " + args[0] + " cuttly"},
 	    {title: "Bitly", rowId: ".short " + args[0] + " bitly"},
-	    {title: "OuO", rowId: ".short " + args[0] + " ouo"},
+            {title: "Linkpoi", rowId: ".short " + args[0] + " linkpoi"},
 	]
     },
 ]
 
 const listMessage = {
   text: caption,
-  footer: null,
+  footer: 'select option',
   title: title,
-  buttonText: "Shorted Link",
+  buttonText: "Option",
   sections
 }
 
-if (!args[0]) return m.reply('Linknya mana?')
-if (!args[0].startsWith('https://')) throw 'Masukan Url Dengan Awalan *https://*'
+if (!args[0]) return m.reply('Wheres the link?')
+if (!args[0].startsWith('https://')) throw 'Enter Url With Prefix *https://*'
 if (!args[1]) return conn.sendMessage(m.chat, listMessage, { quoted: m })
 
-let tesk = '🚀 *ʟɪɴᴋ:* '
-let pros = '_*ᴄ ᴏ ɴ ᴠ ᴇ ʀ ᴛ ɪ ɴ ɢ . . .*_'
-//TINY
+let tesk = '🚀 *Result link:* '
+let pros = '_*Converting Link. . .*_'
+//Case Tinyurl 
 if (args[1] == "tinyurl") {
-	let tiny = await (await fetch(`https://hardianto.xyz/api/short/tinyurl?url=${args[0]}&apikey=hardianto`)).json()
+	let tiny = await (await fetch(`https://botcahx.ddns.net/api/linkshort/tinyurl?link=${args[0]}`)).json()
 m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${tiny.result}`,m))
 }
-//--------------
-
 //Case Cuttly
 if (args[1] == "cuttly") {
 	let cuttly = await (await fetch(`https://botcahx.ddns.net/api/linkshort/cuttly?link=${args[0]}`)).json()
 m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${cuttly.result}`,m))
 }
-//--------------
-
-//LINKPOI
-if (args[1] == "linkpoi") {
-	let poi = await(await fetch(`https://api.xteam.xyz/shorturl/linkpoi?url=${args[0]}&APIKEY=f04c164fdec6c033`)).json()
-	m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${poi.result}`,m))
-}
-//------------
-
-//BITLY
+//Case Bitly 
 if (args[1] == "bitly") {
-	let bit = await (await fetch(`https://api.xteam.xyz/shorturl/bitly?url=${args[0]}&APIKEY=f04c164fdec6c033`)).json()
-	m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${bit.result.link}`,m))
-}
-//------------
-
-//OuO
-if (args[1] == "ouo") {
-	let ouo = await (await fetch(`https://api.lolhuman.xyz/api/ouoshortlink?apikey=SGWN&url=${args[0]}`)).json()
-	m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${ouo.result}`,m))
-	}
+	let bitly = await (await fetch(`https://botcahx.ddns.net/api/linkshort/bitly?link=${args[0]}`)).json()
+m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${bitly.result}`,m))
+  }
+//Case LinkPoi 
+if (args[1] == "linkpoi") {
+	let linkpoi = await (await fetch(`https://botcahx.ddns.net/api/linkshort/linkpoi?link=${args[0]}`)).json()
+m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${linkpoi.result}`,m))
+  }
 }
 handler.help = ['short <url> <type>']
-handler.tags = ['shortlink']
+handler.tags = ['internet']
 handler.command = /^(short(url)?)$/i
 handler.limit = true
 module.exports = handler
-
-async function shortUrl(url) {
-	let res = await fetch(`https://tinyurl.com/api-create.php?url=${url}`)
-	return await res.text()
-}
