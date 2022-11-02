@@ -7,17 +7,17 @@ const sections = [
    {
 	title: "TYPE URL",
 	rows: [
-	    {title: "TinyUrl", rowId: ".short " + args[0] + " tinyurl"},
-	    {title: "Cuttly", rowId: ".short " + args[0] + " cuttly"},
-	    {title: "Bitly", rowId: ".short " + args[0] + " bitly"},
-            {title: "Linkpoi", rowId: ".short " + args[0] + " linkpoi"},
+	    {title: "TinyUrl", rowId: ".short " + args[0] + " tinyurl", description: "MEMBUAT LINK MENJADI TINYURL"},
+	    {title: "Cuttly", rowId: ".short " + args[0] + " cuttly", description: "MEMBUAT LINK MENJADI CUTTLY"},
+	    {title: "Bitly", rowId: ".short " + args[0] + " bitly", description: "MEMBUAT LINK MENJADI BITLY"},
+            {title: "Linkpoi", rowId: ".short " + args[0] + " linkpoi", description: "MEMBUAT LINK MENJADI LINKPOI"},
 	]
     },
 ]
 
 const listMessage = {
   text: caption,
-  footer: 'select option',
+  footer: '© ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×',
   title: title,
   buttonText: "Option",
   sections
