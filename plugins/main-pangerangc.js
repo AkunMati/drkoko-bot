@@ -1,7 +1,9 @@
-let handler = async m => m.reply(`
+let handler = async m => 
+
+m.reply(`
 ╰┈➤ ❝ *GC BOT* ❞
 ✤ *ʙᴏᴛ ʙʏ ᴘᴀɴɢᴇʀᴀɴ ᴍᴅ*
-https://chat.whatsapp.com/JOTpyCQIWcC6wr17Ki7L0n
+_*LINK:*_ https://chat.whatsapp.com/IqFfoXcdh7UFyPoQTpKoQp
 (ɴ) sᴇʙᴇʟᴜᴍ ᴊᴏɪɴ ᴜsᴀʜᴀɪɴ ʙᴀᴄᴀ ᴅᴇsᴋ ᴅᴜʟᴜ ʏᴀ, ᴛʜᴀɴᴋʏᴏᴜᴜ
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['pangerangc']
