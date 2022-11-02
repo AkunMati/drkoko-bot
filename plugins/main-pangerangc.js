@@ -1,4 +1,4 @@
-let handler = async (m, { conn, args, command }) => {
+let handler = async (m, { conn, usedPrefix, command }) => {
 let img = 'https://telegra.ph/file/6433c5e9e7710aeeffeb5.jpg'
 conn.sendButtonImg(m.chat, img, `
 ╰┈➤ ❝ *GC BOT* ❞
