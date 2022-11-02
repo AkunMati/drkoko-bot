@@ -322,6 +322,7 @@ module.exports = {
                 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
                 if (settings) {
                     if (!'self' in settings) settings.self = false
+                    if (!'autoread' in settings) settings.autoread = false
                     if (!'anon' in settings) settings.anon = true
                     if (!'anticall' in settings) settings.anticall = true
                     if (!'backup' in settings) settings.backup = false
@@ -333,6 +334,7 @@ module.exports = {
                     if (!'game' in settings) settings.game = true
                 } else global.db.data.settings[this.user.jid] = {
                     self: false,
+                    autoread: true,
                     anon: true,
                     anticall: true,
                     backup: false,
