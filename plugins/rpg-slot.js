@@ -63,7 +63,7 @@ ${pickRandom(['🦁', '🐼', '🐷', '🐮', '🦊'])}|${pickRandom(['🦁', '�
              Hadiah = `-${count * 1}`
              WinOrLose = '𝙺𝚊𝚖𝚞 𝚔𝚊𝚕𝚊𝚑'
         } 
-        conn.sendBut(m.chat, `
+        conn.sendButton(m.chat, `
        *🎰ᴠɪʀᴛᴜᴀʟ sʟᴏᴛ🎰*
 ${spins1}|${spins2}|${spins3}
 ${spins4}|${spins5}|${spins6} <<==
