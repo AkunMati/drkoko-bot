@@ -7,7 +7,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     let teks = res.map(res => res.subject + '\n' + res.link).join('\n────────────\n')
     let image = 'https://telegra.ph/file/f5ec51bac808f543ef1d7.png'
    // conn.sendButtonLoc(m.chat, await(await fetch(image)).buffer(),teks,wm,'Jangan Di Pencet', 'huuu', m)
-     conn.sendButtonDoc(m.chat, teks, wm, 'Menu', '.menu', m, {
+     conn.sendButtonDoc(m.chat, teks, wm, '😳PANGERAN', '.owner', m, {
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
     mediaUrl: data.sc,
