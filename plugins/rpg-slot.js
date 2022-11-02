@@ -1,4 +1,5 @@
-let { MessageType } = (await import('@adiwajshing/baileys')).default
+//let { MessageType } = (await import('@adiwajshing/baileys')).default
+let { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m, { conn, text, command, args, usedPrefix, DevMode }) => { 
     conn.slots = conn.slots ? conn.slots : {}
     if (m.chat in conn.slots) return m.reply('𝙼𝚊𝚜𝚒𝚑 𝙰𝚍𝚊 𝚈𝚐 𝙱𝚎𝚛𝚖𝚊𝚒𝚗 𝚂𝚕𝚘𝚝 𝙳𝚒𝚜𝚒𝚗𝚒, 𝚃𝚞𝚗𝚐𝚐𝚞 𝚂𝚊𝚖𝚙𝚊𝚒 𝚂𝚎𝚕𝚎𝚜𝚊𝚒!!')
