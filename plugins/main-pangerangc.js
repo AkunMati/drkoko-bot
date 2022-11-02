@@ -5,11 +5,11 @@ let handler = async (m, { conn }) => conn.send2ButtonLoc(m.chat, await (await fe
 ╔═══════════════════
 ║ _*Group All*_ ᵈʳкσкσ-ᴍᴅ×፝֟͜×
 ╠═══════════════════
-║➸ Group Yuni & Alpuy:
-║ https://chat.whatsapp.com/DsLuDkm9h8nDdgtTEKEW49
-║➸ 𝐆𝐫𝐨𝐮𝐩 𝐁𝐨𝐭 1:
+║➸ _Group Yuni & Alpuy:_
+║ https://chat.whatsapp.com/L4FEDmo5VS870hYYm22t7R
+║➸ _𝐆𝐫𝐨𝐮𝐩 𝐁𝐨𝐭 1:_
 ║ https://chat.whatsapp.com/IqFfoXcdh7UFyPoQTpKoQp
-║➸ 𝐆𝐫𝐨𝐮𝐩 𝐁𝐨𝐭 2:
+║➸ _𝐆𝐫𝐨𝐮𝐩 𝐁𝐨𝐭 2:_
 ║ https://chat.whatsapp.com/LhpFRMqsKkn6nrCCf1He9R
 ╚════════════════════
 ╔════════════════════
