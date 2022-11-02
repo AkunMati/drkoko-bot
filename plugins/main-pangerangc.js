@@ -1,11 +1,11 @@
 const fetch = require('node-fetch')
-let teks = 'gcbot'
-let handler = async (m, { conn }) => conn.send2ButtonLoc(m.chat, await (await fetch('https://telegra.ph/file/c6d47e0aa9dca2263bee9.png'+ teks)).buffer(), `
+let teks = 'gckoko'
+let handler = async (m, { conn }) => conn.send2ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/6433c5e9e7710aeeffeb5.jpg'+ teks)).buffer(), `
 *𝐇𝐚𝐥𝐨 𝐁𝐚𝐧𝐡 𝐉𝐚𝐧𝐠𝐚𝐧 𝐋𝐮𝐩𝐚 𝐉𝐨𝐢𝐧 && 𝐁𝐚𝐜𝐚 𝐑𝐮𝐥𝐞𝐬❗*
 ╔═══════════════════
 ║ _*Group All*_ ᵈʳкσкσ-ᴍᴅ×፝֟͜×
 ╠═══════════════════
-║➸ GROUP INTI YUNI:
+║➸ Group Yuni & Alpuy:
 ║ https://chat.whatsapp.com/DsLuDkm9h8nDdgtTEKEW49
 ║➸ 𝐆𝐫𝐨𝐮𝐩 𝐁𝐨𝐭 1:
 ║ https://chat.whatsapp.com/IqFfoXcdh7UFyPoQTpKoQp
@@ -25,8 +25,8 @@ let handler = async (m, { conn }) => conn.send2ButtonLoc(m.chat, await (await fe
 ║𝐌𝐚𝐮 𝐒𝐞𝐰𝐚? 𝐊𝐞𝐭𝐢𝐤 .owner
 ╚════════════════════
 `.trim(), wm, '😳KOKO', '.owner', 'MENU✔️', '.menu')
-handler.help = ['gcbot']
+handler.help = ['gckoko']
 handler.tags = ['info']
-handler.command = /^gc(bot|groupbot)$/i
+handler.command = /^gc(koko|groupkoko)$/i
 
 module.exports = handler
