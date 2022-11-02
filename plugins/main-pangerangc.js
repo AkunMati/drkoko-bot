@@ -1,6 +1,6 @@
 const fetch = require('node-fetch')
 let teks = 'gckoko'
-let handler = async (m, { conn }) => conn.send2ButtonImg(m.chat, await (await fetch('https://telegra.ph/file/6433c5e9e7710aeeffeb5.jpg'+ teks)).buffer(), `
+let handler = async (m, { conn }) => conn.send2ButtonLoc(m.chat, await (await fetch('https://telegra.ph/file/6433c5e9e7710aeeffeb5.jpg'+ teks)).buffer(), `
 *𝐇𝐚𝐥𝐨 𝐁𝐚𝐧𝐡 𝐉𝐚𝐧𝐠𝐚𝐧 𝐋𝐮𝐩𝐚 𝐉𝐨𝐢𝐧 && 𝐁𝐚𝐜𝐚 𝐑𝐮𝐥𝐞𝐬❗*
 ╔═══════════════════
 ║ _*Group All*_ ᵈʳкσкσ-ᴍᴅ×፝֟͜×
