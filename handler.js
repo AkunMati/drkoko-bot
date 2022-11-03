@@ -285,7 +285,8 @@ module.exports = {
                     if (!('simi2' in chat)) chat.simi2 = false
                     if (!('simiautoVn' in chat)) chat.simiautoVn = false
                     if (!('clear' in chat)) chat.clear = false
-                    if (!isNumber(chat.cleartime)) chat.clearTime = 0 
+                    if (!isNumber(chat.cleartime)) chat.clearTime = 0
+                    if (!('autopresence' in chat)) chat.autoPesence = false
                     if (!('antitag' in chat)) chat.antitag = false
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
@@ -318,6 +319,7 @@ module.exports = {
                     simiautoVn: false,
                     clear: false,
                     clearTime: 0,
+                    autopresence: false,
                     antitag: false
                 }
                 let settings = global.db.data.settings[this.user.jid]
@@ -325,7 +327,6 @@ module.exports = {
                 if (settings) {
                     if (!'self' in settings) settings.self = false
                     if (!'autoread' in settings) settings.autoread = false
-                    if (!'autoPesence' in settings) settings.autoPesence = false
                     if (!'anon' in settings) settings.anon = true
                     if (!'anticall' in settings) settings.anticall = true
                     if (!'backup' in settings) settings.backup = false
@@ -338,7 +339,6 @@ module.exports = {
                 } else global.db.data.settings[this.user.jid] = {
                     self: false,
                     autoread: true,
-                    autoPesence: false,
                     anon: true,
                     anticall: true,
                     backup: false,
