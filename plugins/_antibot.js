@@ -14,7 +14,7 @@ handler.before = async (m, { isAdmin, isBotAdmin }) => {
    	user.banned = true
    	this.sendButt(m.chat, caption, author, null, `${imgr + 'Anti Bot'}`, [['Disable Anti Bule', '.off antibot']], m, { mentions: this.parseMention(caption) })
         await conn.sendMessage(m.chat, { delete: m.key })
-   	await conn.groupParticipantsUpdate(m.chat, [m.sender], "remove")
+   	return conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    }
   }
  }
