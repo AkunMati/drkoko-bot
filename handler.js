@@ -282,6 +282,7 @@ module.exports = {
                     if (!('viewonce' in chat)) chat.viewonce = true
                     if (!('nsfw' in chat)) chat.nsfw = false
                     if (!('simi' in chat)) chat.simi = false
+                    if (!('simi2' in chat)) chat.simi2 = false
                     if (!('simiautoVn' in chat)) chat.simiautoVn = false
                     if (!('clear' in chat)) chat.clear = false
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0 
@@ -313,6 +314,7 @@ module.exports = {
                     viewonce: false,
                     nsfw: false,
                     simi: false,
+                    simi2: false,
                     simiautoVn: false,
                     clear: false,
                     clearTime: 0,
@@ -323,6 +325,7 @@ module.exports = {
                 if (settings) {
                     if (!'self' in settings) settings.self = false
                     if (!'autoread' in settings) settings.autoread = false
+                    if (!'autoPesence' in settings) settings.autoPesence = false
                     if (!'anon' in settings) settings.anon = true
                     if (!'anticall' in settings) settings.anticall = true
                     if (!'backup' in settings) settings.backup = false
@@ -335,6 +338,7 @@ module.exports = {
                 } else global.db.data.settings[this.user.jid] = {
                     self: false,
                     autoread: true,
+                    autoPesence: false,
                     anon: true,
                     anticall: true,
                     backup: false,
@@ -726,27 +730,27 @@ global.dfail = (type, m, conn) => {
     let nmsr = `👋 Hai *@${m.sender.split("@")[0]}*, `
     let msg = {
         rowner: `${nmsr}\n 
-Perintah ini hanya dapat digunakan oleh *OWWNER* !`,
+Perintah Ini Hanya Dapat Digunakan Oleh *OWWNER* !`,
         owner: `${nmsr}\n
-Perintah ini hanya dapat digunakan oleh *Owner Bot* !`,
+Perintah Ini Hanya Dapat Digunakan Oleh *OWNER BOT* !`,
         mods: `${nmsr}\n 
-Perintah ini hanya dapat digunakan oleh *Moderator* !`,
+Perintah Ini Hanya Dapat Digunakan Oleh *MODERATOR* !`,
         premium: `${nmsr}\n
-Perintah ini hanya untuk member *Premium* !`,
+Perintah Ini Hanya Untuk Member *PREMIUM* !`,
         group: `${nmsr}\n
-Perintah ini hanya dapat digunakan di grup !`,
+Perintah Ini Hanya Dapat Digunakan Di *GROUP* !`,
         private: `${nmsr}\n
-Perintah ini hanya dapat digunakan di Chat Pribadi !`,
+Perintah Ini Hanya Dapat Digunakan Di *Chat Pribadi* !`,
         admin: `${nmsr}\n
-Perintah ini hanya untuk *Admin* grup !`,
+Perintah Ini Hanya Untuk *ADMIN GROUP* !`,
         botAdmin: `${nmsr}\n
-Jadikan bot sebagai *Admin* untuk menggunakan perintah ini !`,
+Jadikan Bot Sebagai *ADMIN* Untuk Menggunakan Perintah Ini !`,
         nsfw: `${nmsr}\n
-NSFW tidak aktif, Silahkan hubungi Team Bot Discussion untuk mengaktifkan fitur ini !`,
+NSFW Tidak Aktif, Silahkan Hubungi *TEAM BOT DISCUSSION* Untuk Mengaktifkan Fitur Ini !`,
         rpg: `${nmsr}\n
-RPG tidak aktif, Silahkan hubungi Team Bot Discussion Untuk mengaktifkan fitur ini !`,
+RPG Tidak Aktif, Silahkan Hubungi *TEAM BOT DISCUSSION* Untuk Mengaktifkan Fitur Ini !`,
         restrict: `${nmsr}\n
-Fitur ini di *disable* !`
+Fitur Ini Di *DISABLE* !`
     }[type]
     if (msg) return conn.sendButt(m.chat, danied, msg, `${imgr + 'ACCSES DANIED'}`, [['✔️MENU', '.menu'],['KOKO👦', '.owner']],m)
     
