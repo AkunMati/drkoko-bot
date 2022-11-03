@@ -26,7 +26,7 @@ handler.before = async function (m, { conn, args, usedPrefix, command, isAdmin, 
     const isAntiLinkBitly = isLinkBitly.exec(m.text)
 
     if (chat.antiLinkTik && isAntiLinkTik) {
-        await conn.sendButton(m.chat, `*Link Terdeteksi!*${isBotAdmin ? '' : '\n\n_Bot bukan atmin_'}`, author, ['off antilinktik', '/disable antilinktik'], m)
+        await conn.sendButt(m.chat, `*Link Terdeteksi!*${isBotAdmin ? '' : '\n\n_Bot bukan atmin_'}`, author, ['off antilinktik', '/disable antilinktik'], m)
         if (isBotAdmin && bot.restrict) {
             // await conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
     global.db.data.users[m.sender].limit = 0
