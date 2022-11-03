@@ -276,6 +276,8 @@ module.exports = {
                     if (!('delete' in chat)) chat.delete = false
                     if (!('antiLink' in chat)) chat.antiLink = true
                     if (!('antiBuleAll' in chat)) chat.antiBuleAll = true
+                    if (!('antibule' in chat)) chat.antibule = false
+                    if (!('antibot' in chat)) chat.antibot = false
                     if (!isNumber(chat.expired)) chat.expired = 0
                     if (!('antiBadword' in chat)) chat.antiBadword = true
                     if (!('antiDownload' in chat)) chat.antiDownload = true
@@ -309,6 +311,8 @@ module.exports = {
                     delete: true,
                     antiLink: true,
                     antiBuleAll: true,
+                    antibule: false,
+                    antibot: false,
                     expired: 0,
                     antiBadword: true,
                     antiDownload: false,
