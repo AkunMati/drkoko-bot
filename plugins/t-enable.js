@@ -359,6 +359,13 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       global.opts['autoread'] = isEnable
       break
+    case 'autopresence':
+        if (!isROwner) {
+          global.dfail('rowner', m, conn)
+          throw false
+        }
+      chat.autoPesence = isEnable
+      break
     case 'epe':
     case 'ephe':
     case 'ephemeral':
@@ -405,7 +412,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
     default:
       if (!/[01]/.test(command)) throw `
 ┌〔 Daftar Opsi 〕
-│ ${isOwner ? '\n├ anon\n├ antispam\n├ antivirtex\n├ backup\n├ clear\n├ autoread\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ clear\n├ mycontact\n├ ephe' : ''}
+│ ${isOwner ? '\n├ anon\n├ antispam\n├ antivirtex\n├ backup\n├ clear\n├ autoread\n├ autopresence\n├ grouponly\n├ jadibot\n├ nsfw\n├ public\n├ clear\n├ mycontact\n├ ephe' : ''}
 ├ autoclosegroup
 ├ antiviewonce
 ├ antilink
