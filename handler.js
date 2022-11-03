@@ -38,7 +38,9 @@ module.exports = {
                     if (!isNumber(user.healt)) user.healt = 0
                     if (!isNumber(user.level)) user.level = 1
                     if (!isNumber(user.exp)) user.exp = 0
-                    if (!isNumber(user.limit)) user.limit = 10
+                    if (!isNumber(user.limit)) user.limit = 100
+                    if (!isNumber(user.tiketcoin)) user.tiketcoin = 0
+                    if (!isNumber(user.lasthunt)) user.lasthunt = 0
                     if (!isNumber(user.lastseen)) user.lastseen = 0
                     if (!isNumber(user.usebot)) user.usebot = 0
                     if (!isNumber(user.lastclaim)) user.lastclaim = 0
@@ -149,7 +151,9 @@ module.exports = {
                     healt: 100,
                     level: 1,
                     exp: 0,
-                    limit: 10,
+                    limit: 100,
+                    tiketcoin: 0,
+                    lasthunt: 0,
                     lastseen: 0,
                     usebot: 0,
                     lastclaim: 0,
