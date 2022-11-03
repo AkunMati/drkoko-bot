@@ -1,6 +1,6 @@
 const fetch = require('node-fetch')
 
-export async function before(m, { isAdmin, isBotAdmin }) {
+handler.before = function (m, { isAdmin, isBotAdmin }) => {
 if (m.isBaileys && m.fromMe)
         return !0
     if (!m.isGroup) return !1
@@ -12,3 +12,4 @@ if (m.isBaileys && m.fromMe)
   m.reply(`*Simi:* ${res.success}`)
     }
 }
+module.exports = handler
