@@ -219,7 +219,16 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
       }
       chat.antibule = isEnable
       break
-    case 'stiker':
+    case 'antibot':
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+         }
+       }
+       chat.antibot = isEnable
+       break
+     case 'stiker':
       if (m.isGroup) {
         if (!(isAdmin || isOwner)) {
           global.dfail('admin', m, conn)
@@ -442,6 +451,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ antihttp
 ├ antibuleall
 ├ antibule
+├ antibot
 ├ antivirus
 ├ antitroli
 ├ antitag
