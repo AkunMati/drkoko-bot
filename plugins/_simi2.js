@@ -1,4 +1,5 @@
 const fetch = require('node-fetch')
+let handler = m => m
 
 handler.before = function (m, { isAdmin, isBotAdmin }) => {
 if (m.isBaileys && m.fromMe)
