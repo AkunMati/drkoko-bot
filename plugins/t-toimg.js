@@ -1,6 +1,7 @@
 let { webp2png } = require('../lib/webp2mp4')
 let handler = async (m, { conn, usedPrefix, command }) => {
   if (!m.quoted) throw `balas stiker dengan perintah *${usedPrefix + command}*`
+  m.react('⏱️')
   let mime = m.quoted.mimetype || ''
   if (!/webp/.test(mime)) throw `balas stiker dengan perintah *${usedPrefix + command}*`
   let media = await m.quoted.download()
@@ -8,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   if (/webp/.test(mime)) {
     out = await webp2png(media)
   }
-  await conn.sendFile(m.chat, out, 'out.png', '*Nihh Kakk >_<*', m, false, { thumbnail: out, contextInfo: { externalAdReply :{
+  await conn.sendFile(m.chat, out, 'out.png', '*Nihh Kakk >_<*\n\n_*Jangan Lupa Follow IG Ku Kak>Ω<*\nhttps://instagram.com/kokopangeran_', m, false, { thumbnail: out, contextInfo: { externalAdReply :{
     showAdAttribution: true,
     mediaUrl: data.sc,
     mediaType: 2,
