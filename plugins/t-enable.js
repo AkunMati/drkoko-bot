@@ -392,6 +392,22 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 	   chat.simi = isEnable
     }
     break
+    case 'simi2':
+    case 'simsimi2':
+	if (m.isGroup) {
+	if (!(isAdmin || isOwner)) {
+	global.dfail('admin', m, conn)
+	throw false
+	}
+   }
+	if (chat.simi2 && isEnable) {
+	throw "simsimi telah aktif di chat ini"
+	} else if (!chat.simi2 && isEnable == false) {
+	   throw "simsimi belum aktif di chat ini"
+	} else {
+	   chat.simi2 = isEnable
+    }
+    break
     case 'simiautovn':
         if (!isROwner) {
           global.dfail('rowner', m, conn)
@@ -437,9 +453,10 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
 ├ document
 ├ stiker
 ├ simi
+├ simi2
 ├ simiautovn
 ├ welcome
-│ 
+│CopyRight: ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ
 └────
 Contoh:
 ${usedPrefix}on welcome
