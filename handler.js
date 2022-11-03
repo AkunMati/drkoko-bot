@@ -292,14 +292,14 @@ module.exports = {
                     if (!('simiautoVn' in chat)) chat.simiautoVn = false
                     if (!('clear' in chat)) chat.clear = false
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0
-                    if (!('autopresence' in chat)) chat.autoPesence = false
+                    if (!('autopresence' in chat)) chat.autoPesence = true
                     if (!('antitag' in chat)) chat.antitag = false
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
                     closeGroup: false,
                     add: 0,
                     isBanned: false,
-                    welcome: false,
+                    welcome: true,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
@@ -316,7 +316,7 @@ module.exports = {
                     expired: 0,
                     antiBadword: true,
                     antiDownload: false,
-                    antispam: true,
+                    antispam: false,
                     antitroli: true,
                     antivirtex: true,
                     antiVirus: true,
@@ -327,7 +327,7 @@ module.exports = {
                     simiautoVn: false,
                     clear: false,
                     clearTime: 0,
-                    autopresence: false,
+                    autopresence: true,
                     antitag: false
                 }
                 let settings = global.db.data.settings[this.user.jid]
@@ -645,7 +645,7 @@ async participantsUpdate({ id, participants, action }) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
-                                this.send2ButtonImg(id, pp, text, wm, "⎙ MENU", ".menu", "⎙ INTRO", ".intro", null)
+                                this.sendButtonLoc(id, pp, text, wm, "THNKS KOKO GANTENG:v", "terimakasih", null)
                                 }
                     }
                 }
