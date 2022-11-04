@@ -37,8 +37,7 @@ const defaultMenu = {
   footer: '┃\n╚══════════❖\n', 
   after: `*%admen*
 
-*Made By ♡*
-*%npmname* | %version
+*Made By ♡ %npmname* | %version
 ${'```%npmdesc```'}
 `,
 }
