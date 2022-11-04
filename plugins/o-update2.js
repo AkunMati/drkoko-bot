@@ -5,7 +5,7 @@ const { join } = require('path')
 
 let confirmation = {}
 let repository = 'sadteams/bot-md'
-let branch = 'main'
+let branch = '1.0.0'
 
 async function handler(m, { text }) {
     let res = await fetch(`https://raw.githubusercontent.com/${repository}/${branch}/${text}`)
