@@ -52,8 +52,8 @@ let imgr = flaaa.getRandom()
 ⬡ 👧Kalau Tidak Kelihatan Button nya, Contohnya Dibawah!.
 ┗━━━━━━━━━━━━━━━━━━㉿
 ┏━━〔 ıll CONTOH llı 〕━㉿
-⬡ #daftar namamu.umurmu
-⬡ #daftar ${conn.getName(m.sender)}.17
+⬡ #daftarce namamu.umurmu
+⬡ #daftarce ${conn.getName(m.sender)}.17
 ┗━━━━━━━━━━㉿ 
 ⫹⫺ 
 ⫹⫺`, 
@@ -100,7 +100,7 @@ Di Database Kami
 _*Jika Owner Mengetahui Hal Di Atas, Maka Tidak Segan² Nomor Akan Di Banned!*_
 
 *SN* (Serial Number) Di Kirim Di Chat Pribadi Dan Digunakan Untuk Daftar Ulang, Jika Lupa *SN* Silahkan Ketik *${usedPrefix}sn* Untuk Mengecek *SN* Kamu! 
-`.trim(), wm, `${imgr + 'SUCCES'}`, [['✔️MENU','.menu'],['SEWA💰','.sewain']], m) 
+`.trim(), wm, `${imgr + 'SUCCES'}`, [['✔️MENU','.menu'],['SEWA💰','.sewabot']], m) 
 conn.sendMessage(m.sender, {text: `*SN:* ${sn}`}, { quoted:fpay}, m)
 //conn.sendMessage(m.chat, buttonMessage, { quoted:fpay}) 
 } 
