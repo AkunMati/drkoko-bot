@@ -4,7 +4,7 @@ handler.all = async function (m) {
 	if (chat.autoPesence) {
     if (m.text) {
     /* Mengetik */
-    let ran = ['unavailable', 'available', 'composing', 'recording', 'paused']
+    let ran = ['composing', 'recording']
 	return this.sendPresenceUpdate(ran.getRandom(), m.chat)
     }
   }
