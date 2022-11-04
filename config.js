@@ -39,9 +39,9 @@ global.APIKeys = { // APIKey Here
 }
 global.packname = data.namabot
 global.author = data.owner
-global.wm = 'Copyright: ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×'
+global.wm = '*Copyright: ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×*'
 
-global.asing = `*Ciee Orang Asing Join, Dadah Saya Kick👋*`
+global.asing = `*Ciee Orang Asing, Dadah👋*`
 global.wait = `*Tunggu Sebentar Dungu!*`
 
 
@@ -106,6 +106,22 @@ global.fpagedoc = '999' //Gausah di ganti.
 global.htki = '––––––⦅' // Hiasan Titile (KIRI)
 global.htka = '⦆––––––' // Hiasan Title  (KANAN)
 global.htjava = '⫹⫺'
+
+global.admen = `┏═┅〔 *SUPPORT* 〕┅═✦
+┃
+┃⫹⫺ Nurutomo
+┃⫹⫺ KokoPangeran
+┃⫹⫺ Ilmanhdyt
+┃⫹⫺ Elyas
+┃⫹⫺ Hyzer
+┃⫹⫺ KrizynOfc
+┃⫹⫺ Zivsan
+┃⫹⫺ Mursid
+┃⫹⫺ Jarot
+┃⫹⫺ Kanna
+┃⫹⫺ Fokusid
+┃
+┗━━══┅┅══━━━✦`
 
 // Config Whatsapp socket
 global.socket = {
@@ -343,14 +359,6 @@ global.hwaifu = ['https://i.pinimg.com/originals/ed/34/f8/ed34f88af161e6278993e1
 'https://i.pinimg.com/originals/8d/04/9a/8d049a1e6951491b24ea4c364f2459bc.jpg',
 'https://i.pinimg.com/originals/fd/21/41/fd21419275236bb153de3c8dcbbf3bf9.jpg',
 'https://i.pinimg.com/originals/80/4f/1a/804f1a05f9996c96a2d492b4854b7fd5.jpg']
-
-global.set = {
-//========={ SETTING HERE }=========//
-    name: "Bottom-MD2",
-    version: "1.0.1",
-    repo: 'https://github.com/MendingTuru/Bottom-md2.git',
-    browser: ['My-MD By Pangeran', 'Safari', '1.0.1'],
-}
 
 //=========== Requirements ==========//
 
