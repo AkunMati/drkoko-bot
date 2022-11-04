@@ -414,7 +414,7 @@ global.fpay = {
 			requestFrom: '0@s.whatsapp.net',
 			noteMessage: {
 				extendedTextMessage: {
-					text: 'Hay kak👋'
+					text: 'Subs YT: Koko Pangeran👋'
 				}
 			},
 			expiryTimestamp: 999999999,
@@ -426,33 +426,6 @@ global.fpay = {
 		}
 	}
 }
-
-global.fpayment = {
-		key: {
-		remoteJid: '0@s.whatsapp.net',
-		fromMe: false,
-		id: 'ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×',
-		participant: '0@s.whatsapp.net'
-	},
-	message: {
-		requestPaymentMessage: {
-			currencyCodeIso4217: "USD",
-			amount1000: 999999999,
-			requestFrom: (m !== null && m !== undefined) ? m.sender : '0@s.whatsapp.net',
-			noteMessage: {
-				extendedTextMessage: {
-					text: (m !== null && m !== undefined) ? m.text : 'Subs YT: Koko Pangeran'
-				}
-			},
-			expiryTimestamp: 999999999,
-			amount: {
-				value: 91929291929,
-				offset: 1000,
-				currencyCode: "USD"
-		        }
-		 }
-          }
-    }
 
 
 //-------JANGAN DI UBAH MEK-------//
