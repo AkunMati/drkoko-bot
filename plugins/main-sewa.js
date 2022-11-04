@@ -61,7 +61,7 @@ const listMessage = {
   buttonText: "Click Here",
   sections
 }
-await conn.sendMessage(m.chat, listMessage, { quoted: fpay })
+await conn.sendMessage(m.chat, listMessage, { quoted: adReply })
 //conn.sendHydrated(m.chat, info, wm, null, sgc, "🌎 Group Official", null,null, [['😳KOKO','.owner']], m)
 }
 
