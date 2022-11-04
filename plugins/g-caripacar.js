@@ -1,4 +1,3 @@
-let imgr = flaaa.getRandom()
 let handler = async (m, { conn, participants, command, usedPrefix }) => {
     let member = participants.map(u => u.id)
     let orang
@@ -6,7 +5,7 @@ let handler = async (m, { conn, participants, command, usedPrefix }) => {
     else orang = member[Math.floor(Math.random() * member.length)]
     let jawab = `Ehh @${orang.replace(/@.+/, '')} Mau Gak Jadi Pacar Gw? 😌`.trim()
     let mentionedJid = [orang]
-    await conn.sendButt(m.chat, jawab, '📮Silahkan Cari Pacar Lagi📮', wm + '\n\n' + run, `${imgr + 'Cari Pacar'}`, [['Cari Lagi?','.caripacar']], m, { contextInfo: { mentionedJid } })
+    await conn.sendButton(m.chat, jawab, '📮Silahkan Cari Pacar Lagi📮', wm, `Cari Lagi?`, `.caripacar`, m, { contextInfo: { mentionedJid } })
 }
 handler.help = ['caripacar']
 handler.tags = ['fun']
