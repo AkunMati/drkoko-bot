@@ -44,10 +44,10 @@ if (args[1] == "bitly") {
 	let bitly = await (await fetch(`https://botcahx.ddns.net/api/linkshort/bitly?link=${args[0]}`)).json()
 m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${bitly.result}`,m))
   }
-//Case LinkPoi 
+//Case LINKPOI
 if (args[1] == "linkpoi") {
-	let linkpoi = await (await fetch(`https://botcahx.ddns.net/api/linkshort/linkpoi?link=${args[0]}`)).json()
-m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${linkpoi.result}`,m))
+	let poi = await(await fetch(`https://linkpoi.ga/api.php?url=${args[0]}`)).json()
+m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${poi.shorturl.replace('\/','/')}`, m))
   }
 }
 handler.help = ['short <url> <type>']
