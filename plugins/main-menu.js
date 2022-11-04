@@ -6,36 +6,38 @@ let moment = require('moment-timezone')
 let jimp = require('jimp')
 let PhoneNumber = require('awesome-phonenumber')
 const defaultMenu = {
-  before: `
-┌─〔 ᵈʳкσкσ-ᴍᴅ×፝֟͜× 〕
-├❏ *${ucapan()} %name*
-│
-├❏ Tersisa *%limit Limit*
-├❏ Role *%role*
-├❏ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├❏ %totalexp XP secara Total
-│
-├❏ Tanggal: *%week %weton, %date*
-├❏ Tanggal Islam: *%dateIslamic*
-├❏ Waktu: *%time*
-│
-├❏ Uptime: *%uptime (%muptime)*
-├❏ Database: %rtotalreg dari %totalreg
-├❏ Github:
-├❏ https://github.com/MendingTuru
-│
-├❏ Note :
-├❏ *Ⓟ* = Premium
-├❏ *Ⓛ* = Limit
-└────
+  before: ` *┄┄┄┅┅❑ ᵈʳкσкσ-ᴍᴅ×፝֟͜× ❑┅┅┄┄┄*
+┏─────────────────⬣
+┆ 𝑯𝒂𝒊, *${ucapan()} %name*👋
+┗┬──────────────┈ ⳹
+┏┆♠︎ *Limit:* %limit
+┆┆♠︎ *Role:* %role
+┆┆♠︎ *Level:* %level
+┆┆♠︎ *XP:* (%exp / %maxexp) [%xp4levelup]
+┗┬──────────────┈ ⳹
+┏┤   *𝐊𝐚𝐥𝐞𝐧𝐝𝐞𝐫*
+┆┗──────────────┈ ⳹
+┆♠︎ *Hari:* %week
+┆♠︎ *Tanggal:* %weton, %date
+┆♠︎ *Tanggal Islam:* %dateIslamic
+┆♠︎ *Waktu:* %time
+┗┬──────────────┈ ⳹
+┏┤ *𝐁𝐨𝐭 𝐈𝐧𝐟𝐨*
+┆┗──────────────┈ ⳹
+┆♠︎ *Limit* : Ⓛ 
+┆♠︎ *Premium* : Ⓟ
+┆♠︎ *Uptime:* : %uptime (%muptime)
+┆♠︎ *Database:* %rtotalreg dari %totalreg
+┆♠︎ *Penulis Ulang:* ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
+┗─────────────────⬣
 %readmore`.trim(),
-  header: '┌─〔 %category 〕',
-  body: '├❏ %cmd %islimit %isPremium',
-  footer: '└────\n',
-  after: `
-*%admen*
+  header: '╔═❖〔 %category 〕❖════╗\n┃',
+  body: '┃➺ %cmd %islimit %isPremium',
+  footer: '┃\n╚══════════❖\n', 
+  after: `*%admen*
 
-*%npmname@^%version*
+*Made By ♡*
+*%npmname* | %version
 ${'```%npmdesc```'}
 `,
 }
