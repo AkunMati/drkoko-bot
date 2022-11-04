@@ -1,5 +1,5 @@
 {
-    "name": "Bottom-MA",
+    "name": "Bottom-MD2",
     "version": "1.0.2",
     "description": "Simple Bot WhatsApp Multi Auth By ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×",
     "depecrated": false,
@@ -28,16 +28,16 @@
         "stikerin",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/radhin123/Leviathan-md",
+    "homepage": "https://github.com/MendingTuru/Bottom-MD2",
     "author": {
-        "name": "radhin123"
+        "name": "Koko Pangeran"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/radhin123/Leviathan-md.git"
+        "url": "git+https://github.com/MendingTuru/Bottom-MD2.git"
     },
     "bugs": {
-        "url": "https://github.com/radhin123/Leviathan-md/issues"
+        "url": "https://github.com/MendingTuru/Bottom-MD2/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
