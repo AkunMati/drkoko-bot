@@ -33,6 +33,8 @@ const defaultMenu = {
   body: '├❏ %cmd %islimit %isPremium',
   footer: '└────\n',
   after: `
+*%admen*
+
 *%npmname@^%version*
 ${'```%npmdesc```'}
 `,
