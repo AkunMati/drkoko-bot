@@ -47,7 +47,7 @@ m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${bitly.result}`,m))
 //Case LINKPOI
 if (args[1] == "linkpoi") {
 	let poi = await(await fetch(`https://linkpoi.ga/api.php?url=${args[0]}`)).json()
-m.reply(pros).then(_=> conn.reply(m.chat, `${tesk}${poi.shorturl.replace('\/','/')}`, m))
+m.reply(pros).then(_ => conn.reply(m.chat, `${tesk}${poi.shorturl.replace('\/','/')}`, m))
   }
 }
 handler.help = ['short <url> <type>']
