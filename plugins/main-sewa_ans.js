@@ -3,7 +3,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (text.length < 1 ) throw `Laporan Terlalu Pendek, Minimal 10 Karakter!`
     if (text.length > 1000) throw `Laporan Terlalu Panjang, Maksimal 1000 Karakter!`
     let teks = `*ORDER SEWA*\n *ORDER :* ${text}\n* NAME :* @${m.sender.split`@`[0]}`
-    conn.reply(`${global.owner}` + '@s.whatsapp.net', m.quoted ? teks + m.quoted.text : teks, m, {
+    conn.reply(global.owner[0] + `@s.whatsapp.net`, m.quoted ? teks + m.quoted.text : teks, m, {
         contextInfo: {
             mentionedJid: [m.sender]
         }
