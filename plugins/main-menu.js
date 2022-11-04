@@ -29,6 +29,7 @@ const defaultMenu = {
 ┆♠︎ *Uptime:* : %uptime (%muptime)
 ┆♠︎ *Database:* %rtotalreg dari %totalreg
 ┆♠︎ *Penulis Ulang:* ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
+┆♠︎ *Script Ini:* Private!
 ┗─────────────────⬣
 %readmore`.trim(),
   header: '╔═❖〔 %category 〕❖════╗\n┃',
