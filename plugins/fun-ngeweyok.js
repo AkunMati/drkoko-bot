@@ -1,5 +1,5 @@
-let imgr = flaaa.getRandom()
 let handler = async (m, { conn, participants, command, usedPrefix }) => {
+    let imgr = flaaa.getRandom()
     let member = participants.map(u => u.id)
     let orang
     if (/ku/i.test(command)) orang = m.sender
