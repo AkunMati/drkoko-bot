@@ -2,6 +2,7 @@ const { default: fetch } = require('node-fetch')
 const { createWriteStream, existsSync } = require('fs')
 const { promisify } = require('util')
 const { join } = require('path')
+let handler = m => m
 
 let confirmation = {}
 let repository = 'sadteams/bot-md'
