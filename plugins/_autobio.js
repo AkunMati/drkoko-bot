@@ -1,5 +1,6 @@
-let fetch = require('node-fetch')
-export async function before(m) {
+const fetch = require('node-fetch')
+let handler = m => m
+handler.before = function (m) {
 	let setting = global.db.data.settings[this.user.jid]
 	if (new Date() * 1 - setting.status > 1000) {
 		let _uptime = process.uptime() * 1000
