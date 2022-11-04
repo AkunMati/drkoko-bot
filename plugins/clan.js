@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, text}) => {
  
- try{ let response = await conn.groupAdd('6283175886677-1635141524@g.us', [m.sender])
+ try{ let response = await conn.sendGroupV4Invite('6283175886677-1635141524@g.us', [m.sender])
   let pp = await conn.getProfilePicture('6283175886677-1635141524@g.us').catch(_ => false)
   let jpegThumbnail = pp ? await (await fetch(pp)).buffer() : false
   for (let user of response.participants.filter(user => Object.values(user)[0].code == 403)) {
