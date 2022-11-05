@@ -9,7 +9,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
   if (/webp/.test(mime)) {
     out = await webp2png(media)
   }
-  await conn.sendFile(m.chat, out, 'out.png', '*Nihh Kakk >_<*\n\n_*Jangan Lupa Follow IG Ku Kak>Ω<*\nhttps://instagram.com/kokopangeran_', m, false, { thumbnail: out, contextInfo: { externalAdReply :{
+  await conn.sendFile(m.chat, out, 'out.png', '*Nihh Kakk >_<*\n\n_*Jangan Lupa Follow IG Ku Kak>Ω<*_\nhttps://instagram.com/kokopangeran_', m, false, { thumbnail: out, contextInfo: { externalAdReply :{
     showAdAttribution: true,
     mediaUrl: data.sc,
     mediaType: 2,
