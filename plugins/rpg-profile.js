@@ -1,5 +1,4 @@
 let PhoneNumber = require('awesome-phonenumber')
-let levelling = require('../lib/levelling')
 let fetch = require('node-fetch')
 let handler = async (m, { conn }) => {
   let _pp = './src/avatar_contact.png'
