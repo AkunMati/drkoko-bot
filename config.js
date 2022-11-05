@@ -26,7 +26,7 @@ global.APIKeys = { // APIKey Here
   'https://api.neoxr.my.id': '5VC9rvNx',
   'https://api.xteam.xyz': 'Dawnfrostkey',
   'https://melcanz.com': 'manHkmst', //punya koko : 'ZZBk7EBb'
-  'https://api.lolhuman.xyz': 'pelitbetsihluwh',
+  'https://api.lolhuman.xyz': '8e66d0934cf741bfd2182c16',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
   'https://ghostui-api.herokuapp.com/': 'OC2eTK',
@@ -72,7 +72,7 @@ global.serialimg = 'https://telegra.ph/file/eaf30ca57d5c4c2d7a6f0.jpg'
 /*============== APIKEY SIMPEL ==============*/
 global.zenzkey = 'b8040941f7'
 /*Lolhuman*/
-global.lolkey = 'pelitbetsihluwh' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+global.lolkey = 'bukanitucuy14315195' // PUNYA WAHID  8e66d0934cf741bfd2182c16
 /*Xteam*/
 global.xteamkey = 'Dawnfrostkey'
 /*Xcoders*/
@@ -103,9 +103,28 @@ global.fpagedoc = '1'.repeat(10)
 global.fsizedoc = '99999999999999' // 10TB
 global.fpagedoc = '999' //Gausah di ganti.
 
-global.htki = '––––––⦅' // Hiasan Titile (KIRI)
-global.htka = '⦆––––––' // Hiasan Title  (KANAN)
-global.htjava = '⫹⫺'
+/*=========== HIASAN ===========*/
+// DEFAULT MENU
+global.dmenut = 'ଓ═┅═━–〈' //top
+global.dmenub = '┊↬' //body
+global.dmenub2 = '┊' //body for info cmd on Default menu
+global.dmenuf = '┗––––––––––✦' //footer
+
+// COMMAND MENU
+global.dashmenu = '┅═┅═❏ *DASHBOARD* ❏═┅═┅'
+global.cmenut = '❏––––––『' //top
+global.cmenuh = '』––––––' //header
+global.cmenub = '┊✦ ' //body
+global.cmenuf = '┗━═┅═━––––––๑\n' //footer
+global.cmenua = '\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕\n     ' //after
+global.pmenus = '✦' //pembatas menu selector
+
+global.htki = '––––––『' // Hiasan Titile (KIRI)
+global.htka = '』––––––' // Hiasan Title  (KANAN)
+global.lopr = 'Ⓟ' //LOGO PREMIUM ON MENU.JS
+global.lolm = 'Ⓛ' //LOGO LIMIT/FREE ON MENU.JS
+global.htjava = '⫹⫺'    //hiasan Doang :v
+global.hsquere = ['⛶','❏','⫹⫺']
 
 global.admen = `┏═┅〔 *SUPPORT* 〕┅═✦
 ┃
