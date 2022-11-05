@@ -12,7 +12,7 @@ let imgr = pickRandom(flaaa)
    if (!isBotAdmin) return m.reply('*Jadiin Bot Admin Terlebih Dahulu, Gimana Mau Kick Pantek_-*')
    if (m.sender.id.startsWith('BAE5') && !m.fromMe) {
    	user.banned = true
-   	this.sendButt(m.chat, caption, author, null, `${imgr + 'Anti Bot'}`, [['Disable Anti Bule', '.off antibot']], m, { mentions: this.parseMention(caption) })
+   	this.sendButt(m.chat, caption, author, null, `${imgr + 'Anti Bot'}`, [['Disable Anti Bot', '.off antibot']], m, { mentions: this.parseMention(caption) })
    	return conn.groupParticipantsUpdate(m.chat, [m.sender], 'remove')
    }
   }
