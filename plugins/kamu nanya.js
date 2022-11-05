@@ -1,4 +1,4 @@
-let fs = require('fs')
+/*let fs = require('fs')
 const { MessageType } = require('@adiwajshing/baileys')
 let handler = async (m) => {
 let aineess = fs.readFileSync('./mp3/mp3_kamu_nanya yah.opus')
@@ -13,5 +13,17 @@ handler.mods = false
 handler.premium = false
 handler.group = false 
 handler.private = false
+
+module.exports = handler*/
+
+let fs = require('fs')
+const { MessageType } = require('@adiwajshing/baileys')
+let handler = async (m, { conn }) => {
+let cepmek = fs.readFileSync('./mp3/mp3_kamu_nanya yah.opus') 
+conn.sendFile(m.chat, cepmek, '', '', m, true)
+}
+
+handler.customPrefix = /^(kamu nanya|apa|apaa|apaan|ap|Apa|Apaan|Ap|Kamu nanya)$/i
+handler.command = new RegExp
 
 module.exports = handler
