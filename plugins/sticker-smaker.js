@@ -1,5 +1,5 @@
-const uploadImage from require('../lib/uploadImage.js')
-const { sticker } = require('../lib/sticker.js')
+const uploadImage = require('../lib/uploadImage') 
+const { sticker } = require('../lib/sticker')
 const { MessageType } = require('@adiwajshing/baileys')
 const effects = ['jail', 'gay', 'glass', 'wasted' ,'triggered', 'lolice', 'simpcard', 'horny']
 
