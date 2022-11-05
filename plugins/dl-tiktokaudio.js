@@ -18,10 +18,10 @@ let txt = `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.
    document: { url: `https://api.lolhuman.xyz/api/tiktokwm?apikey=${global.lolkey}&url=${args[0]}`}, mimetype: 'audio/mpeg', fileName: 'tiktok.mp3', conntextInfo: {
         externalAdReply: {
             title: '▶︎ ━━━━━━━•────────────────── ', 
-            body: 'Now Playing...',
+            body: wm,
             description: 'Now Playing...',
             mediaType: 2,
-          thumbnail: await (await fetch('https://telegra.ph/file/9e323ad1f4b2d52579416.jpg')).buffer(),
+          thumbnail: await (await fetch('https://telegra.ph/file/11847cc65e161641e59bb.jpg')).buffer(),
          mediaUrl: sig
         }
      }
