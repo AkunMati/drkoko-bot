@@ -39,7 +39,7 @@ const sections = [
 
 const listMessage = {
   text: tiktok,
-  footer: botdate,
+  footer: 'Jangan Spm!',
   title: wm,
   buttonText: "Click Here!",
   sections
