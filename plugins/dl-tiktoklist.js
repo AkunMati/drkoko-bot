@@ -44,7 +44,7 @@ const listMessage = {
   buttonText: "Click Here!",
   sections
 }
-await conn.sendMessage(m.chat, listMessage, { quoted: fakes, mentions: await conn.parseMention(tiktok), contextInfo:{ forwardingScore: 99999, isForwarded: true }})
+await conn.sendMessage(m.chat, listMessage, { quoted: fake, mentions: await conn.parseMention(tiktok), contextInfo:{ forwardingScore: 99999, isForwarded: true }})
 
 }
 
