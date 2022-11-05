@@ -1,31 +1,28 @@
-const { tiktokdl } = require('@bochilteam/scraper')
-const { tiktok } = require('../lib/scrape.js')
-const fetch = require('node-fetch')
-
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
-let name = await conn.getName(who)
-if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
-m.react('⏱️')
-try {
-    const { author: { nickname }, video, description } = await tiktokdl(args[0])
-    const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
-    if (!url) throw 'Can\'t download video!'
-let caption = `*Nickname:* ${nickname}
-*Description:* ${description}`
-  conn.sendButtonVid(m.chat, url, caption, author, 'To mp3', '.tomp3', fakes, adReply)
-} catch {
-const { res } = await aiovideodl(args[0])
-    const urll = res.data.url
-    if (!urll) throw 'Can\'t download video!'
-let caption = `*Nickname:* ${wm}`
-  conn.sendButtonVid(m.chat, urll, caption, author, 'To mp3', '.tomp3', fakes, adReply)
-}
+let fetch = require('node-fetch')
+let axios = require('axios')
+let handler = async (m, { conn, args }) => {
+  if (!args[0]) throw 'Uhm...url nya mana?'
+ // let url = `https://api.lolhuman.xyz/api/tiktokwm?apikey=9b817532fadff8fc7cb86862&url=${args[0]}`
+    m.reply(data.wait)
+await conn.reply(m.chat, `Downloading media from Tiktok`, 0, {
+  contextInfo: { mentionedJid: [m.sender],
+    externalAdReply :{
+    showAdAttribution: true,
+    mediaUrl: data.sc,
+    mediaType: 2,
+    description: data.deslink , 
+    title: run,
+    body: wm,
+    thumbnail: await(await fetch(img)).buffer(),
+    sourceUrl: data.sc
+     }}
+  })
+let txt = `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.php?url=${args[0]}`)).data}` 
+    await conn.send2ButtonVid(m.chat, `https://api.lolhuman.xyz/api/tiktokwm?apikey=9b817532fadff8fc7cb86862&url=${args[0]}` , txt, wm, `No Wm`, `.tiktoknowm ${args[0]}`, `Audio`, `.tiktokaudio ${args[0]}`, m)
 }
 handler.help = ['tiktok2'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^t(iktok(d(own(load(er)?2|2)|l2)|2)|td(own(load(er)?2|2)|l2))$/i
+handler.command = /^((tt2|tiktok2)?(dl2)?)$/i
 handler.premium = true
 handler.limit = true
 module.exports = handler
