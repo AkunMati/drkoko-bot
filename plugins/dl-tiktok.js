@@ -1,6 +1,6 @@
-const fetch = require('node-fetch')
+let fetch = require('node-fetch')
 const axios = require('axios')
-const { tiktok } = require('social_media_downloader')
+const { tiktok } = require("social_media_downloader")
 let handler = async (m, { conn, usedPrefix, command, text, args }) => {
 if (!args[0]) throw 'Masukkan Link'
 m.react('⏱️')
@@ -29,7 +29,7 @@ conn.send2ButtonVid(m.chat, p.link, cap, author, `No Wm`, `.tiktoknowm ${args[0]
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^t(iktok(d(own(load(er)?)?|l))?|td(own(load(er)?)?|l))$/i
-handler.premium = true
+//handler.premium = true
 handler.limit = true
 
 module.exports = handler
