@@ -1,43 +1,42 @@
 let PhoneNumber = require('awesome-phonenumber')
+let levelling = require('../lib/levelling')
 let fetch = require('node-fetch')
-let handler = async (m, { conn }) => {
-  let _pp = './src/avatar_contact.png'
-  let user = db.data.users[m.sender]
+let handler = async (m, { conn, usedPrefix }) => {
+  const pp = 'https://i.ibb.co/gS0XrNc/avatar-contact.png'
+  let prefix = usedPrefix
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
-    let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/avatar_contact.png')
-    let { premium, level, limit, exp, lastclaim, registered, regTime, age } = global.db.data.users[m.sender]
+  try {
+    pp = await conn.profilePictureUrl(m.sender, 'image')
+  } catch (e) {
+
+  } finally {
+    let { name, premium, premiumTime, atm, limit, warning, money, exp, lastclaim, registered, regTime, age, level, role } = global.db.data.users[who]
+    let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let username = conn.getName(who)
-    let name = conn.getName(who)
-    let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '16504228206@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${name}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${name}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
     let str = `
-]──────────❏ *PROFILE* ❏──────────[
-💌 • *Name:* ${username} 
-🎐 • *Username:* ${registered ? name : ''}
-📧 • *Tag:* @${who.replace(/@.+/, '')}
-📞 • *Number:* ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
-🔗 • *Link:* https://wa.me/${who.split`@`[0]}
-🎨 • *Age:* ${registered ? age : ''}
-${readMore}
-🌟 • *Premium:* ${premium ? "✅" :"❌"}
-⏰ • *PremiumTime:* 
-${clockString(user.premiumTime)}
-📑 • *Registered:* ${registered ? '✅': '❌'}
+╭───ꕥ *PROFILE* ꕥ───✾
+│•> Name: ${username}
+│•> Premium: ${premium ? `${conn.msToDate(premiumTime - new Date() * 1)}` : 'Gratisan'}
+│•> Number: ${PhoneNumber('+' + who.replace('@s.whatsapp.net', '')).getNumber('international')}
+│•> Umur: *${age == '-1' ? 'Belum Daftar' : age}*
+│•> Link: wa.me/${m.sender.split`@`[0]}
+│•> Level: *${level}*
+│•> Rank : *${role}*
+│•> Limit: *${limit}*
+│•> Atm: *${atm}*
+│•> Money: *${money}*
+│•> Exp  : *${exp}*
+│•> Warning : *${warning}*
+╰─────────────────────
 `.trim()
-    conn.sendButt(m.chat, str, pp, wm, [[`${registered ? '♡KOKO♡':'👦COWO':'CEWE👧'}`, `${user.registered ? '.owner':'.daftarco':'.daftarce'}`]], fkon, { contextInfo: { mentionedJid: [who], forwardingScore: 999, isForwarded: true}})
+    let mentionedJid = [who]
+    //conn.sendFile(m.chat, pp, 'pp.jpg', str, m, false, { contextInfo: { mentionedJid }})
+    conn.sendButtonImg(m.chat, await (await fetch(pp)).buffer(), str, wm, '♡KOKO♡', `${prefix}owner`, { mentions: [m.sender] })
+    //conn.send2ButtonLoc(m.chat, await (await fetch(pp)).buffer(), str, wm, `Menu`, `${prefix}menu`, 'Claim', `${prefix}claim`)
+  }
 }
-handler.help = ['profile [@user]']
+handler.help = ['dompet', 'profile']
 handler.tags = ['exp']
-handler.command = /^profile|pp$/i
-
+handler.command = /^(dompet|pp|profile|profil|propil)$/i
+handler.register = false
 module.exports = handler
-
-const more = String.fromCharCode(8206)
-const readMore = more.repeat(4001)
-
-function clockString(ms) {
-  let d = isNaN(ms) ? '--' : Math.floor(ms / 86400000)
-  let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000) % 24
-  let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
-  let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [d, ' *Days ☀️*\n ', h, ' *Hours 🕐*\n ', m, ' *Minute ⏰*\n ', s, ' *Second ⏱️* '].map(v => v.toString().padStart(2, 0)).join('')
-}
