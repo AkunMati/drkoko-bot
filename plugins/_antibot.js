@@ -1,8 +1,8 @@
 // DETECTOR BOT
 let handler = m => m
-let imgr = pickRandom(flaaa)
 
 handler.before = async (m, { isAdmin, isBotAdmin }) => {
+let imgr = pickRandom(flaaa)
     let name = await conn.getName(m.sender)
     let chat = global.db.data.chats[m.chat]
     let user = global.db.data.users[m.sender]
