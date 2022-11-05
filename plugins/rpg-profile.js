@@ -29,7 +29,8 @@ ${clockString(user.premiumTime)}
 handler.help = ['profile [@user]']
 handler.tags = ['exp']
 handler.command = /^profile|pp$/i
-export default handler
+
+module.exports = handler
 
 const more = String.fromCharCode(8206)
 const readMore = more.repeat(4001)
