@@ -1,9 +1,9 @@
 // MADE BY KOKO PANGERAN (JANGAN DIHAPUS !!!)
 
-
-const jimp = require('jimp')
-const uploadImage = require('../lib/uploadImage.js')
-const uploadFile = require('../lib/uploadFile.js')
+const uploadImage = require('../lib/uploadImage')
+const uploadFile = require('../lib/uploadFile')
+const { MessageType } = require('@adiwajshing/baileys')
+let jimp = require('jimp')
 
 let handler = async (m, { conn, usedPrefix, args}) => {
 	let towidth = args[0]
