@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
-const axios = require('axios')
-const { tiktok } = require("social_media_downloader")
+let axios = require('axios')
+const { tiktok } = require('social_media_downloader')
 let handler = async (m, { conn, usedPrefix, command, text, args }) => {
 if (!args[0]) throw 'Masukkan Link'
 m.react('⏱️')
