@@ -24,7 +24,7 @@ ${readMore}
 ${clockString(user.premiumTime)}
 📑 • *Registered:* ${registered ? '✅': '❌'}
 `.trim()
-    conn.sendButt(m.chat, str, run, pp, [[`${registered ? '♡KOKO♡':'👦COWO':'CEWE👧'}`, `${user.registered ? '.owner':'.daftarco':'.daftarce'}`]], fkon, { contextInfo: { mentionedJid: [who], forwardingScore: 999, isForwarded: true}})
+    conn.sendButt(m.chat, str, pp, wm, [[`${registered ? '♡KOKO♡':'👦COWO':'CEWE👧'}`, `${user.registered ? '.owner':'.daftarco':'.daftarce'}`]], fkon, { contextInfo: { mentionedJid: [who], forwardingScore: 999, isForwarded: true}})
 }
 handler.help = ['profile [@user]']
 handler.tags = ['exp']
