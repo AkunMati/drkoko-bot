@@ -43,7 +43,7 @@ global.wm = '*Copyright: ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×
 
 global.asing = `*Ciee Orang Asing, Dadah👋*`
 global.wait = `*Tunggu Sebentar Dungu!*`
-
+global.eror = '*ᴇʀᴏʀʀ!*'
 
 global.sig = 'https://instagram.com/kokopangeran_' //Link Instagrammu
 global.sgh = 'https://github.com/MendingTuru' //Link Githubmu
