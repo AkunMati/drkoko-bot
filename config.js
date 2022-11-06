@@ -24,7 +24,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.neoxr.my.id': '5VC9rvNx',
-  'https://api.xteam.xyz': 'Dawnfrostkey',
+  'https://api.xteam.xyz': 'ebb6251cc00f9c63',
   'https://melcanz.com': 'manHkmst', //punya koko : 'ZZBk7EBb'
   'https://api.lolhuman.xyz': '8e66d0934cf741bfd2182c16',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
@@ -72,7 +72,7 @@ global.serialimg = 'https://telegra.ph/file/eaf30ca57d5c4c2d7a6f0.jpg'
 /*============== APIKEY SIMPEL ==============*/
 global.zenzkey = 'b8040941f7'
 /*Lolhuman*/
-global.lolkey = 'bukanitucuy14315195' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+global.lolkey = '8e66d0934cf741bfd2182c16' // PUNYA WAHID  8e66d0934cf741bfd2182c16
 /*Xteam*/
 global.xteamkey = 'Dawnfrostkey'
 /*Xcoders*/
@@ -128,17 +128,17 @@ global.hsquere = ['⛶','❏','⫹⫺']
 
 global.admen = `┏═┅〔 *SUPPORT* 〕┅═✦
 ┃
-┃⫹⫺ Nurutomo
-┃⫹⫺ KokoPangeran
-┃⫹⫺ Ilmanhdyt
-┃⫹⫺ Elyas
-┃⫹⫺ Hyzer
-┃⫹⫺ KrizynOfc
-┃⫹⫺ Zivsan
-┃⫹⫺ Mursid
-┃⫹⫺ Jarot
-┃⫹⫺ Kanna
-┃⫹⫺ Fokusid
+┃✦ Nurutomo
+┃✦ KokoPangeran
+┃✦ Ilmanhdyt
+┃✦ Elyas
+┃✦ Hyzer
+┃✦ KrizynOfc
+┃✦ Zivsan
+┃✦ Mursid
+┃✦ Jarot
+┃✦ Kanna
+┃✦ Fokusid
 ┃
 ┗━━══┅┅══━━━✦`
 
