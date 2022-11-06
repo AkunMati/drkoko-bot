@@ -1,59 +1,25 @@
-const { Tiktok } = require('xfarr-api')
-const { tiktok } = require('../lib/scrape')
-const { toAudio, toPTT } = require('../lib/converter')
+   let axios = require('axios')
+const fetch = require('node-fetch')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-  if (!args[0]) throw `uhm.. url nya mana?\n\ncontoh:\n${usedPrefix + command} https://vt.tiktok.com/ZGJBtcsDq/`
- m.react('⏱️')
-  if (!args[0].match(/tiktok/gi)) throw `url salah`
-  const sentMsg = await m.reply(data.wait)
-await conn.reply(m.chat, `Lain Kali Download Sendiri Memek!`, 0, {
-  contextInfo: { mentionedJid: [m.sender],
-    externalAdReply :{
-    showAdAttribution: true,
-    mediaUrl: data.sc,
-    mediaType: 2,
-    description: data.deslink , 
-    title: run,
+    if (!args[0]) throw `contoh:\n ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
+    let res = (await axios.get(API('males', '/tiktok2', { url: args[0] } ))).data;
+    if (res.status != 200) throw res.message;
+    if (!res) throw res.message;
+    
+conn.sendFile(m.chat, res.audio, 'error.mp3', null, m, true, {
+type: 'audioMessage', 
+ptt: false, seconds: 0,contextInfo: {
+         externalAdReply: { showAdAttribution: true,
+ mediaUrl: sig,
+    mediaType: 2, 
+    description: 'Follow IG Pangeran',
+    title: "Nɪʜ...",
     body: wm,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: data.sc
-     }}
-  })
-  try {
-    var anu = await Tiktok(args[0])
-    var { url, title, thumbnail, duration, source, medias } = anu
-    var { quality, extension, size, formattedSize, } = anu.medias[0]
-    await conn.sendMedia(m.chat, medias[2].url, m, {mentions: [m.sender]})
-    //await conn.sendMedia(m.chat, medias[2].url, null, {ptt: true, mentions: [m.sender]})
-    } catch {
-    try {
-    var anu = await Tiktok(args[0])
-    var { url, title, thumbnail, duration, source, medias } = anu
-    var { quality, extension, size, formattedSize, } = anu.medias[0]
-    let v = medias[1].url
-    let a = await(await fetch(v)).buffer()
-    let au = await toAudio(a, 'mp4')
-    let vn = await toPTT(a, 'mp4') 
-    await conn.sendFile(m.chat, au.data, 'tiktok.mp3', '', m, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: db.data.chats[m.chat].useDocument })
-    //await conn.sendFile(m.chat, vn.data, 'tiktok.opus', '', 0, m, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: db.data.chats[m.chat].useDocument })
-  } catch {
-    try {
-    var anuu = await tiktok(args[0])
-    var { nowm, wm, audio } = anuu
-    let v = nowm
-    let a = await(await fetch(v)).buffer()
-    let au = await toAudio(a, 'mp4')
-    let vn = await toPTT(a, 'mp4')
-    await conn.sendFile(m.chat, au.data, 'tiktok.mp3', '', m, { mentions: [m.sender], mimetype: 'audio/mp4', asDocument: db.data.chats[m.chat].useDocument })
-  } catch {
-    throw data.eror 
-      }
-    }
-  }
+    thumbnail: await (await fetch('https://telegra.ph/file/63d157733afce65388504.jpg')).buffer(),
+    sourceUrl: sig}}})
 }
-handler.help = ['tiktokaudio'].map(v => v + ' <url>')
+handler.help = ['tiktokmp3'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(tt|tiktok)(a(udio)?|mp3|sound)(dl)?(download(er)?)?$/i
-handler.limit = true
-
+handler.command = /^(tiktokmp3|ttdlmp3|ttmp3|tiktokdlmp3|gettt)$/i
+hanlder.limit = true 
 module.exports = handler
