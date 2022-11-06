@@ -24,13 +24,13 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.neoxr.my.id': '5VC9rvNx',
-  'https://api.xteam.xyz': 'ebb6251cc00f9c63',
-  'https://melcanz.com': 'manHkmst', //punya koko : 'ZZBk7EBb'
-  'https://api.lolhuman.xyz': '8e66d0934cf741bfd2182c16',
+  'https://api.xteam.xyz': 'cristian9407',
+  'https://melcanz.com': 'wEDTUsWj', //punya koko : 'ZZBk7EBb'
+  'https://api.lolhuman.xyz': 'Xynoz',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
   'https://ghostui-api.herokuapp.com/': 'OC2eTK',
-  'https://botstyle-api.herokuapp.com': 'iAEzm9gH',
+  'https://botstyle-api.herokuapp.com': 'Eyar749L',
   'https://pencarikode.xyz': 'pais',
   'https://hardianto.xyz': 'hardianto',
   'https://leyscoders-api.herokuapp.com': 'MIMINGANZ',
