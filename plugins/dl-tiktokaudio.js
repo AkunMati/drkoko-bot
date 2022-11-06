@@ -21,5 +21,5 @@ ptt: false, seconds: 0,contextInfo: {
 handler.help = ['tiktokmp3'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 handler.command = /^(tiktokmp3|ttdlmp3|ttmp3|tiktokdlmp3|gettt)$/i
-hanlder.limit = true 
+handler.limit = true 
 module.exports = handler
