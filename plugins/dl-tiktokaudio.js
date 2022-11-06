@@ -1,7 +1,7 @@
 const fetch = require('node-fetch')
 let axios = require('axios')
 let fs = require('fs')
-let moment = require('moment-timezone')
+const moment = require('moment-timezone')
 
 let handler = async (m, { conn, args }) => {
   let _uptime = process.uptime() * 1000
