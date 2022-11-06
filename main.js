@@ -19,7 +19,7 @@ const syntaxerror = require('syntax-error')
 const P = require('pino')
 const os = require('os')
 const chalk = require('chalk')
-let simple = require('./lib/simple')
+let { makeWASocket, protoType, serialize } = require('./lib/simple')
 var low
 try {
   low = require('lowdb')
