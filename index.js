@@ -4,12 +4,11 @@ let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts = require('cfonts')
-const { createRequire } = require('module') // Bring in the ability to create the 'require' method
 const Readline = require('readline')
 const yargs = require('yargs/yargs')
 const rl = Readline.createInterface(process.stdin, process.stdout)
 
-CFonts.say('Bottom', {
+CFonts.say('Leviathan', {
   colors: ['#f2aa4c'],
   font: 'block',
   align: 'center',
