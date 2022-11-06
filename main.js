@@ -8,6 +8,7 @@ const {
   DisconnectReason
 } = require('@adiwajshing/baileys')
 const { generate } = require('qrcode-terminal')
+const { createRequire } = require('module') // Bring in the ability to create the 'require' method
 const WebSocket = require('ws')
 const path = require('path')
 const fs = require('fs')
