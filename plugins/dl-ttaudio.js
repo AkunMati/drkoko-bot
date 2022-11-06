@@ -12,9 +12,9 @@ let handler = async (m, { conn, args }) => {
 ┆• *📥 Ukuran File:* 
 └❏`, m, false)
 }
-handler.help = ['ttaudio <teks>']
+handler.help = ['ttaudio2 <teks>']
 handler.tags = ['downloader']
-handler.command = /^(ttaudio|tiktokmp3|ttmp3)$/i
+handler.command = /^(ttaudio2)$/i
 handler.limit = true
 
 module.exports = handler
