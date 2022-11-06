@@ -46,7 +46,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './mp3/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'soundanime', 'change', 'kerangajaib', 'quotes', 'admin', 'group', 'anime', 'logo', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'soundanime', 'change', 'kerangajaib', 'random', 'quotes', 'admin', 'group', 'anime', 'logo', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
@@ -60,6 +60,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'soundanime': 'Sound Anime',
     'change': 'Pengubah Suara',
     'kerang': 'Kerang Ajaib',
+    'random': 'Random',
     'quotes': 'Quotes',
     'group': 'Group',
     'anime': 'Anime',
@@ -113,6 +114,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'kerangajaib') tags = {
     'kerang': 'Kerang Ajaib'
+  }
+  if (teks == 'random') tags = {
+    'random': 'Random'
   }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
@@ -284,6 +288,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
           { title: 'Sound Anime', rowId: `${_p + command} soundanime`, description: `FITUR SOUND ANIME KIDZ` },
           { title: 'Pengubah Suara', rowId: `${_p + command} change`, description: `FITUR PENGUBAH SUARA KIDZ` },
           { title: 'Kerang Ajaib', rowId: `${_p + command} kerangajaib`, description: `FITUR KERANG AJAIB KIDZ` },
+          { title: 'Random', rowId: `${_p + command} random`, description: `FITUR RANDOM KIDZ` },
           { title: 'Quotes', rowId: `${_p + command} quotes`, description: `FITUR QUOTES KIDZ` },
           { title: 'Group', rowId: `${_p + command} group`, description: `FITUR GROUP KIDZ` },
           { title: 'Anime', rowId: `${_p + command} anime`, description: `FITUR ANIME KIDZ` },
