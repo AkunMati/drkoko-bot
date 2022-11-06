@@ -8,7 +8,6 @@ const {
   DisconnectReason
 } = require('@adiwajshing/baileys')
 const { generate } = require('qrcode-terminal')
-const { createRequire } = require('module') // Bring in the ability to create the 'require' method
 const WebSocket = require('ws')
 const path = require('path')
 const fs = require('fs')
@@ -19,7 +18,7 @@ const syntaxerror = require('syntax-error')
 const P = require('pino')
 const os = require('os')
 const chalk = require('chalk')
-let { makeWASocket, protoType, serialize } = require('./lib/simple')
+let simple = require('./lib/simple')
 var low
 try {
   low = require('lowdb')
