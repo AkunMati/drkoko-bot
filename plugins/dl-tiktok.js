@@ -13,7 +13,7 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
 ▥ ━┉┄┄┈┈ ►
 ${res.author}
 ◈ ━┉┈┄┈┈ ►`
-    conn.sendButtonVid(m.chat, res.video, result, '©ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×', `Audio`, `.gettt ${args[0]}`, m)
+    conn.sendButtonVid(m.chat, res.video, result, '©ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×', `⏩AUDIO`, `.tomp3`, m)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
