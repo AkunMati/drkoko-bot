@@ -45,7 +45,7 @@ var as = `Tanggal : ${week}, ${date}\nWaktu : ${a} (WIB)`
 }
 handler.help = ['infobot']
 handler.tags = ['info']
-handler.command = /^(info(bot)?)$/i
+handler.command = /^(infobot)?)$/i
 
 module.exports = handler
 
