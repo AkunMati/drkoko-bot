@@ -12,7 +12,7 @@ let handler = async(m, { conn, text, usedPrefix, command }) => {
  ${x.duration}
  ${x.url}
 `
-        await conn.sendButt(m.chat, caption, wm, x.thumbnail, [['gore', '/gore']], m)
+        await conn.sendButtonImg(m.chat, caption, wm, x.thumbnail, 'gore', '/gore', m)
 }
 handler.help = ['gore']
 handler.tags = ['random']
