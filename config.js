@@ -73,12 +73,12 @@ global.serialimg = 'https://telegra.ph/file/eaf30ca57d5c4c2d7a6f0.jpg'
 global.bear = 'VBkM7rbU'
 global.zenzkey = 'b8040941f7'
 /*Lolhuman*/
-global.lolkey = '8e66d0934cf741bfd2182c16' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+global.lolkey = 'Xynoz' // PUNYA WAHID  8e66d0934cf741bfd2182c16
 /*Xteam*/
-global.xteamkey = 'Dawnfrostkey'
+global.xteamkey = 'cristian9407'
 /*Xcoders*/
-global.xckey = '7iyNa0qA'
-//global.xckey = 'BOhjM2hUVn'
+//global.xckey = '7iyNa0qA'
+global.xckey = 'BOhjM2hUVn'
 
 /*List Key
 -Lolhuman-
