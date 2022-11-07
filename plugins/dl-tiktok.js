@@ -1,5 +1,5 @@
 let { tiktokdl } = require('@bochilteam/scraper')
-let { aiovideodl } = require('../lib/scrape')
+let { tiktok } = require('../lib/scrape')
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
