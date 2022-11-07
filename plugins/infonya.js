@@ -6,7 +6,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 const sections = [ {
 	title: `Pilih Salah Satu Menu `,
 	rows: [
-	   {title: `Speed`, rowId: `#speed `, description: `KECEPATAN KIDZ`},
+	   {title: `Ping Pong`, rowId: `#ping `, description: `KECEPATAN KIDZ`},
         {title: `Speedtest`, rowId: `#speedtest `, description: `KECEPATAN KE 2 KIDZ`},
         {title: `Script`, rowId: `#sc `, description: `SCRIPT BOT KIDZ`},
          {title: `Thanks`, rowId: `#tqto `, description: `CONTRIBUTORS KIDZ`},
