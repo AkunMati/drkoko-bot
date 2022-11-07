@@ -1,18 +1,30 @@
-//const { tiktokdl, tiktokdlv2, tiktokdlv3 } = require('@bochilteam/scraper')
-const { tiktokdl, tiktokdlv2 } = require('@bochilteam/scraper')
+let { tiktokdl } = require('@bochilteam/scraper')
+let { aiovideodl } = require('../lib/scrape')
+let fetch = require('node-fetch')
+
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
-    const { author: { nickname }, video, description } = await tiktokdl(args[0]).catch(async _ => await tiktokdlv2(args[0]))
-    const url = video.no_watermark_raw || video.no_watermark || video.no_watermark_hd || video.with_watermark 
+let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
+let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
+let name = await conn.getName(who)
+if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.tiktok.com/@omagadsus/video/7025456384175017243`
+try {
+    const { author: { nickname }, video, description } = await tiktokdl(args[0])
+    const url = video.no_watermark || video.no_watermark2 || video.no_watermark_raw
     if (!url) throw 'Can\'t download video!'
-    conn.sendFile(m.chat, url, 'tiktok.mp4', `
-🔗 *Url:* ${url}
-🧏 *Nickname:* ${nickname}${description ? `🖹 *Description:* ${description}` : ''}
-`.trim(), m)
+let caption = `*Nickname:* ${nickname}
+*Description:* ${description}`
+  conn.sendButtonVid(m.chat, url, caption, author, 'To mp3', '.tomp3', fakes, adReply)
+} catch {
+const { res } = await aiovideodl(args[0])
+    const urll = res.data.url
+    if (!urll) throw 'Can\'t download video!'
+let caption = `*Nickname:* ${wm}`
+  conn.sendButtonVid(m.chat, urll, caption, author, 'To mp3', '.tomp3', fakes, adReply)
+}
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(tik(tok)?(dl)?)$/i
+handler.command = /^(tiktok)$/i
 handler.premium = true
 handler.limit = true
 module.exports = handler
