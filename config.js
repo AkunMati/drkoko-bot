@@ -45,6 +45,12 @@ global.asing = `*Ciee Orang Asing, Dadah👋*`
 global.wait = `*Tunggu Sebentar Dungu!*`
 global.eror = '*ᴇʀᴏʀʀ!*'
 
+//WAR
+global.wem = '✘ᵈʳᴋᴏᴋᴏ 𝐂𝐑𝐀𝐒𝐇 𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘'
+global.thumb = fs.readFileSync('./src/thumb4.jpg') // Thumb Menu
+global.thumb2 = fs.readFileSync('./src/thumb3.jpg') // Thumb War
+//Tutup WAR
+
 global.sig = 'https://instagram.com/kokopangeran_' //Link Instagrammu
 global.sgh = 'https://github.com/MendingTuru' //Link Githubmu
 global.sgc = 'https://chat.whatsapp.com/FR1KfE3OTcQCayiabos8Ff'
