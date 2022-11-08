@@ -638,14 +638,14 @@ async participantsUpdate({ id, participants, action }) {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                       let pp = 'https://telegra.ph/file/11847cc65e161641e59bb.jpg'
+                       let pp = 'https://telegra.ph/file/480d83b0ef52cd62d5c71.jpg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
-                                this.sendButtonLoc(id, pp, text, wm, "THNKS KOKO GANTENG:v", "terimakasih", null)
+                                this.send2ButtonLoc(id, pp, text, wm, "✔️INTRO", ".intro", "SEWA💰", ".sewabot" null)
                                 }
                     }
                 }
