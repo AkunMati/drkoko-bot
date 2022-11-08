@@ -51,7 +51,7 @@ handler.all = async function (m) {
 
 // ==> Fake Virus
 
-global.ftrolii = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 2019, status: 1, surface: 1, message: wem, orderTitle: ucapWaktu, sellerJid: '0@s.whatsapp.net'} } }
+global.ftrolii = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 2019, status: 1, surface: 1, message: wem, orderTitle: ucapan, sellerJid: '0@s.whatsapp.net'} } }
 
 global.fdocs = { key : { participant : '0@s.whatsapp.net' }, message: { documentMessage: { title: `${wem}\n${notif1}`, jpegThumbnail: thumb2, sendEphemeral: true } } }
 
@@ -89,14 +89,11 @@ participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: "@s.whatsapp.net" } :
 "fileEncSha256": "ybdZlRjhY+aXtytT0G2HHN4iKWCFisG2W69AVPLg5yk="
 }}}
 
-global.fkontakk = { key: {participant : '0@s.whatsapp.net'}, message: { 'contactMessage': { 'displayName': `${wem}\n${ngazap}`, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wem},;;;\nFN:${wem},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': thumb2, thumbnail: thumb2,sendEphemeral: true}}}
-
-
         //is fake
 
 		const ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 9999999999999999999999999999999999999999999999999999999, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
 		
-        const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': require('fs').readFileSync('./src/logo.jpg'), thumbnail: require('fs').readFileSync('./src/logo.jpg'),sendEphemeral: true}}}
+        const fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': require('fs').readFileSync('./thumbnail.jpg'), thumbnail: require('fs').readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
         
         const fvn = {
 	 key: { 
