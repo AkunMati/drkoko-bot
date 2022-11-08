@@ -47,8 +47,8 @@ global.eror = '*ᴇʀᴏʀʀ!*'
 
 //WAR
 global.wem = '✘ᵈʳᴋᴏᴋᴏ 𝐂𝐑𝐀𝐒𝐇 𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘'
-global.thumb = fs.readFileSync('./src/thumb4.jpg') // Thumb Menu
-global.thumb2 = fs.readFileSync('./src/thumb3.jpg') // Thumb War
+global.thumb = fs.readFileSync('./src/images (1).jpeg') // Thumb Menu
+global.thumb2 = fs.readFileSync('./thumbnail.jpg') // Thumb War
 //Tutup WAR
 
 global.sig = 'https://instagram.com/kokopangeran_' //Link Instagrammu
