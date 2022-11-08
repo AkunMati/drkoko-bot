@@ -33,6 +33,6 @@ ${usedPrefix + command} greyscale
 }
 handler.help = ['stikerfilter']
 handler.tags = ['sticker']
-handler.command = /^(s(tic?ker)?filter)$/i
+handler.command = /^(stikerfilter)$/i
 handler.limit = true
 module.exports = handler
