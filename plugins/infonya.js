@@ -31,8 +31,8 @@ const listMessage = {
   if (!json.image) throw json
 }
 
-handler.help = ['info'].map((v) => v + ' <opsi>')
+handler.help = ['listinfo'].map((v) => v + ' <opsi>')
 handler.tags = ['main']
-handler.command = /^(Info)$/i
+handler.command = /^(listinfo)$/i
 
 module.exports = handler
