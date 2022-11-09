@@ -630,7 +630,6 @@ async participantsUpdate({ id, participants, action }) {
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
         let chat = global.db.data.chats[id] || {}
-        let fetch = require('node-fetch')
         let text = ''
         switch (action) {
             case 'add':
@@ -638,18 +637,34 @@ async participantsUpdate({ id, participants, action }) {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                       let pp = 'https://telegra.ph/file/480d83b0ef52cd62d5c71.jpg'
+                        let pp = 'https://telegra.ph/file/e641e98d956904c503e86.jpg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
+
                         } finally {
-                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
-                                (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
-                                this.send2ButtonLoc(id, pp, text, wm, "✔️INTRO", ".intro", "SEWA💰", ".sewabot", null)
-                                }
+                            text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc ? String.fromCharCode(8206).repeat(4001) + groupMetadata.desc : '') :
+                                (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                            let wel = API('males', '/welcome2', {
+                                profile: pp,
+                                username: await this.getName(user),
+                                background: 'https://i.ibb.co/z2QQnqm/wp.jpg',
+                                groupname: await this.getName(id),
+                                membercount: groupMetadata.participants.length
+                            })
+                            let lea = API('males', '/goodbye2', {
+                                profile: pp,
+                                username: await this.getName(user),
+                                background: 'https://i.ibb.co/z2QQnqm/wp.jpg',
+                                groupname: await this.getName(id),
+                                membercount: groupMetadata.participants.length
+                            })
+                            await this.sendButtonLoc(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Welcome' : 'Good Bye', action === 'add' ? '.intro' : '-') 
+                        }
                     }
                 }
                 break
+
             case 'promote':
                 text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
             case 'demote':
