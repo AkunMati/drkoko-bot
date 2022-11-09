@@ -1,39 +1,15 @@
-// --------------------------------------------- pakai scrape social_media_downloader --------------------------------------------------------
-
-let fetch = require('node-fetch')
-let axios = require('axios')
-const { tiktok } = require('social_media_downloader')
-let handler = async (m, { conn, usedPrefix, command, text, args }) => {
-if (!args[0]) throw 'Masukkan Link'
-m.react('⏱️')
-try {
-let p = await tiktok(args[0])
-    if (!p.link) throw 'Can\'t download video!'
-    let cap = `*「 🇹 ᴛ ɪ ᴋ ᴛ ᴏ ᴋ 」*
-                 ████████▀▀▀████
-                 ████████────▀██
-                 ████████──█▄──█
-                 ███▀▀▀██──█████
-                 █▀──▄▄██──█████
-                 █──█████──█████
-                 █▄──▀▀▀──▄█████
-                 ███▄▄▄▄▄███████
-────────── ⇆ㅤ◁ㅤ ❚❚ㅤ ▷ㅤ↻ ──────────
-*Nickname:* ${p.dev}
-*Description:* ${p.description}
-*Url:* ${p.url}
-
-_©ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×_
-`.trim()
-conn.send2ButtonVid(m.chat, p.link, cap, wm, `💰SEWA`, `.sewa`, `AUDIO✅`, `.tomp3`, fake, { quoted: adReply})
-} catch (e) {
-    throw eror
-    }
-}
-
-handler.help = ['tiktok', 'tiktok', 'tiktokdl'].map(v => v + ' <url>')
+let https = require('axios')
+let handler = async (m, { conn, args, usedPrefix, command }) => {
+if (!args[0]) throw `contoh:\n ${usedPrefix}${command} https://vm.tiktok.com/ZGJAmhSrp/`
+let tio = (await https.get(API('males', '/tiktok', { url: args[0] } ))).data;
+if (tio.status != 200) throw tio.message;
+if (!tio) throw tio.message;
+ let hasilnya = `*Title:* ${tio.title}\n\n*Author:* ${tio.author}`
+  conn.sendButtonVid(m.chat, tio.video, hasilnya, wm, `Back`, `.menu`, m)
+        }
+handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(tik(tok)?(tok)?(dl)?)$/i
+handler.command = /^(tiktok|ttdl|tt|tiktokdl|tiktoknowm)$/i
 handler.limit = true
-handler.premium = false
+handler.premium = true
 module.exports = handler
