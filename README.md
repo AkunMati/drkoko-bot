@@ -7,7 +7,7 @@
 <h1 align="center">Simple WhatsApp Bot with Bailey multi device</h1>
 <p align="center">
 
-<!--<div align="center"><img src="https://raw.githubusercontent.com/radhin123/Leviathan-md/v3.0/gifs-de-auditoria-23.gif"></div>
+<!--<div align="center"><img src="https://raw.githubusercontent.com/MendingTuru/Bottom-MD2/v3.0/gifs-de-auditoria-23.gif"></div>
 </p>
 <h1 align="center">Kasih Star Biar Semangat Recode Nya:v</h1>
 -->
@@ -19,7 +19,7 @@
 <a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=bot-md&color=blue"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/MendingTuru"><img title="Author" src="https://img.shields.io/badge/Author-Koko-Pangeran-blue.svg?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/MendingTuru"><img title="Author" src="https://img.shields.io/badge/Author-KokoPangeran-blue.svg?style=for-the-badge&logo=github" /></a>
 </p>
 <p align="center">
 <a href="https://botcahx-rest-api.herokuapp.com"><img title="mengapi" 
