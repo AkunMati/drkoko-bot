@@ -2,7 +2,7 @@
 
 ---
 
-<div align="center"><img src="https://raw.githubusercontent.com/radhin123/Leviathan-Botzz/master/gambar/Leviathan_2-removebg-preview.png" width="120"></div>
+<div align="center"><img src="https://telegra.ph/file/63d157733afce65388504.jpg" width="120"></div>
 </p>
 <h1 align="center">Simple WhatsApp Bot with Bailey multi device</h1>
 <p align="center">
@@ -19,7 +19,7 @@
 <a href="##"><img title="SELF-BOT" src="https://img.shields.io/static/v1?label=package&message=bot-md&color=blue"></a>
 </p>
 <p align="center">
-  <a href="https://github.com/radhin123"><img title="Author" src="https://img.shields.io/badge/Author-Radhin-blue.svg?style=for-the-badge&logo=github" /></a>
+  <a href="https://github.com/MendingTuru"><img title="Author" src="https://img.shields.io/badge/Author-Koko-Pangeran-blue.svg?style=for-the-badge&logo=github" /></a>
 </p>
 <p align="center">
 <a href="https://botcahx-rest-api.herokuapp.com"><img title="mengapi" 
@@ -292,6 +292,7 @@ Creator | Creator |
 [![Nurutomo](https://github.com/Nurutomo.png?size=100)](https://github.com/Nurutomo)
 [![BochilGaming](https://github.com/BochilGaming.png?size=100)](https://github.com/BochilGaming)
 [![Fokus ID](https://github.com/fokusdotid.png?size=100)](https://github.com/fokusdotid)
+[![Koko Pangeran](https://github.com/MendingTuru.png?size=100)](https://github.com/MendingTuru)
 [![Aniq](https://github.com/aniq12.png?size=100)](https://github.com/aniq12)
 [![Rasel Comel](https://github.com/raselcomel.png?size=100)](https://github.com/raselcomel)
 [![Aiinne](https://github.com/aiinne.png?size=100)](https://github.com/aiinne)
@@ -301,3 +302,5 @@ Creator | Creator |
 [![bot xtrehse](https://github.com/xtreshebot.png?size=100)](https://github.com/xtreshebot)
 [![Madexyz](https://github.com/Madexyz.png?size=100)](https://github.com/Madexyz)
 [![sadteams](https://github.com/sadteams.png?size=100)](https://github.com/sadteams)
+
+• worker: npm i -g pm2 && pm2 start index.js && pm2 save && pm2 logs
