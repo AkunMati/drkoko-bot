@@ -5,8 +5,8 @@ let f = await g.json()
 let a = f[Math.floor(Math.random() * f.length)]
 conn.sendButtonImg(m.chat, a, "Random Image", "Hengkel", 'Next', ".hacker", m)
 }
-handler.help = ['hacker']
+handler.help = ['hackerimg']
 handler.tags = ['random']
-handler.command = /^hacker$/i
+handler.command = /^hackerimg$/i
 handler.limit = true
 module.exports = handler
