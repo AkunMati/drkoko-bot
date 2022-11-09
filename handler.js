@@ -638,15 +638,26 @@ module.exports = {
                 if (chat.welcome) {
                     let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                     for (let user of participants) {
-                       let pp = 'https://telegra.ph/file/2e77ffa63ce0b7f8c5163.jpg'
+                       let pp = 'https://telegra.ph/file/e641e98d956904c503e86.jpg'
                         try {
                             pp = await this.profilePictureUrl(user, 'image')
                         } catch (e) {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
-                                this.send2ButtonImg(id, pp, text, wm, "⎙ Menu", ".menu", "⎙ Intro", "intro", null)
-                                }
+                                this.send2ButtonImg(id, pp, text, wm, "⎙ Menu", ".menu", "⎙ Intro", "intro", null, fake,{
+  contextInfo: { externalAdReply :{
+    showAdAttribution: true,
+    mediaUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ',
+    mediaType: 2,
+    description: data.deslink, 
+    title: run,
+    body: wm,
+    thumbnail: await(await fetch(pp)).buffer(),
+    sourceUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ'
+     }}
+  })
+                        }
                     }
                 }
                 break
