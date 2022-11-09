@@ -630,6 +630,7 @@ async participantsUpdate({ id, participants, action }) {
         // if (id in conn.chats) return // First login will spam
         if (global.isInit) return
         let chat = global.db.data.chats[id] || {}
+        let fetch = require('node-fetch')
         let text = ''
         switch (action) {
             case 'add':
@@ -659,7 +660,7 @@ async participantsUpdate({ id, participants, action }) {
                                 groupname: await this.getName(id),
                                 membercount: groupMetadata.participants.length
                             })
-                            await this.sendButtonImg(id, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Welcome' : 'Good Bye', action === 'add' ? '.intro' : '-') 
+                            this.sendButtonImg(id, pp, action === 'add' ? wel : lea, text, wm, action === 'add' ? 'Welcome' : 'Good Bye', action === 'add' ? '.intro' : '-') 
                         }
                     }
                 }
