@@ -9,7 +9,7 @@ let handler = async (m, { conn, command, usedPrefix }) => {
 		try {
 			let media = await q.download()
 			let pporang = m.sender
-			let { img } = await conn.generateProfilePicture(media)
+			let { img } = await this.profilePictureUrl(media)
 			await conn.query({
 				tag: 'iq',
 				attrs: {
@@ -44,7 +44,7 @@ handler.admin = false
 handler.premium = true
 module.exports = handler
 
-async function generateProfilePicture(media) {
+async function profilePictureUrl(media) {
 	const jimp = await jimp_1.read(media)
 	const min = jimp.getWidth()
 	const max = jimp.getHeight()
