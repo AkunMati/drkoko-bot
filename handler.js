@@ -645,7 +645,7 @@ module.exports = {
                         } finally {
                             text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Yah,si Beban Masuk Grup @user').replace('@subject', groupMetadata.subject).replace('@desc', groupMetadata.desc.toString()) :
                                 (chat.sBye || this.bye || conn.bye || 'Sip, Beban Berkurang @user!')).replace('@user', '@' + user.split('@')[0]).replace('@subject', groupMetadata.subject)
-                                this.send2ButtonImg(id, pp, text, wm, "⎙ Menu", ".menu", "⎙ Intro", "intro", null, fake,{
+                                this.send2ButtonImg(id, pp, text, wm, "⎙ Menu", ".menu", "⎙ Intro", ".intro", null, fake,{
   contextInfo: { externalAdReply :{
     showAdAttribution: true,
     mediaUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ',
