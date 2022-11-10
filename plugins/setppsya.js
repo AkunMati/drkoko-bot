@@ -2,7 +2,7 @@ const { createRequire } = require("module")
 const fs = require('fs')
 const jimp_1 = require('jimp')
 
-let handler = async (m, { conn, command, usedPrefix }) => {
+let handler = async (m, { conn, command, usedPrefix, participants }) => {
 	let q = m.quoted ? m.quoted : m
 	let mime = (q.msg || q).mimetype || q.mediaType || ''
 	if (/image/g.test(mime) && !/webp/g.test(mime)) {
