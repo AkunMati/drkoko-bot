@@ -2,7 +2,7 @@
 
 ---
 
-<div align="center"><img src="https://telegra.ph/file/63d157733afce65388504.jpg" width="100"></div>
+<div align="center"><img src="https://telegra.ph/file/63d157733afce65388504.jpg" width="200"></div>
 </p>
 <h1 align="center">Simple WhatsApp Bot with Bailey multi device</h1>
 <p align="center">
