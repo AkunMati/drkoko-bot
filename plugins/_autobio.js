@@ -5,7 +5,7 @@ const status = db.data.settings[conn.user.jid] = 0
     // update status
 if (new Date() * 1 - status > 1000) {
         let uptime = clockString(_uptime);
-		let bio = `Aktif selama ${uptime}`
+		let bio = `Aktif selama ${uptime} | By ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ`
 		await conn.setBio(bio).catch(_ => _)
         status = new Date() * 1
     }
