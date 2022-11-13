@@ -24,9 +24,9 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.neoxr.my.id': '5VC9rvNx',
-  'https://api.xteam.xyz': 'cristian9407',
+  'https://api.xteam.xyz': 'ebb6251cc00f9c63',
   'https://melcanz.com': 'wEDTUsWj', //punya koko : 'ZZBk7EBb'
-  'https://api.lolhuman.xyz': 'Xynoz',
+  'https://api.lolhuman.xyz': 'e54205a4ca2caa368cc067bb',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
   'https://ghostui-api.herokuapp.com/': 'OC2eTK',
@@ -79,9 +79,9 @@ global.serialimg = 'https://telegra.ph/file/eaf30ca57d5c4c2d7a6f0.jpg'
 global.bear = 'VBkM7rbU'
 global.zenzkey = 'b8040941f7'
 /*Lolhuman*/
-global.lolkey = 'Xynoz' // PUNYA WAHID  8e66d0934cf741bfd2182c16
+global.lolkey = 'e54205a4ca2caa368cc067bb' // PUNYA WAHID  8e66d0934cf741bfd2182c16
 /*Xteam*/
-global.xteamkey = 'cristian9407'
+global.xteamkey = 'ebb6251cc00f9c63'
 /*Xcoders*/
 //global.xckey = '7iyNa0qA'
 global.xckey = 'BOhjM2hUVn'
