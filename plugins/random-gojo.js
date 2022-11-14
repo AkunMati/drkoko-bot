@@ -6,7 +6,7 @@ let a = f[Math.floor(Math.random() * f.length)]
 conn.sendButtonImg(m.chat, a, "Random Image", "Gojo Satoru", 'Next', ".gojo", m)
 }
 handler.help = ['gojo']
-handler.tags = ['image']
+handler.tags = ['random']
 handler.command = /^gojo$/i
 handler.limit = true
 module.exports = handler
