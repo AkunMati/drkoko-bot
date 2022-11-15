@@ -21,7 +21,7 @@ m.reply(`🚩 Can\'t download media.`)
 m.react('❌')
 }
 }
-handler.help = ['tiktok1', 'tiktokaudio'1]
+handler.help = ['tiktok1', 'tiktokaudio1']
 handler.tags = ['downloader']
 handler.command = /^(tiktok1|tiktokvideo1|tiktokvid1|tiktoknowm1|tiktokmp41|tiktokaudio1|tiktoka1|tiktokmp31|tiktokaud1)$/i
 handler.premium = true
