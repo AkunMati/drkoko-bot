@@ -50,10 +50,6 @@ handler.all = async function (m) {
 		}
 
 // ==> Fake Virus
-// Fake 🤥
-	global.ftroli2 = { key: {participant : '0@s.whatsapp.net'}, message: { orderMessage: { itemCount: 2022, status: 1, surface: 1, message: timeh, orderTitle: author, sellerJid: '0@s.whatsapp.net' } } }
-	global.fkontak2 = { key: {participant : '0@s.whatsapp.net'}, message: { 'contactMessage': { 'displayName': conn.getName(m.sender), 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${packname},;;;\nFN:${packname},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': fs.readFileSync('./thumbnail.jpg'), thumbnail: fs.readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
-
 global.ftrolii = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 2019, status: 1, surface: 1, message: wem, orderTitle: ucapan, sellerJid: '0@s.whatsapp.net'} } }
 
 global.fdocs = { key : { participant : '0@s.whatsapp.net' }, message: { documentMessage: { title: `${wem}\n${notif1}`, jpegThumbnail: thumb2, sendEphemeral: true } } }
