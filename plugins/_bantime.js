@@ -1,6 +1,6 @@
-import db from '../lib/database.js'
-
-export async function before(m, { conn, isAdmin, isBotAdmin }) {
+let db = require('../lib/database')
+let handler = m => m
+handler.before = async function(m, { conn, isAdmin, isBotAdmin }) {
 	if (m.isBaileys && m.fromMe) return !0
 	let user = db.data.users[m.sender]
 	if (user.permaban) return !0
