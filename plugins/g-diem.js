@@ -34,7 +34,7 @@ let handler = async (m, { conn, participants, usedPrefix, command, args, isOwner
 			users.banned = true
 		    users.lastbanned = new Date * 1
 		    users.bannedcd = cooldown * total
-			await conn.sendMessage(m.chat, { text: `@${(who || '').replace(/@s\.whatsapp\.net/g, '')} di *mute* selama ${total} menit.`, mentions: [who] }, { quoted: m })
+			await conn.sendMessage(m.chat, { text: `@${(who || '').replace(/@s\.whatsapp\.net/g, '')} di *mute* selama ${total} menit.`, mentions: [who] }, { quoted: fake })
 		} catch (e) {
 			console.log(e)
 			m.reply(`User tidak ada dalam database.`)
