@@ -1,6 +1,6 @@
 let db = require('../lib/database')
 let handler = m => m
-handler.before = async function(m, { conn, isAdmin, isBotAdmin }) {
+handler.before = async function(m, { conn, isAdmin, isBotAdmin }) => {
 	if (m.isBaileys && m.fromMe) return !0
 	if (m.isGroup) {
 		let chat = db.data.chats[m.chat]
@@ -10,7 +10,7 @@ handler.before = async function(m, { conn, isAdmin, isBotAdmin }) {
 		chat.lastmute = 0
 		chat.mutecd = 0
 		chat.isBanned = false
-		await this.sendMessage(m.chat, { text: `Bot dapat digunakan kembali.` }, { quoted: fkontak })
+		await this.sendMessage(m.chat, { text: `Bot dapat digunakan kembali.` }, { quoted: fake })
 	}
 	return !0
 }
