@@ -10,10 +10,10 @@ let imageMess = await conn.sendFile(m.chat, v.thumbnail, `*乂 T I K T O K - D O
      
 _Tunggu sebentar, sedang mengirim media...._`, m, { isUrl: true })
 if (command === 'tiktok1' || command == 'tiktokvideo1' || command == 'tiktokvid1' || command == 'tiktoknowm1' || command == 'tiktokmp41') {
-conn.sendButtonVid(m.chat, v.nowm, wm, `Audio`, `.tiktokaudio1`, null, imageMess, { isUrl:true })
+conn.sendButtonVid(m.chat, v.nowm, wm, `Audio`, `.tiktokaudio1`, null, imageMess, { isUrl: true })
 }
 if (command === 'tiktokaudio1' || command == 'tiktoka1' || command == 'tiktokmp31' || command == 'tiktokaud1') {
-conn.sendFile(m.chat, v.audio, imageMess, { isUrl:true })
+conn.sendFile(m.chat, v.audio, imageMess, { isUrl: true })
 }
 })
 } catch(e) {
