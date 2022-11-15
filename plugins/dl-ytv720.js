@@ -13,7 +13,6 @@ function niceBytes(x) {
 
 let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 	if (!text.match(new RegExp(/(?:https?:\/\/)?(?:youtu\.be\/|(?:www\.|m\.)?youtube\.com\/(?:watch|v|embed|shorts)(?:\.php)?(?:\?.*v=|\/))([a-zA-Z0-9\_-]+)/, 'gi'))) return m.reply(`Invalid Youtube URL.`)
-	let fimg, fimgb
 	let za = command.includes('480') ? '480' : command.includes('720') ? '720' : '1080'
 	try {
 		const { thumbnail, video: _video, title } = await youtubedl(args[0]).catch(async _ => await youtubedlv2(args[0])).catch(async _ => await youtubedlv3(args[0]))
@@ -27,10 +26,10 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 		ini_txt += `⭔ Watch : ${text}\n`
 		ini_txt += `⭔ Resolution : ${video.quality}\n`
 		ini_txt += `⭔ Size : ${video.fileSizeH}`
-		fimg = await fetch(link)
-		fimgb = Buffer.from(await fimg.arrayBuffer())
+		let fimg = await fetch(link)
+		let fimgb = Buffer.from(await fimg.arrayBuffer())
 		if (Buffer.byteLength(fimgb) < 22000) throw new e()
-		await conn.sendMessage(m.chat, { video: fimgb, caption: ini_txt }, { quoted: m })
+		await conn.sendMessage(m.chat, { video: fimgb, caption: ini_txt }, { quoted: fake })
 	} catch (e) {
 		try {
 			let anu = await savefrom(text)
@@ -43,7 +42,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 			ini_txt += `⭔ Watch : ${anu.meta.source}\n`
 			ini_txt += `⭔ Resolution : ${anu.url[x].quality}p\n`
 			ini_txt += `⭔ Size : ${niceBytes(anu.url[x].filesize)}`
-			await conn.sendMessage(m.chat, { video: fimgb, caption: ini_txt }, { quoted: m })
+			await conn.sendMessage(m.chat, { video: fimgb, caption: ini_txt }, { quoted: fake })
 		} catch (e) {
 			m.reply(`[!] ${za}p tidak tersedia / terjadi kesalahan.`)
 		}
