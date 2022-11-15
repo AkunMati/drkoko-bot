@@ -3,17 +3,17 @@ if (!text) return m.reply(`Gunakan format ${usedPrefix + command} *link tiktok*`
 m.react('⏱️')
 try {
 require('../lib/tiktok').tiktok(text).then(async v => {
-let imageMess = await conn.sendFile(m.chat, v.thumbnail, `*乂 T I K T O K - D O W N L O A D E R*
+let imageMess = await conn.sendMedia(m.chat, v.thumbnail, `*乂 T I K T O K - D O W N L O A D E R*
      *◦ Caption :* ${v.title}
      *◦ Creator :* ${v.author}
      *◦ Fetching :* ${Func.speedNow()}
      
 _Tunggu sebentar, sedang mengirim media...._`, m, { isUrl: true })
 if (command === 'tiktok1' || command == 'tiktokvideo1' || command == 'tiktokvid1' || command == 'tiktoknowm1' || command == 'tiktokmp41') {
-conn.sendFile(m.chat, v.nowm, null, imageMess, { isUrl:true })
+conn.sendMedia(m.chat, v.nowm, null, imageMess, { isUrl:true })
 }
 if (command === 'tiktokaudio1' || command == 'tiktoka1' || command == 'tiktokmp31' || command == 'tiktokaud1') {
-conn.sendFile(m.chat, v.audio, imageMess, { isUrl:true })
+conn.sendMedia(m.chat, v.audio, imageMess, { isUrl:true })
 }
 })
 } catch(e) {
