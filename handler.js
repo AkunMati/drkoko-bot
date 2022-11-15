@@ -294,6 +294,8 @@ module.exports = {
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0
                     if (!('autopresence' in chat)) chat.autoPesence = true
                     if (!('antitag' in chat)) chat.antitag = false
+                    if (!isNumber(chat.lastmute)) chat.lastmute = 0
+                    if (!isNumber(chat.mutecd)) chat.mutecd = 0
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
                     closeGroup: false,
@@ -328,7 +330,9 @@ module.exports = {
                     clear: false,
                     clearTime: 0,
                     autopresence: true,
-                    antitag: false
+                    antitag: false,
+                    lastmute: 0,
+                    mutecd: 0
                 }
                 let settings = global.db.data.settings[this.user.jid]
                 if (typeof settings !== 'object') global.db.data.settings[this.user.jid] = {}
