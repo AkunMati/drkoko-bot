@@ -6,12 +6,12 @@ let handler = async (m, {conn, args, usedPrefix, command }) => {
 	try {
 		let a = await axios.get('https://rest-beni.herokuapp.com/api/tiktok?url=' + args[0])
 		if (!a.data.result.video_original) {
-			conn.sendFile(m.chat, a.data.result.video, '', '\n\nKOKO PANGERAN', m)
+		await conn.sendFile(m.chat, a.data.result.video, '', '\n\nKOKO PANGERAN', m)
 		} else {
-			conn.sendFile(m.chat, a.data.result.video_original, '', '\n\nKOKO PANGERAN', m)
+		await conn.sendFile(m.chat, a.data.result.video_original, '', '\n\nKOKO PANGERAN', m)
 		}
 	} catch (e) {
-logs(e)
+log(e)
 		conn.reply(m.chat, "error memek", m)
 	}
 }
