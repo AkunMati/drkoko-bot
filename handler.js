@@ -77,9 +77,6 @@ module.exports = {
                     if (!isNumber(user.anjinglastclaim)) user.anjinglastclaim = 0
                     if (!isNumber(user.area)) user.area = 0
                     if (!('banned' in user)) user.banned = false
-                    if (!isNumber(user.bannedcd)) user.bannedcd = 0
-                    if (!('permaban' in user)) user.permaban = false
-                    if (!isNumber(user.lastbanned)) user.lastbanned = 0
                     if (!isNumber(user.warn)) user.warn = 0
                     if (!isNumber(user.warning)) user.warning = 0
                     if (!isNumber(user.lastIstigfar)) user.lastIstigfar = 0
@@ -190,9 +187,6 @@ module.exports = {
                     anjinglastclaim: 0,
                     area: 0,
                     banned: false,
-                    bannedcd: 0,
-                    permaban: false,
-                    lastbanned: 0,
                     warn: 0,
                     warning: 0,
                     lastIstigfar: 0,
@@ -270,7 +264,6 @@ module.exports = {
                     if (!('closeGroup' in chat)) chat.closeGroup = false
                     if (!isNumber(chat.add)) chat.add = 0
                     if (!('isBanned' in chat)) chat.isBanned = false
-                    if (!('permaBan' in chat)) chat.permaBan = false
                     if (!('welcome' in chat)) chat.welcome = true
                     if (!('detect' in chat)) chat.detect = true
                     if (!('sWelcome' in chat)) chat.sWelcome = ''
@@ -300,8 +293,6 @@ module.exports = {
                     if (!('clear' in chat)) chat.clear = false
                     if (!isNumber(chat.cleartime)) chat.clearTime = 0
                     if (!('autopresence' in chat)) chat.autoPesence = true
-                    if (!isNumber(chat.lastmute)) chat.lastmute = 0
-                    if (!isNumber(chat.mutecd)) chat.mutecd = 0
                     if (!('antitag' in chat)) chat.antitag = false
                 } else global.db.data.chats[m.chat] = {
                     name: this.getName(m.chat),
@@ -338,8 +329,6 @@ module.exports = {
                     clear: false,
                     clearTime: 0,
                     autopresence: true,
-                    lastmute: 0,
-                    mutecd: 0,
                     antitag: false
                 }
                 let settings = global.db.data.settings[this.user.jid]
