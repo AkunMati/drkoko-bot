@@ -1,5 +1,5 @@
 let handler = async(m, { conn, text, usedPrefix, command }) => {
-if (!text) return msg.reply(`Gunakan format ${usedPrefix + command} *link tiktok*`)
+if (!text) return m.reply(`Gunakan format ${usedPrefix + command} *link tiktok*`)
 m.react('⏱️')
 try {
 require('../lib/tiktok').tiktok(text).then(async v => {
@@ -17,7 +17,7 @@ conn.sendAudio(m.chat, v.audio, imageMess, { isUrl:true })
 }
 })
 } catch(e) {
-msg.reply(`🚩 Can\'t download media.`)
+m.reply(`🚩 Can\'t download media.`)
 m.react('❌')
 }
 }
