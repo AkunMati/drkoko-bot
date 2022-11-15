@@ -15,7 +15,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 			let fimg = await fetch(json.data.url)
 			let fimgb = Buffer.from(await fimg.arrayBuffer())
 			if (Buffer.byteLength(fimgb) < 22000) throw new e()
-			await conn.sendButton(m.chat, `_© meme cringe_`, packname + ' - ' + author, fimgb, [[`⧑ next ${command} ⧑`, `${usedPrefix + command}`]], m)
+			await conn.sendButtonImg(m.chat, `_© meme cringe_`, packname + ' - ' + author, fimgb, `⧑ next ${command} ⧑`, `${usedPrefix + command}`, m)
 		} catch (e) {
 			try {
 				let fimg = await fetch(`https://api.lolhuman.xyz/api/meme/memeindo?apikey=${global.api}`)
