@@ -9,7 +9,7 @@ handler.before = async function(m, { conn, isAdmin, isBotAdmin }) {
 	user.lastbanned = 0
 	user.bannedcd = 0
 	user.banned = false
-	await this.sendMessage(m.chat, { text: `@${(m.sender || '').replace(/@s\.whatsapp\.net/g, '')} udh gk di ban slur, jan spam lagi yak!`, mentions: [m.sender] }, { quoted: fkontak })
+	await this.sendMessage(m.chat, { text: `@${(m.sender || '').replace(/@s\.whatsapp\.net/g, '')} udh gk di ban slur, jan spam lagi yak!`, mentions: [m.sender] }, { quoted: fake })
 	return !0
 }
 module.exports = handler
