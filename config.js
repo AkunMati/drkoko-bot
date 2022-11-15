@@ -76,6 +76,11 @@ global.serialimg = 'https://telegra.ph/file/eaf30ca57d5c4c2d7a6f0.jpg'
 // klau kgk ada github kasih tanda '-' aja biar kgk error
 
 /*============== APIKEY SIMPEL ==============*/
+global.api = '8e66d0934cf741bfd2182c16'	// https://api.lolhuman.xyz/docs apikeylu
+global.bb = 'AzamiApi'	// https://azami-api.herokuapp.com/docs
+global.xco = 'xcoders'	// https://api-xcoders.xyz/docs
+global.yog = 'YogGanz'	// https://yog-apikey.herokuapp.com/docs
+global.imgbb = '3a247f2296ade39d87e71b92ae0256c9' // https://api.imgbb.com/
 global.bear = 'VBkM7rbU'
 global.zenzkey = 'b8040941f7'
 /*Lolhuman*/
