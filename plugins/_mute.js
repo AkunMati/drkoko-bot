@@ -10,7 +10,7 @@ handler.before = async function(m, { conn, isAdmin, isBotAdmin }) => {
 		chat.lastmute = 0
 		chat.mutecd = 0
 		chat.isBanned = false
-		await this.sendMessage(m.chat, { text: `Bot dapat digunakan kembali.` }, { quoted: fake })
+		await this.sendMessage(m.chat, { text: `Bot dapat digunakan kembali.` }, { quoted: fkontak2 })
 	}
 	return !0
 }
