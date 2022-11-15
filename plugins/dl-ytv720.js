@@ -50,8 +50,8 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 	}
 }
 
-handler.menudownload = ['ytvideo480','ytvideo720','ytvideo1080'].map(v => v + ' <url>')
-handler.tagsdownload = ['downloader']
+handler.help = ['ytvideo480','ytvideo720','ytvideo1080'].map(v => v + ' <url>')
+handler.tags = ['downloader']
 handler.command = /^(yt(v(ideo)?|mp4)(480|720|1080)p?)$/i
 
 handler.premium = true
