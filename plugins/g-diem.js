@@ -16,7 +16,7 @@ let handler = async (m, { conn, participants, usedPrefix, command, args, isOwner
 	for (let i of participants) {
 		i.admin === "admin" ? admins.push(i.id.split('@')[0]) : ''
 	}
-	if ((!m.quoted && !args[1]) || (m.quoted && !args[0])) return m.reply(`Format : ${usedPrefix + command} ${m.quoted ? '' : '@tag'} <timer>\n1 = 1 menit\n5 = 5 menit ... dst.\n\nContoh : *${usedPrefix + command} ${m.quoted ? '' : '@Alan'} 10*`)
+	if ((!m.quoted && !args[1]) || (m.quoted && !args[0])) return m.reply(`Format : ${usedPrefix + command} ${m.quoted ? '' : '@tag'} <timer>\n1 = 1 menit\n5 = 5 menit ... dst.\n\nContoh : *${usedPrefix + command} ${m.quoted ? '' : '@Pangeran'} 10*`)
 	const total = m.quoted ? Math.floor(isNumber(args[0]) ? Math.min(Math.max(parseInt(args[0]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1 : Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
 	let who
 	if (m.isGroup) who = m.quoted ? m.quoted.sender : m.mentionedJid[0]
@@ -31,10 +31,10 @@ let handler = async (m, { conn, participants, usedPrefix, command, args, isOwner
 	    if (users.permaban) return m.reply(`[!] Tidak perlu *${command}* karena sudah di *ban*`)
 		if (users.banned == true) throw `Dia sudah di *mute* sebelumnya.`
 		try {
-			users.banned = true
+		    users.banned = true
 		    users.lastbanned = new Date * 1
 		    users.bannedcd = cooldown * total
-			await conn.sendMessage(m.chat, { text: `@${(who || '').replace(/@s\.whatsapp\.net/g, '')} di *mute* selama ${total} menit.`, mentions: [who] }, { quoted: fake })
+			await conn.sendMessage(m.chat, { text: `@${(who || '').replace(/@s\.whatsapp\.net/g, '')} di *mute* selama ${total} menit.`, mentions: [who] }, { quoted: m })
 		} catch (e) {
 			console.log(e)
 			m.reply(`User tidak ada dalam database.`)
