@@ -1,4 +1,5 @@
 let fetch = require('node-fetch')
+let axios = require('axios')
 let handler = async (m, { conn, args }) => {
   let bear = `9b95802c6f20`
   if (!args[0]) throw 'Uhm...url nya mana?'
