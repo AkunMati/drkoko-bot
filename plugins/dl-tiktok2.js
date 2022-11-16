@@ -1,23 +1,48 @@
 let fetch = require('node-fetch')
-let handler = async (m, { conn, args }) => {
-if (!args[0]) throw 'Uhm..url nya mana?'
-m.reply(wait)
-let res = await fetch(`https://botcahx.ddns.net/api/dowloader/tikok?url=${args[0]}`)
-if (!res.ok) throw await res.text()
-let json = await res.json()
-if (!json.status) throw json
-let { video, description, username } = json.result
-await conn.sendFile(m.chat, video, 'video.mp4', `
-\n💌 *Deskripsi*: ${description}
-\n\n📛 *Username*: ${username}
-\n\n🏢 *By*: _© ᵈʳкσкσ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×_
-`, m, false, { contextInfo: { forwardingScore: 999, isForwarded: true }})
+
+let handler = async (m, { conn, text, usedPrefix, command }) => {
+let bear = `9b95802c6f20`
+  if (!text) return conn.reply(m.chat, `Gunakan format: ${usedPrefix}${command} Colin Changed`, m)
+
+  await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/5a46383499a405792185b.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
+    let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${bear}&url=${text}`)
+    let json = await res.json()
+    if (res.status !== 200) throw await res.text()
+    if (!json.status) throw json
+const ftroli = {
+    key : {
+    remoteJid: 'status@broadcast',
+    participant : '0@s.whatsapp.net'
+    },
+    message: {
+    orderMessage: {
+    itemCount : 2022,
+    status: 1,
+    surface : 1,
+    message: `Search Tiktok NoWM 🔍`, 
+    orderTitle: ``,
+    thumbnail: await (await fetch('https://telegra.ph/file/700df524f39be728c8882.jpg')).buffer(), //Gambarnye
+    sellerJid: '0@s.whatsapp.net' 
+    }
+    }
+    }
+    conn.sendButtonVid(m.chat, json.result.nowm, `Nih Kak @${m.sender.split`@`[0]}`, wm, 'Audio', `.tiktokmp3 ${text}`, m, {
+    quoted: ftroli, contextInfo: { forwardingScore: 99999, isForwarded: true,
+         externalAdReply: { 
+             title: global.wm,
+             body: 'Subscribe Channel YouTubeKu Kak>_<',
+             description: 'Apa Benar Ini Yang Ada Cari?', 
+             mediaType: 2, 
+           thumbnail: await (await fetch('https://telegra.ph/file/700df524f39be728c8882.jpg')).buffer(), 
+          mediaUrl: `https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ` 
+         } 
+      } 
+   })
 }
-
-handler.help = ['tiktok2 <url>']
-handler.tags = ['downloader']
-
-handler.command = /^(tiktok2)$/i
+handler.help = ['tiktok2 <keyword>'] 
 handler.limit = true
 handler.premium = true
+handler.tags = ['downloader'] 
+handler.command = /^(tiktok2)$/i 
+  
 module.exports = handler
