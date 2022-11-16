@@ -4,8 +4,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 let bear = `9b95802c6f20`
   if (!text) return conn.reply(m.chat, `Gunakan format: ${usedPrefix}${command} Colin Changed`, m)
 
-  await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/5a46383499a405792185b.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
-    let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${bear}&url=${text}`)
+  await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/700df524f39be728c8882.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
+    let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=9b95802c6f20&url=${text}`)
     let json = await res.json()
     if (res.status !== 200) throw await res.text()
     if (!json.status) throw json
@@ -26,7 +26,7 @@ const ftroli = {
     }
     }
     }
-    conn.sendButtonVid(m.chat, json.result.nowm, `Nih Kak @${m.sender.split`@`[0]}`, wm, 'Audio', `.tiktokmp3 ${text}`, m, {
+await conn.sendButtonVid(m.chat, json.result.nowm, `Nih Kak @${m.sender.split`@`[0]}`, wm, 'Audio', `.tiktokmp3 ${text}`, m, {
     quoted: ftroli, contextInfo: { forwardingScore: 99999, isForwarded: true,
          externalAdReply: { 
              title: global.wm,
