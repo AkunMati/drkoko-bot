@@ -7,7 +7,7 @@ let [number, bebas] = text.split `|`
     let user = global.db.data.users[m.sender]
    
 
-    let vir = ('https://raw.githubusercontent.com/NdaaaXyz/ayomd/main/virtex/virtext2.js')
+    let vir = ('https://raw.githubusercontent.com/NdaaaXyz/ayomd/main/virtex/virtex2.js')
     let korban = `${number}`
     var nomor = m.sender
     
