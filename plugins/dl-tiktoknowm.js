@@ -4,7 +4,7 @@ let handler = async (m, { conn, args }) => {
   let bear = `9b95802c6f20`
   if (!args[0]) throw 'Uhm...url nya mana?'
  m.react('⏱️')
-let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${bear}&url=${args[0]}`)
+let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=9b95802c6f20&url=${args[0]}`)
     let json = await res.json()
     
 await conn.reply(m.chat, data.wait, 0, {
