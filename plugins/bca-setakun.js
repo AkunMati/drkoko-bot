@@ -1,5 +1,5 @@
 let handler = async function (m, { conn, text, args, usedPrefix, command }) {
-  let norek = conn.pickRandom(require('../db/norek.json'))
+  let norek = conn.pickRandom(require('../src/norek.json'))
   let user = global.db.data.users[m.sender]
   
   if (user.bca === true) throw `Kamu sudah terdaftar di database bca`
