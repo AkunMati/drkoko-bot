@@ -11,7 +11,7 @@ let handler = async (m, {conn, args, usedPrefix, command }) => {
 		await conn.sendFile(m.chat, a.data.result.video_original, '', '\n\nKOKO PANGERAN', m)
 		}
 	} catch (e) {
-log(e)
+console.log(e)
 		conn.reply(m.chat, "error memek", m)
 	}
 }
