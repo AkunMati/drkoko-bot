@@ -4,8 +4,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 let bear = `9b95802c6f20`
   if (!text) return conn.reply(m.chat, `Gunakan format: ${usedPrefix}${command} Colin Changed`, m)
 
-  await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/700df524f39be728c8882.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
-    let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=9b95802c6f20&url=${text}`)
+  await conn.sendButtonImg(m.chat, 'https://telegra.ph/file/700df524f39be728c8882.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
+    let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=0e92565522&url=${text}`)
     let json = await res.json()
     if (res.status !== 200) throw await res.text()
     if (!json.status) throw json
