@@ -1,4 +1,6 @@
 let fs = require('fs')
+const moment = require('moment-timezone')
+
 global.data = JSON.parse(fs.readFileSync('./data.json'))
 global.owner = JSON.parse(fs.readFileSync('./src/owner.json')) // Put your number to /src/owner.json
 global.mods = JSON.parse(fs.readFileSync('./src/moderator.json')) // Want some help?
@@ -465,3 +467,7 @@ fs.watchFile(file, () => {
   delete require.cache[file]
   require(file)
 })
+
+function pickRandom(list) {
+  return list[Math.floor(list.length * Math.random())]
+}
