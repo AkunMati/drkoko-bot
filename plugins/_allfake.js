@@ -49,6 +49,10 @@ handler.all = async function (m) {
 			}
 		}
 
+
+// Fake 🤥
+global.ftroli = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 2022, status: 1, surface: 1, message: wm, orderTitle: wm, sellerJid: '0@s.whatsapp.net' } } }
+global.fkontak = { key: {participant: `0@s.whatsapp.net`, ...(m.chat ? { remoteJid: `status@broadcast` } : {}) }, message: { 'contactMessage': { 'displayName': wm, 'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabell:Ponsel\nEND:VCARD`, 'jpegThumbnail': require('fs').readFileSync('./thumbnail.jpg'), thumbnail: require('fs').readFileSync('./thumbnail.jpg'),sendEphemeral: true}}}
 // ==> Fake Virus
 global.ftrolii = { key: { remoteJid: 'status@broadcast', participant: '0@s.whatsapp.net' }, message: { orderMessage: { itemCount: 2019, status: 1, surface: 1, message: wem, orderTitle: ucapan, sellerJid: '0@s.whatsapp.net'} } }
 
