@@ -24,7 +24,7 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.neoxr.my.id': '5VC9rvNx',
-  'https://api.xteam.xyz': 'ebb6251cc00f9c63',
+  'https://api.xteam.xyz': 'd90a9e986e18778b',
   'https://melcanz.com': 'wEDTUsWj', //punya koko : 'ZZBk7EBb'
   'https://api.lolhuman.xyz': 'e54205a4ca2caa368cc067bb',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
@@ -49,6 +49,7 @@ global.eror = '*ᴇʀᴏʀʀ!*'
 global.wem = '✘ᵈʳᴋᴏᴋᴏ 𝐂𝐑𝐀𝐒𝐇 𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘'
 global.thumb = fs.readFileSync('./src/images (1).jpeg') // Thumb Menu
 global.thumb2 = fs.readFileSync('./thumbnail.jpg') // Thumb War
+global.botdate = `⫹⫺ Date :  ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}`
 //Tutup WAR
 
 global.sig = 'https://instagram.com/kokopangeran_' //Link Instagrammu
@@ -82,7 +83,7 @@ global.zenzkey = 'b8040941f7'
 /*Lolhuman*/
 global.lolkey = 'e54205a4ca2caa368cc067bb' // PUNYA WAHID  8e66d0934cf741bfd2182c16
 /*Xteam*/
-global.xteamkey = 'ebb6251cc00f9c63'
+global.xteamkey = 'd90a9e986e18778b'
 /*Xcoders*/
 //global.xckey = '7iyNa0qA'
 global.xckey = 'BOhjM2hUVn'
