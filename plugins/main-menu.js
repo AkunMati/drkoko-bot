@@ -46,11 +46,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let bzz = './mp3/tmp.mp3'
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'store', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'soundanime', 'change', 'kerangajaib', 'random', 'quotes', 'admin', 'group', 'anime', 'logo', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'store', 'bca', 'shortlink', 'game', 'rpg', 'xp', 'sticker', 'sound', 'soundanime', 'change', 'kerangajaib', 'random', 'quotes', 'admin', 'group', 'anime', 'logo', 'nsfw', 'premium', 'virus', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'asupan', 'bokep', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'UTAMA',
-    'store': 'Store',
+    'store': 'Team Store',
+    'bca': 'Bank BCA',
     'shortlink': 'Short Link',
     'game': 'Game',
     'rpg': 'RPG',
@@ -86,7 +87,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     '': 'Tanpa Kategori',
   }
   if (teks == 'store') tags = {
-    'store': 'Store'
+    'store': 'Team Store'
+  }
+  if (teks == 'bca') tags = {
+    'bca': 'Bank BCA'
   }
   if (teks == 'shortlink') tags = {
     'shortlink': 'Short Link'
@@ -278,7 +282,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         title: 'List Menu ' + data.namabot,
         rows: [
           { title: 'Semua Perintah', rowId: `${_p + command} all`, description: `ALL MENU KIDZ` },
-          { title: 'Koko Store', rowId: `${_p + command} store`, description: `FITUR STORE KIDZ` },
+          { title: 'Koko Store', rowId: `${_p + command} store`, description: `FITUR TEAM STORE KIDZ` },
+          { title: 'Bank BCA', rowId: `${_p + command} bca`, description: `FITUR BANK BCA KIDZ` },
           { title: 'Short Link', rowId: `${_p + command} shortlink`, description: `FITUR SHORTLINK KIDZ` },
           { title: 'Game', rowId: `${_p + command} game`, description: `FITUR GAMES KIDZ` },
           { title: 'Rpg', rowId: `${_p + command} rpg`, description: `FITUR RPG KIDZ` },
