@@ -54,6 +54,7 @@ module.exports = {
                     if (!isNumber(user.lastnyampah)) user.lastnyampah = 0
                     if (!isNumber(user.lastowner)) user.lastowner = 0
                     if (!isNumber(user.money)) user.money = 0
+                    if (!isNumber(user.saldo)) user.saldo = 0
                     if (!isNumber(user.diamond)) user.diamond = 0
                     if (!isNumber(user.iron)) user.iron = 0
                     if (!isNumber(user.batu)) user.batu = 0
@@ -134,6 +135,13 @@ module.exports = {
                     if (!isNumber(user.udang)) user.udang = 0
                     if (!isNumber(user.ikan)) user.ikan = 0
                     if (!isNumber(user.orca)) user.orca = 0
+                    //Bcacoy
+                    if (!('bca' in user)) user.bca = false
+                    if (!('norek' in user)) user.norek = ''
+                    if (!('bcapin' in user)) user.bcapin = ''
+                    if (!('bcapw' in user)) user.bcapw = ''
+                    if (!('bcaname' in user)) user.bcaname = ''
+                    if (!isNumber(user.premiumTime)) user.premiumTime = 0
                     // kerja
                     if (!isNumber(user.atm)) user.atm = 0
                     if (!('job' in user)) user.job = 'Pengangguran'
@@ -167,6 +175,7 @@ module.exports = {
                     lastnyampah: 0,
                     lastowner: 0,
                     money: 0,
+                    saldo : 0,
                     diamond: 0,
                     iron: 0,
                     common: 0,
@@ -256,6 +265,12 @@ module.exports = {
                     montir: false,
                     kuli: false,
                     polisi: false,
+                    //bca cok
+                    bca: false,
+                    bcapw: '',
+                    bcaname: '',
+                    bcapin: '',
+                    bcanorek: '',
                 }
                 let chat = global.db.data.chats[m.chat]
                 if (typeof chat !== 'object') global.db.data.chats[m.chat] = {}
