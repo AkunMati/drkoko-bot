@@ -4,7 +4,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 pangeran = `5d1197db351b`
   if (!text) return conn.reply(m.chat, `Gunakan format: ${usedPrefix}${command} Colin Changed`, m)
 
-  await conn.sendButtonImg(m.chat, 'https://telegra.ph/file/700df524f39be728c8882.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
+  await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/700df524f39be728c8882.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
     let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${pangeran}&url=${text}`)
     let json = await res.json()
     if (res.status !== 200) throw await res.text()
@@ -26,7 +26,7 @@ const ftroli = {
     }
     }
     }
-await conn.sendButtonVid(m.chat, json.result.nowm, `Nih Kak @${m.sender.split`@`[0]}`, wm, 'Audio', `.tiktokmp3 ${text}`, m, {
+await conn.sendButtonVid(m.chat, json.result.nowm, `Nih Kak @${m.sender.split`@`[0]} Vidio nya!`, wm, 'Audio', `.tiktokmp3 ${text}`, m, {
     quoted: ftroli, contextInfo: { forwardingScore: 99999, isForwarded: true,
          externalAdReply: { 
              title: global.wm,
