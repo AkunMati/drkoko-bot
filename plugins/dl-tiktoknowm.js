@@ -1,10 +1,10 @@
 let fetch = require('node-fetch')
 let axios = require('axios')
 let handler = async (m, { conn, args }) => {
-  let bear = `9b95802c6f20`
+  pangeran = `5d1197db351b`
   if (!args[0]) throw 'Uhm...url nya mana?'
  m.react('⏱️')
-let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=0e92565522&url=${args[0]}`)
+let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${pangeran}&url=${args[0]}`)
     let json = await res.json()
     
 await conn.reply(m.chat, 'Tunggu Sayang!', 0, {
