@@ -4,7 +4,7 @@ let handler = async (m, { conn, args }) => {
   pangeran = `5d1197db351b`;
   if (!args[0]) throw 'Uhm...url nya mana?'
  let chat = global.db.data.chats[m.chat]
-await conn.reply(m.chat, data.wait, 0, {
+await conn.sendMessage(m.chat, 'Tunggu Dungu!', 0, {
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
     mediaUrl: `https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ`,
