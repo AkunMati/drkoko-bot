@@ -79,6 +79,7 @@ global.serialimg = 'https://telegra.ph/file/700df524f39be728c8882.jpg'
 // klau kgk ada github kasih tanda '-' aja biar kgk error
 
 /*============== APIKEY SIMPEL ==============*/
+global.pangeran = `5d1197db351b`
 global.imgbb = '3a247f2296ade39d87e71b92ae0256c9' // https://api.imgbb.com/
 global.bear = 'VBkM7rbU'
 global.zenzkey = 'b8040941f7'
