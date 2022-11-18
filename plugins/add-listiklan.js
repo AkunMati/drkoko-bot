@@ -19,7 +19,7 @@ for (let i of json) {
 
 }
 handler.help = ['iklan'].map(v => 'list' + v)
-handler.tags = ['iklan']
+handler.tags = ['info']
 handler.command = /^(listiklan|iklan)$/i
 
 module.exports = handler
