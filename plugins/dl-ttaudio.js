@@ -4,13 +4,13 @@ let handler = async (m, { conn, args }) => {
   pangeran = `5d1197db351b`;
   if (!args[0]) throw 'Uhm...url nya mana?'
  let chat = global.db.data.chats[m.chat]
-await conn.sendMessage(m.chat, 'Tunggu Dungu!', 0, {
+await conn.reply(m.chat, 'Tunggu Dungu!', 0, {
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
     mediaUrl: `https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ`,
     mediaType: 2,
     description: `Subscribe Channel YT Ku Kak>_<`, 
-    title: run,
+    title: ``,
     body: wm, //`${fileSizeH}`,
     thumbnail: await(await fetch(img)).buffer(),
     sourceUrl: `https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ`
