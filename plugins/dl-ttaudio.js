@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let axios = require('axios')
 let handler = async (m, { conn, args }) => {
-  let bear = `9b95802c6f20`
+  pangeran = `5d1197db351b`;
   if (!args[0]) throw 'Uhm...url nya mana?'
  let chat = global.db.data.chats[m.chat]
 await conn.reply(m.chat, data.wait, 0, {
@@ -16,7 +16,7 @@ await conn.reply(m.chat, data.wait, 0, {
     sourceUrl: `https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ`
      }}
   })
-    let url = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=0e92565522&url=${args[0]}`)
+    let url = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${pangeran}&url=${args[0]}`)
   let json = await url.json()
     if (url.status !== 200) throw await url.text()
     if (!json.status) throw json
@@ -30,14 +30,14 @@ let txt = `🚀 *Link:* ${await(await axios.get(`https://tinyurl.com/api-create.
 ┆• *📥 Ukuran File:* 
 └❏
 `.trim(), m, null, {
-   document: { url: `https://zenzapis.xyz/downloader/musically?apikey=0e92565522&url=${args[0]}`}, mimetype: 'audio/mpeg', fileName: 'tiktok.mp3', conntextInfo: {
+   document: { url: `https://zenzapis.xyz/downloader/musically?apikey=${pangeran}&url=${args[0]}`}, mimetype: 'audio/mpeg', fileName: 'tiktok.mp3', conntextInfo: {
         externalAdReply: {
             title: `▶︎━━━━━━━•──────────────────`, 
             body: `Subscribe Channel YT Ku Kak>_<`,
             description: `Now Playing...`,
             mediaType: 2,
           thumbnail: await (await fetch('https://telegra.ph/file/700df524f39be728c8882.jpg')).buffer(),
-         mediaUrl: `https://youtu.be/E1nLzgkOH8A`
+         mediaUrl: `https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ`
         }
      }
   })
