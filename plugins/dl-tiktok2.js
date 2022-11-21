@@ -1,8 +1,8 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-pangeran = `5d1197db351b`;
-  if (!text) return conn.reply(m.chat, `Gunakan format: ${usedPrefix}${command} Colin Changed`, m)
+let pangeran = `b8040941f7`
+  if (!text) return conn.reply(m.chat, `Gunakan format: ${usedPrefix}${command} Link nya`, m)
 
   await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/700df524f39be728c8882.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
     let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${pangeran}&url=${text}`)
