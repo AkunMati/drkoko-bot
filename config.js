@@ -26,9 +26,9 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://api.neoxr.my.id': '5VC9rvNx',
-  'https://api.xteam.xyz': 'd90a9e986e18778b',
+  'https://api.xteam.xyz': '6aceac403a3d479b',
   'https://melcanz.com': 'wEDTUsWj', //punya koko : 'ZZBk7EBb'
-  'https://api.lolhuman.xyz': '60b1eeb58eb87814b50d2082',
+  'https://api.lolhuman.xyz': '60b1eeb58eb87814b50d2082', //punya koko: 'a243d5d9b0d811b81d63e6cf'
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://api.zeks.me': 'apivinz',
   'https://ghostui-api.herokuapp.com/': 'OC2eTK',
