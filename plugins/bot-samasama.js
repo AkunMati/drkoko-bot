@@ -1,21 +1,14 @@
-let { sticker } = require('../lib/sticker.js')
+let fetch = require("node-fetch")
+const { sticker } = require('../lib/sticker')
+const { MessageType } = require('@adiwajshing/baileys')
 
-let handler = async (m, { conn, text, usedPrefix, command }) => {
-
-let stiker = await sticker(null, global.API(`${pickRandom(stikerhuuu)}`), global.packname, global.author)
-    if (stiker) return conn.sendFile(m.chat, stiker, 'sticker.webp', 'sama.sama', m)
-    throw stiker.toString()
-    
+let handler = async(m, { conn }) => {
+  let name = await conn.getName(m.sender)
+  let res = await `https://api.memegen.link/images/custom/sama_sama_kak/${name}.jpg?background=https%3A%2F%2Ftelegra.ph%2Ffile%2F06a27a93b66f63a5a067e.png&watermark=memecomplete.com&token=khj7yfpkw8idaztccuys`
+  let stiker = await sticker(null, res, global.packname, global.author)
+  conn.sendFile(m.chat, stiker, 'sticker.webp', '', m, false, { asSticker: true })
 }
-
-handler.customPrefix = /^(terimakasih|tq|ty|thx|thank|thanks)$/i
+handler.customPrefix = /^(terimakasih)$/i
 handler.command = new RegExp
 
 module.exports = handler
-
-function pickRandom(list) {
-  return list[Math.floor(list.length * Math.random())]
-}
-let stikerhuuu = [
- "https://telegra.ph/file/06a27a93b66f63a5a067e.jpg",
-]
