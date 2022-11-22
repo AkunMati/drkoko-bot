@@ -23,7 +23,7 @@ ptt: false, seconds: 9999999,contextInfo: {
     description: 'Follow Go My Instagram',
     title: "⌫     ⌨︎     ☏︎",
     body: wm,
-    thumbnail: await (await fetch('https://telegra.ph/file/6411cc04828f3cc335324.jpg')).buffer(),
+    thumbnail: await (await fetch('https://telegra.ph/file/700df524f39be728c8882.jpg')).buffer(),
     sourceUrl: 'https://instagram.com/kokopangeran_',
   }
   } })
