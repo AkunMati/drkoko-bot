@@ -7,6 +7,8 @@ handler.all = async function (m) {
 	} catch (e) {
 	} finally {
         global.fs = require('fs')
+        global.axios = require('axios')
+		global.request = require('request')
         global.fetch = require('node-fetch')
         global.bochil = require('@bochilteam/scraper')
         const _uptime = process.uptime() * 1000
