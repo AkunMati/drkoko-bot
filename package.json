@@ -77,6 +77,7 @@
         "nodemon": "^2.0.15",
         "npm": "^8.12.1",
         "nhentai-node-api": "^1.1.2",
+        "obfuscator": "^0.5.4",
         "os": "^0.1.2",
         "perf_hooks": "^0.0.1",
         "pino-pretty": "^8.1.0",
