@@ -27,17 +27,17 @@ m.reply('Mohon Ditunggu yah Bro')
 *Nickname:* ${nickname}
 *Description:* ${description}
 _©By ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×_
-`.trim(), wm, `Audio`, `.ttmp3 ${args[0]}`, m, true, {
+`.trim(), wm, `Audio`, `.ttmp31 ${args[0]}`, m, true, {
 type: 'audioMessage', 
 ptt: false, seconds: 3596400,contextInfo: {
          externalAdReply: { showAdAttribution: true,
- mediaUrl: 'https://youtube.com/channel/UCmEQy5B3GhmfNVSrHEzv-uA',
+ mediaUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ',
     mediaType: 2, 
-    description: 'https://youtube.com/channel/UCmEQy5B3GhmfNVSrHEzv-uA',
+    description: 'Subscribe My Channel YouTube',
     title: "⌫     ⌨︎     ☏︎",
     body: wm,
-    thumbnail: await (await fetch('https://telegra.ph/file/16b25c336a13d942170dc.jpg')).buffer(),
-    sourceUrl: 'https://youtube.com/channel/UCmEQy5B3GhmfNVSrHEzv-uA'
+    thumbnail: await (await fetch('https://telegra.ph/file/700df524f39be728c8882.jpg')).buffer(),
+    sourceUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ'
   }
   } })
 } catch {
