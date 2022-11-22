@@ -1,6 +1,6 @@
 {
     "name": "Bottom-MD2",
-    "version": "1.0.5",
+    "version": "1.0.0",
     "description": "Simple Bot WhatsApp Multi Auth By ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×",
     "depecrated": false,
     "main": "index.js",
@@ -43,9 +43,9 @@
     "dependencies": {
         "@adiwajshing/baileys": "github:BOTCAHX/baileys",
         "@adiwajshing/keyed-db": "^0.2.4",
-        "@bochilteam/scraper": "^3.0.0",
+        "@bochilteam/scraper": "^2.0.0",
         "awesome-phonenumber": "^2.69.0",
-        "axios": "^0.26.1",
+        "axios": "^0.24.0",
         "caliph-api": "^0.7.6",
         "catch": "^1.0.48",
         "cfonts": "^2.10.0",
