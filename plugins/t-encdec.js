@@ -1,8 +1,8 @@
 let fetch = require('node-fetch')
 let fs = require('fs')
 let handler = async (m, { conn, text, command, usedPrefix }) => {
-const frep = { contextInfo: { externalAdReply: {title: global.wm, body: 'Simple Bot Esm', sourceUrl: sgc, thumbnail: fs.readFileSync('./thumbnail.jpg')}}}
-const fdoc = {quoted:{key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `${command}`}}}}
+global.frep = { contextInfo: { externalAdReply: {title: global.wm, body: 'Bottom Simple', sourceUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ', thumbnail: fs.readFileSync('./thumbnail.jpg')}}}
+global.fdoc = { quoted: { key : {participant : '0@s.whatsapp.net'},message: {documentMessage: {title: `${command}`}}}}
 
 if (command == 'dec32') {
 if (!text) throw `Contoh penggunaan ${usedPrefix}${command} anjing`
