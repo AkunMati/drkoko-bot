@@ -1,6 +1,7 @@
-const fetch = require('node-fetch')
-const { addExif } = require('../lib/sticker.js')
-const { Sticker } = require('wa-sticker-formatter')
+let fetch = require('node-fetch')
+let { addExif } = require('../lib/sticker')
+let { Sticker } = require('wa-sticker-formatter')
+let { webp2png } = require('../lib/webp2mp4')
 
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 	let stiker = false
