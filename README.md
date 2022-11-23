@@ -2,7 +2,7 @@
 
 ---
 
-<div align="center"><img src="https://telegra.ph/file/63d157733afce65388504.jpg" width="200"></div>
+<div align="center"><img src="https://telegra.ph/file/700df524f39be728c8882.jpg" width="200"></div>
 </p>
 <h1 align="center">Simple WhatsApp Bot with Bailey multi device</h1>
 <p align="center">
@@ -133,8 +133,8 @@ Choose your repo
 * Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
 
 ```bash
-git clone https://github.com/radhin123/Leviathan-md
-cd Leviathan-md
+git clone https://github.com/MendingTuru/Bottom-MD2
+cd Bottom-MD2
 npm i
 node .
 ```
@@ -150,8 +150,8 @@ $ apt update && upgrade -y
 $ pkg install ffmpeg
 $ pkg install nodejs-lts
 $ pkg install git
-$ git clone https://github.com/radhin123/Leviathan-md
-$ cd Leviathan-md
+$ git clone https://github.com/MendingTuru/Bottom-MD2
+$ cd Bottom-MD2
 $ npm i
 $ node .
 ```
@@ -278,13 +278,13 @@ conn.logger.level = 'debug'
 **Semua yang selalu mendukung**
 
 ##### Contributors
-<a href="https://github.com/BOTCAHX"><img src="https://github.com/BOTCAHX.png?size=100" width="100" height="100"></a> | [![Alya Putri](https://github.com/radhin123.png?size=100)](https://github.com/radhin123) 
+<a href="https://github.com/MendingTuru"><img src="https://github.com/MendingTuru.png?size=100" width="100" height="100"></a> | [![Radhin](https://github.com/radhin123.png?size=100)](https://github.com/radhin123) 
 ---|---
-[Tio](https://github.com/BOTCAHX)  | [Radhin](https://github.com/radhin123)
+[Koko Pangeran](https://github.com/MendingTuru)  | [Radhin](https://github.com/radhin123)
 Creator | Creator |
 ### contact person
 
- [`BOTCAHX`](https://wa.me/6282221792667)
+ [`Koko Pangeran`](https://wa.me/6283863727744)
 
  [`Radhin`](https://wa.me/6282373158947)
 
