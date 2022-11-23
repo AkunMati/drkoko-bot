@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let axios = require('axios')
 let handler = async (m, { conn, args }) => {
- let pangeran = `b8040941f7`
+ let pangeran = `c2459db922`
   if (!args[0]) throw 'Uhm...url nya mana?'
  m.react('⏱️')
 let res = await fetch(`https://zenzapis.xyz/downloader/musically?apikey=${pangeran}&url=${args[0]}`)
