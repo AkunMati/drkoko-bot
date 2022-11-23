@@ -59,7 +59,7 @@ const listMessage = {
   sections
 }
 
-    if(!text) await conn.sendMessage(m.chat, listMessage, { quoted: adReply })
+    if(!text) await conn.sendMessage(m.chat, listMessage, { quoted: fkontak })
 
 let im = `https://api.lolhuman.xyz/api/random/nsfw/${text}?apikey=SGWN`
 conn.sendButtonImg(m.chat, im, `Nih Kak ${_c + ' ' + text}nya`, wm, 'Next ?', `${_p + _c + ' ' + text}`, m, {
