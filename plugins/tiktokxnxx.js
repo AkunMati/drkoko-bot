@@ -13,7 +13,7 @@ let name = await conn.getName[who]
 let json = await fetch(`http://mkbot.online/api/tiktok/nsfw/nsfwtt?&apikey=${mkbotkey}`)
 let jsons = await json.json()
 let res = jsons.result
-conn.sendButt(m.chat, `- Nih Beb Jgn Sangne🥵 -`, `*◈•@${who.split("@s.whatsapp.net")[0]}*`, res, [['🔄 NEXT BEB 🔄', `/${command}`]], fgif, { mentions: [who] })}
+conn.sendButtonVid(m.chat, res, `Nih Beb Jgn Sangne🥵 *◈•@${who.split('@s.whatsapp.net')[0]}*`, wm, '🔄 NEXT BEB 🔄', `/${command}`, fgif, { mentions: [who] })}
 handler.help = ['tiktokxxx']
 handler.tags = ['bokep']
 handler.command = /^(tiktokxxx)$/i
