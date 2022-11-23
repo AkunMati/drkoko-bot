@@ -9,6 +9,7 @@ global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
   bg: 'http://bochil.ddns.net',
+  dzx: 'https://api.dhamzxploit.my.id',
   xteam: 'https://api.xteam.xyz',
   zahir: 'https://zahirr-web.herokuapp.com',
   zeks: 'https://api.zeks.me',
@@ -36,7 +37,7 @@ global.APIKeys = { // APIKey Here
   'https://pencarikode.xyz': 'pais',
   'https://hardianto.xyz': 'hardianto',
   'https://leyscoders-api.herokuapp.com': 'MIMINGANZ',
-  'https://zenzapis.xyz' : 'f9fccfcff1',
+  'https://zenzapis.xyz' : 'c2459db922',
   'https://violetics.pw': '0a97-8713-11dc'
 }
 global.packname = data.namabot
@@ -79,7 +80,7 @@ global.serialimg = 'https://telegra.ph/file/700df524f39be728c8882.jpg'
 // klau kgk ada github kasih tanda '-' aja biar kgk error
 
 /*============== APIKEY SIMPEL ==============*/
-global.pangeran = `5d1197db351b`
+global.pangeran = `c2459db922`
 global.imgbb = '3a247f2296ade39d87e71b92ae0256c9' // https://api.imgbb.com/
 global.bear = 'VBkM7rbU'
 global.zenzkey = 'b8040941f7'
