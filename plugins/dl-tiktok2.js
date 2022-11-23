@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-let pangeran = `b8040941f7`
+let pangeran = `c2459db922`
   if (!text) return conn.reply(m.chat, `Gunakan format: ${usedPrefix}${command} Link nya`, m)
 
   await conn.sendButtonLoc(m.chat, 'https://telegra.ph/file/700df524f39be728c8882.jpg', 'Searching...', wm, '😳KOKO', '.owner', m)
