@@ -42,6 +42,8 @@ const sections = [ {
 	{title: `${_c} Lewd Kemo`, rowId: `${_p + _c} lewdkemo`, description: `JANGAN BUAT COMLY OM:v`},
     {title: `${_c} Pap Tetew`, rowId: `${_p} paptt`, description: `JANGAN BUAT COMLY OM:v`},
     {title: `${_c} Pap Vid Tetew`, rowId: `${_p} papttvid`, description: `JANGAN BUAT COMLY OM:v`},
+    {title: `${_c} Tiktok Porn`, rowId: `${_p} tiktokporn`, description: `JANGAN BUAT COMLY OM:v`},
+    {title: `${_c} Hentai Video`, rowId: `${_p} hentaivt`, description: `JANGAN BUAT COMLY OM:v`},
     {title: `${_c} nhentai Search`, rowId: `${_p} nhs`, description: `Mau Nyari Apa Om?:v`},
     {title: `${_c} nhentai Pdf`, rowId: `${_p} nhpdf`, description: `Hentai Jadi Pdf Om:`},
     {title: `${_c} nhentai Detail`, rowId: `${_p} nh`, description: `Mau Download Om?:v`},
@@ -57,26 +59,26 @@ const listMessage = {
   sections
 }
 
-    if(!text) await conn.sendMessage(m.chat, listMessage, { quoted: m })
+    if(!text) await conn.sendMessage(m.chat, listMessage, { quoted: adReply })
 
 let im = `https://api.lolhuman.xyz/api/random/nsfw/${text}?apikey=SGWN`
 conn.sendButtonImg(m.chat, im, `Nih Kak ${_c + ' ' + text}nya`, wm, 'Next ?', `${_p + _c + ' ' + text}`, m, {
   contextInfo: { mentionedJid: [m.sender],
     externalAdReply :{
     showAdAttribution: true,
-    mediaUrl: data.sc,
+    mediaUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ',
     mediaType: 2,
-    description: data.deslink , 
+    description: 'Subscribe My Channel>_<', 
     title: run,
     body: wm,
-    thumbnail: await(await fetch(img)).buffer(),
-    sourceUrl: data.sc
+    thumbnail: await(await fetch('https://telegra.ph/file/700df524f39be728c8882.jpg')).buffer(),
+    sourceUrl: 'https://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ'
      }}
   })
 
 }
 handler.help = ['nsfw', 'hentai'].map(v => v + ' <query>')
-handler.tags = ['nsfw', 'premium']
+handler.tags = ['nsfw']
 handler.command = /^(nsfw|hentai)$/i
 
 handler.nsfw = true
