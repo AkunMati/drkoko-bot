@@ -1,15 +1,21 @@
-let instagramGetUrl = require('instagram-url-direct')
-let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`
-    const results = (await instagramGetUrl(args[0])).url_list[0]
+const scraper = require('@bochilteam/scraper')
 
-    conn.sendFile(m.chat, results, 'ig.mp4', `*Nih Kak>_<*\n_Lain Kali Download Sendiri Kak😖_\n\n_*Jangan Lupa Subscribe My Channel:*_\nhttps://youtube.com/channel/UC_nKNU3Htf4Bp_wkhj3pVXQ`, m)
+let handler = async (m, { args }) => {
+    if (!args[0]) throw 'Input URL'
+    let res = await scraper.instagramdl(args[0])
+        .catch(async _ => await scraper.instagramdlv2(args[0]))
+        .catch(async _ => await scraper.instagramdlv3(args[0]))
+        .catch(async _ => await scraper.instagramdlv4(args[0]))
+    if (!res) throw 'Can\'t download the post'
+    await m.reply('_In progress, please wait..._')
+    for (let { url } of res) await conn.sendFile(m.chat, url, 'instagram.mp4', 
+`
+_©Bʏ: ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×_
+`.trim(), m)
 }
-handler.help = ['ig'].map(v => v + ' <url>')
+handler.help = ['instagram']
 handler.tags = ['downloader']
-
-handler.command = /^(instagram|ig|igdl)$/i
-handler.limit = true
+handler.command = /^(ig(dl)?|instagram(dl)?)$/i
 handler.premium = true
-
+handler.limit = true
 module.exports = handler
