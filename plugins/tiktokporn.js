@@ -4,9 +4,11 @@ let fetch = require('node-fetch')
 
 let fs = require('fs')
 
+let { porno } = require('../lib/scrape')
+
 let handler = async(m, { conn, usedPrefix, text, command }) => {
 
-  let json = await require("../lib/scrape").porno('')
+  let json = await fetch('../lib/scrape').porno('')
 
   conn.sendButtonVid(m.chat, json.video, `Title : ${json.title}\nDesc : ${json.desc}`, `${json.upload}`, `Next`, `${ usedPrefix + command }`, fkontak)
 
