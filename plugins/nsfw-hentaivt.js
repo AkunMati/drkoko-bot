@@ -6,7 +6,7 @@ let handler = async (m, { conn, command }) => {
 
     let neko = conn.pickRandom(ne)
 
-	conn.sendFile(m.chat, neko, 'hentai.mp4', 'By NdaaBotz-MD',m)
+	conn.sendFile(m.chat, neko, 'hentai.mp4', '_*©By: ᵈʳᴋᴏᴋᴏ ᴘᴀ፝֟፝֟ɴɢᴇʀᴀɴ×፝֟͜×*_',m)
 
 }
 
