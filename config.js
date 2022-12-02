@@ -1,5 +1,4 @@
 let fs = require('fs')
-let moment = require('moment-timezone')
 
 global.data = JSON.parse(fs.readFileSync('./data.json'))
 global.owner = JSON.parse(fs.readFileSync('./src/owner.json')) // Put your number to /src/owner.json
@@ -52,7 +51,6 @@ global.eror = '*ᴇʀᴏʀʀ!*'
 global.wem = '✘ᵈʳᴋᴏᴋᴏ 𝐂𝐑𝐀𝐒𝐇 𝐈𝐍𝐅𝐈𝐍𝐈𝐓𝐘'
 global.thumb = fs.readFileSync('./src/images (1).jpeg') // Thumb Menu
 global.thumb2 = fs.readFileSync('./thumbnail.jpg') // Thumb War
-global.botdate = `⫹⫺ Date :  ${moment.tz('Asia/Jakarta').format('DD/MM/YY')}`
 //Tutup WAR
 
 global.sig = 'https://instagram.com/kokopangeran_' //Link Instagrammu
