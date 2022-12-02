@@ -1,12 +1,9 @@
-(async() => {
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
-process.on('uncaughtException', console.error);
+(async () => {
 require('./config')
 const {
   useMultiFileAuthState,
   DisconnectReason
 } = require('@adiwajshing/baileys')
-const { generate } = require('qrcode-terminal')
 const WebSocket = require('ws')
 const path = require('path')
 const fs = require('fs')
@@ -16,7 +13,6 @@ const _ = require('lodash')
 const syntaxerror = require('syntax-error')
 const P = require('pino')
 const os = require('os')
-const chalk = require('chalk')
 let simple = require('./lib/simple')
 var low
 try {
@@ -25,12 +21,8 @@ try {
   low = require('./lib/lowdb')
 }
 const { Low, JSONFile } = low
-const {
-	mongoDB,
-	MongoDBV2
-} = require('./lib/mongoDB')
+const mongoDB = require('./lib/mongoDB')
 
-simple.protoType()
 
 global.API = (name, path = '/', query = {}, apikeyqueryname) => (name in global.APIs ? global.APIs[name] : name) + path + (query || apikeyqueryname ? '?' + new URLSearchParams(Object.entries({ ...query, ...(apikeyqueryname ? { [apikeyqueryname]: global.APIKeys[name in global.APIs ? global.APIs[name] : name] } : {}) })) : '')
 // global.Fn = function functionCallBack(fn, ...args) { return fn.call(global.conn, ...args) }
@@ -63,7 +55,6 @@ global.loadDatabase = async function loadDatabase() {
     stats: {},
     msgs: {},
     sticker: {},
-    settings: {},
     ...(global.db.data || {})
   }
   global.db.chain = _.chain(global.db.data)
@@ -73,16 +64,15 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-const authF = opts['single'] ? `${opts._[0] || 'session'}.data.json` : 'sessions'
-global.isInit = !fs.existsSync(authF)
-const { state, saveState, saveCreds } = opts['single'] ? await useSingleFileAuthState(authF) : await useMultiFileAuthState(authF)
+const authFile = `${opts._[0] || 'sessions'}`
+global.isInit = !fs.existsSync(authFile)
+const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
 
 const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'silent'}),
-  version: [2, 2204, 13],
-  // browser: ['Family-MD', 'IOS', '4.1.0']
+  logger: P({ level: 'debug'}),
+  version: [2, 2204, 13]
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
@@ -90,45 +80,20 @@ global.conn = simple.makeWASocket(connectionOptions)
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
     if (global.db.data) await global.db.write()
-    if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
+    if (!opts['tmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
   }, 30 * 1000)
 }
-if (opts['big-qr'] || opts['server']) conn.ev.on('qr', qr => generate(qr, { small: false }))
-if (opts['server']) require('./server')(global.conn, PORT)
 
-/* async function connectionUpdate(update) {
+async function connectionUpdate(update) {
   const { connection, lastDisconnect } = update
-  if (connection == 'connecting') console.log(chalk.redBright('🕛 Mengaktifkan Bot, Harap tunggu sebentar...'))
-  if (connection == 'open') {
-      console.log(chalk.green('Connected✅'))
-      await conn.hehe("6281320170984@s.whatsapp.net", global.ftoli).catch(err => { return !0 })
-  }
-  if (connection == 'close') console.log(chalk.red('⏹️Koneksi berhenti dan mencoba menghubungkan kembali...'))
   global.timestamp.connect = new Date
   if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== WebSocket.CONNECTING) {
     console.log(global.reloadHandler(true))
   }
   if (global.db.data == null) await loadDatabase()
-  //console.log(JSON.stringify(update, null, 4))
-} */
-
-// by rasel : bit.ly/AcellComel
-async function connectionUpdate(update) {
-  console.log(update)
-  const { receivedPendingNotifications, connection, lastDisconnect, isOnline, isNewLogin } = update
-  if (isNewLogin) conn.isInit = true
-  if (connection == 'connecting') console.log(chalk.redBright('⚡ Activate the Bot, please wait a moment...'))
-  if (connection == 'open') console.log(chalk.green('✅ Connected'))
-  if (isOnline == true) console.log(chalk.green('Status Online'))
-  if (isOnline == false) console.log(chalk.red('Status Offline'))
-  if (receivedPendingNotifications) console.log(chalk.yellow('Waiting New Messages'))
-  if (connection == 'close') console.log(chalk.red('⏱️ Connection stopped and tried to reconnect...'))
-  global.timestamp.connect = new Date
-  if (lastDisconnect && lastDisconnect.error && lastDisconnect.error.output && lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut && conn.ws.readyState !== WebSocket.CONNECTING) {
-    console.log(global.reloadHandler(true))
-  } 
-  if (global.db.data == null) await global.loadDatabase()
+  // console.log(JSON.stringify(update, null, 4))
 }
+
 
 process.on('uncaughtException', console.error)
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/
@@ -155,35 +120,23 @@ global.reloadHandler = function (restatConn) {
   if (!isInit) {
     conn.ev.off('messages.upsert', conn.handler)
     conn.ev.off('group-participants.update', conn.participantsUpdate)
-    conn.ev.off('groups.update', conn.groupsUpdate)
     conn.ev.off('message.delete', conn.onDelete)
     conn.ev.off('connection.update', conn.connectionUpdate)
     conn.ev.off('creds.update', conn.credsUpdate)
   }
 
-  conn.welcome = 'Hai, @user!\nSelamat datang di grup @subject\n\n@desc'
-  conn.bye = 'Selamat tinggal @user!'
+  conn.welcome = 'Hai @user Selamat Datang\n\nDi Grup @subject\nKetik .intro untuk menampilkan card intro'
+  conn.bye = '@user Telah Meninggalkan Percakapan Grup.'
   conn.spromote = '@user sekarang admin!'
   conn.sdemote = '@user sekarang bukan admin!'
-  conn.sDesc = 'Deskripsi telah diubah ke \n@desc'
-  conn.sSubject = 'Judul grup telah diubah ke \n@subject'
-  conn.sIcon = 'Icon grup telah diubah!'
-  conn.sRevoke = 'Link group telah diubah ke \n@revoke'
-  conn.sAnnounceOn = 'Group telah di tutup!\nsekarang hanya admin yang dapat mengirim pesan.'
-  conn.sAnnounceOff = 'Group telah di buka!\nsekarang semua peserta dapat mengirim pesan.'
-  conn.sRestrictOn = 'Edit Info Grup di ubah ke hanya admin!'
-  conn.sRestrictOff = 'Edit Info Grup di ubah ke semua peserta!'
-
   conn.handler = handler.handler.bind(conn)
   conn.participantsUpdate = handler.participantsUpdate.bind(conn)
-  conn.groupsUpdate = handler.groupsUpdate.bind(conn)
   conn.onDelete = handler.delete.bind(conn)
   conn.connectionUpdate = connectionUpdate.bind(conn)
-  conn.credsUpdate = opts['single'] ? saveState.bind(conn) : saveCreds.bind(conn)
+  conn.credsUpdate = saveCreds.bind(conn)
 
   conn.ev.on('messages.upsert', conn.handler)
   conn.ev.on('group-participants.update', conn.participantsUpdate)
-  conn.ev.on('groups.update', conn.groupsUpdate)
   conn.ev.on('message.delete', conn.onDelete)
   conn.ev.on('connection.update', conn.connectionUpdate)
   conn.ev.on('creds.update', conn.credsUpdate)
@@ -208,7 +161,7 @@ global.reload = (_ev, filename) => {
     let dir = path.join(pluginFolder, filename)
     if (dir in require.cache) {
       delete require.cache[dir]
-      if (fs.existsSync(dir)) conn.logger.info(`re require plugin '${filename}'`)
+      if (fs.existsSync(dir)) conn.logger.info(`re - require plugin '${filename}'`)
       else {
         conn.logger.warn(`deleted plugin '${filename}'`)
         return delete global.plugins[filename]
@@ -262,7 +215,7 @@ async function _quickTest() {
     gm,
     find
   }
-  require('./lib/sticker').support = s
+  // require('./lib/sticker').support = s
   Object.freeze(global.support)
 
   if (!s.ffmpeg) conn.logger.warn('Please install ffmpeg for sending videos (pkg install ffmpeg)')
@@ -273,4 +226,4 @@ async function _quickTest() {
 _quickTest()
   .then(() => conn.logger.info('Quick Test Done'))
   .catch(console.error)
-  })()
+})()
