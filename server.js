@@ -1,13 +1,13 @@
-const express = require('express')
-const path = require('path')
-const SocketIO = require('socket.io')
-const qrcode = require('qrcode')
-const fetch = require('node-fetch')
+let express = require('express')
+let path = require('path')
+let SocketIO = require('socket.io')
+let qrcode = require('qrcode')
+let fetch = require('node-fetch')
 
 function connect(conn, PORT) {
     let app = global.app = express()
 
-    // app.use(express.static(path.join(__dirname, 'views')))
+    //app.use(express.static(path.join(__dirname, 'views')))
     let _qr = 'invalid'
 
     conn.ev.on('connection.update', function appQR({ qr }) {
@@ -20,9 +20,10 @@ function connect(conn, PORT) {
     })
 
     let server = app.listen(PORT, () => {
-      console.log('App listened on port', PORT)
+      console.log('Aplikasi berjalan di port', PORT)
       if (opts['keepalive']) keepAlive()
     })
+
     let io = SocketIO(server)
     io.on('connection', socket => {
         let { unpipeEmit } = pipeEmit(conn, socket, 'conn-')
@@ -50,6 +51,5 @@ function keepAlive() {
     fetch(url).catch(console.error)
   }, 5 * 1000 * 60)
 }
-
 
 module.exports = connect
