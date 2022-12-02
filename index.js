@@ -32,11 +32,11 @@ function start(file) {
     font: 'console',
     align: 'center',
     gradient: ['red', 'magenta']
-  })
+  });
   cluster.setupMaster({
     exec: path.join(__dirname, file),
     args: args.slice(1),
-  })
+  });
   let p = cluster.fork()
   p.on("message", data => {
     console.log("[RECEIVED]", data);
@@ -50,7 +50,7 @@ function start(file) {
         p.send(process.uptime());
         break;
     }
-  })
+  });
   p.on("exit", code => {
     isRunning = false;
     console.error("Exited with code:", code);
@@ -58,13 +58,13 @@ function start(file) {
     fs.watchFile(args[0], () => {
       fs.unwatchFile(args[0]);
       start("main.js");
-    })
-  })
+    });
+  });
   let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
   if (!opts['test'])
     if (!rl.listenerCount()) rl.on('line', line => {
       p.emit('message', line.trim())
-    })
+    });
   // console.log(p)
 }
 
