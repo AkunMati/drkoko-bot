@@ -12,7 +12,7 @@
     "scripts": {
         "start": "node index.js",
         "test": "node test.js",
-        "test2": "nodemon index.js --autocleartmp"
+        "test2": "nodemon index.js"
     },
     "keywords": [
         "termux-whatsapp-bot",
@@ -20,11 +20,13 @@
         "whatsapp",
         "js-whatsapp",
         "whatsapp",
-        "Games-wabot",
-        "wabot-aq",
-        "multi-device",
-        "MD",
-        "baileys"
+        "mybot-md",
+        "family-md",
+        "family-bot",
+        "enjela",
+        "shiraori-md",
+        "stikerin",
+        "wabot-aq"
     ],
     "homepage": "https://github.com/MendingTuru/drkoko-bot",
     "author": {
