@@ -4,7 +4,7 @@ apt install nodejs -y
 apt install ffmpeg -y
 apt install imagemagick -y
 apt install npm
-git clone https://github.com/BOTCAHX/Bottom-MD2
+git clone https://github.com/MendingTuru/Bottom-MD2
 cd Bottom-MD2
 npm install
 node .
