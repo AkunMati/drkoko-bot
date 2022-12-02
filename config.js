@@ -1,5 +1,4 @@
 let fs = require('fs')
-const moment = require('moment-timezone')
 
 global.data = JSON.parse(fs.readFileSync('./data.json'))
 global.owner = JSON.parse(fs.readFileSync('./src/owner.json')) // Put your number to /src/owner.json
