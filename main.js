@@ -3,10 +3,8 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 process.on('uncaughtException', console.error);
 require('./config')
 const {
-  default: useSingleFileAuthState,
   useMultiFileAuthState,
-  DisconnectReason,
-  WA_DEFAULT_EPHEMERAL,
+  DisconnectReason
 } = require('@adiwajshing/baileys')
 const { generate } = require('qrcode-terminal')
 const WebSocket = require('ws')
