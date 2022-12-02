@@ -1,4 +1,3 @@
-let fs = require('fs')
 
 global.data = JSON.parse(fs.readFileSync('./data.json'))
 global.owner = JSON.parse(fs.readFileSync('./src/owner.json')) // Put your number to /src/owner.json
@@ -458,7 +457,8 @@ global.fpay = {
 }
 
 
-//-------JANGAN DI UBAH MEK-------//
+//-------JANGAN DI UBAH MEK, NANTI ERROR-------//
+let fs = require('fs')
 let chalk = require('chalk')
 let file = require.resolve(__filename)
 fs.watchFile(file, () => {
