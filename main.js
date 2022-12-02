@@ -2,8 +2,8 @@
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 process.on('uncaughtException', console.error);
 require('./config')
-const { default:
-  useSingleFileAuthState,
+const {
+  default: useSingleFileAuthState,
   useMultiFileAuthState,
   DisconnectReason,
   WA_DEFAULT_EPHEMERAL,
