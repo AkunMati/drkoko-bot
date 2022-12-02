@@ -28,16 +28,16 @@
         "stikerin",
         "wabot-aq"
     ],
-    "homepage": "https://github.com/MendingTuru/Bottom-MD2",
+    "homepage": "https://github.com/MendingTuru/drkoko-bot",
     "author": {
         "name": "Koko Pangeran"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/MendingTuru/Bottom-MD2.git"
+        "url": "git+https://github.com/MendingTuru/drkoko-bot.git"
     },
     "bugs": {
-        "url": "https://github.com/MendingTuru/Bottom-MD2/issues"
+        "url": "https://github.com/MendingTuru/drkoko-bot/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
