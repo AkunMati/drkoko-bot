@@ -14,7 +14,8 @@ const yargs = require('yargs/yargs')
 const cp = require('child_process')
 const _ = require('lodash')
 const syntaxerror = require('syntax-error')
-const P = require('pino')
+//const P = require('pino')
+const pino = require('pino')
 const os = require('os')
 const chalk = require('chalk')
 let simple = require('./lib/simple')
@@ -77,15 +78,29 @@ const authFile = `${opts._[0] || 'sessions'}`
 global.isInit = !fs.existsSync(authFile)
 const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
 
+const logger = pino({
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      colorize: true,
+      levelFirst: true, 
+      ignore: 'hostname', 
+      translateTime: true
+    }
+  }
+}).child({ class: 'baileys'})
+
 const connectionOptions = {
+  version: [2, 2208, 14],
   printQRInTerminal: true,
   auth: state,
-  logger: P({ level: 'silent'}),
-  version: [2, 2204, 13],
-  // browser: ['Family-MD', 'IOS', '4.1.0']
+  // logger: pino({ prettyPrint: { levelFirst: true, ignore: 'hostname', translateTime: true },  prettifier: require('pino-pretty') }),
+  logger: pino({ level: 'silent' })
+  // logger: P({ level: 'trace' })
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
+conn.isInit = false
 
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
@@ -93,7 +108,7 @@ if (!opts['test']) {
     if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
   }, 30 * 1000)
 }
-if (opts['big-qr'] || opts['server']) conn.ev.on('qr', qr => generate(qr, { small: false }))
+//if (opts['big-qr'] || opts['server']) conn.ev.on('qr', qr => generate(qr, { small: false }))
 if (opts['server']) require('./server')(global.conn, PORT)
 
 /* async function connectionUpdate(update) {
@@ -252,7 +267,7 @@ async function _quickTest() {
     ])
   }))
   let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test
-  console.log(test)
+  //console.log(test)
   let s = global.support = {
     ffmpeg,
     ffprobe,
@@ -262,7 +277,7 @@ async function _quickTest() {
     gm,
     find
   }
-  require('./lib/sticker').support = s
+  //require('./lib/sticker').support = s
   Object.freeze(global.support)
 
   if (!s.ffmpeg) conn.logger.warn('Please install ffmpeg for sending videos (pkg install ffmpeg)')
