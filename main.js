@@ -111,6 +111,16 @@ if (!opts['test']) {
 //if (opts['big-qr'] || opts['server']) conn.ev.on('qr', qr => generate(qr, { small: false }))
 if (opts['server']) require('./server')(global.conn, PORT)
 
+function clearTmp() {
+  const tmp = [path.join(__dirname, './tmp')]
+  const filename = []
+  tmp.forEach(dirname => fs.readdirSync(dirname).forEach(file => filename.push(path.join(dirname, file))))
+  filename.map(file => (
+    stats = fs.statSync(file),
+    stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3) ?
+      fs.unlinkSync(file) :
+      null))
+}
 /* async function connectionUpdate(update) {
   const { connection, lastDisconnect } = update
   if (connection == 'connecting') console.log(chalk.redBright('🕛 Mengaktifkan Bot, Harap tunggu sebentar...'))
