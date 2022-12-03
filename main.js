@@ -3,7 +3,6 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 process.on('uncaughtException', console.error);
 require('./config')
 const {
-  useSingleFileAuthState,
   useMultiFileAuthState,
   DisconnectReason
 } = require('@adiwajshing/baileys')
@@ -74,9 +73,9 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-const authF = opts['single'] ? `${opts._[0] || 'session'}.data.json` : 'sessions'
-global.isInit = !fs.existsSync(authF)
-const { state, saveState, saveCreds } = opts['single'] ? await useSingleFileAuthState(authF) : await useMultiFileAuthState(authF)
+const authFile = `${opts._[0] || 'sessions'}`
+global.isInit = !fs.existsSync(authFile)
+const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
 
 const connectionOptions = {
   printQRInTerminal: true,
