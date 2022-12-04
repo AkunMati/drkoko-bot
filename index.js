@@ -1,4 +1,4 @@
-oconsole.log("Running Bot...");
+console.log("Running Bot...");
 let cluster = require("cluster");
 let path = require("path");
 let fs = require("fs");
