@@ -3,7 +3,7 @@ let handler = async(m, { isOwner, isAdmin, conn, text, participants }) => {
                 global.dfail('admin', m, conn)
                 throw false
                 }
-  let teks = `┌─「 TAG ALL 」\n\n@${m.sender.split('@')[0]} : ${text ? text : ''}\n\n`
+  let teks = `┌─「 TAG ALL 」\n\n@${m.sender.split('@')[0]} : ${text ? text : ''} %readmore\n\n`
   for (let mem of participants) {
   teks += `├✪➢ @${mem.id.split('@')[0]}\n`}
   teks += `└────\n`
