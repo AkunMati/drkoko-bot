@@ -1,4 +1,4 @@
-console.log("Running Bot...");
+oconsole.log("Running Bot...");
 let cluster = require("cluster");
 let path = require("path");
 let fs = require("fs");
@@ -61,10 +61,10 @@ function start(file) {
     })
   });
   let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse());
-  if (!opts['test'])!
+  if (!opts["test"])!
     if (!rl.listenerCount()) rl.on('line', line => {
-      p.emit('message', line.trim());
-    })
+      p.emit("message", line.trim())
+    });
   // console.log(p)
 }
 
