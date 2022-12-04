@@ -67,6 +67,8 @@
         "human-readable": "^0.2.1",
         "image-to-base64": "^2.2.0",
         "hxz-api": "^1.0.1",
+        "link-preview-js": "^2.1.15",
+        "tiny-timer": "^1.6.0",
         "image-to-pdf": "^1.0.0",
         "install": "^0.13.0",
         "jsdom": "^20.0.0",
