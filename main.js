@@ -3,6 +3,7 @@ process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 process.on('uncaughtException', console.error);
 require('./config')
 const {
+  useSingleFileAuthState,
   useMultiFileAuthState,
   DisconnectReason
 } = require('@adiwajshing/baileys')
@@ -14,8 +15,7 @@ const yargs = require('yargs/yargs')
 const cp = require('child_process')
 const _ = require('lodash')
 const syntaxerror = require('syntax-error')
-//const P = require('pino')
-const pino = require('pino')
+const P = require('pino')
 const os = require('os')
 const chalk = require('chalk')
 let simple = require('./lib/simple')
@@ -74,33 +74,19 @@ loadDatabase()
 // if (opts['cluster']) {
 //   require('./lib/cluster').Cluster()
 // }
-const authFile = `${opts._[0] || 'sessions'}`
-global.isInit = !fs.existsSync(authFile)
-const { state, saveState, saveCreds } = await useMultiFileAuthState(authFile)
-
-const logger = pino({
-  transport: {
-    target: 'pino-pretty',
-    options: {
-      colorize: true,
-      levelFirst: true, 
-      ignore: 'hostname', 
-      translateTime: true
-    }
-  }
-}).child({ class: 'baileys'})
+const authF = opts['single'] ? `${opts._[0] || 'session'}.data.json` : 'sessions'
+global.isInit = !fs.existsSync(authF)
+const { state, saveState, saveCreds } = opts['single'] ? await useSingleFileAuthState(authF) : await useMultiFileAuthState(authF)
 
 const connectionOptions = {
-  version: [2, 2208, 14],
   printQRInTerminal: true,
   auth: state,
-  // logger: pino({ prettyPrint: { levelFirst: true, ignore: 'hostname', translateTime: true },  prettifier: require('pino-pretty') }),
-  logger: pino({ level: 'silent' })
-  // logger: P({ level: 'trace' })
+  logger: P({ level: 'silent'}),
+  version: [2, 2204, 13],
+  // browser: ['Family-MD', 'IOS', '4.1.0']
 }
 
 global.conn = simple.makeWASocket(connectionOptions)
-conn.isInit = false
 
 if (!opts['test']) {
   if (global.db) setInterval(async () => {
@@ -108,19 +94,9 @@ if (!opts['test']) {
     if (opts['autocleartmp'] && (global.support || {}).find) (tmp = [os.tmpdir(), 'tmp'], tmp.forEach(filename => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
   }, 30 * 1000)
 }
-//if (opts['big-qr'] || opts['server']) conn.ev.on('qr', qr => generate(qr, { small: false }))
+if (opts['big-qr'] || opts['server']) conn.ev.on('qr', qr => generate(qr, { small: false }))
 if (opts['server']) require('./server')(global.conn, PORT)
 
-function clearTmp() {
-  const tmp = [path.join(__dirname, './tmp')]
-  const filename = []
-  tmp.forEach(dirname => fs.readdirSync(dirname).forEach(file => filename.push(path.join(dirname, file))))
-  filename.map(file => (
-    stats = fs.statSync(file),
-    stats.isFile() && (Date.now() - stats.mtimeMs >= 1000 * 60 * 3) ?
-      fs.unlinkSync(file) :
-      null))
-}
 /* async function connectionUpdate(update) {
   const { connection, lastDisconnect } = update
   if (connection == 'connecting') console.log(chalk.redBright('🕛 Mengaktifkan Bot, Harap tunggu sebentar...'))
@@ -277,7 +253,7 @@ async function _quickTest() {
     ])
   }))
   let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test
-  //console.log(test)
+  console.log(test)
   let s = global.support = {
     ffmpeg,
     ffprobe,
@@ -287,7 +263,7 @@ async function _quickTest() {
     gm,
     find
   }
-  //require('./lib/sticker').support = s
+  require('./lib/sticker').support = s
   Object.freeze(global.support)
 
   if (!s.ffmpeg) conn.logger.warn('Please install ffmpeg for sending videos (pkg install ffmpeg)')
