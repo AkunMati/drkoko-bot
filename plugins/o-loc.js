@@ -3,7 +3,7 @@ const { generateWAMessageFromContent } = require('@adiwajshing/baileys')
 
 let handler  = async (m, { conn }) => {
 
- let pp = 'https://telegra.ph/file/700df524f39be728c8882.jpgg'
+ let pp = 'https://i.ibb.co/R9Hx76q/drkoko-bot.jpg'
   try {
     pp = await conn.profilePictureUrl(m.sender, 'image')
   } catch (e) {
@@ -21,7 +21,7 @@ let msg = await generateWAMessageFromContent(m.chat, { locationMessage: {
   degreesClockwiseFromMagneticNorth: 2,
   comment: '',
   jpegThumbnail: await( await fetch(pp)).buffer()
-}}, { quoted: fpay })
+}}, { quoted: m })
 
 return conn.relayMessage(m.chat, msg.message, {})
 }
