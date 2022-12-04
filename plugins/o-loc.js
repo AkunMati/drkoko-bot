@@ -26,8 +26,8 @@ let msg = await generateWAMessageFromContent(m.chat, { locationMessage: {
 return conn.relayMessage(m.chat, msg.message, {})
 }
 
-handler.help = ["loc1"]
-handler.tags = ["owner"]
+handler.help = ['loc1']
+handler.tags = ['owner']
 handler.command = /^loc1$/
 handler.owner = true
 module.exports = handler
